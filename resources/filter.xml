@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hexya>
+    <data>
+
+        <view id="base_ir_filters_view_form" model="Filter">
+            <form>
+                <sheet>
+                    <group col="4">
+                        <field name="name"/>
+                        <field name="user_id"/>
+                        <field name="model_id"/>
+                        <field name="is_default"/>
+                        <field name="action_id"/>
+                        <field name="active"/>
+                    </group>
+                    <group>
+                        <field name="domain"/>
+                        <field name="context"/>
+                        <field name="sort"/>
+                    </group>
+                </sheet>
+            </form>
+        </view>
+
+        <view id="base_ir_filters_view_tree" model="Filter">
+            <tree>
+                <field name="name"/>
+                <field name="model_id"/>
+                <field name="user_id"/>
+                <field name="is_default"/>
+                <field name="action_id"/>
+                <field name="domain" groups="base_group_no_one"/>
+                <field name="context" groups="base_group_no_one"/>
+                <field name="sort" groups="base_group_no_one"/>
+            </tree>
+        </view>
+
+        <view id="base_ir_filters_view_search" model="Filter">
+            <search>
+                <field name="name" string="Filter Name"/>
+                <filter string="User" domain="[('user_id','!=',False)]" name="user"
+                        help="Filters visible only for one user"/>
+                <filter string="Shared" domain="[('user_id','=',False)]" name="shared"
+                        help="Filters shared with all users"/>
+                <filter string="My filters" domain="[('user_id','=',uid)]" name="my_filters"
+                        help="Filters created by myself"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="User" domain="[]" context="{'group_by':'user_id'}"/>
+                    <filter string="Model" domain="[]" context="{'group_by':'model_id'}"/>
+                </group>
+                <field name="model_id"/>
+                <field name="user_id"/>
+            </search>
+        </view>
+
+        <action id="base_actions_ir_filters_view" type="ir.actions.act_window" model="Filter" name="Filters"
+                view_mode="tree,form"/>
+
+        <menuitem parent="base_menu_user_interface" name="User-defined Filters"
+                  id="base_menu_ir_filters" action="base_actions_ir_filters_view" sequence="5"/>
+
+    </data>
+</hexya>

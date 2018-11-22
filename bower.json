@@ -1,0 +1,20 @@
+{
+  "name": "web",
+  "version": "0.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.8.3",
+    "underscore": "^1.8.3",
+    "underscore.string": "2.2.1",
+    "jquery.browser": "^0.1.0"
+  },
+  "resolutions": {
+    "underscore": "^1.8.3"
+  }
+}

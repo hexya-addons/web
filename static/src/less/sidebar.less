@@ -1,0 +1,86 @@
+/* Copyright 2016, 2017 Openworx.
+ * License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). */
+
+/* App Sidebar Panel */
+
+@hexya-sidebar-width: 180px;
+
+.app-sidebar-panel {
+    .o-flex(0, 0, @hexya-sidebar-width);
+    background-color: @gray-base;
+    height: 100% !important;
+    overflow-y: auto;
+    @media (max-width: @screen-sm-min) {
+      display: none;
+    }
+}
+
+.app-sidebar {
+    white-space: nowrap;
+    padding: 0;
+
+    .o_sub_menu_logo {
+        display: block;
+        .o-flex(0, 0, auto);
+        text-align: center;
+        position: relative;
+
+        > img {
+            margin: 14px 0;
+            background-color: white;
+        }
+
+        .oe_logo_edit {
+            position: absolute;
+            top: 1px;
+            width: 100%;
+            padding: 4px;
+            margin: 14px 0;
+            display: none;
+            color: #eee;
+            background: rgba(37,37,37,0.9);
+        }
+        &:hover .oe_logo_edit_admin {
+            display: block;
+        }
+    }
+
+    .app-sidebar-menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	>li {
+	    display: block;
+	    margin: 0;
+	    padding: 0;
+	    border: 0px;
+	    >a {
+            display: block;
+            position: relative;
+            margin: 0;
+            border: 0px;
+            padding: 8px 15px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 300;
+            color: @gray-lighter;
+            overflow: hidden;
+            text-overflow: ellipsis;
+	    }
+	}
+        > li:hover > a{
+    	    background: darken(@hexya-brand-primary, 15%);
+    	    color: #fff;
+        }
+    }
+}
+
+.app-sidebar-menuitem {
+    width: 23px;
+    height: 22px;
+    margin-right: 5px;
+}
+
+.toggle-sidebar {
+    margin-left: 0px - @hexya-sidebar-width;
+}

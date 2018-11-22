@@ -1,0 +1,1354 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. field:Filter.Action
+msgid "Action"
+msgstr "Дія"
+
+#. field:Filter.Context
+msgid "Context"
+msgstr ""
+
+#. field:Company.DashboardBackground
+msgid "Dashboard Background"
+msgstr ""
+
+#. field:Filter.IsDefault
+msgid "Default filter"
+msgstr ""
+
+#. field:Filter.Domain
+msgid "Domain"
+msgstr ""
+
+#. field:Filter.Name
+#. resource:base_ir_filters_view_search
+msgid "Filter Name"
+msgstr ""
+
+#. resource:base_actions_ir_filters_view
+msgid "Filters"
+msgstr "Фільтри"
+
+#. resource:base_ir_filters_view_search
+msgid "Filters created by myself"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "Filters shared with all users"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "Filters visible only for one user"
+msgstr ""
+
+#. field:CommonMixin.ID
+#. field:Company.ID
+#. field:Filter.ID
+#. field:User.ID
+msgid "ID"
+msgstr "ІД"
+
+#. field:Filter.ResModel
+#. resource:base_ir_filters_view_search
+msgid "Model"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "My filters"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "$(this).addClass('o_error');"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "...Upload in progress..."
+msgstr "...Виконується вивантаження ..."
+
+#. custom: web
+#: base.xml:0
+msgid "99+"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Activate Assets Debugging"
+msgstr "Активізувати налагодження активів"
+
+#. custom: web
+#: base.xml:0
+msgid "Add Custom Filter"
+msgstr "Додати фільтр користувача"
+
+#. custom: web
+#: base.xml:0
+msgid "Add custom group"
+msgstr "Додати групу користувачів"
+
+#. custom: web
+#: base.xml:0
+msgid "Add..."
+msgstr "Додати..."
+
+#. custom: web
+#: base.xml:0
+msgid "All users"
+msgstr "Всі користувачі"
+
+#. custom: web
+#: base.xml:0
+msgid "Attachment :"
+msgstr "Вкладення:"
+
+#. custom: web
+#: base.xml:0
+msgid "Available fields"
+msgstr "Доступні поля"
+
+#. custom: web
+#: base.xml:0
+msgid "Clear Events"
+msgstr "Очистити список подій"
+
+#. custom: web
+#: base.xml:0
+msgid "Condition:"
+msgstr "Стан:"
+
+#. custom: web
+#: base.xml:0
+msgid "Confirm New Password"
+msgstr "Підтвердіть новий пароль"
+
+#. custom: web
+#: base.xml:0
+msgid "Created by :"
+msgstr "Створено: "
+
+#. custom: web
+#: base.xml:0
+msgid "Creation Date:"
+msgstr "Дата створення: "
+
+#. custom: web
+#: base.xml:0
+msgid "Creation User:"
+msgstr "Створив:"
+
+#. custom: web
+#: base.xml:0
+msgid "Day"
+msgstr "День"
+
+#. custom: web
+#: base.xml:0
+msgid "Default:"
+msgstr "Замовчування:"
+
+#. custom: web
+#: base.xml:0
+msgid "Delete"
+msgstr "Видалити"
+
+#. custom: web
+#: base.xml:0
+msgid "Disable Technical Features"
+msgstr "Вимкнути технічні характеристики"
+
+#. custom: web
+#: base.xml:0
+msgid "Edit"
+msgstr "Редагувати"
+
+#. custom: web
+#: base.xml:0
+msgid "Enable Technical Features"
+msgstr "Увімкнути технічні характеристики"
+
+#. custom: web
+#: base.xml:0
+msgid "Export Formats :"
+msgstr "Формати експорту:"
+
+#. custom: web
+#: base.xml:0
+msgid "Export Type :"
+msgstr "Тип експорту:"
+
+#. custom: web
+#: base.xml:0
+msgid "Export all Data"
+msgstr "Експортувати всі дані"
+
+#. custom: web
+#: base.xml:0
+msgid "ID:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Import-Compatible Export"
+msgstr "Імпортосумісний експорт"
+
+#. custom: web
+#: base.xml:0
+msgid "Latest Modification Date:"
+msgstr "Дата останньої модифікації:"
+
+#. custom: web
+#: base.xml:0
+msgid "Latest Modification by:"
+msgstr "Автор останньої модифікації:"
+
+#. custom: web
+#: base.xml:0
+msgid "Leave the Developer Tools"
+msgstr "Вийти з інструментів розробника"
+
+#. custom: web
+#: base.xml:0
+msgid "Log out"
+msgstr "Вихід"
+
+#. custom: web
+#: base.xml:0
+msgid "Manage Filters"
+msgstr "Керування фільтрами"
+
+#. custom: web
+#: base.xml:0
+msgid "Modified by :"
+msgstr "Автор змін:"
+
+#. custom: web
+#: base.xml:0
+msgid "Month"
+msgstr "Місяць"
+
+#. custom: web
+#: base.xml:0
+msgid "More"
+msgstr "Більше"
+
+#. custom: web
+#: base.xml:0
+msgid "Move Down"
+msgstr "Перемістити вниз"
+
+#. custom: web
+#: base.xml:0
+msgid "Move Up"
+msgstr "Перемістити вгору"
+
+#. custom: web
+#: base.xml:0
+msgid "New Password"
+msgstr "Новий пароль"
+
+#. custom: web
+#: base.xml:0
+msgid "No Update:"
+msgstr "Немає оновлень:"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"No data available for this pivot table.  Try to add some records, or make sure\n"
+"        that there is at least one measure and no active filter in the search bar."
+msgstr ""
+"Немає даних для цієї зведеної таблиці. Спробуйте додати записи, або впевніться, \n"
+"що в панелі пошуку є принаймні одна міра і немає активних фільтрів."
+
+#. custom: web
+#: base.xml:0
+msgid "No data to display."
+msgstr "Немає даних для відображення."
+
+#. custom: web
+#: base.xml:0
+msgid "Not shown in kanban"
+msgstr "Не показується в канбан"
+
+#. custom: web
+#: base.xml:0
+msgid "Old Password"
+msgstr "Старий пароль"
+
+#. custom: web
+#: base.xml:0
+msgid "Only you"
+msgstr "Тільки Ви"
+
+#. custom: web
+#: base.xml:0
+msgid "Please note that only the selected ids will be exported."
+msgstr "Зауважте, що тільки вибрані ID буде експортовано."
+
+#. custom: web
+#: base.xml:0
+msgid "Please pay attention that all records matching your search filter will be exported. Not only the selected ids."
+msgstr "Зауважте, що всі записи, які відповідають вашому пошуковому фільтру - будуть експортовані, а не тільки вибрані ID."
+
+#. custom: web
+#: base.xml:0
+msgid "Preferences"
+msgstr "Налаштування"
+
+#. custom: web
+#: base_common.xml:0
+msgid "(no string)"
+msgstr "(немає умови)"
+
+#. custom: web
+#: base_common.xml:0
+msgid "(nolabel)"
+msgstr "(без мітки)"
+
+#. custom: web
+#: base_common.xml:0
+msgid "-"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid ":"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Action ID:"
+msgstr "ID дії:"
+
+#. custom: web
+#: base_common.xml:0
+msgid ""
+"Button\n"
+"                <t t-if=\"widget.string\">: </t>\n"
+"                <t t-if=\"!widget.string\"> (no string)</t>"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Button Type:"
+msgstr "Тип кнопки:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Change default:"
+msgstr "Змінити замовчування:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Context:"
+msgstr "Контекст:"
+
+#. custom: web
+#: base.xml:0
+msgid "Remove All"
+msgstr "Вилучити всі"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Domain:"
+msgstr "Домен:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Field:"
+msgstr "Поле:"
+
+#. custom: web
+#: data_export.js:199
+msgid "Export Data"
+msgstr "Експорт даних"
+
+#. custom: web
+#: base.xml:0
+msgid "Run JS Tests"
+msgstr "Запустіть тести JS"
+
+#. custom: web
+#: base.xml:0
+msgid "Save as:"
+msgstr "Зберегти як:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Relation:"
+msgstr "Зв'язок:"
+
+#. custom: web
+#: debug_manager.js:134
+msgid "%d requests (%d ms) %d queries (%d ms)"
+msgstr "%d заявок (%d ms) %d запитів (%d ms)"
+
+#. custom: web
+#: debug_manager.js:241
+msgid "Fields of %s"
+msgstr "Поля %s"
+
+#. custom: web
+#: dialog.js:168
+msgid "Alert"
+msgstr "Попередження"
+
+#. custom: web
+#: data_export.js:201
+msgid "Export To File"
+msgstr "Експортувати у файл"
+
+#. custom: web
+#: debug_manager.js:183
+msgid "JS Tests"
+msgstr "Тести JS"
+
+#. custom: web
+#: debug_manager.js:321
+msgid "No metadata available"
+msgstr "Немає доступних метаданих"
+
+#. custom: web
+#: data_export.js:435
+msgid "Please select fields to export..."
+msgstr "Будь ласка, виділіть поля для експорту…"
+
+#. custom: web
+#: base.xml:0
+msgid "Remove"
+msgstr "Вилучити"
+
+#. custom: web
+#: dialog.js:193
+msgid "Confirmation"
+msgstr "Підтвердження"
+
+#. custom: web
+#: form_common.js:236
+msgid "Create and Edit..."
+msgstr "Створити і редагувати..."
+
+#. custom: web
+#: debug_manager.js:326
+msgid "Metadata (%s)"
+msgstr "Метадані (%s)"
+
+#. custom: web
+#: base.xml:0
+msgid "Quarter"
+msgstr "Чверть"
+
+#. custom: web
+#: base.xml:0
+msgid "Save current search"
+msgstr "Зберегти поточний пошук"
+
+#. custom: web
+#: base.xml:0
+msgid "Save fields list"
+msgstr "Зберегти список полів"
+
+#. custom: web
+#: form_widgets.js:634 form_widgets.js:640
+msgid "Active"
+msgstr "Активно"
+
+#. custom: web
+#: base.xml:0
+msgid "Saved exports:"
+msgstr "Збережений експорт:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Method:"
+msgstr "Метод:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Modifiers:"
+msgstr "Модифікатори:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Object:"
+msgstr "Об'єкт:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "On change:"
+msgstr "Змінюється:"
+
+#. custom: web
+#: data_export.js:167
+msgid "Please enter save field list name"
+msgstr "Введіть назву списку збереження полів"
+
+#. custom: web
+#: form_common.js:211
+msgid "Search More..."
+msgstr "Шукати ще..."
+
+#. custom: web
+#: form_common.js:245
+msgid "No results to show..."
+msgstr "Немає результатів для відображення..."
+
+#. custom: web
+#: data_export.js:421
+msgid "Please select fields to save export list..."
+msgstr "Виділіть поля для збереження у переліку ексорта…"
+
+#. custom: web
+#: form_common.js:281
+msgid "Search: "
+msgstr "Пошук:"
+
+#. resource:base_ir_filters_view_search
+msgid "Shared"
+msgstr ""
+
+#. field:Filter.User
+#. resource:base_ir_filters_view_search
+#. resource:base_ir_filters_view_search
+msgid "User"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Set Defaults"
+msgstr "Встановити за замовчуванням"
+
+#. custom: web
+#: form_view.js:1300
+msgid "Field '%s' specified in view could not be found."
+msgstr "Не знайдено вказане поле '%s'."
+
+#. field:User.SidebarVisible
+msgid "Show App Sidebar"
+msgstr ""
+
+#. field:Filter.Sort
+msgid "Sort"
+msgstr ""
+
+#. help:Filter.Action
+msgid "The menu action this filter applies to. When left empty the filter applies to all menus for this model."
+msgstr ""
+
+#. help:Filter.User
+msgid "The user this filter is private to. When left empty the filter is public and available to all users."
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Technical Translation"
+msgstr "Технічний переклад"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"This wizard will export all data that matches the current search criteria to a CSV file.\n"
+"        You can export all data or only the fields that can be reimported after modification."
+msgstr ""
+"Цей майстер експортуватиме всі дані, що відповідають за поточними критеріями пошуку до файлу CSV .\n"
+"Ви можете експортувати всі дані або тільки поля, що можуть ре-імпортуватися після модифікації."
+
+#. custom: web
+#: base.xml:0
+msgid "Toggle Timelines"
+msgstr "Графіки перемикання"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"Unhandled widget\n"
+"    <t t-js=\"dict\">console.warn('Unhandled widget', dict.widget);</t>"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Selection:"
+msgstr "Вибір:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Size:"
+msgstr "Розмір:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Special:"
+msgstr "Спеціальний:"
+
+#. custom: web
+#: form_view.js:733
+msgid "Do you really want to delete this record?"
+msgstr "Ви справді хочете видалити цей запис?"
+
+#. custom: web
+#: form_view.js:1125
+msgid "Set Default"
+msgstr "Встановити за замовчуванням"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Type:"
+msgstr "Тип:"
+
+#. custom: web
+#: data.js:1083
+msgid "Unknown field %s in domain %s"
+msgstr "Нерозпізнане поле %s в домені %s"
+
+#. custom: web
+#: list_view.js:543
+msgid "Do you really want to remove these records?"
+msgstr "Ви справді хочете вилучити ці записи?"
+
+#. custom: web
+#: form_upgrade_widgets.js:51
+msgid "Hexya Enterprise"
+msgstr ""
+
+#. resource:base_menu_ir_filters
+msgid "User-defined Filters"
+msgstr ""
+
+#. custom: web
+#: list_view.js:287
+msgid "Export"
+msgstr "Експорт"
+
+#. custom: web
+#: form_common.js:1054
+msgid "Select"
+msgstr "Обрати"
+
+#. custom: web
+#: form_common.js:1103
+msgid "Selected domain"
+msgstr "Вибрати домен"
+
+#. custom: web
+#: base.xml:0
+msgid "Update translations"
+msgstr "Оновіть переклад"
+
+#. custom: web
+#: base.xml:0
+msgid "Upload your file"
+msgstr "Завантажте файл"
+
+#. custom: web
+#: form_relational_widgets.js:326
+msgid "Render"
+msgstr "Перегляд"
+
+#. custom: web
+#: list_view_editable.js:122
+msgid "The line has been modified, your changes will be discarded. Are you sure you want to discard the changes ?"
+msgstr "Рядок було змінено, Ваші зміни буде скасовано. Ви впевнені, що хочете скасувати зміни ?"
+
+#. custom: web
+#: base.xml:0
+msgid "View Fields"
+msgstr "Показати поля"
+
+#. custom: web
+#: base.xml:0
+msgid "Week"
+msgstr "Тиждень"
+
+#. custom: web
+#: loading.js:44
+msgid "Loading (%d)"
+msgstr "Завантаження (%d)"
+
+#. custom: web
+#: form_common.js:889
+msgid "Save & New"
+msgstr "Зберегти і створити новий"
+
+#. custom: web
+#: form_relational_widgets.js:1018
+msgid "Add an item"
+msgstr "Додати елемент"
+
+#. custom: web
+#: data.js:1075
+msgid "Unknown operator %s in domain %s"
+msgstr "Невідомий оператор %s в домені %s"
+
+#. custom: web
+#: data.js:1121
+msgid "Unsupported operator %s in domain %s"
+msgstr "Не підтримується оператор %s в домені %s"
+
+#. custom: web
+#: form_relational_widgets.js:1122
+msgid "Action Button"
+msgstr "Кнопка дії"
+
+#. custom: web
+#: form_relational_widgets.js:1305
+msgid "Add: "
+msgstr "Додати:"
+
+#. custom: web
+#: form_view.js:315
+msgid "New"
+msgstr "Нова"
+
+#. custom: web
+#: form_relational_widgets.js:327
+msgid "No value found for the field %s for value %s"
+msgstr "Не знайдено значень для поля %s значень %s"
+
+#. custom: web
+#: form_view.js:1128
+msgid "Save default"
+msgstr "Зберегти за замовчуванням"
+
+#. custom: web
+#: misc.js:13
+msgid "Still loading..."
+msgstr "Завантажується..."
+
+#. custom: web
+#: base.xml:0
+msgid "View Metadata"
+msgstr "Показати метадані"
+
+#. custom: web
+#: form_relational_widgets.js:1123
+msgid "The o2m record must be saved before an action can be used"
+msgstr "Запис o2m потрібно зберегти перед використанням"
+
+#. custom: web
+#: form_relational_widgets.js:1595
+msgid "The type of the field '%s' must be a many2many field with a relation to 'ir.attachment' model."
+msgstr "Тип поля '%s' повинен бути полем many2many з прив'язкою до моделі 'ir.attachment'."
+
+#. custom: web
+#: formats.js:173
+msgid "'%s' is not a correct datetime"
+msgstr "'%s' - невірні дата і час"
+
+#. custom: web
+#: form_widgets.js:1114
+msgid "File Upload"
+msgstr "Вивантаження файлу"
+
+#. custom: web
+#: form_view.js:301
+msgid "Form"
+msgstr "Вікно"
+
+#. custom: web
+#: form_view.js:887
+msgid "The following fields are invalid:"
+msgstr "Невірно заповнені поля:"
+
+#. custom: web
+#: search_inputs.js:331
+msgid "No"
+msgstr "Ні"
+
+#. custom: web
+#: form_view.js:301
+msgid "The record could not be found in the database."
+msgstr "Запис не знайдено в базі даних."
+
+#. custom: web
+#: data.js:1138
+msgid "Unnamed"
+msgstr "Неназваний"
+
+#. custom: web
+#: form_upgrade_widgets.js:34
+msgid "Upgrade now"
+msgstr "Покращити негайно"
+
+#. custom: web
+#: dialog.js:40 dialog.js:158 dialog.js:176 base.xml:0
+msgid "Ok"
+msgstr "Гаразд"
+
+#. custom: web
+#: base.xml:0
+msgid "Whoops, you shouldn't have come up to here..."
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"var message = (d.message !== undefined) ? d.message : d.error.data.message;\n"
+"            d.html_error = context.engine.tools.html_escape(message).replace(/\\n/g, '<br/>');"
+msgstr ""
+
+#. custom: web
+#: form_common.js:874
+msgid " & Close"
+msgstr " і закрити"
+
+#. custom: web
+#: form_widgets.js:642
+msgid "Archived"
+msgstr "Заархівовано"
+
+#. custom: web
+#: list_common.js:133
+msgid "Can't convert value %s to context"
+msgstr "Неможливо перетворити значення %s в контекст"
+
+#. custom: web
+#: form_relational_widgets.js:25
+msgid "Create a %s"
+msgstr "Створити %s"
+
+#. custom: web
+#: view_manager.js:223
+msgid " view couldn't be loaded"
+msgstr "не вдалося завантажити"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Apply"
+msgstr "Застосувати"
+
+#. custom: web
+#: form_view.js:756
+msgid "The record has been modified, your changes will be discarded. Are you sure you want to leave this page ?"
+msgstr "Запис було змінено, Ваші зміни буде скасовано. Ви впевнені, що хочете залишити сторінку ?"
+
+#. custom: web
+#: form_relational_widgets.js:740
+msgid "View type '%s' is not supported in X2Many."
+msgstr "Тип перегляду '%s' не підтримується в X2Many."
+
+#. custom: web
+#: form_view.js:1304
+msgid "Widget type '%s' is not implemented"
+msgstr "Тип віджета '%s' не впроваджено."
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"You have updated <strong><t t-esc=\"field.string\"/></strong> (<t t-esc=\"lang\"/>).\n"
+"            <a class=\"oe_field_translate\" t-att-name=\"field.name\" href=\"#\">Update translations</a>"
+msgstr ""
+
+#. custom: web
+#: form_widgets.js:635
+msgid "Deactivate"
+msgstr "Деактивувати"
+
+#. custom: web
+#: form_widgets.js:636
+msgid "Inactive"
+msgstr "Неактивний"
+
+#. custom: web
+#: form_widgets.js:637
+msgid "Activate"
+msgstr "Активувати"
+
+#. custom: web
+#: form_widgets.js:1251
+msgid "Could not display the selected image."
+msgstr "Не вдалося відтворити зображення."
+
+#. custom: web
+#: change_password.js:14 base.xml:0
+msgid "Change Password"
+msgstr "Змінити пароль"
+
+#. custom: web
+#: form_widgets.js:1094
+msgid "File upload"
+msgstr "Вивантаження файлу"
+
+#. custom: web
+#: sidebar.js:217
+msgid "Do you really want to delete this attachment ?"
+msgstr "Ви справді хочете видалити це прикріплення?"
+
+#. custom: web
+#: form_widgets.js:1131
+msgid "Save As..."
+msgstr "Зберегти як..."
+
+#. custom: web
+#: misc.js:17
+msgid "Take a minute to get a coffee,<br />because it's loading..."
+msgstr "Зробіть перерву на каву,<br />поки йде завантаження..."
+
+#. custom: web
+#: form_widgets.js:1131
+msgid "The field is empty, there's nothing to save !"
+msgstr "Поле не заповнене. Що зберегти?!"
+
+#. custom: web
+#: formats.js:144
+msgid "'%s' is not a correct float"
+msgstr "'%s' - невірне число з комою"
+
+#. custom: web
+#: form_widgets.js:1093
+msgid "The selected file exceed the maximum file size of %s."
+msgstr "Вибраний файл перевищує максимальний розмір %s."
+
+#. custom: web
+#: form_widgets.js:1251
+msgid "Image"
+msgstr "Зображення"
+
+#. custom: web
+#: formats.js:75
+msgid "(%d records)"
+msgstr "(%d записів)"
+
+#. custom: web
+#: formats.js:132
+msgid "'%s' is not a correct integer"
+msgstr "'%s' - невірне ціле число"
+
+#. custom: web
+#: formats.js:187
+msgid "'%s' is not a correct date"
+msgstr "'%s' - невірна дата "
+
+#. custom: web
+#: formats.js:192
+msgid "'%s' is not a correct time"
+msgstr "'%s' - невірний час"
+
+#. custom: web
+#: list_view.js:1024
+msgid "Could not find id in dataset"
+msgstr "Не вдалося знайти ID в базі даних"
+
+#. custom: web
+#: list_view.js:1847
+msgid "Download"
+msgstr "Завантажити"
+
+#. custom: web
+#: list_view.js:1863
+msgid "Download \\\"%s\\\""
+msgstr ""
+
+#. custom: web
+#: loading.js:46
+msgid "Loading"
+msgstr "Завантаження"
+
+#. custom: web
+#: misc.js:12
+msgid "Loading..."
+msgstr "Завантаження..."
+
+#. custom: web
+#: form_widgets.js:862
+msgid "Timezone Mismatch : The timezone of your browser doesn't match the selected one. The time in Hexya is displayed according to your field timezone."
+msgstr ""
+
+#. custom: web
+#: graph_widget.js:94
+msgid "No data to display"
+msgstr "Немає даних для відображення"
+
+#. custom: web
+#: graph_widget.js:252
+msgid "Not enough data points"
+msgstr "Не достатньо точок вводу даних"
+
+#. custom: web
+#: misc.js:15
+msgid "Don't leave yet,<br />it's still loading..."
+msgstr "Не покидайте сторінку,<br />триває завантаження..."
+
+#. custom: web
+#: pivot_view.js:831
+msgid "For Excel compatibility, data cannot be exported if there are more than 256 columns.\\n\\nTip: try to flip axis, filter further or reduce the number of measures."
+msgstr ""
+
+#. custom: web
+#: misc.js:18
+msgid "Maybe you should consider reloading the application by pressing F5..."
+msgstr "Можливо Вам слід перезавантажити програму, натиснувши клавішу F5..."
+
+#. custom: web
+#: priority.js:49
+msgid "High"
+msgstr "Високий"
+
+#. custom: web
+#: priority.js:47
+msgid "Normal"
+msgstr "Звичайний"
+
+#. custom: web
+#: priority.js:48
+msgid "Low"
+msgstr "Низький"
+
+#. custom: web
+#: progress_bar.js:78
+msgid "Only Integer Value should be valid."
+msgstr "Дійсні тільки цілі числа."
+
+#. custom: web
+#: pyeval.js:1023
+msgid "Evaluation Error"
+msgstr "Помилка обчислення"
+
+#. custom: web
+#: time.js:192
+msgid "'%s' is not a correct date, datetime nor time"
+msgstr "'%s' - невірні дата, дата і час, час"
+
+#. custom: web
+#: time.js:204
+msgid "'%s' is not convertible to date, datetime nor time"
+msgstr "'%s' не перетворюється в дату, дату і час, час"
+
+#. custom: web
+#: pyeval.js:1027
+msgid "Local evaluation failure\\n%s\\n\\n%s"
+msgstr ""
+
+#. custom: web
+#: utils.js:284
+msgid "Bytes,Kb,Mb,Gb,Tb,Pb,Eb,Zb,Yb"
+msgstr "Байт,кБ,МБ,ГБ,ТБ,ПБ,ЕБ,ЗБ,ЙБ"
+
+#. custom: web
+#: view_manager.js:437
+msgid "Failed to evaluate search criterions"
+msgstr "Не вдалося обчислити критерії пошуку"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "/web/binary/upload_attachment"
+msgstr ""
+
+#. custom: web
+#: crash_manager.js:170 dialog.js:182 form_common.js:1046 form_upgrade_widgets.js:40 base.xml:0
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. custom: web
+#: base.xml:0
+msgid "or"
+msgstr "або"
+
+#. custom: web
+#: list_view.js:931
+msgid "Setting 'id' attribute on existing record %s"
+msgstr "Встановлення атрибута 'id' на існуючий запис %s"
+
+#. custom: web
+#: form_common.js:281 form_relational_widgets.js:1080
+msgid "Create: "
+msgstr "Створити:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Widget:"
+msgstr "Віджет:"
+
+#. custom: web
+#: form_common.js:1096 search_menus.js:177
+msgid "Custom Filter"
+msgstr "Фільтр користувача"
+
+#. custom: web
+#: form_relational_widgets.js:1378 base.xml:0
+msgid "Add"
+msgstr "Додати"
+
+#. custom: web
+#: priority.js:50
+msgid "Very High"
+msgstr "Дуже високий"
+
+#. custom: web
+#: pyeval.js:991
+msgid "Unknown nonliteral type "
+msgstr "Невідомий незнаковий тип"
+
+#. custom: web
+#: abstract_web_client.js:124 crash_manager.js:123
+msgid "Client Error"
+msgstr "Помилка клієнта"
+
+#. custom: web
+#: progress_bar.js:78
+msgid "Wrong value entered!"
+msgstr "Введено невірне значення!"
+
+#. custom: web
+#: base.xml:0
+msgid "Year"
+msgstr "Рік"
+
+#. custom: web
+#: form_relational_widgets.js:47
+msgid "You are creating a new %s, are you sure it does not exist yet?"
+msgstr "Ви створюєте новий %s. Ви впевнені, що його ще не існує?"
+
+#. custom: web
+#: base.xml:0
+msgid "console.warn('Unhandled widget', dict.widget);"
+msgstr ""
+
+#. custom: web
+#: search_inputs.js:230
+msgid "not a valid integer"
+msgstr "недійсне ціле число"
+
+#. custom: web
+#: debug_manager.js:339 base.xml:0
+msgid "Fields View Get"
+msgstr "Вигляд полів"
+
+#. custom: web
+#: utils.js:143
+msgid "Node [%s] is not a JSONified XML node"
+msgstr ""
+
+#. custom: web
+#: form_widgets.js:1114
+msgid "There was a problem while uploading your file"
+msgstr "Виникла проблема при вивантаженні файла"
+
+#. custom: web
+#: base.xml:0
+msgid "XML ID:"
+msgstr ""
+
+#. custom: web
+#: search_inputs.js:553 search_view.js:205
+msgid " or "
+msgstr " або "
+
+#. custom: web
+#: misc.js:14
+msgid "Still loading...<br />Please be patient."
+msgstr "Завантажуєтсья...<br />Будь ласка зачекайте."
+
+#. custom: web
+#: list_view.js:1086
+msgid "Unknown m2m command %s"
+msgstr "Невідома команда m2m %s"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Uploading..."
+msgstr "Вивантажується..."
+
+#. custom: web
+#: form_widgets.js:641 list_view.js:288
+msgid "Archive"
+msgstr "Архів"
+
+#. custom: web
+#: form_relational_widgets.js:153 form_relational_widgets.js:921 form_relational_widgets.js:1104 form_relational_widgets.js:1321
+msgid "Open: "
+msgstr "Відкрито:"
+
+#. custom: web
+#: search_inputs.js:192 search_inputs.js:211 search_inputs.js:402
+msgid "Search %(field)s for: %(value)s"
+msgstr "Шукати %(field)s : %(value)s"
+
+#. custom: web
+#: graph_view.js:86 graph_widget.js:21 pivot_view.js:182 base.xml:0 base.xml:0
+msgid "Count"
+msgstr "Підрахунок"
+
+#. custom: web
+#: search_inputs.js:330
+msgid "Yes"
+msgstr "Так"
+
+#. custom: web
+#: base.xml:0 base.xml:0 base.xml:0
+msgid "?"
+msgstr ""
+
+#. custom: web
+#: search_menus.js:252
+msgid "Are you sure that you want to remove this filter?"
+msgstr "Ви впевнені, що хочете прибрати цей фільтр?"
+
+#. custom: web
+#: sidebar.js:131
+msgid "You must choose at least one record."
+msgstr "Потрібно вибрати хоча б один запис."
+
+#. custom: web
+#: form_common.js:868 form_view.js:1127 data_export.js:202
+msgid "Close"
+msgstr "Закрити"
+
+#. custom: web
+#: search_menus.js:251
+msgid "This filter is global and will be removed for everybody if you continue."
+msgstr "Це загальний фільтр. Якщо продовжити, його буде видалено для всіх, ."
+
+#. custom: web
+#: utils.js:179
+msgid "Could not serialize XML"
+msgstr "Не вдається впорядкувати XML"
+
+#. custom: web
+#: form_common.js:1049 base.xml:0
+msgid "Create"
+msgstr "Створити"
+
+#. custom: web
+#: graph_widget.js:208 graph_widget.js:216
+msgid "Invalid data"
+msgstr "Некоректні дані"
+
+#. custom: web
+#: form_common.js:868 base.xml:0 base.xml:0
+msgid "Discard"
+msgstr "Відмінити"
+
+#. custom: web
+#: base.xml:0
+msgid "overflow-x: hidden"
+msgstr ""
+
+#. custom: web
+#: search_inputs.js:551
+msgid "Filter"
+msgstr "Фільтр"
+
+#. custom: web
+#: search_inputs.js:698
+msgid "Group By"
+msgstr "Групувати за"
+
+#. custom: web
+#: search_inputs.js:451
+msgid "M2O search fields do not currently handle multiple default values"
+msgstr "Поля пушку M2O наразі не підтримують кількох значень за замовчуванням"
+
+#. custom: web
+#: search_inputs.js:360
+msgid "Search %(field)s at: %(value)s"
+msgstr "Шукати %(field)s у: %(value)s"
+
+#. custom: web
+#: search_menus.js:84
+msgid "Filter name is required."
+msgstr "Вкажіть назву фільтра."
+
+#. custom: web
+#: search_menus.js:91
+msgid "Filter with same name already exists."
+msgstr "Фільтр з такою назвою вже існує."
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Measures <span class=\"caret\"/>"
+msgstr ""
+
+#. custom: web
+#: list_view.js:676
+msgid "You must select at least one record."
+msgstr "Потрібно вибрати хоча б один запис."
+
+#. custom: web
+#: pivot_view.js:526 pivot_view.js:555
+msgid "Total"
+msgstr "Разом"
+
+#. custom: web
+#: misc.js:16
+msgid "You may not believe it,<br />but the application is actually loading..."
+msgstr "Можете не вірити,<br />але програма дійсно запускається..."
+
+#. custom: web
+#: crash_manager.js:57
+msgid "Your Hexya session expired. Please refresh the current web page."
+msgstr ""
+
+#. custom: web
+#: view_manager.js:223 search_menus.js:84 search_menus.js:91
+msgid "Error"
+msgstr "Помилка"
+
+#. custom: web
+#: form_widgets.js:643 list_view.js:289
+msgid "Unarchive"
+msgstr "Розархівувати"
+
+#. custom: web
+#: form_view.xml:0
+msgid "e"
+msgstr ""
+
+#. custom: web
+#: search_inputs.js:245
+msgid "not a valid number"
+msgstr "недійсне число"
+
+#. custom: web
+#: crash_manager.js:107 form_view.js:761 list_view.js:676 sidebar.js:131
+msgid "Warning"
+msgstr "Попередження"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"var $div = $(document.createElement('div')).attr('t-if', this.attr('t-if')).addClass('o_form_field_monetary');\n"
+"        this.clone(true).appendTo($div);\n"
+"        this.replaceWith($div);"
+msgstr ""
+
+#. custom: web
+#: form_common.js:874 base.xml:0 base.xml:0 base.xml:0
+msgid "Save"
+msgstr "Зберегти"
+
+#. custom: web
+#: utils.js:302
+msgid "kMGTPE"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "×"
+msgstr ""
+
+#. custom: web
+#: graph_widget.js:79 list_view.js:1379 list_view.js:1385 pivot_view.js:508
+msgid "Undefined"
+msgstr "Невизначений"
+
+#. custom: web
+#: base_common.xml:0
+msgid ""
+"[<t t-esc=\"option[0]\"/>]\n"
+"                    <t t-if=\"option[1]\"> - </t>\n"
+"                    <t t-esc=\"option[1]\"/>"
+msgstr ""
+

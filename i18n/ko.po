@@ -1,0 +1,1352 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. custom: web
+#: base.xml:0
+msgid "$(this).addClass('o_error');"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "...Upload in progress..."
+msgstr "...업로드가 진행 중입니다..."
+
+#. custom: web
+#: base.xml:0
+msgid "99+"
+msgstr ""
+
+#. field:Filter.Action
+msgid "Action"
+msgstr "실행"
+
+#. resource:base_ir_filters_view_search
+msgid "Filters visible only for one user"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Activate Assets Debugging"
+msgstr "에셋 디버깅 활성화"
+
+#. custom: web
+#: base.xml:0
+msgid "Add Custom Filter"
+msgstr "사용자 지정 필터 추가"
+
+#. custom: web
+#: base.xml:0
+msgid "Add custom group"
+msgstr "사용자 지정 그룹 추가"
+
+#. custom: web
+#: base.xml:0
+msgid "Add..."
+msgstr "추가..."
+
+#. custom: web
+#: base.xml:0
+msgid "All users"
+msgstr "모든 사용자"
+
+#. custom: web
+#: base.xml:0
+msgid "Attachment :"
+msgstr "첨부 파일 :"
+
+#. custom: web
+#: base.xml:0
+msgid "Available fields"
+msgstr "사용 가능한 필드"
+
+#. custom: web
+#: base.xml:0
+msgid "Clear Events"
+msgstr "이벤트 지우기"
+
+#. custom: web
+#: base.xml:0
+msgid "Condition:"
+msgstr "조건 :"
+
+#. custom: web
+#: base.xml:0
+msgid "Confirm New Password"
+msgstr "새 비밀번호 확인"
+
+#. field:Filter.Context
+msgid "Context"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Created by :"
+msgstr "작성자 :"
+
+#. custom: web
+#: base.xml:0
+msgid "Creation Date:"
+msgstr "작성일 :"
+
+#. field:Company.DashboardBackground
+msgid "Dashboard Background"
+msgstr ""
+
+#. field:Filter.Domain
+msgid "Domain"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Creation User:"
+msgstr "작성자 :"
+
+#. custom: web
+#: base.xml:0
+msgid "Day"
+msgstr "일"
+
+#. field:Filter.IsDefault
+msgid "Default filter"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Default:"
+msgstr "기본 값:"
+
+#. custom: web
+#: base.xml:0
+msgid "Delete"
+msgstr "삭제"
+
+#. custom: web
+#: base.xml:0
+msgid "Disable Technical Features"
+msgstr "기술 기능 사용 중지"
+
+#. custom: web
+#: base.xml:0
+msgid "Edit"
+msgstr "편집"
+
+#. custom: web
+#: base.xml:0
+msgid "Enable Technical Features"
+msgstr "기술적 기능 사용"
+
+#. field:Filter.Name
+#. resource:base_ir_filters_view_search
+msgid "Filter Name"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Export Formats :"
+msgstr "내보내기 형식 :"
+
+#. custom: web
+#: base.xml:0
+msgid "Export Type :"
+msgstr "내보내기 유형 :"
+
+#. custom: web
+#: base.xml:0
+msgid "Export all Data"
+msgstr "모든 데이터 내보내기"
+
+#. resource:base_actions_ir_filters_view
+msgid "Filters"
+msgstr "필터"
+
+#. resource:base_ir_filters_view_search
+msgid "Filters created by myself"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "Filters shared with all users"
+msgstr ""
+
+#. field:Filter.ID
+#. field:User.ID
+#. field:CommonMixin.ID
+#. field:Company.ID
+msgid "ID"
+msgstr "ID"
+
+#. custom: web
+#: base.xml:0
+msgid "ID:"
+msgstr "ID :"
+
+#. custom: web
+#: base.xml:0
+msgid "Import-Compatible Export"
+msgstr "가져오기-호환 파일 내보내기"
+
+#. field:Filter.ResModel
+#. resource:base_ir_filters_view_search
+msgid "Model"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Latest Modification Date:"
+msgstr "최종 수정일 :"
+
+#. custom: web
+#: base.xml:0
+msgid "Latest Modification by:"
+msgstr "최근 수정자 :"
+
+#. custom: web
+#: base.xml:0
+msgid "Leave the Developer Tools"
+msgstr ""
+"개발자 도구는 그대로 둡니다.\n"
+"\n"
+
+#. custom: web
+#: base.xml:0
+msgid "Log out"
+msgstr "로그아웃"
+
+#. custom: web
+#: base.xml:0
+msgid "Manage Filters"
+msgstr "필터 관리"
+
+#. custom: web
+#: base.xml:0
+msgid "Modified by :"
+msgstr "수정자 :"
+
+#. custom: web
+#: base.xml:0
+msgid "Month"
+msgstr "월"
+
+#. custom: web
+#: base.xml:0
+msgid "More"
+msgstr "더 보기"
+
+#. custom: web
+#: base.xml:0
+msgid "Move Down"
+msgstr "아래로 이동"
+
+#. resource:base_ir_filters_view_search
+msgid "My filters"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Move Up"
+msgstr "위로 이동"
+
+#. custom: web
+#: base.xml:0
+msgid "New Password"
+msgstr "새 비밀번호"
+
+#. custom: web
+#: base.xml:0
+msgid "No Update:"
+msgstr "업데이트 없음 :"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"No data available for this pivot table.  Try to add some records, or make sure\n"
+"        that there is at least one measure and no active filter in the search bar."
+msgstr "이 피벗 테이블에 사용할 수있는 데이터가 없습니다. 일부 레코드를 추가하거나 검색 막대에 하나 이상의 측정 값과 활성 필터가 없는지 확인하십시오."
+
+#. custom: web
+#: base.xml:0
+msgid "No data to display."
+msgstr "표시할 데이타가 없습니다."
+
+#. custom: web
+#: base.xml:0
+msgid "Not shown in kanban"
+msgstr "칸반에 표시되지 않음"
+
+#. custom: web
+#: base.xml:0
+msgid "Old Password"
+msgstr "기존 비밀번호"
+
+#. custom: web
+#: base.xml:0
+msgid "Only you"
+msgstr "개인용"
+
+#. custom: web
+#: base.xml:0
+msgid "Please note that only the selected ids will be exported."
+msgstr "선택한 ID 만 내보낼 수 있습니다."
+
+#. custom: web
+#: base.xml:0
+msgid "Please pay attention that all records matching your search filter will be exported. Not only the selected ids."
+msgstr "선택한 ID뿐만이 아니라 검색 필터와 일치하는 모든 결과를 내보내는 것에 주의하십시오."
+
+#. custom: web
+#: base.xml:0
+msgid "Preferences"
+msgstr "환경 설정"
+
+#. custom: web
+#: base.xml:0
+msgid "Quarter"
+msgstr "분기"
+
+#. custom: web
+#: time.js:192
+msgid "'%s' is not a correct date, datetime nor time"
+msgstr "'%s'은(는) 올바른 날짜, 일시 또는 시간이 아닙니다"
+
+#. custom: web
+#: base_common.xml:0
+msgid "(no string)"
+msgstr "(문자열 없음)"
+
+#. custom: web
+#: base_common.xml:0
+msgid "(nolabel)"
+msgstr "(라벨 없음)"
+
+#. custom: web
+#: base_common.xml:0
+msgid "-"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid ":"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Action ID:"
+msgstr "동작 ID :"
+
+#. custom: web
+#: base_common.xml:0
+msgid ""
+"Button\n"
+"                <t t-if=\"widget.string\">: </t>\n"
+"                <t t-if=\"!widget.string\"> (no string)</t>"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Button Type:"
+msgstr "버튼 유형 :"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Change default:"
+msgstr "기본 값 변경 :"
+
+#. custom: web
+#: form_relational_widgets.js:1305
+msgid "Add: "
+msgstr "추가 : "
+
+#. help:Filter.User
+msgid "The user this filter is private to. When left empty the filter is public and available to all users."
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "View Fields"
+msgstr "필드 화면"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Context:"
+msgstr "문맥 :"
+
+#. custom: web
+#: form_common.js:281 form_relational_widgets.js:1080
+msgid "Create: "
+msgstr "작성 : "
+
+#. custom: web
+#: base_common.xml:0
+msgid "Domain:"
+msgstr "도메인 :"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Field:"
+msgstr "필드 :"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Method:"
+msgstr "방법 :"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Modifiers:"
+msgstr "수정자 :"
+
+#. custom: web
+#: base.xml:0
+msgid "Remove"
+msgstr "제거"
+
+#. custom: web
+#: base.xml:0
+msgid "XML ID:"
+msgstr "XML ID :"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Object:"
+msgstr "오브젝트 :"
+
+#. custom: web
+#: base_common.xml:0
+msgid "On change:"
+msgstr "변경 시 :"
+
+#. custom: web
+#: data_export.js:167
+msgid "Please enter save field list name"
+msgstr "저장 필드 목록명을 입력하십시오"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Special:"
+msgstr "스페셜 :"
+
+#. custom: web
+#: data_export.js:199
+msgid "Export Data"
+msgstr "데이터 내보내기"
+
+#. custom: web
+#: data_export.js:201
+msgid "Export To File"
+msgstr "파일로 내보내기"
+
+#. custom: web
+#: formats.js:187
+msgid "'%s' is not a correct date"
+msgstr "'%s' 은(는) 올바른 날짜가 아닙니다"
+
+#. custom: web
+#: priority.js:47
+msgid "Normal"
+msgstr "보통"
+
+#. custom: web
+#: search_menus.js:252
+msgid "Are you sure that you want to remove this filter?"
+msgstr "정말로 이 항목을 제거 하시겠습니까?"
+
+#. custom: web
+#: data_export.js:421
+msgid "Please select fields to save export list..."
+msgstr "내보내기 목록을 저장할 필드를 선택하십시오..."
+
+#. custom: web
+#: data_export.js:435
+msgid "Please select fields to export..."
+msgstr "내보낼 필드를 선택하십시오..."
+
+#. custom: web
+#: debug_manager.js:134
+msgid "%d requests (%d ms) %d queries (%d ms)"
+msgstr "%d 요청 (% d ms) % d 질문 (% d ms)"
+
+#. custom: web
+#: dialog.js:168
+msgid "Alert"
+msgstr "경고"
+
+#. custom: web
+#: debug_manager.js:241
+msgid "Fields of %s"
+msgstr " %s 필드"
+
+#. field:Filter.Sort
+msgid "Sort"
+msgstr ""
+
+#. custom: web
+#: debug_manager.js:183
+msgid "JS Tests"
+msgstr "JS 시험"
+
+#. custom: web
+#: debug_manager.js:321
+msgid "No metadata available"
+msgstr "표시할 메타데이타가 없습니다"
+
+#. custom: web
+#: form_common.js:245
+msgid "No results to show..."
+msgstr "표시할 결과가 없습니다..."
+
+#. custom: web
+#: base.xml:0
+msgid "Run JS Tests"
+msgstr "JS 테스트 실행"
+
+#. custom: web
+#: base.xml:0
+msgid "Save as:"
+msgstr "다른 이름으로 저장 :"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Selection:"
+msgstr "선택 :"
+
+#. custom: web
+#: form_common.js:874
+msgid " & Close"
+msgstr "& 닫기"
+
+#. custom: web
+#: form_relational_widgets.js:1122
+msgid "Action Button"
+msgstr "실행 버턴"
+
+#. custom: web
+#: form_relational_widgets.js:1018
+msgid "Add an item"
+msgstr "항목 추가"
+
+#. custom: web
+#: base.xml:0
+msgid "Save current search"
+msgstr "현재 검색 저장"
+
+#. custom: web
+#: base.xml:0
+msgid "Set Defaults"
+msgstr "기본 값 설정"
+
+#. custom: web
+#: dialog.js:193
+msgid "Confirmation"
+msgstr "확정"
+
+#. custom: web
+#: form_common.js:236
+msgid "Create and Edit..."
+msgstr "작성 및 편집..."
+
+#. custom: web
+#: debug_manager.js:326
+msgid "Metadata (%s)"
+msgstr "메타데이타 (%s)"
+
+#. resource:base_ir_filters_view_search
+msgid "Shared"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Technical Translation"
+msgstr "기술 번역"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Relation:"
+msgstr "관계 :"
+
+#. custom: web
+#: form_common.js:889
+msgid "Save & New"
+msgstr "저장 및 신규 작성"
+
+#. custom: web
+#: form_relational_widgets.js:25
+msgid "Create a %s"
+msgstr "%s 작성"
+
+#. custom: web
+#: form_relational_widgets.js:327
+msgid "No value found for the field %s for value %s"
+msgstr "값 %s의 필드 %s에 값이 없습니다"
+
+#. custom: web
+#: base.xml:0
+msgid "Remove All"
+msgstr "모두 제거"
+
+#. custom: web
+#: base.xml:0
+msgid "Save fields list"
+msgstr "필드 목록 저장"
+
+#. custom: web
+#: base.xml:0
+msgid "Saved exports:"
+msgstr "저장된 내보내기 파일 :"
+
+#. custom: web
+#: form_relational_widgets.js:326
+msgid "Render"
+msgstr "화면 생성"
+
+#. field:User.SidebarVisible
+msgid "Show App Sidebar"
+msgstr ""
+
+#. help:Filter.Action
+msgid "The menu action this filter applies to. When left empty the filter applies to all menus for this model."
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Size:"
+msgstr "사이즈 :"
+
+#. custom: web
+#: form_common.js:211
+msgid "Search More..."
+msgstr "추가 검색..."
+
+#. custom: web
+#: form_common.js:281
+msgid "Search: "
+msgstr "검색 : "
+
+#. custom: web
+#: form_common.js:1054
+msgid "Select"
+msgstr "선택하기"
+
+#. custom: web
+#: form_common.js:1103
+msgid "Selected domain"
+msgstr "선택된 도메인"
+
+#. custom: web
+#: list_view.js:543
+msgid "Do you really want to remove these records?"
+msgstr "정말로 해당 기록을 제거하시겠습니까?"
+
+#. custom: web
+#: form_relational_widgets.js:1123
+msgid "The o2m record must be saved before an action can be used"
+msgstr "o2m 기록은 동작을 사용하기 전에 저장되어야 합니다."
+
+#. custom: web
+#: misc.js:13
+msgid "Still loading..."
+msgstr "로딩 중입니다..."
+
+#. custom: web
+#: form_relational_widgets.js:1595
+msgid "The type of the field '%s' must be a many2many field with a relation to 'ir.attachment' model."
+msgstr "'%s' 필드의 유형은 'ir.attachment' 모델과 관련된 many2many 필드여야 합니다."
+
+#. custom: web
+#: formats.js:173
+msgid "'%s' is not a correct datetime"
+msgstr "'%s'은(는) 올바른 일시가 아닙니다"
+
+#. custom: web
+#: formats.js:75
+msgid "(%d records)"
+msgstr "(%d개의 레코드)"
+
+#. custom: web
+#: formats.js:144
+msgid "'%s' is not a correct float"
+msgstr "'%s'은(는) 올바른 float 유형이 아닙니다."
+
+#. custom: web
+#: form_widgets.js:637
+msgid "Activate"
+msgstr "활성화 됨"
+
+#. custom: web
+#: form_widgets.js:642
+msgid "Archived"
+msgstr "보관됨"
+
+#. custom: web
+#: view_manager.js:223
+msgid " view couldn't be loaded"
+msgstr "보기를 불러올 수 없습니다."
+
+#. custom: web
+#: formats.js:132
+msgid "'%s' is not a correct integer"
+msgstr "'%s'은(는) 올바른 정수가 아닙니다"
+
+#. custom: web
+#: formats.js:192
+msgid "'%s' is not a correct time"
+msgstr "'%s'은(는) 올바른 시간이 아닙니다."
+
+#. custom: web
+#: list_common.js:133
+msgid "Can't convert value %s to context"
+msgstr "값  %s을 컨텍스트로 변환 할 수 없습니다."
+
+#. custom: web
+#: time.js:204
+msgid "'%s' is not convertible to date, datetime nor time"
+msgstr "'%s'은(는) 날짜, 일시 또는 시간으로 변환할 수 없습니다"
+
+#. custom: web
+#: utils.js:284
+msgid "Bytes,Kb,Mb,Gb,Tb,Pb,Eb,Zb,Yb"
+msgstr "바이트, Kb, Mb, Gb, Tb, Pb, Eb, Zb, Yb"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "/web/binary/upload_attachment"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Apply"
+msgstr "적용"
+
+#. custom: web
+#: search_menus.js:84
+msgid "Filter name is required."
+msgstr "필터 이름이 필요합니다."
+
+#. custom: web
+#: change_password.js:14 base.xml:0
+msgid "Change Password"
+msgstr "비밀번호 변경"
+
+#. custom: web
+#: form_view.js:733
+msgid "Do you really want to delete this record?"
+msgstr "정말로 해당 기록을 삭제하시겠습니까?"
+
+#. custom: web
+#: form_widgets.js:1251
+msgid "Could not display the selected image."
+msgstr "선택한 이미지를 표시할 수 없습니다."
+
+#. custom: web
+#: form_widgets.js:635
+msgid "Deactivate"
+msgstr "비활성화"
+
+#. custom: web
+#: base_common.xml:0
+msgid ""
+"[<t t-esc=\"option[0]\"/>]\n"
+"                    <t t-if=\"option[1]\"> - </t>\n"
+"                    <t t-esc=\"option[1]\"/>"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "or"
+msgstr "또는"
+
+#. custom: web
+#: list_view.js:1024
+msgid "Could not find id in dataset"
+msgstr "데이터 세트에서 id를 찾을 수 없습니다"
+
+#. custom: web
+#: list_view.js:1847
+msgid "Download"
+msgstr "다운로드"
+
+#. custom: web
+#: list_view.js:1863
+msgid "Download \\\"%s\\\""
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Toggle Timelines"
+msgstr "타임 라인 전환"
+
+#. custom: web
+#: form_common.js:1096 search_menus.js:177
+msgid "Custom Filter"
+msgstr "사용자 지정 필터"
+
+#. custom: web
+#: form_view.js:301
+msgid "Form"
+msgstr "양식"
+
+#. custom: web
+#: form_upgrade_widgets.js:51
+msgid "Hexya Enterprise"
+msgstr ""
+
+#. custom: web
+#: form_view.js:1300
+msgid "Field '%s' specified in view could not be found."
+msgstr "화면에서 지정된 '%s' 필드를 찾을 수 없습니다."
+
+#. custom: web
+#: form_widgets.js:636
+msgid "Inactive"
+msgstr "비활성"
+
+#. custom: web
+#: form_widgets.js:1114
+msgid "File Upload"
+msgstr "파일 업로드"
+
+#. custom: web
+#: form_widgets.js:1094
+msgid "File upload"
+msgstr "파일 업로드"
+
+#. custom: web
+#: form_widgets.js:1251
+msgid "Image"
+msgstr "이미지"
+
+#. custom: web
+#: list_view.js:287
+msgid "Export"
+msgstr "내보내기"
+
+#. custom: web
+#: view_manager.js:437
+msgid "Failed to evaluate search criterions"
+msgstr "검색 기준을 평가하지 못했습니다."
+
+#. custom: web
+#: loading.js:46
+msgid "Loading"
+msgstr "불러오는 중"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"This wizard will export all data that matches the current search criteria to a CSV file.\n"
+"        You can export all data or only the fields that can be reimported after modification."
+msgstr "이 마법사는 현재 검색 조건과 일치하는 모든 데이터를 CSV 파일로 내 보냅니다. 모든 데이터 또는 수정 후 다시 가져올 수있는 필드 만 내보낼 수 있습니다."
+
+#. resource:base_menu_ir_filters
+msgid "User-defined Filters"
+msgstr ""
+
+#. custom: web
+#: data.js:1083
+msgid "Unknown field %s in domain %s"
+msgstr "알 수 없는 %s 필드가 %s 도메인에 존재합니다"
+
+#. custom: web
+#: graph_widget.js:252
+msgid "Not enough data points"
+msgstr "데이터 포인트가 충분하지 않습니다."
+
+#. custom: web
+#: form_view.js:756
+msgid "The record has been modified, your changes will be discarded. Are you sure you want to leave this page ?"
+msgstr "레코드가 수정 되었으면 변경 사항이 무시됩니다. 이 페이지에서 나가시겠습니까?"
+
+#. custom: web
+#: form_view.js:1125
+msgid "Set Default"
+msgstr "기본 값 설정"
+
+#. custom: web
+#: form_widgets.js:1131
+msgid "Save As..."
+msgstr "다른 이름으로 저장..."
+
+#. custom: web
+#: view_manager.js:223 search_menus.js:84 search_menus.js:91
+msgid "Error"
+msgstr "오류"
+
+#. custom: web
+#: form_relational_widgets.js:153 form_relational_widgets.js:921 form_relational_widgets.js:1104 form_relational_widgets.js:1321
+msgid "Open: "
+msgstr "열기 : "
+
+#. custom: web
+#: form_view.js:301
+msgid "The record could not be found in the database."
+msgstr "데이터베이스에서 레코드를 찾을 수 없습니다."
+
+#. custom: web
+#: list_view_editable.js:122
+msgid "The line has been modified, your changes will be discarded. Are you sure you want to discard the changes ?"
+msgstr "행이 수정 되었으면 변경 사항이 무시됩니다. 변경 사항을 삭제 하시겠습니까?"
+
+#. custom: web
+#: misc.js:17
+msgid "Take a minute to get a coffee,<br />because it's loading..."
+msgstr "커피를 마시려면 잠시 기다려주세요. <br /> 로딩 중입니다..."
+
+#. custom: web
+#: form_widgets.js:1093
+msgid "The selected file exceed the maximum file size of %s."
+msgstr "선택된 파일은 %s인 최대 파일 크기를 초과했습니다."
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"Unhandled widget\n"
+"    <t t-js=\"dict\">console.warn('Unhandled widget', dict.widget);</t>"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"var message = (d.message !== undefined) ? d.message : d.error.data.message;\n"
+"            d.html_error = context.engine.tools.html_escape(message).replace(/\\n/g, '<br/>');"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Type:"
+msgstr "유형 :"
+
+#. custom: web
+#: priority.js:50
+msgid "Very High"
+msgstr "매우 높음"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Widget:"
+msgstr "위젯 :"
+
+#. custom: web
+#: misc.js:15
+msgid "Don't leave yet,<br />it's still loading..."
+msgstr "잠시만 기다리세요. <br />아직 불러오는 중입니다..."
+
+#. custom: web
+#: loading.js:44
+msgid "Loading (%d)"
+msgstr "(%d)을(를) 불러오는 중"
+
+#. custom: web
+#: list_view.js:931
+msgid "Setting 'id' attribute on existing record %s"
+msgstr "기존 레코드  %s에 'id'속성 설정 중"
+
+#. custom: web
+#: form_widgets.js:862
+msgid "Timezone Mismatch : The timezone of your browser doesn't match the selected one. The time in Hexya is displayed according to your field timezone."
+msgstr ""
+
+#. custom: web
+#: pivot_view.js:831
+msgid "For Excel compatibility, data cannot be exported if there are more than 256 columns.\\n\\nTip: try to flip axis, filter further or reduce the number of measures."
+msgstr ""
+
+#. custom: web
+#: form_view.js:887
+msgid "The following fields are invalid:"
+msgstr "다음 필드는 유효하지 않습니다 :"
+
+#. custom: web
+#: priority.js:48
+msgid "Low"
+msgstr "낮음"
+
+#. custom: web
+#: form_view.js:1128
+msgid "Save default"
+msgstr "기본 값 저장"
+
+#. custom: web
+#: sidebar.js:217
+msgid "Do you really want to delete this attachment ?"
+msgstr "해당 첨부 파일을 정말로 삭제하시겠습니까?"
+
+#. custom: web
+#: misc.js:14
+msgid "Still loading...<br />Please be patient."
+msgstr "로딩 중입니다...<br />기다려 주세요."
+
+#. custom: web
+#: crash_manager.js:57
+msgid "Your Hexya session expired. Please refresh the current web page."
+msgstr ""
+
+#. custom: web
+#: priority.js:49
+msgid "High"
+msgstr "높음"
+
+#. custom: web
+#: form_relational_widgets.js:1378 base.xml:0
+msgid "Add"
+msgstr "추가"
+
+#. custom: web
+#: base.xml:0 base.xml:0 base.xml:0
+msgid "?"
+msgstr ""
+
+#. custom: web
+#: misc.js:18
+msgid "Maybe you should consider reloading the application by pressing F5..."
+msgstr "F5를 눌러 응용 프로그램을 다시 불러오는 것을 고려해보십시오..."
+
+#. custom: web
+#: form_view.js:315
+msgid "New"
+msgstr "신규"
+
+#. custom: web
+#: form_widgets.js:1131
+msgid "The field is empty, there's nothing to save !"
+msgstr "필드가 비어 있어 저장할 것이 없습니다 !"
+
+#. custom: web
+#: progress_bar.js:78
+msgid "Only Integer Value should be valid."
+msgstr "오직 정수 값만이 유효합니다."
+
+#. custom: web
+#: search_inputs.js:360
+msgid "Search %(field)s at: %(value)s"
+msgstr "다음 위치에서 %(field)s 검색: %(value)s"
+
+#. custom: web
+#: form_widgets.js:1114
+msgid "There was a problem while uploading your file"
+msgstr "파일 업로드 중 문제가 발생했습니다"
+
+#. custom: web
+#: list_view.js:1086
+msgid "Unknown m2m command %s"
+msgstr "알 수 없는 %s m2m 명령"
+
+#. custom: web
+#: misc.js:16
+msgid "You may not believe it,<br />but the application is actually loading..."
+msgstr "믿기시지 않겠지만<br />응용 프로그램을 실제로 불러오는 중입니다..."
+
+#. custom: web
+#: progress_bar.js:78
+msgid "Wrong value entered!"
+msgstr "잘못된 값이 입력되었습니다!"
+
+#. custom: web
+#: form_view.xml:0
+msgid "e"
+msgstr ""
+
+#. custom: web
+#: misc.js:12
+msgid "Loading..."
+msgstr "불러오는 중..."
+
+#. custom: web
+#: base_common.xml:0
+msgid "×"
+msgstr ""
+
+#. custom: web
+#: graph_widget.js:94
+msgid "No data to display"
+msgstr "표시할 데이터가 없습니다"
+
+#. custom: web
+#: pyeval.js:991
+msgid "Unknown nonliteral type "
+msgstr "알 수없는 비선형 유형"
+
+#. custom: web
+#: search_inputs.js:551
+msgid "Filter"
+msgstr "필터"
+
+#. custom: web
+#: abstract_web_client.js:124 crash_manager.js:123
+msgid "Client Error"
+msgstr "클라이언트 오류"
+
+#. custom: web
+#: data.js:1075
+msgid "Unknown operator %s in domain %s"
+msgstr "알 수 없는 %s 작업자가 %s 도메인에 존재합니다"
+
+#. custom: web
+#: data.js:1121
+msgid "Unsupported operator %s in domain %s"
+msgstr "지원되지 않는 %s 작업자가  %s 도메인에 있습니다"
+
+#. custom: web
+#: graph_view.js:86 graph_widget.js:21 pivot_view.js:182 base.xml:0 base.xml:0
+msgid "Count"
+msgstr "계수"
+
+#. field:Filter.User
+#. resource:base_ir_filters_view_search
+#. resource:base_ir_filters_view_search
+msgid "User"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Update translations"
+msgstr "변역 업데이트"
+
+#. custom: web
+#: base.xml:0
+msgid "Upload your file"
+msgstr "파일 업로드"
+
+#. custom: web
+#: base.xml:0
+msgid "View Metadata"
+msgstr "메타데이타 보기"
+
+#. custom: web
+#: base.xml:0
+msgid "Week"
+msgstr "주"
+
+#. custom: web
+#: base.xml:0
+msgid "Whoops, you shouldn't have come up to here..."
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Year"
+msgstr "년"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"You have updated <strong><t t-esc=\"field.string\"/></strong> (<t t-esc=\"lang\"/>).\n"
+"            <a class=\"oe_field_translate\" t-att-name=\"field.name\" href=\"#\">Update translations</a>"
+msgstr ""
+
+#. custom: web
+#: data.js:1138
+msgid "Unnamed"
+msgstr "이름 없음"
+
+#. custom: web
+#: utils.js:179
+msgid "Could not serialize XML"
+msgstr "XML을 직렬화할 수 없습니다"
+
+#. custom: web
+#: base.xml:0
+msgid "console.warn('Unhandled widget', dict.widget);"
+msgstr ""
+
+#. custom: web
+#: form_relational_widgets.js:47
+msgid "You are creating a new %s, are you sure it does not exist yet?"
+msgstr "새 %s를 생성하려고 합니다. 아직 없는 것이 확실한가요?"
+
+#. custom: web
+#: list_view.js:676
+msgid "You must select at least one record."
+msgstr "하나 이상의 레코드를 선택해야합니다."
+
+#. custom: web
+#: search_inputs.js:553 search_view.js:205
+msgid " or "
+msgstr "또는"
+
+#. custom: web
+#: form_widgets.js:634 form_widgets.js:640
+msgid "Active"
+msgstr "활성화"
+
+#. custom: web
+#: pyeval.js:1023
+msgid "Evaluation Error"
+msgstr "평가 오류"
+
+#. custom: web
+#: pyeval.js:1027
+msgid "Local evaluation failure\\n%s\\n\\n%s"
+msgstr ""
+
+#. custom: web
+#: search_inputs.js:451
+msgid "M2O search fields do not currently handle multiple default values"
+msgstr "M2O 검색 필드는 현재 다중 기본값을 처리하지 않습니다"
+
+#. custom: web
+#: form_common.js:1049 base.xml:0
+msgid "Create"
+msgstr "작성"
+
+#. custom: web
+#: debug_manager.js:339 base.xml:0
+msgid "Fields View Get"
+msgstr "필드보기 가져 오기"
+
+#. custom: web
+#: search_inputs.js:331
+msgid "No"
+msgstr "아니오"
+
+#. custom: web
+#: form_widgets.js:641 list_view.js:288
+msgid "Archive"
+msgstr "기록 보관"
+
+#. custom: web
+#: form_common.js:868 base.xml:0 base.xml:0
+msgid "Discard"
+msgstr "폐기"
+
+#. custom: web
+#: crash_manager.js:170 dialog.js:182 form_common.js:1046 form_upgrade_widgets.js:40 base.xml:0
+msgid "Cancel"
+msgstr "취소"
+
+#. custom: web
+#: search_menus.js:91
+msgid "Filter with same name already exists."
+msgstr "같은 이름의 필터가 이미 있습니다."
+
+#. custom: web
+#: search_inputs.js:698
+msgid "Group By"
+msgstr "그룹 분류 기준"
+
+#. custom: web
+#: graph_widget.js:208 graph_widget.js:216
+msgid "Invalid data"
+msgstr "잘못된 데이터"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Measures <span class=\"caret\"/>"
+msgstr ""
+
+#. custom: web
+#: utils.js:143
+msgid "Node [%s] is not a JSONified XML node"
+msgstr ""
+
+#. custom: web
+#: form_common.js:868 form_view.js:1127 data_export.js:202
+msgid "Close"
+msgstr "닫기"
+
+#. custom: web
+#: search_menus.js:251
+msgid "This filter is global and will be removed for everybody if you continue."
+msgstr "이 필터는 전역 필터이며 계속 진행하는 경우 모두에게 삭제됩니다."
+
+#. custom: web
+#: dialog.js:40 dialog.js:158 dialog.js:176 base.xml:0
+msgid "Ok"
+msgstr "OK"
+
+#. custom: web
+#: utils.js:302
+msgid "kMGTPE"
+msgstr ""
+
+#. custom: web
+#: search_inputs.js:192 search_inputs.js:211 search_inputs.js:402
+msgid "Search %(field)s for: %(value)s"
+msgstr "%(field)s에서 다음 검색: %(value)s"
+
+#. custom: web
+#: base.xml:0
+msgid "overflow-x: hidden"
+msgstr ""
+
+#. custom: web
+#: form_common.js:874 base.xml:0 base.xml:0 base.xml:0
+msgid "Save"
+msgstr "저장"
+
+#. custom: web
+#: pivot_view.js:526 pivot_view.js:555
+msgid "Total"
+msgstr "합계"
+
+#. custom: web
+#: form_widgets.js:643 list_view.js:289
+msgid "Unarchive"
+msgstr "보관 취소"
+
+#. custom: web
+#: form_upgrade_widgets.js:34
+msgid "Upgrade now"
+msgstr "지금 업그레이드"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Uploading..."
+msgstr "업로드 중…"
+
+#. custom: web
+#: form_relational_widgets.js:740
+msgid "View type '%s' is not supported in X2Many."
+msgstr "X2Many에서는 보기 유형 '%s'이 (가) 지원되지 않습니다."
+
+#. custom: web
+#: search_inputs.js:330
+msgid "Yes"
+msgstr "예"
+
+#. custom: web
+#: sidebar.js:131
+msgid "You must choose at least one record."
+msgstr "하나 이상의 레코드를 선택해야합니다."
+
+#. custom: web
+#: crash_manager.js:107 form_view.js:761 list_view.js:676 sidebar.js:131
+msgid "Warning"
+msgstr "경고"
+
+#. custom: web
+#: search_inputs.js:230
+msgid "not a valid integer"
+msgstr "유효하지 않은 정수"
+
+#. custom: web
+#: search_inputs.js:245
+msgid "not a valid number"
+msgstr "유효한 숫자가 아님"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"var $div = $(document.createElement('div')).attr('t-if', this.attr('t-if')).addClass('o_form_field_monetary');\n"
+"        this.clone(true).appendTo($div);\n"
+"        this.replaceWith($div);"
+msgstr ""
+
+#. custom: web
+#: graph_widget.js:79 list_view.js:1379 list_view.js:1385 pivot_view.js:508
+msgid "Undefined"
+msgstr "정의되지 않음"
+
+#. custom: web
+#: form_view.js:1304
+msgid "Widget type '%s' is not implemented"
+msgstr "위젯 유형 '%s'이 (가) 구현되지 않았습니다."
+

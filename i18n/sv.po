@@ -1,0 +1,1350 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. custom: web
+#: base.xml:0
+msgid "$(this).addClass('o_error');"
+msgstr ""
+
+#. custom: web
+#: debug_manager.js:134
+msgid "%d requests (%d ms) %d queries (%d ms)"
+msgstr ""
+
+#. field:Filter.Action
+msgid "Action"
+msgstr "Åtgärd"
+
+#. custom: web
+#: base_common.xml:0
+msgid "(nolabel)"
+msgstr "(ingen rubrik)"
+
+#. custom: web
+#: base.xml:0
+msgid "...Upload in progress..."
+msgstr "...Uppladdning pågår..."
+
+#. custom: web
+#: base.xml:0
+msgid "99+"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "(no string)"
+msgstr "(ingen sträng)"
+
+#. custom: web
+#: base.xml:0
+msgid "Activate Assets Debugging"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "-"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid ":"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Action ID:"
+msgstr "Aktivitets ID:"
+
+#. custom: web
+#: base.xml:0
+msgid "Add Custom Filter"
+msgstr "Anpassat filter"
+
+#. custom: web
+#: base.xml:0
+msgid "Add custom group"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Add..."
+msgstr "Lägg till..."
+
+#. custom: web
+#: base.xml:0
+msgid "All users"
+msgstr "Alla användare"
+
+#. custom: web
+#: base.xml:0
+msgid "Attachment :"
+msgstr "Bilaga:"
+
+#. custom: web
+#: base.xml:0
+msgid "Available fields"
+msgstr "Tillgängliga fält"
+
+#. custom: web
+#: base_common.xml:0
+msgid ""
+"Button\n"
+"                <t t-if=\"widget.string\">: </t>\n"
+"                <t t-if=\"!widget.string\"> (no string)</t>"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Button Type:"
+msgstr "Typ av knapp:"
+
+#. custom: web
+#: base.xml:0
+msgid "Clear Events"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Condition:"
+msgstr "Tillstånd:"
+
+#. custom: web
+#: base.xml:0
+msgid "Confirm New Password"
+msgstr ""
+
+#. field:Filter.Context
+msgid "Context"
+msgstr ""
+
+#. field:Company.DashboardBackground
+msgid "Dashboard Background"
+msgstr ""
+
+#. field:Filter.IsDefault
+msgid "Default filter"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Created by :"
+msgstr "Skapad av:"
+
+#. custom: web
+#: base.xml:0
+msgid "Creation Date:"
+msgstr "Datum skapad:"
+
+#. custom: web
+#: base.xml:0
+msgid "Creation User:"
+msgstr "Skapa Användare:"
+
+#. custom: web
+#: base.xml:0
+msgid "Day"
+msgstr "Dag"
+
+#. custom: web
+#: base.xml:0
+msgid "Default:"
+msgstr "Förvalt:"
+
+#. custom: web
+#: base.xml:0
+msgid "Delete"
+msgstr "Ta bort"
+
+#. custom: web
+#: base.xml:0
+msgid "Disable Technical Features"
+msgstr ""
+
+#. field:Filter.Domain
+msgid "Domain"
+msgstr ""
+
+#. field:Filter.Name
+#. resource:base_ir_filters_view_search
+msgid "Filter Name"
+msgstr ""
+
+#. resource:base_actions_ir_filters_view
+msgid "Filters"
+msgstr "Filter"
+
+#. resource:base_ir_filters_view_search
+msgid "Filters created by myself"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "Filters shared with all users"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Edit"
+msgstr "Redigera"
+
+#. custom: web
+#: base.xml:0
+msgid "Enable Technical Features"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "Filters visible only for one user"
+msgstr ""
+
+#. field:Filter.ID
+#. field:User.ID
+#. field:CommonMixin.ID
+#. field:Company.ID
+msgid "ID"
+msgstr "ID"
+
+#. custom: web
+#: base.xml:0
+msgid "Export Formats :"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Export Type :"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Export all Data"
+msgstr "Exportera all data"
+
+#. custom: web
+#: base.xml:0
+msgid "ID:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Import-Compatible Export"
+msgstr "Importkompatibel export"
+
+#. custom: web
+#: base.xml:0
+msgid "Latest Modification Date:"
+msgstr "Senaste ändringsdatum:"
+
+#. custom: web
+#: base.xml:0
+msgid "Latest Modification by:"
+msgstr "Senast ändrad av:"
+
+#. custom: web
+#: base.xml:0
+msgid "Leave the Developer Tools"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Log out"
+msgstr "Logga ut"
+
+#. field:Filter.ResModel
+#. resource:base_ir_filters_view_search
+msgid "Model"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "My filters"
+msgstr ""
+
+#. help:Filter.Action
+msgid "The menu action this filter applies to. When left empty the filter applies to all menus for this model."
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Manage Filters"
+msgstr "Hantera filter"
+
+#. custom: web
+#: base.xml:0
+msgid "Modified by :"
+msgstr "Ändrad av:"
+
+#. custom: web
+#: base.xml:0
+msgid "Month"
+msgstr "Månad"
+
+#. custom: web
+#: base.xml:0
+msgid "More"
+msgstr "Mer"
+
+#. custom: web
+#: base.xml:0
+msgid "Move Down"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Move Up"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "New Password"
+msgstr "Nytt lösenord:"
+
+#. custom: web
+#: base.xml:0
+msgid "No Update:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"No data available for this pivot table.  Try to add some records, or make sure\n"
+"        that there is at least one measure and no active filter in the search bar."
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "No data to display."
+msgstr ""
+
+#. resource:base_menu_ir_filters
+msgid "User-defined Filters"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Not shown in kanban"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Old Password"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Only you"
+msgstr "Bara du"
+
+#. custom: web
+#: base.xml:0
+msgid "Please note that only the selected ids will be exported."
+msgstr "Vänligen notera att endast valda ids kommer att exporteras."
+
+#. custom: web
+#: base.xml:0
+msgid "Please pay attention that all records matching your search filter will be exported. Not only the selected ids."
+msgstr "Vänligen notera att alla poster som matchar ditt sökfilter exporteras. Inte bara valda ids."
+
+#. custom: web
+#: base.xml:0
+msgid "Preferences"
+msgstr "Preferenser"
+
+#. custom: web
+#: base.xml:0
+msgid "Quarter"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Remove"
+msgstr "Ta bort"
+
+#. custom: web
+#: base.xml:0
+msgid "Remove All"
+msgstr "Ta bort alla"
+
+#. custom: web
+#: base.xml:0
+msgid "Run JS Tests"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Save as:"
+msgstr "Spara som:"
+
+#. custom: web
+#: base.xml:0
+msgid "Save current search"
+msgstr "Spara aktuell sökning"
+
+#. resource:base_ir_filters_view_search
+msgid "Shared"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Save fields list"
+msgstr "Spara fältlista"
+
+#. custom: web
+#: base.xml:0
+msgid "Saved exports:"
+msgstr "Sparad export:"
+
+#. custom: web
+#: base.xml:0
+msgid "Set Defaults"
+msgstr "Ställ in standardvärden"
+
+#. field:User.SidebarVisible
+msgid "Show App Sidebar"
+msgstr ""
+
+#. field:Filter.Sort
+msgid "Sort"
+msgstr ""
+
+#. help:Filter.User
+msgid "The user this filter is private to. When left empty the filter is public and available to all users."
+msgstr ""
+
+#. field:Filter.User
+#. resource:base_ir_filters_view_search
+#. resource:base_ir_filters_view_search
+msgid "User"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Technical Translation"
+msgstr "Teknisk översättning"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"This wizard will export all data that matches the current search criteria to a CSV file.\n"
+"        You can export all data or only the fields that can be reimported after modification."
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Toggle Timelines"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"Unhandled widget\n"
+"    <t t-js=\"dict\">console.warn('Unhandled widget', dict.widget);</t>"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Update translations"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Upload your file"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "View Fields"
+msgstr "Visa fält"
+
+#. custom: web
+#: base.xml:0
+msgid "Whoops, you shouldn't have come up to here..."
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Change default:"
+msgstr "Byt standardvärde:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Context:"
+msgstr "Sammanhang:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Domain:"
+msgstr "Domän:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Field:"
+msgstr "Fält:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Method:"
+msgstr "Metod:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Modifiers:"
+msgstr "Modifierare:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Object:"
+msgstr "Objekt:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "On change:"
+msgstr "Vid ändring:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Relation:"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Selection:"
+msgstr "Val:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Size:"
+msgstr "Storlek:"
+
+#. custom: web
+#: form_common.js:889
+msgid "Save & New"
+msgstr "Spara & ny"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Special:"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Type:"
+msgstr "Typ:"
+
+#. custom: web
+#: form_common.js:1054
+msgid "Select"
+msgstr "Välj"
+
+#. custom: web
+#: form_relational_widgets.js:1595
+msgid "The type of the field '%s' must be a many2many field with a relation to 'ir.attachment' model."
+msgstr "Denna typ av fält '%s' måste var ett many2many fält med en relation  till 'ir.attachment' modellen."
+
+#. custom: web
+#: base.xml:0
+msgid "View Metadata"
+msgstr "Visa metadata"
+
+#. custom: web
+#: base.xml:0
+msgid "Week"
+msgstr "Vecka"
+
+#. custom: web
+#: formats.js:75
+msgid "(%d records)"
+msgstr "(%d poster)"
+
+#. custom: web
+#: list_common.js:133
+msgid "Can't convert value %s to context"
+msgstr "Kan inte konvertera värdet %s i sammanhanget"
+
+#. custom: web
+#: list_view.js:1863
+msgid "Download \\\"%s\\\""
+msgstr ""
+
+#. custom: web
+#: debug_manager.js:339 base.xml:0
+msgid "Fields View Get"
+msgstr "Fält för visningsvy"
+
+#. custom: web
+#: crash_manager.js:107 form_view.js:761 list_view.js:676 sidebar.js:131
+msgid "Warning"
+msgstr "Varning"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Widget:"
+msgstr "Grafisk komponent:"
+
+#. custom: web
+#: form_common.js:868 form_view.js:1127 data_export.js:202
+msgid "Close"
+msgstr "Stäng"
+
+#. custom: web
+#: form_relational_widgets.js:1123
+msgid "The o2m record must be saved before an action can be used"
+msgstr "o2m posten måste sparas innan en händelse kan användas"
+
+#. custom: web
+#: view_manager.js:223 search_menus.js:84 search_menus.js:91
+msgid "Error"
+msgstr "Fel"
+
+#. custom: web
+#: base.xml:0
+msgid "XML ID:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Year"
+msgstr "År"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"You have updated <strong><t t-esc=\"field.string\"/></strong> (<t t-esc=\"lang\"/>).\n"
+"            <a class=\"oe_field_translate\" t-att-name=\"field.name\" href=\"#\">Update translations</a>"
+msgstr ""
+
+#. custom: web
+#: data.js:1121
+msgid "Unsupported operator %s in domain %s"
+msgstr "Felaktig operator %s i domän %s"
+
+#. custom: web
+#: base.xml:0
+msgid "overflow-x: hidden"
+msgstr ""
+
+#. custom: web
+#: time.js:192
+msgid "'%s' is not a correct date, datetime nor time"
+msgstr "'%s' är inte ett korrekt datum , datum/tid eller tid"
+
+#. custom: web
+#: dialog.js:168
+msgid "Alert"
+msgstr "Varning"
+
+#. custom: web
+#: form_common.js:1103
+msgid "Selected domain"
+msgstr ""
+
+#. custom: web
+#: utils.js:179
+msgid "Could not serialize XML"
+msgstr "Kunde inte serialisera XML"
+
+#. custom: web
+#: form_relational_widgets.js:25
+msgid "Create a %s"
+msgstr "Skapa en %s"
+
+#. custom: web
+#: view_manager.js:437
+msgid "Failed to evaluate search criterions"
+msgstr "Misslyckades utvärdera sökkriterier"
+
+#. custom: web
+#: list_view.js:931
+msgid "Setting 'id' attribute on existing record %s"
+msgstr "Anger 'id' egenskapen på existerande post %s"
+
+#. custom: web
+#: form_common.js:868 base.xml:0 base.xml:0
+msgid "Discard"
+msgstr "Ignorera"
+
+#. custom: web
+#: list_view_editable.js:122
+msgid "The line has been modified, your changes will be discarded. Are you sure you want to discard the changes ?"
+msgstr "Raden har ändrats och dina ändringar försvinner om du avbryter. Avbryt och låt ändringar gå förlorade?"
+
+#. custom: web
+#: pivot_view.js:526 pivot_view.js:555
+msgid "Total"
+msgstr "Totalt"
+
+#. custom: web
+#: crash_manager.js:57
+msgid "Your Hexya session expired. Please refresh the current web page."
+msgstr ""
+
+#. custom: web
+#: dialog.js:193
+msgid "Confirmation"
+msgstr "Bekräftelse"
+
+#. custom: web
+#: data_export.js:199
+msgid "Export Data"
+msgstr "Exportera data"
+
+#. custom: web
+#: data_export.js:201
+msgid "Export To File"
+msgstr "Exportera till fil"
+
+#. custom: web
+#: form_common.js:236
+msgid "Create and Edit..."
+msgstr "Skapa och redigera..."
+
+#. custom: web
+#: debug_manager.js:183
+msgid "JS Tests"
+msgstr "JS tester"
+
+#. custom: web
+#: debug_manager.js:241
+msgid "Fields of %s"
+msgstr ""
+
+#. custom: web
+#: debug_manager.js:321
+msgid "No metadata available"
+msgstr ""
+
+#. custom: web
+#: debug_manager.js:326
+msgid "Metadata (%s)"
+msgstr ""
+
+#. custom: web
+#: form_common.js:245
+msgid "No results to show..."
+msgstr "Inga resultat att visa..."
+
+#. custom: web
+#: data_export.js:167
+msgid "Please enter save field list name"
+msgstr "Vänligen namnge fältlistan"
+
+#. custom: web
+#: data_export.js:435
+msgid "Please select fields to export..."
+msgstr "Vänligen välj fält att exportera..."
+
+#. custom: web
+#: form_common.js:874
+msgid " & Close"
+msgstr "& Stäng"
+
+#. custom: web
+#: form_relational_widgets.js:1018
+msgid "Add an item"
+msgstr "Lägg till en post"
+
+#. custom: web
+#: form_relational_widgets.js:1122
+msgid "Action Button"
+msgstr "Åtgärdsknapp"
+
+#. custom: web
+#: form_upgrade_widgets.js:51
+msgid "Hexya Enterprise"
+msgstr ""
+
+#. custom: web
+#: form_view.js:733
+msgid "Do you really want to delete this record?"
+msgstr "Vill du radera denna post?"
+
+#. custom: web
+#: form_view.js:1300
+msgid "Field '%s' specified in view could not be found."
+msgstr "Fält '%s' angivet i vyn kan inte hittas"
+
+#. custom: web
+#: search_inputs.js:451
+msgid "M2O search fields do not currently handle multiple default values"
+msgstr "M2O sökfält kan just nu inte hantera multipla standardvärden"
+
+#. custom: web
+#: data_export.js:421
+msgid "Please select fields to save export list..."
+msgstr "Vänligen välj fält att exportera som lista..."
+
+#. custom: web
+#: form_common.js:211
+msgid "Search More..."
+msgstr "Sök flera..."
+
+#. custom: web
+#: form_common.js:281
+msgid "Search: "
+msgstr "Sök: "
+
+#. custom: web
+#: form_relational_widgets.js:326
+msgid "Render"
+msgstr "Rendera"
+
+#. custom: web
+#: form_relational_widgets.js:327
+msgid "No value found for the field %s for value %s"
+msgstr ""
+
+#. custom: web
+#: form_relational_widgets.js:1305
+msgid "Add: "
+msgstr "Lägg till: "
+
+#. custom: web
+#: form_view.js:301
+msgid "Form"
+msgstr "Formulär"
+
+#. custom: web
+#: form_view.js:315
+msgid "New"
+msgstr "Ny"
+
+#. custom: web
+#: form_view.js:1125
+msgid "Set Default"
+msgstr "Ställ in standardvärden"
+
+#. custom: web
+#: formats.js:187
+msgid "'%s' is not a correct date"
+msgstr "'%s' är inte ett giltigt datum"
+
+#. custom: web
+#: formats.js:173
+msgid "'%s' is not a correct datetime"
+msgstr "'%s' är inte korrekt datum/tid"
+
+#. custom: web
+#: form_widgets.js:637
+msgid "Activate"
+msgstr "Aktivera"
+
+#. custom: web
+#: form_widgets.js:642
+msgid "Archived"
+msgstr "Arkiverad"
+
+#. custom: web
+#: formats.js:144
+msgid "'%s' is not a correct float"
+msgstr "'%s' är inte en korrekt \"float\""
+
+#. custom: web
+#: formats.js:132
+msgid "'%s' is not a correct integer"
+msgstr "'%s' är inte ett korrekt heltal"
+
+#. custom: web
+#: formats.js:192
+msgid "'%s' is not a correct time"
+msgstr "'%s' är inte en korrekt tid"
+
+#. custom: web
+#: search_menus.js:252
+msgid "Are you sure that you want to remove this filter?"
+msgstr ""
+
+#. custom: web
+#: time.js:204
+msgid "'%s' is not convertible to date, datetime nor time"
+msgstr "'%s' är inte konverterbart till datum, datum/tid eller tid"
+
+#. custom: web
+#: utils.js:284
+msgid "Bytes,Kb,Mb,Gb,Tb,Pb,Eb,Zb,Yb"
+msgstr "Bitar,Kb,Mb,Gb,Tb,Pb,Eb,Zb,Yb"
+
+#. custom: web
+#: form_widgets.js:1131
+msgid "Save As..."
+msgstr "Spara som…"
+
+#. custom: web
+#: loading.js:44
+msgid "Loading (%d)"
+msgstr "Laddar (%d)"
+
+#. custom: web
+#: loading.js:46
+msgid "Loading"
+msgstr "Laddar"
+
+#. custom: web
+#: priority.js:50
+msgid "Very High"
+msgstr "Mycket hög"
+
+#. custom: web
+#: view_manager.js:223
+msgid " view couldn't be loaded"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "/web/binary/upload_attachment"
+msgstr ""
+
+#. custom: web
+#: form_common.js:281 form_relational_widgets.js:1080
+msgid "Create: "
+msgstr "Skapa: "
+
+#. custom: web
+#: form_relational_widgets.js:1378 base.xml:0
+msgid "Add"
+msgstr "Lägg till"
+
+#. custom: web
+#: form_widgets.js:1251
+msgid "Could not display the selected image."
+msgstr "Kunde inte visa utvald bild."
+
+#. custom: web
+#: form_widgets.js:635
+msgid "Deactivate"
+msgstr ""
+
+#. custom: web
+#: form_widgets.js:636
+msgid "Inactive"
+msgstr "Inaktiv"
+
+#. custom: web
+#: form_widgets.js:1094
+msgid "File upload"
+msgstr "Filuppladdning"
+
+#. custom: web
+#: form_widgets.js:1114
+msgid "File Upload"
+msgstr "Filuppladdning"
+
+#. custom: web
+#: form_widgets.js:1251
+msgid "Image"
+msgstr "Bild"
+
+#. custom: web
+#: graph_widget.js:94
+msgid "No data to display"
+msgstr ""
+
+#. custom: web
+#: form_view.js:887
+msgid "The following fields are invalid:"
+msgstr "Följande fält är inte giltiga:"
+
+#. custom: web
+#: form_common.js:1096 search_menus.js:177
+msgid "Custom Filter"
+msgstr "Anpassat filter"
+
+#. custom: web
+#: form_widgets.js:634 form_widgets.js:640
+msgid "Active"
+msgstr "Aktiv"
+
+#. custom: web
+#: priority.js:48
+msgid "Low"
+msgstr "Låg"
+
+#. custom: web
+#: data.js:1083
+msgid "Unknown field %s in domain %s"
+msgstr "Okänt fält %s i domän %s"
+
+#. custom: web
+#: base_common.xml:0
+msgid ""
+"[<t t-esc=\"option[0]\"/>]\n"
+"                    <t t-if=\"option[1]\"> - </t>\n"
+"                    <t t-esc=\"option[1]\"/>"
+msgstr ""
+
+#. custom: web
+#: form_widgets.js:1131
+msgid "The field is empty, there's nothing to save !"
+msgstr "Fältet är tomt, det finns ingenting att spara!"
+
+#. custom: web
+#: list_view.js:287
+msgid "Export"
+msgstr "Exportera"
+
+#. custom: web
+#: base.xml:0 base.xml:0 base.xml:0
+msgid "?"
+msgstr ""
+
+#. custom: web
+#: list_view.js:543
+msgid "Do you really want to remove these records?"
+msgstr "Vill du verkligen radera dessa poster?"
+
+#. custom: web
+#: misc.js:15
+msgid "Don't leave yet,<br />it's still loading..."
+msgstr "Lämna inte skärmen än,<br />det laddar fortfarande..."
+
+#. custom: web
+#: list_view.js:1847
+msgid "Download"
+msgstr "Hämta"
+
+#. custom: web
+#: misc.js:12
+msgid "Loading..."
+msgstr "Laddar..."
+
+#. custom: web
+#: misc.js:18
+msgid "Maybe you should consider reloading the application by pressing F5..."
+msgstr "Du kanske skulle överväga att återladda applikationen genom att trycka F5..."
+
+#. custom: web
+#: base_common.xml:0
+msgid "×"
+msgstr ""
+
+#. custom: web
+#: search_inputs.js:331
+msgid "No"
+msgstr "Nej"
+
+#. custom: web
+#: form_upgrade_widgets.js:34
+msgid "Upgrade now"
+msgstr "Uppgradera nu"
+
+#. custom: web
+#: form_view.js:301
+msgid "The record could not be found in the database."
+msgstr "Posten saknas i databasen."
+
+#. custom: web
+#: form_view.js:1128
+msgid "Save default"
+msgstr "Spara standardvärden"
+
+#. custom: web
+#: graph_widget.js:252
+msgid "Not enough data points"
+msgstr ""
+
+#. custom: web
+#: dialog.js:40 dialog.js:158 dialog.js:176 base.xml:0
+msgid "Ok"
+msgstr ""
+
+#. custom: web
+#: form_common.js:874 base.xml:0 base.xml:0 base.xml:0
+msgid "Save"
+msgstr "Spara"
+
+#. custom: web
+#: search_inputs.js:192 search_inputs.js:211 search_inputs.js:402
+msgid "Search %(field)s for: %(value)s"
+msgstr "Sök %(field)s för: %(value)s"
+
+#. custom: web
+#: misc.js:13
+msgid "Still loading..."
+msgstr "Laddar fortfarande..."
+
+#. custom: web
+#: misc.js:14
+msgid "Still loading...<br />Please be patient."
+msgstr "Laddar fortfarande...<br />Ha tålamod."
+
+#. custom: web
+#: form_relational_widgets.js:47
+msgid "You are creating a new %s, are you sure it does not exist yet?"
+msgstr "Du skapar en ny %s, är du säker på att det inte finns redan?"
+
+#. custom: web
+#: list_view.js:1024
+msgid "Could not find id in dataset"
+msgstr "Id saknas i datasättet"
+
+#. custom: web
+#: misc.js:17
+msgid "Take a minute to get a coffee,<br />because it's loading..."
+msgstr "Ta en paus för en kaffe,<br/>därför den laddar..."
+
+#. custom: web
+#: search_inputs.js:551
+msgid "Filter"
+msgstr "Filtrera"
+
+#. custom: web
+#: base.xml:0
+msgid "or"
+msgstr "eller"
+
+#. custom: web
+#: search_menus.js:91
+msgid "Filter with same name already exists."
+msgstr ""
+
+#. custom: web
+#: form_common.js:1049 base.xml:0
+msgid "Create"
+msgstr "Skapa"
+
+#. custom: web
+#: pivot_view.js:831
+msgid "For Excel compatibility, data cannot be exported if there are more than 256 columns.\\n\\nTip: try to flip axis, filter further or reduce the number of measures."
+msgstr ""
+
+#. custom: web
+#: priority.js:49
+msgid "High"
+msgstr "Hög"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Measures <span class=\"caret\"/>"
+msgstr ""
+
+#. custom: web
+#: utils.js:143
+msgid "Node [%s] is not a JSONified XML node"
+msgstr ""
+
+#. custom: web
+#: form_view.js:756
+msgid "The record has been modified, your changes will be discarded. Are you sure you want to leave this page ?"
+msgstr ""
+
+#. custom: web
+#: form_widgets.js:862
+msgid "Timezone Mismatch : The timezone of your browser doesn't match the selected one. The time in Hexya is displayed according to your field timezone."
+msgstr ""
+
+#. custom: web
+#: form_view.js:1304
+msgid "Widget type '%s' is not implemented"
+msgstr "Widgettypen '%s' är inte implementerad"
+
+#. custom: web
+#: priority.js:47
+msgid "Normal"
+msgstr ""
+
+#. custom: web
+#: form_relational_widgets.js:153 form_relational_widgets.js:921 form_relational_widgets.js:1104 form_relational_widgets.js:1321
+msgid "Open: "
+msgstr "Öppna: "
+
+#. custom: web
+#: form_widgets.js:1093
+msgid "The selected file exceed the maximum file size of %s."
+msgstr "Vald fil överstiger maximal filstorlek på %s."
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Apply"
+msgstr "Verkställ"
+
+#. custom: web
+#: change_password.js:14 base.xml:0
+msgid "Change Password"
+msgstr "Ändra lösenord"
+
+#. custom: web
+#: crash_manager.js:170 dialog.js:182 form_common.js:1046 form_upgrade_widgets.js:40 base.xml:0
+msgid "Cancel"
+msgstr "Avbryt"
+
+#. custom: web
+#: sidebar.js:217
+msgid "Do you really want to delete this attachment ?"
+msgstr "Vill du verkligen ta bort denna bilaga"
+
+#. custom: web
+#: search_menus.js:84
+msgid "Filter name is required."
+msgstr "Filternamn är obligatoriskt."
+
+#. custom: web
+#: form_widgets.js:1114
+msgid "There was a problem while uploading your file"
+msgstr "Det uppstod ett fel vid filuppladdningen"
+
+#. custom: web
+#: list_view.js:1086
+msgid "Unknown m2m command %s"
+msgstr "Okänt m2m-kommando %s"
+
+#. custom: web
+#: data.js:1075
+msgid "Unknown operator %s in domain %s"
+msgstr "Okänd operator %s i domän %s"
+
+#. custom: web
+#: form_relational_widgets.js:740
+msgid "View type '%s' is not supported in X2Many."
+msgstr ""
+
+#. custom: web
+#: progress_bar.js:78
+msgid "Only Integer Value should be valid."
+msgstr ""
+
+#. custom: web
+#: pyeval.js:1023
+msgid "Evaluation Error"
+msgstr "Granskningsfel"
+
+#. custom: web
+#: form_widgets.js:641 list_view.js:288
+msgid "Archive"
+msgstr "Arkiv"
+
+#. custom: web
+#: graph_widget.js:208 graph_widget.js:216
+msgid "Invalid data"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"var message = (d.message !== undefined) ? d.message : d.error.data.message;\n"
+"            d.html_error = context.engine.tools.html_escape(message).replace(/\\n/g, '<br/>');"
+msgstr ""
+
+#. custom: web
+#: data.js:1138
+msgid "Unnamed"
+msgstr ""
+
+#. custom: web
+#: progress_bar.js:78
+msgid "Wrong value entered!"
+msgstr "Fel värde inmatat!"
+
+#. custom: web
+#: pyeval.js:991
+msgid "Unknown nonliteral type "
+msgstr ""
+
+#. custom: web
+#: search_inputs.js:553 search_view.js:205
+msgid " or "
+msgstr "eller"
+
+#. custom: web
+#: pyeval.js:1027
+msgid "Local evaluation failure\\n%s\\n\\n%s"
+msgstr ""
+
+#. custom: web
+#: search_menus.js:251
+msgid "This filter is global and will be removed for everybody if you continue."
+msgstr "Detta filter är globalt och kommer att tas bort för alla om du fortsätter"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Uploading..."
+msgstr "Överför…"
+
+#. custom: web
+#: search_inputs.js:230
+msgid "not a valid integer"
+msgstr "inte ett korrekt heltal"
+
+#. custom: web
+#: search_inputs.js:330
+msgid "Yes"
+msgstr "Ja"
+
+#. custom: web
+#: base.xml:0
+msgid "console.warn('Unhandled widget', dict.widget);"
+msgstr ""
+
+#. custom: web
+#: abstract_web_client.js:124 crash_manager.js:123
+msgid "Client Error"
+msgstr "Klientfel"
+
+#. custom: web
+#: search_inputs.js:360
+msgid "Search %(field)s at: %(value)s"
+msgstr "Sök %(field)s vid: %(value)s"
+
+#. custom: web
+#: form_view.xml:0
+msgid "e"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"var $div = $(document.createElement('div')).attr('t-if', this.attr('t-if')).addClass('o_form_field_monetary');\n"
+"        this.clone(true).appendTo($div);\n"
+"        this.replaceWith($div);"
+msgstr ""
+
+#. custom: web
+#: graph_view.js:86 graph_widget.js:21 pivot_view.js:182 base.xml:0 base.xml:0
+msgid "Count"
+msgstr ""
+
+#. custom: web
+#: list_view.js:676
+msgid "You must select at least one record."
+msgstr "Du måste välja åtminstone en post"
+
+#. custom: web
+#: search_inputs.js:698
+msgid "Group By"
+msgstr "Gruppera på"
+
+#. custom: web
+#: form_widgets.js:643 list_view.js:289
+msgid "Unarchive"
+msgstr ""
+
+#. custom: web
+#: misc.js:16
+msgid "You may not believe it,<br />but the application is actually loading..."
+msgstr "Du kanske inte tror det, <br />men applikationen laddar faktiskt..."
+
+#. custom: web
+#: sidebar.js:131
+msgid "You must choose at least one record."
+msgstr "Du måste välja minst en post."
+
+#. custom: web
+#: utils.js:302
+msgid "kMGTPE"
+msgstr ""
+
+#. custom: web
+#: graph_widget.js:79 list_view.js:1379 list_view.js:1385 pivot_view.js:508
+msgid "Undefined"
+msgstr "Odefinierad"
+
+#. custom: web
+#: search_inputs.js:245
+msgid "not a valid number"
+msgstr "inte ett korrekt nummer"
+

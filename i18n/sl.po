@@ -1,0 +1,1350 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. custom: web
+#: base.xml:0
+msgid "$(this).addClass('o_error');"
+msgstr ""
+
+#. custom: web
+#: debug_manager.js:134
+msgid "%d requests (%d ms) %d queries (%d ms)"
+msgstr ""
+
+#. custom: web
+#: form_common.js:874
+msgid " & Close"
+msgstr ""
+
+#. custom: web
+#: formats.js:173
+msgid "'%s' is not a correct datetime"
+msgstr "'%s' ni pravilen čas"
+
+#. custom: web
+#: base_common.xml:0
+msgid "(no string)"
+msgstr "(ni tekst)"
+
+#. custom: web
+#: base_common.xml:0
+msgid "(nolabel)"
+msgstr "(brez naziva)"
+
+#. custom: web
+#: base.xml:0
+msgid "Confirm New Password"
+msgstr ""
+
+#. custom: web
+#: form_relational_widgets.js:1018
+msgid "Add an item"
+msgstr "Dodaj postavko"
+
+#. custom: web
+#: formats.js:187
+msgid "'%s' is not a correct date"
+msgstr "'%s' ni pravilen datum"
+
+#. custom: web
+#: formats.js:75
+msgid "(%d records)"
+msgstr "(%d zapisov)"
+
+#. custom: web
+#: view_manager.js:223
+msgid " view couldn't be loaded"
+msgstr ""
+
+#. custom: web
+#: formats.js:132
+msgid "'%s' is not a correct integer"
+msgstr "'%s' ni pravilno celo število"
+
+#. custom: web
+#: formats.js:192
+msgid "'%s' is not a correct time"
+msgstr "'%s' ni pravilen čas"
+
+#. custom: web
+#: base_common.xml:0
+msgid "-"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "...Upload in progress..."
+msgstr "...Nalaganje v teku..."
+
+#. custom: web
+#: form_relational_widgets.js:25
+msgid "Create a %s"
+msgstr "Ustvari %s"
+
+#. custom: web
+#: form_view.js:315
+msgid "New"
+msgstr "Novo"
+
+#. custom: web
+#: search_inputs.js:331
+msgid "No"
+msgstr "Ne"
+
+#. custom: web
+#: form_widgets.js:1093
+msgid "The selected file exceed the maximum file size of %s."
+msgstr "Izbrana datoteka presega dovoljeno velikost %s."
+
+#. custom: web
+#: time.js:192
+msgid "'%s' is not a correct date, datetime nor time"
+msgstr "'%s' ni pravi datum ali čas"
+
+#. custom: web
+#: time.js:204
+msgid "'%s' is not convertible to date, datetime nor time"
+msgstr "'%s' se ne da spremeniti v čas ali datum"
+
+#. custom: web
+#: data.js:1083
+msgid "Unknown field %s in domain %s"
+msgstr "Neznano polje %s v domeni %s"
+
+#. custom: web
+#: formats.js:144
+msgid "'%s' is not a correct float"
+msgstr "'%s' ni prava vrednost z plavajočo vejico (float)"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "/web/binary/upload_attachment"
+msgstr ""
+
+#. field:Filter.Action
+msgid "Action"
+msgstr "Dejanje"
+
+#. custom: web
+#: base.xml:0
+msgid "99+"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid ":"
+msgstr ""
+
+#. custom: web
+#: form_relational_widgets.js:1122
+msgid "Action Button"
+msgstr "Gumb (akcija)"
+
+#. custom: web
+#: base.xml:0
+msgid "Activate Assets Debugging"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Day"
+msgstr "Dan"
+
+#. custom: web
+#: base.xml:0
+msgid "Default:"
+msgstr "Privzeto:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Action ID:"
+msgstr "Akcija ID:"
+
+#. custom: web
+#: dialog.js:193
+msgid "Confirmation"
+msgstr "Potrditev"
+
+#. custom: web
+#: form_view.js:1300
+msgid "Field '%s' specified in view could not be found."
+msgstr "Polja '%s' ni možno najti."
+
+#. custom: web
+#: base.xml:0
+msgid "ID:"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Field:"
+msgstr "Polje:"
+
+#. custom: web
+#: form_upgrade_widgets.js:51
+msgid "Hexya Enterprise"
+msgstr ""
+
+#. custom: web
+#: form_view.js:301
+msgid "Form"
+msgstr "Obrazec"
+
+#. custom: web
+#: base.xml:0
+msgid "Save fields list"
+msgstr "Shrani seznam polj"
+
+#. custom: web
+#: form_widgets.js:637
+msgid "Activate"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Not shown in kanban"
+msgstr ""
+
+#. custom: web
+#: data_export.js:421
+msgid "Please select fields to save export list..."
+msgstr "Izberite polja, ki se hranijo na seznamu izvoza"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"var $div = $(document.createElement('div')).attr('t-if', this.attr('t-if')).addClass('o_form_field_monetary');\n"
+"        this.clone(true).appendTo($div);\n"
+"        this.replaceWith($div);"
+msgstr ""
+
+#. custom: web
+#: debug_manager.js:183
+msgid "JS Tests"
+msgstr "JS Testi"
+
+#. custom: web
+#: search_menus.js:252
+msgid "Are you sure that you want to remove this filter?"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Selection:"
+msgstr "Izbor:"
+
+#. custom: web
+#: form_view.js:887
+msgid "The following fields are invalid:"
+msgstr "Sledeča polja so napačna:"
+
+#. custom: web
+#: form_view.js:756
+msgid "The record has been modified, your changes will be discarded. Are you sure you want to leave this page ?"
+msgstr ""
+
+#. custom: web
+#: data.js:1075
+msgid "Unknown operator %s in domain %s"
+msgstr "Neznan operator %s v domeni %s"
+
+#. custom: web
+#: priority.js:49
+msgid "High"
+msgstr "Visok"
+
+#. custom: web
+#: graph_widget.js:94
+msgid "No data to display"
+msgstr ""
+
+#. custom: web
+#: progress_bar.js:78
+msgid "Only Integer Value should be valid."
+msgstr "Veljavne so le vrednosti v celih številih."
+
+#. custom: web
+#: pyeval.js:1027
+msgid "Local evaluation failure\\n%s\\n\\n%s"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Save current search"
+msgstr ""
+
+#. custom: web
+#: debug_manager.js:339 base.xml:0
+msgid "Fields View Get"
+msgstr ""
+
+#. custom: web
+#: priority.js:47
+msgid "Normal"
+msgstr "Običajno"
+
+#. custom: web
+#: form_view.js:1304
+msgid "Widget type '%s' is not implemented"
+msgstr "Čarovnik vrste '%s' ni implementiran"
+
+#. custom: web
+#: loading.js:46
+msgid "Loading"
+msgstr "Nalaganje"
+
+#. custom: web
+#: form_relational_widgets.js:1378 base.xml:0
+msgid "Add"
+msgstr "Dodaj"
+
+#. custom: web
+#: base.xml:0
+msgid "Add Custom Filter"
+msgstr ""
+
+#. field:Filter.Context
+msgid "Context"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Add custom group"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Add..."
+msgstr "Dodaj ..."
+
+#. custom: web
+#: base.xml:0
+msgid "All users"
+msgstr "Vsi uporabniki"
+
+#. custom: web
+#: base.xml:0
+msgid "Attachment :"
+msgstr "Priponka"
+
+#. custom: web
+#: base.xml:0
+msgid "Available fields"
+msgstr "Razpoložljiva polja"
+
+#. custom: web
+#: base.xml:0
+msgid "Clear Events"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Condition:"
+msgstr "Pogoj:"
+
+#. custom: web
+#: base_common.xml:0
+msgid ""
+"Button\n"
+"                <t t-if=\"widget.string\">: </t>\n"
+"                <t t-if=\"!widget.string\"> (no string)</t>"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Button Type:"
+msgstr "Vrsta tipke:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Change default:"
+msgstr "Spremeni privzete vrednosti:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Context:"
+msgstr "Vsebina:"
+
+#. custom: web
+#: base.xml:0
+msgid "Created by :"
+msgstr "Ustvaril:"
+
+#. custom: web
+#: base.xml:0
+msgid "Creation Date:"
+msgstr "Datum nastanka:"
+
+#. field:Company.DashboardBackground
+msgid "Dashboard Background"
+msgstr ""
+
+#. field:Filter.IsDefault
+msgid "Default filter"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Creation User:"
+msgstr "Uporabnik:"
+
+#. custom: web
+#: base.xml:0
+msgid "Delete"
+msgstr "Izbriši"
+
+#. custom: web
+#: base.xml:0
+msgid "Disable Technical Features"
+msgstr ""
+
+#. field:Filter.Domain
+msgid "Domain"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Edit"
+msgstr "Urejanje"
+
+#. custom: web
+#: base.xml:0
+msgid "Enable Technical Features"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Export Formats :"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Export Type :"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Domain:"
+msgstr "Domena:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "×"
+msgstr ""
+
+#. custom: web
+#: data_export.js:199
+msgid "Export Data"
+msgstr "Izvoz podatkov"
+
+#. custom: web
+#: data_export.js:201
+msgid "Export To File"
+msgstr "Izvozi v Datoteko"
+
+#. field:Filter.Name
+#. resource:base_ir_filters_view_search
+msgid "Filter Name"
+msgstr ""
+
+#. resource:base_actions_ir_filters_view
+msgid "Filters"
+msgstr "Filtri"
+
+#. resource:base_ir_filters_view_search
+msgid "Filters created by myself"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "Filters shared with all users"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "Filters visible only for one user"
+msgstr ""
+
+#. field:CommonMixin.ID
+#. field:Company.ID
+#. field:Filter.ID
+#. field:User.ID
+msgid "ID"
+msgstr "ID"
+
+#. field:Filter.ResModel
+#. resource:base_ir_filters_view_search
+msgid "Model"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Export all Data"
+msgstr "Izvozi vse podatke"
+
+#. custom: web
+#: base.xml:0
+msgid "Import-Compatible Export"
+msgstr "Uvoz-Primerljiv Izvoz"
+
+#. custom: web
+#: base.xml:0
+msgid "Latest Modification Date:"
+msgstr "Zadnji datum spremembe:"
+
+#. custom: web
+#: base.xml:0
+msgid "Latest Modification by:"
+msgstr "Zadnja sprememba:"
+
+#. custom: web
+#: base.xml:0
+msgid "Leave the Developer Tools"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Log out"
+msgstr "Odjava"
+
+#. custom: web
+#: base.xml:0
+msgid "Manage Filters"
+msgstr "Upravljanje filtrov"
+
+#. custom: web
+#: base.xml:0
+msgid "Modified by :"
+msgstr "Spremenil:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Method:"
+msgstr "Metoda:"
+
+#. custom: web
+#: debug_manager.js:326
+msgid "Metadata (%s)"
+msgstr "Metapodatki (%s)"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Modifiers:"
+msgstr "Prilagoditve:"
+
+#. custom: web
+#: base.xml:0
+msgid "Month"
+msgstr "Mesec"
+
+#. custom: web
+#: base.xml:0
+msgid "More"
+msgstr "Več"
+
+#. custom: web
+#: base.xml:0
+msgid "Move Down"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Move Up"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "My filters"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "New Password"
+msgstr "Novo geslo"
+
+#. custom: web
+#: base.xml:0
+msgid "No Update:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"No data available for this pivot table.  Try to add some records, or make sure\n"
+"        that there is at least one measure and no active filter in the search bar."
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "No data to display."
+msgstr "Ni podatkov za prikaz."
+
+#. custom: web
+#: debug_manager.js:321
+msgid "No metadata available"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Quarter"
+msgstr "Četrtina"
+
+#. custom: web
+#: base.xml:0
+msgid "Remove"
+msgstr "Odstrani"
+
+#. custom: web
+#: base.xml:0
+msgid "Run JS Tests"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Object:"
+msgstr "Predmet:"
+
+#. custom: web
+#: base.xml:0
+msgid "Old Password"
+msgstr ""
+
+#. custom: web
+#: form_relational_widgets.js:1305
+msgid "Add: "
+msgstr "Dodaj: "
+
+#. custom: web
+#: base.xml:0
+msgid "Only you"
+msgstr "Samo vi"
+
+#. custom: web
+#: base.xml:0
+msgid "Please note that only the selected ids will be exported."
+msgstr "Upoštevajte, da bodo le izbrani id-ji izvoženi."
+
+#. custom: web
+#: base.xml:0
+msgid "Preferences"
+msgstr "Nastavitve"
+
+#. custom: web
+#: dialog.js:168
+msgid "Alert"
+msgstr "Opozorilo"
+
+#. custom: web
+#: form_common.js:236
+msgid "Create and Edit..."
+msgstr "Ustvarite in uredite"
+
+#. custom: web
+#: base_common.xml:0
+msgid "On change:"
+msgstr "Ob spremembi:"
+
+#. custom: web
+#: debug_manager.js:241
+msgid "Fields of %s"
+msgstr ""
+
+#. custom: web
+#: form_common.js:245
+msgid "No results to show..."
+msgstr "Ni rezultatov za prikaz..."
+
+#. custom: web
+#: form_view.js:733
+msgid "Do you really want to delete this record?"
+msgstr "Ali res želite izbrisati ta zapis?"
+
+#. custom: web
+#: base.xml:0
+msgid "Please pay attention that all records matching your search filter will be exported. Not only the selected ids."
+msgstr "Upoštevajte, da bodo vsi zapisi, ki ustrezajo iskalnemu filtru, izvoženi, in ne le izbrani id-ji."
+
+#. custom: web
+#: base.xml:0
+msgid "Remove All"
+msgstr "Odstrani vse"
+
+#. custom: web
+#: base.xml:0
+msgid "Save as:"
+msgstr "Shrani kot:"
+
+#. custom: web
+#: form_relational_widgets.js:327
+msgid "No value found for the field %s for value %s"
+msgstr ""
+
+#. custom: web
+#: data_export.js:167
+msgid "Please enter save field list name"
+msgstr "Vnesite ime seznama"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Relation:"
+msgstr "Relacija:"
+
+#. custom: web
+#: form_widgets.js:1251
+msgid "Image"
+msgstr "Slika"
+
+#. custom: web
+#: data_export.js:435
+msgid "Please select fields to export..."
+msgstr "Izberite polja za izvoz"
+
+#. custom: web
+#: form_common.js:889
+msgid "Save & New"
+msgstr "Shrani & Novo"
+
+#. custom: web
+#: form_relational_widgets.js:326
+msgid "Render"
+msgstr "Upodobi"
+
+#. custom: web
+#: form_view.js:1128
+msgid "Save default"
+msgstr "Shrani privzeto"
+
+#. resource:base_ir_filters_view_search
+msgid "Shared"
+msgstr ""
+
+#. field:User.SidebarVisible
+msgid "Show App Sidebar"
+msgstr ""
+
+#. field:Filter.Sort
+msgid "Sort"
+msgstr ""
+
+#. custom: web
+#: list_view.js:1024
+msgid "Could not find id in dataset"
+msgstr "V naboru podatkov ni možno najti id-ja"
+
+#. custom: web
+#: search_menus.js:91
+msgid "Filter with same name already exists."
+msgstr ""
+
+#. custom: web
+#: search_inputs.js:698
+msgid "Group By"
+msgstr "Združi po"
+
+#. custom: web
+#: form_widgets.js:636
+msgid "Inactive"
+msgstr "Neaktivno"
+
+#. help:Filter.Action
+msgid "The menu action this filter applies to. When left empty the filter applies to all menus for this model."
+msgstr ""
+
+#. custom: web
+#: misc.js:14
+msgid "Still loading...<br />Please be patient."
+msgstr "Nalaganje"
+
+#. custom: web
+#: utils.js:179
+msgid "Could not serialize XML"
+msgstr "Ni možno serializirati XML"
+
+#. help:Filter.User
+msgid "The user this filter is private to. When left empty the filter is public and available to all users."
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"This wizard will export all data that matches the current search criteria to a CSV file.\n"
+"        You can export all data or only the fields that can be reimported after modification."
+msgstr ""
+
+#. custom: web
+#: form_widgets.js:1114
+msgid "There was a problem while uploading your file"
+msgstr "Nastal je problem pri nalaganju datoteke"
+
+#. custom: web
+#: search_menus.js:251
+msgid "This filter is global and will be removed for everybody if you continue."
+msgstr "Filter je globalen in bo odstranjen za vse"
+
+#. field:Filter.User
+#. resource:base_ir_filters_view_search
+#. resource:base_ir_filters_view_search
+msgid "User"
+msgstr ""
+
+#. resource:base_menu_ir_filters
+msgid "User-defined Filters"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Saved exports:"
+msgstr "Shranjeni izvozi:"
+
+#. custom: web
+#: base.xml:0
+msgid "Set Defaults"
+msgstr "Nastavi privzete vrednosti"
+
+#. custom: web
+#: view_manager.js:437
+msgid "Failed to evaluate search criterions"
+msgstr "Vrednotenje iskalnih kriterijev ni uspelo"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Size:"
+msgstr "Velikost:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Special:"
+msgstr "Posebno:"
+
+#. custom: web
+#: base.xml:0
+msgid "Technical Translation"
+msgstr "Prevodi"
+
+#. custom: web
+#: base.xml:0
+msgid "Toggle Timelines"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"Unhandled widget\n"
+"    <t t-js=\"dict\">console.warn('Unhandled widget', dict.widget);</t>"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Update translations"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Upload your file"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "View Fields"
+msgstr "Polja prikaza"
+
+#. custom: web
+#: base.xml:0
+msgid "View Metadata"
+msgstr "Pregled metapodatkov"
+
+#. custom: web
+#: crash_manager.js:170 dialog.js:182 form_common.js:1046 form_upgrade_widgets.js:40 base.xml:0
+msgid "Cancel"
+msgstr "Prekliči"
+
+#. custom: web
+#: misc.js:15
+msgid "Don't leave yet,<br />it's still loading..."
+msgstr "Še malo potrpljenja,<br />nalaganje..."
+
+#. custom: web
+#: utils.js:143
+msgid "Node [%s] is not a JSONified XML node"
+msgstr ""
+
+#. custom: web
+#: graph_widget.js:208 graph_widget.js:216
+msgid "Invalid data"
+msgstr ""
+
+#. custom: web
+#: form_common.js:211
+msgid "Search More..."
+msgstr "Več..."
+
+#. custom: web
+#: form_common.js:281
+msgid "Search: "
+msgstr "Iskanje: "
+
+#. custom: web
+#: form_common.js:1054
+msgid "Select"
+msgstr "Izberi"
+
+#. custom: web
+#: form_common.js:1103
+msgid "Selected domain"
+msgstr ""
+
+#. custom: web
+#: form_view.js:1125
+msgid "Set Default"
+msgstr "Nastavi kot privzeto"
+
+#. custom: web
+#: utils.js:284
+msgid "Bytes,Kb,Mb,Gb,Tb,Pb,Eb,Zb,Yb"
+msgstr ""
+
+#. custom: web
+#: form_widgets.js:635
+msgid "Deactivate"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Type:"
+msgstr "Vrsta:"
+
+#. custom: web
+#: form_widgets.js:642
+msgid "Archived"
+msgstr "Arhivirano"
+
+#. custom: web
+#: form_widgets.js:1251
+msgid "Could not display the selected image."
+msgstr "Ni možno prikazati izbrane slike"
+
+#. custom: web
+#: sidebar.js:217
+msgid "Do you really want to delete this attachment ?"
+msgstr "Res želite brisati to prilogo?"
+
+#. custom: web
+#: form_widgets.js:1114
+msgid "File Upload"
+msgstr "Nalaganje datoteke"
+
+#. custom: web
+#: base.xml:0
+msgid "Week"
+msgstr "Teden"
+
+#. custom: web
+#: base.xml:0
+msgid "XML ID:"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid ""
+"[<t t-esc=\"option[0]\"/>]\n"
+"                    <t t-if=\"option[1]\"> - </t>\n"
+"                    <t t-esc=\"option[1]\"/>"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0 base.xml:0
+msgid "?"
+msgstr ""
+
+#. custom: web
+#: form_widgets.js:1094
+msgid "File upload"
+msgstr "Nalaganje datoteke"
+
+#. custom: web
+#: form_widgets.js:1131
+msgid "Save As..."
+msgstr "Shrani kot ..."
+
+#. custom: web
+#: list_view.js:1847
+msgid "Download"
+msgstr "Prenesi"
+
+#. custom: web
+#: pyeval.js:1023
+msgid "Evaluation Error"
+msgstr "Napaka vrednotenja"
+
+#. custom: web
+#: base.xml:0
+msgid "console.warn('Unhandled widget', dict.widget);"
+msgstr ""
+
+#. custom: web
+#: search_inputs.js:451
+msgid "M2O search fields do not currently handle multiple default values"
+msgstr "M2O iskalna polja trenutno ne podpirajo večih privzetih vrednosti"
+
+#. custom: web
+#: form_common.js:1049 base.xml:0
+msgid "Create"
+msgstr "Ustvari"
+
+#. custom: web
+#: graph_widget.js:252
+msgid "Not enough data points"
+msgstr ""
+
+#. custom: web
+#: list_common.js:133
+msgid "Can't convert value %s to context"
+msgstr "Ni možno spremeniti vrednost %s v vsebino"
+
+#. custom: web
+#: form_common.js:868 base.xml:0 base.xml:0
+msgid "Discard"
+msgstr "Opusti"
+
+#. custom: web
+#: list_view.js:543
+msgid "Do you really want to remove these records?"
+msgstr "Res želite odstraniti te zapise?"
+
+#. custom: web
+#: list_view.js:1863
+msgid "Download \\\"%s\\\""
+msgstr ""
+
+#. custom: web
+#: list_view.js:287
+msgid "Export"
+msgstr "Izvozi"
+
+#. custom: web
+#: list_view.js:931
+msgid "Setting 'id' attribute on existing record %s"
+msgstr "Postavljanje 'id' atributa obstoječem zapisu %s"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Apply"
+msgstr "Uporabi"
+
+#. custom: web
+#: loading.js:44
+msgid "Loading (%d)"
+msgstr "Nalaganje (%d)"
+
+#. custom: web
+#: misc.js:12
+msgid "Loading..."
+msgstr "Nalaganje …"
+
+#. custom: web
+#: misc.js:13
+msgid "Still loading..."
+msgstr "Še se nalaga..."
+
+#. custom: web
+#: priority.js:48
+msgid "Low"
+msgstr "Nizko"
+
+#. custom: web
+#: misc.js:17
+msgid "Take a minute to get a coffee,<br />because it's loading..."
+msgstr "Še imate čas za kavico,<br />še vedno traja nalaganje..."
+
+#. custom: web
+#: form_widgets.js:634 form_widgets.js:640
+msgid "Active"
+msgstr "Aktivno"
+
+#. custom: web
+#: form_widgets.js:641 list_view.js:288
+msgid "Archive"
+msgstr "Arhiviraj"
+
+#. custom: web
+#: pivot_view.js:831
+msgid "For Excel compatibility, data cannot be exported if there are more than 256 columns.\\n\\nTip: try to flip axis, filter further or reduce the number of measures."
+msgstr ""
+
+#. custom: web
+#: dialog.js:40 dialog.js:158 dialog.js:176 base.xml:0
+msgid "Ok"
+msgstr "V Redu"
+
+#. custom: web
+#: search_inputs.js:360
+msgid "Search %(field)s at: %(value)s"
+msgstr "Iskanje %(field)s v: %(value)s"
+
+#. custom: web
+#: data.js:1138
+msgid "Unnamed"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"You have updated <strong><t t-esc=\"field.string\"/></strong> (<t t-esc=\"lang\"/>).\n"
+"            <a class=\"oe_field_translate\" t-att-name=\"field.name\" href=\"#\">Update translations</a>"
+msgstr ""
+
+#. custom: web
+#: form_relational_widgets.js:1123
+msgid "The o2m record must be saved before an action can be used"
+msgstr "O2M zapis mora biti shranjen , preden lahko uporabite akcijo"
+
+#. custom: web
+#: form_view.js:301
+msgid "The record could not be found in the database."
+msgstr "Zapisa ni v podatkovni zbirki"
+
+#. custom: web
+#: form_relational_widgets.js:1595
+msgid "The type of the field '%s' must be a many2many field with a relation to 'ir.attachment' model."
+msgstr "Vrsta polja '%s' mora biti many2many z relacijo do 'ir.attachment' modela."
+
+#. custom: web
+#: form_widgets.js:862
+msgid "Timezone Mismatch : The timezone of your browser doesn't match the selected one. The time in Hexya is displayed according to your field timezone."
+msgstr ""
+
+#. custom: web
+#: misc.js:18
+msgid "Maybe you should consider reloading the application by pressing F5..."
+msgstr "Mogoče je potrebno osvežiti stran (F5)"
+
+#. custom: web
+#: base.xml:0
+msgid "or"
+msgstr "ali"
+
+#. custom: web
+#: form_common.js:868 form_view.js:1127 data_export.js:202
+msgid "Close"
+msgstr "Zapri"
+
+#. custom: web
+#: search_menus.js:84
+msgid "Filter name is required."
+msgstr "Zahtevan je naziv filtra."
+
+#. custom: web
+#: base.xml:0
+msgid "overflow-x: hidden"
+msgstr ""
+
+#. custom: web
+#: form_relational_widgets.js:740
+msgid "View type '%s' is not supported in X2Many."
+msgstr ""
+
+#. custom: web
+#: form_widgets.js:1131
+msgid "The field is empty, there's nothing to save !"
+msgstr "Polje je prazno in ni kaj shraniti!"
+
+#. custom: web
+#: list_view.js:1086
+msgid "Unknown m2m command %s"
+msgstr "Neznan m2m ukaz %s"
+
+#. custom: web
+#: list_view_editable.js:122
+msgid "The line has been modified, your changes will be discarded. Are you sure you want to discard the changes ?"
+msgstr ""
+
+#. custom: web
+#: graph_widget.js:79 list_view.js:1379 list_view.js:1385 pivot_view.js:508
+msgid "Undefined"
+msgstr "Nedoločeno"
+
+#. custom: web
+#: progress_bar.js:78
+msgid "Wrong value entered!"
+msgstr "Vnesena vrednost je napačna!"
+
+#. custom: web
+#: pyeval.js:991
+msgid "Unknown nonliteral type "
+msgstr "Neznana ne-tekstovna vrsta "
+
+#. custom: web
+#: change_password.js:14 base.xml:0
+msgid "Change Password"
+msgstr "Spremeni geslo"
+
+#. custom: web
+#: graph_view.js:86 graph_widget.js:21 pivot_view.js:182 base.xml:0 base.xml:0
+msgid "Count"
+msgstr "Štetje"
+
+#. custom: web
+#: form_widgets.js:643 list_view.js:289
+msgid "Unarchive"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Whoops, you shouldn't have come up to here..."
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Widget:"
+msgstr "Čarovnik:"
+
+#. custom: web
+#: form_upgrade_widgets.js:34
+msgid "Upgrade now"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Year"
+msgstr "Leto"
+
+#. custom: web
+#: form_relational_widgets.js:47
+msgid "You are creating a new %s, are you sure it does not exist yet?"
+msgstr "Ustvarjate novo %s, ste prepričani, da ni že obstoječa?"
+
+#. custom: web
+#: list_view.js:676
+msgid "You must select at least one record."
+msgstr "Izbrati morate vsaj en zapis"
+
+#. custom: web
+#: misc.js:16
+msgid "You may not believe it,<br />but the application is actually loading..."
+msgstr "Nalaganje..."
+
+#. custom: web
+#: crash_manager.js:57
+msgid "Your Hexya session expired. Please refresh the current web page."
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"var message = (d.message !== undefined) ? d.message : d.error.data.message;\n"
+"            d.html_error = context.engine.tools.html_escape(message).replace(/\\n/g, '<br/>');"
+msgstr ""
+
+#. custom: web
+#: abstract_web_client.js:124 crash_manager.js:123
+msgid "Client Error"
+msgstr "Napaka spletnega odjemalca"
+
+#. custom: web
+#: form_common.js:281 form_relational_widgets.js:1080
+msgid "Create: "
+msgstr "Ustvari: "
+
+#. custom: web
+#: form_common.js:1096 search_menus.js:177
+msgid "Custom Filter"
+msgstr "Filter po meri"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Measures <span class=\"caret\"/>"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Uploading..."
+msgstr "Nalaganje..."
+
+#. custom: web
+#: search_inputs.js:553 search_view.js:205
+msgid " or "
+msgstr "ali"
+
+#. custom: web
+#: search_inputs.js:551
+msgid "Filter"
+msgstr ""
+
+#. custom: web
+#: data.js:1121
+msgid "Unsupported operator %s in domain %s"
+msgstr "Nepodprt operator %s  v domeni %s"
+
+#. custom: web
+#: priority.js:50
+msgid "Very High"
+msgstr "Zelo visoka"
+
+#. custom: web
+#: sidebar.js:131
+msgid "You must choose at least one record."
+msgstr "Izbrati morate vsaj en zapis."
+
+#. custom: web
+#: view_manager.js:223 search_menus.js:84 search_menus.js:91
+msgid "Error"
+msgstr "Napaka"
+
+#. custom: web
+#: form_view.xml:0
+msgid "e"
+msgstr ""
+
+#. custom: web
+#: search_inputs.js:330
+msgid "Yes"
+msgstr "Da"
+
+#. custom: web
+#: search_inputs.js:230
+msgid "not a valid integer"
+msgstr "Ne pravilno celo število"
+
+#. custom: web
+#: utils.js:302
+msgid "kMGTPE"
+msgstr ""
+
+#. custom: web
+#: search_inputs.js:245
+msgid "not a valid number"
+msgstr "ni pravilna številka"
+
+#. custom: web
+#: search_inputs.js:192 search_inputs.js:211 search_inputs.js:402
+msgid "Search %(field)s for: %(value)s"
+msgstr "Išči %(field)s v: %(value)s"
+
+#. custom: web
+#: form_relational_widgets.js:153 form_relational_widgets.js:921 form_relational_widgets.js:1104 form_relational_widgets.js:1321
+msgid "Open: "
+msgstr "Odpri: "
+
+#. custom: web
+#: pivot_view.js:526 pivot_view.js:555
+msgid "Total"
+msgstr "Skupaj"
+
+#. custom: web
+#: crash_manager.js:107 form_view.js:761 list_view.js:676 sidebar.js:131
+msgid "Warning"
+msgstr "Opozorilo"
+
+#. custom: web
+#: form_common.js:874 base.xml:0 base.xml:0 base.xml:0
+msgid "Save"
+msgstr "Shrani"
+

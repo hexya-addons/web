@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hexya>
+    <data>
+
+        <view inherit_id="base.view_company_form" model="Company">
+            <xpath expr="//notebook" position="inside">
+                <page name="background" string="Apps Dashboard">
+                    <group name="dashboard_settings">
+                        <field name="dashboard_background" widget="image" class="oe_avatar"/>
+                    </group>
+                </page>
+            </xpath>
+        </view>
+
+    </data>
+</hexya>

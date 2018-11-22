@@ -1,0 +1,1354 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. field:Filter.Action
+msgid "Action"
+msgstr "Eylem"
+
+#. custom: web
+#: base.xml:0
+msgid "$(this).addClass('o_error');"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "...Upload in progress..."
+msgstr "... Yükleme sürüyor..."
+
+#. custom: web
+#: base.xml:0
+msgid "99+"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Activate Assets Debugging"
+msgstr "Varlıklar Ayıklamasını Etkinleştir"
+
+#. custom: web
+#: base.xml:0
+msgid "Add Custom Filter"
+msgstr "Özel Filtre Ekle"
+
+#. custom: web
+#: base.xml:0
+msgid "Add custom group"
+msgstr "Özelleşmiş grup ekle"
+
+#. custom: web
+#: base.xml:0
+msgid "Add..."
+msgstr "Ekle..."
+
+#. custom: web
+#: base.xml:0
+msgid "All users"
+msgstr "Tüm kullanıcılar"
+
+#. custom: web
+#: form_widgets.js:641 list_view.js:288
+msgid "Archive"
+msgstr "Arşiv"
+
+#. custom: web
+#: base.xml:0
+msgid "Attachment :"
+msgstr "Ek :"
+
+#. custom: web
+#: base.xml:0
+msgid "Available fields"
+msgstr "Uygun Alanlar"
+
+#. custom: web
+#: base.xml:0
+msgid "Clear Events"
+msgstr "Etkinlikleri Temizle"
+
+#. custom: web
+#: base.xml:0
+msgid "Condition:"
+msgstr "Koşul:"
+
+#. field:Filter.Context
+msgid "Context"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Confirm New Password"
+msgstr "Yeni Parolayı Onayla"
+
+#. custom: web
+#: base.xml:0
+msgid "Created by :"
+msgstr "Oluşturan:"
+
+#. custom: web
+#: base.xml:0
+msgid "Creation Date:"
+msgstr "Oluşturma Tarihi:"
+
+#. custom: web
+#: base.xml:0
+msgid "Creation User:"
+msgstr "Oluşturan Kullanıcı:"
+
+#. field:Company.DashboardBackground
+msgid "Dashboard Background"
+msgstr ""
+
+#. field:Filter.IsDefault
+msgid "Default filter"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Day"
+msgstr "Gün"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Button Type:"
+msgstr "Düğme Türü:"
+
+#. custom: web
+#: base.xml:0
+msgid "Default:"
+msgstr "Öntanımlı:"
+
+#. custom: web
+#: base.xml:0
+msgid "Delete"
+msgstr "Sil"
+
+#. custom: web
+#: base_common.xml:0
+msgid "(no string)"
+msgstr "(yazı yok)"
+
+#. custom: web
+#: base_common.xml:0
+msgid "(nolabel)"
+msgstr "(etiketyok)"
+
+#. custom: web
+#: base_common.xml:0
+msgid "-"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid ":"
+msgstr ""
+
+#. field:Filter.Domain
+msgid "Domain"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Disable Technical Features"
+msgstr "Teknik Özellikleri Engelle"
+
+#. custom: web
+#: base.xml:0
+msgid "Edit"
+msgstr "Düzenle"
+
+#. custom: web
+#: base.xml:0
+msgid "Enable Technical Features"
+msgstr "Teknik Özellikleri Etkinleştir"
+
+#. custom: web
+#: view_manager.js:223
+msgid " view couldn't be loaded"
+msgstr "görünüm yüklenemedi"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Action ID:"
+msgstr "İşlem ID:"
+
+#. custom: web
+#: base_common.xml:0
+msgid ""
+"Button\n"
+"                <t t-if=\"widget.string\">: </t>\n"
+"                <t t-if=\"!widget.string\"> (no string)</t>"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Change default:"
+msgstr "Varsayılanı değiştir:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Context:"
+msgstr "Bağlam:"
+
+#. custom: web
+#: list_view.js:543
+msgid "Do you really want to remove these records?"
+msgstr "Bu kayıtları silmek istediğinizden emin misinizi?"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Domain:"
+msgstr ""
+
+#. resource:base_menu_ir_filters
+msgid "User-defined Filters"
+msgstr ""
+
+#. custom: web
+#: form_relational_widgets.js:1378 base.xml:0
+msgid "Add"
+msgstr "Ekle"
+
+#. custom: web
+#: data_export.js:199
+msgid "Export Data"
+msgstr "Veri Dışaaktar"
+
+#. field:Filter.Name
+#. resource:base_ir_filters_view_search
+msgid "Filter Name"
+msgstr ""
+
+#. resource:base_actions_ir_filters_view
+msgid "Filters"
+msgstr "Filtreler"
+
+#. custom: web
+#: base.xml:0
+msgid "Export Formats :"
+msgstr "Dışaaktarma Biçimleri :"
+
+#. resource:base_ir_filters_view_search
+msgid "Filters created by myself"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "Filters shared with all users"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "Filters visible only for one user"
+msgstr ""
+
+#. field:CommonMixin.ID
+#. field:Company.ID
+#. field:Filter.ID
+#. field:User.ID
+msgid "ID"
+msgstr "ID"
+
+#. custom: web
+#: base.xml:0
+msgid "Export Type :"
+msgstr "Dışaaktarma Türü :"
+
+#. custom: web
+#: base.xml:0
+msgid "Export all Data"
+msgstr "Tüm veriyi Dışa Aktar"
+
+#. custom: web
+#: base.xml:0
+msgid "ID:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Import-Compatible Export"
+msgstr "İç Aktarıma-Uygun Dış Aktarım"
+
+#. custom: web
+#: base.xml:0
+msgid "Latest Modification Date:"
+msgstr "Son Değiştirme tarihi:"
+
+#. custom: web
+#: base.xml:0
+msgid "Latest Modification by:"
+msgstr "Son Değiştiren:"
+
+#. custom: web
+#: base.xml:0
+msgid "Leave the Developer Tools"
+msgstr "Geliştirici Araçlarından Çık"
+
+#. custom: web
+#: base.xml:0
+msgid "Log out"
+msgstr "Çıkış"
+
+#. field:Filter.ResModel
+#. resource:base_ir_filters_view_search
+msgid "Model"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Manage Filters"
+msgstr "Filtreleri Yönet"
+
+#. custom: web
+#: base.xml:0
+msgid "Modified by :"
+msgstr "Değiştiren :"
+
+#. custom: web
+#: base.xml:0
+msgid "Month"
+msgstr "Ay"
+
+#. custom: web
+#: base.xml:0
+msgid "More"
+msgstr "Daha"
+
+#. custom: web
+#: base.xml:0
+msgid "Move Down"
+msgstr "Aşağı Taşı"
+
+#. custom: web
+#: base.xml:0
+msgid "Move Up"
+msgstr "Yukarı Taşı"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Field:"
+msgstr "Alan:"
+
+#. resource:base_ir_filters_view_search
+msgid "My filters"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "New Password"
+msgstr "Yeni Parola"
+
+#. custom: web
+#: base.xml:0
+msgid "No Update:"
+msgstr "Güncelleme Yok:"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"No data available for this pivot table.  Try to add some records, or make sure\n"
+"        that there is at least one measure and no active filter in the search bar."
+msgstr ""
+"Bu pivot tablosu için veri yok.  Biraz kayıt eklemeye çalışın yada enazından bir ölçü \n"
+"olduğundan ve arama çubuğunda etkin bir süzgeç olmadığından emin olun."
+
+#. custom: web
+#: base.xml:0
+msgid "No data to display."
+msgstr "Gösterilecek veri yok."
+
+#. custom: web
+#: base.xml:0
+msgid "Not shown in kanban"
+msgstr "Kanban da gösterilmez"
+
+#. custom: web
+#: base.xml:0
+msgid "Old Password"
+msgstr "Eski Parola"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Method:"
+msgstr "Yöntem:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Modifiers:"
+msgstr "Değiştirenler:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Object:"
+msgstr "Nesne:"
+
+#. custom: web
+#: base.xml:0
+msgid "Only you"
+msgstr "Sadece sen"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"This wizard will export all data that matches the current search criteria to a CSV file.\n"
+"        You can export all data or only the fields that can be reimported after modification."
+msgstr ""
+"Sihirbaz, mevcut arama kriteriyle eşleşen tüm veriyi bir CSV dosyasına aktaracaktır.\n"
+"Tüm veriyi dışa aktarabilir veya değiştirdikten sonra yeniden aktarılabilecek alanları dışaaktarabilirsiniz."
+
+#. custom: web
+#: base.xml:0
+msgid "or"
+msgstr "veya"
+
+#. custom: web
+#: base_common.xml:0
+msgid "On change:"
+msgstr "Değişimde:"
+
+#. custom: web
+#: data_export.js:167
+msgid "Please enter save field list name"
+msgstr "Lütfen kaydedilecek alan listesi adını girin"
+
+#. custom: web
+#: form_common.js:874
+msgid " & Close"
+msgstr " & Kapat"
+
+#. custom: web
+#: debug_manager.js:134
+msgid "%d requests (%d ms) %d queries (%d ms)"
+msgstr "%d istekler (%d ms) %d sorgular (%d ms)"
+
+#. custom: web
+#: dialog.js:168
+msgid "Alert"
+msgstr "Uyarı"
+
+#. custom: web
+#: dialog.js:193
+msgid "Confirmation"
+msgstr "Doğrulama"
+
+#. custom: web
+#: form_relational_widgets.js:25
+msgid "Create a %s"
+msgstr "Bir %s oluştur"
+
+#. custom: web
+#: form_relational_widgets.js:1122
+msgid "Action Button"
+msgstr "İşlem Düğmesi"
+
+#. help:Filter.Action
+msgid "The menu action this filter applies to. When left empty the filter applies to all menus for this model."
+msgstr ""
+
+#. custom: web
+#: form_relational_widgets.js:1018
+msgid "Add an item"
+msgstr "Bir öge ekle"
+
+#. custom: web
+#: form_relational_widgets.js:1305
+msgid "Add: "
+msgstr "Ekle: "
+
+#. custom: web
+#: base.xml:0
+msgid "Run JS Tests"
+msgstr "JS Sınamalarını Çalıştır"
+
+#. custom: web
+#: base.xml:0
+msgid "Upload your file"
+msgstr "Dosyanızı yükleyin"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Widget:"
+msgstr "Parçacık:"
+
+#. custom: web
+#: data_export.js:201
+msgid "Export To File"
+msgstr "Dosyaya Veri Ver"
+
+#. custom: web
+#: debug_manager.js:241
+msgid "Fields of %s"
+msgstr "%s Alanları"
+
+#. custom: web
+#: form_common.js:236
+msgid "Create and Edit..."
+msgstr "Oluştur ve Düzenle..."
+
+#. custom: web
+#: form_upgrade_widgets.js:34
+msgid "Upgrade now"
+msgstr "Şimdi Güncelle"
+
+#. custom: web
+#: formats.js:132
+msgid "'%s' is not a correct integer"
+msgstr "'%s' geçerli bir tamsayı (interger) değil"
+
+#. custom: web
+#: form_view.js:301
+msgid "Form"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Please note that only the selected ids will be exported."
+msgstr "Sadece seçili kimliklerin dışa aktarılacağını unutmayın."
+
+#. custom: web
+#: base.xml:0
+msgid "Please pay attention that all records matching your search filter will be exported. Not only the selected ids."
+msgstr "Arama filtresi ile eşleşen tüm kayıtların dışa aktarılacağına dikkat ediniz. Sadece seçili kimlikler değil."
+
+#. custom: web
+#: base.xml:0
+msgid "Preferences"
+msgstr "Tercihler"
+
+#. custom: web
+#: base.xml:0
+msgid "Quarter"
+msgstr "Çeyrek"
+
+#. custom: web
+#: base.xml:0
+msgid "Remove"
+msgstr "Kaldır"
+
+#. custom: web
+#: base.xml:0
+msgid "Remove All"
+msgstr "Tümünü Kaldır"
+
+#. custom: web
+#: form_common.js:889
+msgid "Save & New"
+msgstr "Kaydet & Yeni"
+
+#. custom: web
+#: base.xml:0
+msgid "Save as:"
+msgstr "Farklı kaydet:"
+
+#. custom: web
+#: base.xml:0
+msgid "Save current search"
+msgstr "Şimdiki filtreyi kaydet"
+
+#. custom: web
+#: base.xml:0
+msgid "Save fields list"
+msgstr "Alan listesini kaydet"
+
+#. custom: web
+#: form_view.js:1128
+msgid "Save default"
+msgstr "Varsayılanı Kaydet"
+
+#. custom: web
+#: form_widgets.js:1251
+msgid "Could not display the selected image."
+msgstr "Seçilen resim gösterilemiyor."
+
+#. field:Filter.Sort
+msgid "Sort"
+msgstr ""
+
+#. custom: web
+#: form_view.js:1300
+msgid "Field '%s' specified in view could not be found."
+msgstr "Ekranda tanımlanan '%s' alanı bulunamıyor."
+
+#. custom: web
+#: base.xml:0
+msgid "Saved exports:"
+msgstr "Kaydedilmiş dışaaktarımlar:"
+
+#. custom: web
+#: base.xml:0
+msgid "Toggle Timelines"
+msgstr "Zaman çizelgelerine Geç"
+
+#. custom: web
+#: data.js:1121
+msgid "Unsupported operator %s in domain %s"
+msgstr "Desteklenmeyen %s operatörü %s alanında"
+
+#. custom: web
+#: form_common.js:281
+msgid "Search: "
+msgstr "Ara: "
+
+#. custom: web
+#: form_view.js:1125
+msgid "Set Default"
+msgstr "Varsayılanı Ayarla"
+
+#. custom: web
+#: form_widgets.js:1114
+msgid "There was a problem while uploading your file"
+msgstr "Dosyanızı yüklerken bir problem oluştu"
+
+#. custom: web
+#: formats.js:144
+msgid "'%s' is not a correct float"
+msgstr "'%s' geçersiz bir float"
+
+#. custom: web
+#: formats.js:75
+msgid "(%d records)"
+msgstr "(%d kayıt)"
+
+#. custom: web
+#: formats.js:173
+msgid "'%s' is not a correct datetime"
+msgstr "'%s' geçerli bir tarih saat biçimi değildir"
+
+#. custom: web
+#: formats.js:192
+msgid "'%s' is not a correct time"
+msgstr "'%s' geçersiz saat biçimi"
+
+#. custom: web
+#: form_widgets.js:1131
+msgid "The field is empty, there's nothing to save !"
+msgstr "Alan boş, saklayacak birşey yok!"
+
+#. custom: web
+#: list_common.js:133
+msgid "Can't convert value %s to context"
+msgstr "%s değeri bağlama dönüştürülemiyor"
+
+#. custom: web
+#: list_view.js:1863
+msgid "Download \\\"%s\\\""
+msgstr ""
+
+#. custom: web
+#: form_relational_widgets.js:326
+msgid "Render"
+msgstr "İşle"
+
+#. field:Filter.User
+#. resource:base_ir_filters_view_search
+#. resource:base_ir_filters_view_search
+msgid "User"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Selection:"
+msgstr "Seçim:"
+
+#. custom: web
+#: debug_manager.js:321
+msgid "No metadata available"
+msgstr "Kılavuz bilgi yok"
+
+#. resource:base_ir_filters_view_search
+msgid "Shared"
+msgstr ""
+
+#. custom: web
+#: data_export.js:421
+msgid "Please select fields to save export list..."
+msgstr "Lütfen dışa aktarıma listesine kaydedilecek alanları seçin..."
+
+#. field:User.SidebarVisible
+msgid "Show App Sidebar"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Set Defaults"
+msgstr "Öntanımlı Ayarla"
+
+#. custom: web
+#: base.xml:0
+msgid "Technical Translation"
+msgstr "Terim Çevirileri"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Size:"
+msgstr "Boy:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Special:"
+msgstr "Özel:"
+
+#. custom: web
+#: form_relational_widgets.js:1123
+msgid "The o2m record must be saved before an action can be used"
+msgstr "birden çoka kaydı bir eylem kullanılmadan önce kaydedilmeli"
+
+#. help:Filter.User
+msgid "The user this filter is private to. When left empty the filter is public and available to all users."
+msgstr ""
+
+#. custom: web
+#: loading.js:44
+msgid "Loading (%d)"
+msgstr "(%d) Yükleniyor"
+
+#. custom: web
+#: misc.js:12
+msgid "Loading..."
+msgstr "Yükleniyor..."
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"Unhandled widget\n"
+"    <t t-js=\"dict\">console.warn('Unhandled widget', dict.widget);</t>"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Update translations"
+msgstr "Çevirileri güncelle"
+
+#. custom: web
+#: data.js:1138
+msgid "Unnamed"
+msgstr "Adsız"
+
+#. custom: web
+#: base.xml:0
+msgid "View Fields"
+msgstr "Alanları Göster"
+
+#. custom: web
+#: misc.js:15
+msgid "Don't leave yet,<br />it's still loading..."
+msgstr "Henüz çıkmayın,<br /> Hala yükleniyor..."
+
+#. custom: web
+#: pivot_view.js:831
+msgid "For Excel compatibility, data cannot be exported if there are more than 256 columns.\\n\\nTip: try to flip axis, filter further or reduce the number of measures."
+msgstr ""
+
+#. custom: web
+#: form_widgets.js:1131
+msgid "Save As..."
+msgstr "Farklı Kaydet..."
+
+#. custom: web
+#: graph_widget.js:94
+msgid "No data to display"
+msgstr "Gösterilecek veri yok"
+
+#. custom: web
+#: form_view.js:756
+msgid "The record has been modified, your changes will be discarded. Are you sure you want to leave this page ?"
+msgstr "Kayıt değiştirildi, değişikliklerinizi kaybedeceksiniz. Bunu yapmak istediğinize emin misiniz ?"
+
+#. custom: web
+#: list_view_editable.js:122
+msgid "The line has been modified, your changes will be discarded. Are you sure you want to discard the changes ?"
+msgstr "Satır değiştirildi, değişikliklerinizi kaybedeceksiniz. Bunu yapmak istediğinize emin misiniz ?"
+
+#. custom: web
+#: data.js:1083
+msgid "Unknown field %s in domain %s"
+msgstr "Bilinmeyen alan %s alan adında %s"
+
+#. custom: web
+#: form_widgets.js:1093
+msgid "The selected file exceed the maximum file size of %s."
+msgstr "Seçilen dosya ençok dosya boyutunu %s aşıyor."
+
+#. custom: web
+#: list_view.js:1086
+msgid "Unknown m2m command %s"
+msgstr "Bilinmeyen m2m komutu %s"
+
+#. custom: web
+#: base.xml:0
+msgid "View Metadata"
+msgstr "Metaveri izle"
+
+#. custom: web
+#: form_relational_widgets.js:740
+msgid "View type '%s' is not supported in X2Many."
+msgstr "'%s' görünüm tipi X2many için desteklenmiyor."
+
+#. custom: web
+#: misc.js:14
+msgid "Still loading...<br />Please be patient."
+msgstr "Hala yükleniyor... <br />Lütfen sabırlı olun."
+
+#. custom: web
+#: priority.js:50
+msgid "Very High"
+msgstr "Çok Yüksek"
+
+#. custom: web
+#: base.xml:0
+msgid "Week"
+msgstr "Hafta"
+
+#. custom: web
+#: progress_bar.js:78
+msgid "Only Integer Value should be valid."
+msgstr "Sadece tamsayı değeri geçerli olmalıdır."
+
+#. custom: web
+#: base.xml:0
+msgid "Whoops, you shouldn't have come up to here..."
+msgstr ""
+
+#. custom: web
+#: debug_manager.js:183
+msgid "JS Tests"
+msgstr "JS Testleri"
+
+#. custom: web
+#: priority.js:48
+msgid "Low"
+msgstr "Düşük"
+
+#. custom: web
+#: debug_manager.js:326
+msgid "Metadata (%s)"
+msgstr "Metaveri (%s)"
+
+#. custom: web
+#: form_common.js:245
+msgid "No results to show..."
+msgstr "Gösterilecek sonuç yok..."
+
+#. custom: web
+#: form_relational_widgets.js:327
+msgid "No value found for the field %s for value %s"
+msgstr ""
+
+#. custom: web
+#: form_view.js:733
+msgid "Do you really want to delete this record?"
+msgstr "Bu kaydı silmek istediğinden emin misin?"
+
+#. custom: web
+#: form_widgets.js:635
+msgid "Deactivate"
+msgstr "Devre Dışı Bırak"
+
+#. custom: web
+#: data.js:1075
+msgid "Unknown operator %s in domain %s"
+msgstr "Etki alanı %s te bilinmeyen %s operatörü"
+
+#. custom: web
+#: form_relational_widgets.js:1595
+msgid "The type of the field '%s' must be a many2many field with a relation to 'ir.attachment' model."
+msgstr "'%s' alanı 'ir.attachment'  modeline many2many ile bağlı bir tipte olmalı"
+
+#. custom: web
+#: form_upgrade_widgets.js:51
+msgid "Hexya Enterprise"
+msgstr ""
+
+#. custom: web
+#: form_widgets.js:636
+msgid "Inactive"
+msgstr "Pasif"
+
+#. custom: web
+#: form_widgets.js:637
+msgid "Activate"
+msgstr "Etkinleştir"
+
+#. custom: web
+#: form_widgets.js:642
+msgid "Archived"
+msgstr "Arşivlenmiş"
+
+#. custom: web
+#: form_widgets.js:1114
+msgid "File Upload"
+msgstr "Dosya Yükle"
+
+#. custom: web
+#: form_widgets.js:1094
+msgid "File upload"
+msgstr "Dosya yükle"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Relation:"
+msgstr "İlişki:"
+
+#. custom: web
+#: form_common.js:1103
+msgid "Selected domain"
+msgstr "Seçilmiş Alan"
+
+#. custom: web
+#: form_view.js:315
+msgid "New"
+msgstr "Yeni"
+
+#. custom: web
+#: formats.js:187
+msgid "'%s' is not a correct date"
+msgstr "'%s' doğru bir tarih değildir"
+
+#. custom: web
+#: loading.js:46
+msgid "Loading"
+msgstr "Yükleniyor"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Type:"
+msgstr "Türü:"
+
+#. custom: web
+#: data_export.js:435
+msgid "Please select fields to export..."
+msgstr "Lütfen dışaaktarılacak alanları seçin..."
+
+#. custom: web
+#: form_widgets.js:1251
+msgid "Image"
+msgstr "Resim"
+
+#. custom: web
+#: crash_manager.js:57
+msgid "Your Hexya session expired. Please refresh the current web page."
+msgstr ""
+
+#. custom: web
+#: graph_widget.js:252
+msgid "Not enough data points"
+msgstr "Yeterli veri yok"
+
+#. custom: web
+#: list_view.js:1024
+msgid "Could not find id in dataset"
+msgstr "Verikümesinde id bulunamıyor"
+
+#. custom: web
+#: form_common.js:211
+msgid "Search More..."
+msgstr "Daha Fazla Ara..."
+
+#. custom: web
+#: form_view.js:301
+msgid "The record could not be found in the database."
+msgstr "Kayıt veritabanında bulunamadı"
+
+#. custom: web
+#: list_view.js:287
+msgid "Export"
+msgstr "Dışa Aktar"
+
+#. custom: web
+#: list_view.js:931
+msgid "Setting 'id' attribute on existing record %s"
+msgstr "Geçerli kayıt %s nin 'id' özeliği ayarlanıyor"
+
+#. custom: web
+#: list_view.js:1847
+msgid "Download"
+msgstr "İndir"
+
+#. custom: web
+#: misc.js:13
+msgid "Still loading..."
+msgstr "Hala yükleniyor..."
+
+#. custom: web
+#: priority.js:49
+msgid "High"
+msgstr "Yüksek"
+
+#. custom: web
+#: form_view.js:1304
+msgid "Widget type '%s' is not implemented"
+msgstr "'%s' Parçacık tipi uygulanmamış"
+
+#. custom: web
+#: misc.js:17
+msgid "Take a minute to get a coffee,<br />because it's loading..."
+msgstr "Çay içmek için bir dakika mola verin,<br /> çünkü yükleniyor..."
+
+#. custom: web
+#: form_widgets.js:862
+msgid "Timezone Mismatch : The timezone of your browser doesn't match the selected one. The time in Hexya is displayed according to your field timezone."
+msgstr ""
+
+#. custom: web
+#: misc.js:18
+msgid "Maybe you should consider reloading the application by pressing F5..."
+msgstr "Uygulamayı F5 tuşuna basarak yeniden yüklemeyi düşünebilirsiniz..."
+
+#. custom: web
+#: priority.js:47
+msgid "Normal"
+msgstr ""
+
+#. custom: web
+#: form_common.js:1054
+msgid "Select"
+msgstr "Seçin"
+
+#. custom: web
+#: form_view.js:887
+msgid "The following fields are invalid:"
+msgstr "Aşağıdaki alanlar geçersizdir:"
+
+#. custom: web
+#: search_inputs.js:360
+msgid "Search %(field)s at: %(value)s"
+msgstr "%(field)s ara: %(value)s"
+
+#. custom: web
+#: progress_bar.js:78
+msgid "Wrong value entered!"
+msgstr "Yanlış değer girildi!"
+
+#. custom: web
+#: pyeval.js:1023
+msgid "Evaluation Error"
+msgstr "Değerlendirme Hatası"
+
+#. custom: web
+#: search_inputs.js:698
+msgid "Group By"
+msgstr "Grupla"
+
+#. custom: web
+#: time.js:204
+msgid "'%s' is not convertible to date, datetime nor time"
+msgstr "'%s' tarih, tarihsaat veya saat biçimine çevrilemiyor"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Apply"
+msgstr "Uygula"
+
+#. custom: web
+#: crash_manager.js:170 dialog.js:182 form_common.js:1046 form_upgrade_widgets.js:40 base.xml:0
+msgid "Cancel"
+msgstr "İptal"
+
+#. custom: web
+#: form_common.js:281 form_relational_widgets.js:1080
+msgid "Create: "
+msgstr "Oluştur: "
+
+#. custom: web
+#: graph_widget.js:208 graph_widget.js:216
+msgid "Invalid data"
+msgstr "Geçersiz Veri"
+
+#. custom: web
+#: form_common.js:868 base.xml:0 base.xml:0
+msgid "Discard"
+msgstr "Vazgeç"
+
+#. custom: web
+#: graph_view.js:86 graph_widget.js:21 pivot_view.js:182 base.xml:0 base.xml:0
+msgid "Count"
+msgstr "Sayı"
+
+#. custom: web
+#: form_widgets.js:643 list_view.js:289
+msgid "Unarchive"
+msgstr "Arşivi aç"
+
+#. custom: web
+#: dialog.js:40 dialog.js:158 dialog.js:176 base.xml:0
+msgid "Ok"
+msgstr "Tamam"
+
+#. custom: web
+#: base.xml:0
+msgid "XML ID:"
+msgstr ""
+
+#. custom: web
+#: search_menus.js:251
+msgid "This filter is global and will be removed for everybody if you continue."
+msgstr "Bu süzgeç geneldir ve devam ederseniz herkes için kaldırılacaktır."
+
+#. custom: web
+#: view_manager.js:437
+msgid "Failed to evaluate search criterions"
+msgstr "Arama kriterlerini değerlendirme başarısız oldu"
+
+#. custom: web
+#: form_common.js:1049 base.xml:0
+msgid "Create"
+msgstr "Oluştur"
+
+#. custom: web
+#: crash_manager.js:107 form_view.js:761 list_view.js:676 sidebar.js:131
+msgid "Warning"
+msgstr "Uyarı"
+
+#. custom: web
+#: base.xml:0
+msgid "Year"
+msgstr "Yıl"
+
+#. custom: web
+#: search_menus.js:84
+msgid "Filter name is required."
+msgstr "Filtre için isim gerekli."
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "/web/binary/upload_attachment"
+msgstr ""
+
+#. custom: web
+#: search_menus.js:252
+msgid "Are you sure that you want to remove this filter?"
+msgstr "Bu filtreyi kaldırmak istediğinizden emin misiniz?"
+
+#. custom: web
+#: utils.js:179
+msgid "Could not serialize XML"
+msgstr "XML serileştirilemedi"
+
+#. custom: web
+#: search_inputs.js:553 search_view.js:205
+msgid " or "
+msgstr "veya"
+
+#. custom: web
+#: sidebar.js:217
+msgid "Do you really want to delete this attachment ?"
+msgstr "Gerçekten bu eki silmek istediğinizden emin misiniz?"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"You have updated <strong><t t-esc=\"field.string\"/></strong> (<t t-esc=\"lang\"/>).\n"
+"            <a class=\"oe_field_translate\" t-att-name=\"field.name\" href=\"#\">Update translations</a>"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "overflow-x: hidden"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"var $div = $(document.createElement('div')).attr('t-if', this.attr('t-if')).addClass('o_form_field_monetary');\n"
+"        this.clone(true).appendTo($div);\n"
+"        this.replaceWith($div);"
+msgstr ""
+
+#. custom: web
+#: pyeval.js:991
+msgid "Unknown nonliteral type "
+msgstr "Bilinmeyen mecazi türü "
+
+#. custom: web
+#: pyeval.js:1027
+msgid "Local evaluation failure\\n%s\\n\\n%s"
+msgstr ""
+
+#. custom: web
+#: graph_widget.js:79 list_view.js:1379 list_view.js:1385 pivot_view.js:508
+msgid "Undefined"
+msgstr "Tanımlanmamış"
+
+#. custom: web
+#: form_relational_widgets.js:47
+msgid "You are creating a new %s, are you sure it does not exist yet?"
+msgstr "Yeni bir %s oluşturuyorsunuz, bunun henüz var olmadığından emin misiniz*"
+
+#. custom: web
+#: misc.js:16
+msgid "You may not believe it,<br />but the application is actually loading..."
+msgstr "İnanamayabilirsin ama, <br /> uygulama gerçekten yükleniyor..."
+
+#. custom: web
+#: search_menus.js:91
+msgid "Filter with same name already exists."
+msgstr "Aynı isimle süzgeç mevcut."
+
+#. custom: web
+#: time.js:192
+msgid "'%s' is not a correct date, datetime nor time"
+msgstr "'%s' geçerli bir tarih, saat ya da tarih saat değeri değil"
+
+#. custom: web
+#: utils.js:284
+msgid "Bytes,Kb,Mb,Gb,Tb,Pb,Eb,Zb,Yb"
+msgstr ""
+
+#. custom: web
+#: abstract_web_client.js:124 crash_manager.js:123
+msgid "Client Error"
+msgstr "İstemci Hatası"
+
+#. custom: web
+#: form_widgets.js:634 form_widgets.js:640
+msgid "Active"
+msgstr "Etkin"
+
+#. custom: web
+#: base.xml:0 base.xml:0 base.xml:0
+msgid "?"
+msgstr ""
+
+#. custom: web
+#: change_password.js:14 base.xml:0
+msgid "Change Password"
+msgstr "Parolayı Değiştir"
+
+#. custom: web
+#: debug_manager.js:339 base.xml:0
+msgid "Fields View Get"
+msgstr "Alanların Görünümünü Al"
+
+#. custom: web
+#: form_common.js:868 form_view.js:1127 data_export.js:202
+msgid "Close"
+msgstr "Kapat"
+
+#. custom: web
+#: search_inputs.js:330
+msgid "Yes"
+msgstr "Evet"
+
+#. custom: web
+#: base.xml:0
+msgid "console.warn('Unhandled widget', dict.widget);"
+msgstr ""
+
+#. custom: web
+#: utils.js:143
+msgid "Node [%s] is not a JSONified XML node"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"var message = (d.message !== undefined) ? d.message : d.error.data.message;\n"
+"            d.html_error = context.engine.tools.html_escape(message).replace(/\\n/g, '<br/>');"
+msgstr ""
+
+#. custom: web
+#: form_common.js:1096 search_menus.js:177
+msgid "Custom Filter"
+msgstr "Özel Filtre"
+
+#. custom: web
+#: list_view.js:676
+msgid "You must select at least one record."
+msgstr "En az bir kayıt seçmelisiniz."
+
+#. custom: web
+#: search_inputs.js:192 search_inputs.js:211 search_inputs.js:402
+msgid "Search %(field)s for: %(value)s"
+msgstr "%(field)s alanlarında %(value)s yi ara"
+
+#. custom: web
+#: base_common.xml:0
+msgid ""
+"[<t t-esc=\"option[0]\"/>]\n"
+"                    <t t-if=\"option[1]\"> - </t>\n"
+"                    <t t-esc=\"option[1]\"/>"
+msgstr ""
+
+#. custom: web
+#: form_view.xml:0
+msgid "e"
+msgstr ""
+
+#. custom: web
+#: search_inputs.js:230
+msgid "not a valid integer"
+msgstr "geçerli bir tamsayı değil"
+
+#. custom: web
+#: search_inputs.js:451
+msgid "M2O search fields do not currently handle multiple default values"
+msgstr "M2O arama alanları henüz çok öntanımlı değerleri desteklemiyor"
+
+#. custom: web
+#: search_inputs.js:331
+msgid "No"
+msgstr "Hayır"
+
+#. custom: web
+#: view_manager.js:223 search_menus.js:84 search_menus.js:91
+msgid "Error"
+msgstr "Hata"
+
+#. custom: web
+#: search_inputs.js:551
+msgid "Filter"
+msgstr "Filtre"
+
+#. custom: web
+#: sidebar.js:131
+msgid "You must choose at least one record."
+msgstr "En az bir kayıt seçmelisiniz."
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Measures <span class=\"caret\"/>"
+msgstr ""
+
+#. custom: web
+#: form_common.js:874 base.xml:0 base.xml:0 base.xml:0
+msgid "Save"
+msgstr "Kaydet"
+
+#. custom: web
+#: pivot_view.js:526 pivot_view.js:555
+msgid "Total"
+msgstr "Toplam"
+
+#. custom: web
+#: form_relational_widgets.js:153 form_relational_widgets.js:921 form_relational_widgets.js:1104 form_relational_widgets.js:1321
+msgid "Open: "
+msgstr "Aç: "
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Uploading..."
+msgstr "Gönderiliyor..."
+
+#. custom: web
+#: search_inputs.js:245
+msgid "not a valid number"
+msgstr "geçerli bir sayı değil"
+
+#. custom: web
+#: base_common.xml:0
+msgid "×"
+msgstr ""
+
+#. custom: web
+#: utils.js:302
+msgid "kMGTPE"
+msgstr ""
+

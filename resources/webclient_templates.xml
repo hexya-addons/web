@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hexya>
+    <data>
+
+        <template id="web.assets_common_css">
+            <t t-foreach="commonCSS" t-as="css_link">
+                <link rel="stylesheet" type="text/css" t-att-href="css_link"/>
+            </t>
+            <link rel="stylesheet" t-att-href="commonCompiledCSS"/>
+        </template>
+
+        <template id="web.assets_common_js">
+            <t t-foreach="commonJS" t-as="js_link">
+                <script type="text/javascript" t-att-src="js_link"> </script>
+            </t>
+        </template>
+
+        <template id="web.assets_backend_css">
+            <t t-foreach="backendCSS" t-as="css_link">
+                <link rel="stylesheet" type="text/css" t-att-href="css_link"/>
+            </t>
+            <link rel="stylesheet" t-att-href="backendCompiledCSS"/>
+        </template>
+
+        <template id="web.assets_backend_js">
+            <script type="text/javascript" charset="utf-8">
+                hexya._modules = <t t-raw="modules"/>;
+            </script>
+            <t t-foreach="backendJS" t-as="js_link">
+                <script type="text/javascript" t-att-src="js_link"> </script>
+            </t>
+        </template>
+
+        <template id="web.assets_frontend_css">
+            <t t-foreach="frontendCSS" t-as="css_link">
+                <link rel="stylesheet" type="text/css" t-att-href="css_link"/>
+            </t>
+            <link rel="stylesheet" t-att-href="frontendCompiledCSS"/>
+        </template>
+
+        <template id="web.assets_frontend_js">
+            <t t-foreach="frontendJS" t-as="js_link">
+                <script type="text/javascript" t-att-src="js_link"> </script>
+            </t>
+        </template>
+
+        <template id="web.layout" name="Web layout">
+            <!DOCTYPE html>
+            <html style="height: 100%;">
+                <head>
+                    <meta charset="utf-8"/>
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+                    <title t-esc="title|default:'Odoo'"/>
+                    <link type="image/x-icon" rel="shortcut icon"
+                          t-att-href="x_icon|default:'/static/web/src/img/favicon.ico'"/>
+
+                    <script type="text/javascript">
+                        var hexya = {
+                            csrf_token: "", // t-esc="request.csrf_token(None)"
+                        };
+                    </script>
+
+                    <t t-raw="head|default:''"/>
+                </head>
+                <body t-att-class="body_classname">
+                    <t t-raw="0"/>
+                </body>
+            </html>
+        </template>
+
+        <template id="web.login_layout" name="Login Layout">
+            <t t-call="web.layout">
+                <t t-set="head">
+                    <t t-call="web.assets_common_css"/>
+                    <t t-call="web.assets_frontend_css"/>
+                    <t t-call="web.assets_common_js"/>
+                    <t t-call="web.assets_frontend_js"/>
+                </t>
+                <t t-set="body_classname" t-value="'container'"/>
+
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 o_database_list">
+                        <div class="text-center">
+                            <img t-attf-src="/web/binary/company_logo"/>
+                        </div>
+                        <t t-raw="0"/>
+                        <p class="text-center">
+                            Credentials: admin/admin
+                        </p>
+                        <h3 class="text-center alert alert-danger">
+                            This is a technology preview of Hexya.<br/>Many features are still missing or might be
+                            buggy.
+                        </h3>
+                        <div class="text-center" t-if="not disable_footer">
+                            <a href="https://www.hexya.io" target="_blank">Powered by
+                                <span>Hexya</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="web.login" name="Login">
+            <t t-call="web.login_layout">
+                <form class="oe_login_form" role="form"
+                      t-attf-action="/web/login{% if debug %}?debug={% endif %}" method="post"
+                      onsubmit="this.action = this.action + location.hash">
+                    <!-- <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>  -->
+
+                    <div class="form-group field-login">
+                        <label for="login" class="control-label">Email</label>
+                        <input type="text" name="login" t-att-value="login" id="login" class="form-control"
+                               required="required" autofocus="autofocus" autocapitalize="off"/>
+                    </div>
+
+                    <div class="form-group field-password">
+                        <label for="password" class="control-label">Password</label>
+                        <input type="password" name="password" id="password" class="form-control" required="required"
+                               autocomplete="current-password" t-attf-autofocus="{% if login %}autofocus{% endif %}"
+                               maxlength="4096"/>
+                    </div>
+
+                    <p class="alert alert-danger" t-if="error">
+                        <t t-esc="error"/>
+                    </p>
+                    <p class="alert alert-success" t-if="message">
+                        <t t-esc="message"/>
+                    </p>
+
+                    <input type="hidden" name="redirect" t-att-value="redirect"/>
+                    <div class="clearfix oe_login_buttons">
+                        <button type="submit" class="btn btn-primary">Log in</button>
+                    </div>
+                </form>
+            </t>
+        </template>
+
+        <template id="web.menu">
+            <div class="panel-default app-drawer-app-panel" id="appDrawerAppMenu">
+                <div class="panel-heading" id="appDrawerAppPanelHead">
+                    <div class="col-xs-6">
+                        <h4 class="app-drawer-panel-title pull-left">
+                            <a class="app-drawer-icon-close drawer-toggle hidden-xs">
+                                <i class="fa fa-lg fa-chevron-left"
+                                   t-translation="off"
+                                   aria-hidden="true"> </i>
+                                Apps
+                            </a>
+                            <span class="hidden-xs">
+                                 |
+                            </span>
+                            <a class="app-drawer-icon-search drawer-search-open">
+                                <i class="fa fa-lg fa-search"
+                                   t-translation="off"
+                                   aria-hidden="true"> </i>
+                            </a>
+                            <a class="app-drawer-icon-search drawer-search-close">
+                                <i class="fa fa-lg fa-close"
+                                   t-translation="off"
+                                   aria-hidden="true"> </i>
+                            </a>
+                        </h4>
+                    </div>
+                    <div class="col-xs-6">
+                        <a class="oe_logo pull-right" t-attf-href="/web/?{{ keep_query() }}">
+                            <i class="fa fa-pencil-square-o oe_logo_edit"
+                               aria-hidden="true"
+                               t-translation="off"> </i>
+                            <img src='/web/binary/company_logo'/>
+                        </a>
+                    </div>
+                </div>
+                <div class="panel-body" id="appDrawerAppPanelBody">
+                    <div id="appDrawerApps"
+                         class="row oe_application_menu_placeholder"
+                         style="display: none;">
+                        <t t-foreach="menu_data.Children" t-as="menu">
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 text-center mt16">
+                                <t t-call="web.menu_link">
+                                    <t t-set="display_images" t-value="1"/>
+                                </t>
+                            </div>
+                            <!-- Provide breakpoints on necessary viewports for proper row heights -->
+                            <t t-if="(menu_index + 1) % 6 == 0">
+                                <div class="clearfix visible-lg-block"> </div>
+                            </t>
+                            <t t-if="(menu_index + 1) % 4 == 0">
+                                <div class="clearfix visible-md-block"> </div>
+                            </t>
+                            <t t-if="(menu_index + 1) % 3 == 0">
+                                <div class="clearfix visible-sm-block"> </div>
+                            </t>
+                            <t t-if="(menu_index + 1) % 2 == 0">
+                                <div class="clearfix visible-xs-block"> </div>
+                            </t>
+                        </t>
+                        <div id="menu_more_container" class="dropdown" style="display: none;">
+                            <a class="dropdown-toggle" data-toggle="dropdown">More
+                                <b class="caret"> </b>
+                            </a>
+                            <ul id="menu_more" class="dropdown-menu"> </ul>
+                        </div>
+                    </div>
+                    <ul id="appDrawerMenuSearch"
+                        class="row list-unstyled"
+                        style="display: none;">
+                        <div class="panel panel-info app-drawer-search-panel">
+                            <div class="panel-heading">
+                                <h2>
+                                    <i>Searching:</i>
+                                    <input id="appDrawerSearchInput" class="menu-search-query"/>
+                                </h2>
+                            </div>
+                            <div class="panel-body">
+                                <ul id="appDrawerSearchResults"
+                                    class="row list-unstyled oe_application_menu_placeholder">
+                                    No Search Supplied.
+                                </ul>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="app-drawer-search-action"> </div>
+
+        </template>
+
+        <template id="web.menu_secondary">
+            <a class="o_sub_menu_logo" t-attf-href="/web/{% if debug %}?debug={% endif %}">
+                <span class="oe_logo_edit">Edit Company data</span>
+                <img src='/web/binary/company_logo'/>
+            </a>
+            <div class="o_sub_menu_content">
+                <t t-foreach="menu_data.Children" t-as="menu">
+                    <ul style="display: none"
+                        class="oe_secondary_menu nav navbar-nav"
+                        t-att-data-menu-parent="menu.ID">
+                        <li class="app-name">
+                            <span class="oe_menu_text">
+                                <t t-esc="menu.Name"/>
+                            </span>
+                        </li>
+                        <li>
+                            <t t-call="web.menu_secondary_submenu"/>
+                        </li>
+                    </ul>
+                </t>
+            </div>
+            <div class="o_sub_menu_footer">
+                Powered by
+                <a href="https://www.hexya.io" target="_blank">
+                    <span>Hexya</span>
+                </a>
+            </div>
+        </template>
+
+        <template id="web.menu_secondary_submenu">
+            <t t-foreach="menu.Children" t-as="menu">
+                <t t-if="menu.HasChildren">
+                    <li t-attf-class="{% if submenu %}dropdown-header{% endif %}">
+                        <t t-if="submenu">
+                            <t t-esc="menu.Name"/>
+                            <t t-call="web.menu_secondary_submenu">
+                                <t t-set="submenu" t-value="1"/>
+                            </t>
+                        </t>
+                        <t t-if="not submenu">
+                            <a class="dropdown-toggle"
+                               data-toggle="dropdown"
+                               role="button"
+                               aria-haspopup="true"
+                               aria-expanded="false">
+                                <t t-esc="menu.Name"/>
+                                <span class="caret"> </span>
+                            </a>
+                            <ul t-if="menu.HasChildren"
+                                t-attf-class="dropdown-menu oe_secondary_submenu dropdown-scrollable">
+                                <t t-call="web.menu_secondary_submenu">
+                                    <t t-set="submenu" t-value="1"/>
+                                </t>
+                            </ul>
+                        </t>
+                    </li>
+                </t>
+                <t t-if="not menu.HasChildren">
+                    <li>
+                        <t t-call="web.menu_link"/>
+                    </li>
+                </t>
+            </t>
+        </template>
+
+        <template id="web.menu_link">
+            <a t-attf-href="/web/{% if debug %}?debug={% endif %}#menu_id={{ menu.ID }}{% if menu.HasAction %}&amp;action={{ menu.ActionID}}{% endif %}"
+               t-attf-class="{% if menu.HasChildren %}oe_menu_toggler{% else %}oe_menu_leaf{% endif %}"
+               t-att-data-menu="menu.ID"
+               t-att-data-menu-xmlid="menu.ID"
+               t-att-data-menu-name="menu.Name"
+               t-attf-data-action-model="{% if menu.HasAction %}{{ menu.ActionModel }}{% endif %}"
+               t-attf-data-action-id="{% if menu.HasAction %}{{ menu.ActionID }}{% endif %}">
+                <t t-if="display_images">
+                    <img t-attf-src="/web/menu/{{ menu.ID }}"
+                         class="app-drawer-icon-app img-rounded"
+                         t-att-alt="menu.Name"
+                         t-att-title="menu.Name"/>
+                    <p class="app-drawer-title text-center">
+                        <t t-esc="menu.Name"/>
+                    </p>
+                </t>
+                <t t-if="not display_images">
+                    <span class="oe_menu_text">
+                        <t t-esc="menu.Name"/>
+                    </span>
+                </t>
+
+            </a>
+        </template>
+
+        <template id="web.webclient_script">
+            <script type="text/javascript">
+                hexya.define('web.web_client', function (require) {
+                    var WebClient = require('web.WebClient');
+                    var web_client = new WebClient();
+                    $(function () {
+                        web_client.setElement($(document.body));
+                        web_client.start();
+                    });
+                    return web_client;
+                });
+            </script>
+        </template>
+
+        <template id="web.qunit_suite">
+            <t t-call="web.layout">
+                <t t-set="html_data" t-value="{&quot;style&quot;: &quot;height: 100%;&quot;}"/>
+                <t t-set="title">Odoo Web Tests</t>
+                <t t-set="head">
+                    <link type="text/css" rel="stylesheet" href="/static/web/lib/qunit/qunit-1.17.1.css"/>
+                    <script type="text/javascript" src="/static/web/lib/qunit/qunit-1.17.1.js"> </script>
+
+                    <t t-call-assets="web.assets_common" t-css="false"/>
+                    <t t-call-assets="web.assets_backend" t-css="false"/>
+                    <t t-call="web.webclient_script"/>
+
+                    <script type="text/javascript" src="/static/web/test/testing.js"> </script>
+                    <script type="text/javascript" src="/static/web/test/registry.js"> </script>
+                    <script type="text/javascript" src="/static/web/test/rpc-misordered.js"> </script>
+                    <script type="text/javascript" src="/static/web/test/mutex.js"> </script>
+                    <script type="text/javascript" src="/static/web/test/data.js"> </script>
+                    <script type="text/javascript" src="/static/web/test/evals.js"> </script>
+                    <script type="text/javascript" src="/static/web/test/form.js"> </script>
+                    <script type="text/javascript" src="/static/web/test/formats.js"> </script>
+                    <script type="text/javascript" src="/static/web/test/framework.js"> </script>
+                    <script type="text/javascript" src="/static/web/test/list.js"> </script>
+                    <script type="text/javascript" src="/static/web/test/list-utils.js"> </script>
+                    <script type="text/javascript" src="/static/web/test/list-editable.js"> </script>
+                    <script type="text/javascript" src="/static/web/test/search.js"> </script>
+                    <script type="text/javascript" src="/static/web/src/js/web_responsive.js"> </script>
+                </t>
+
+                <div id="qunit"/>
+                <div id="qunit-fixture"/>
+            </t>
+        </template>
+
+        <template id="web.webclient_bootstrap">
+            <t t-call="web.layout">
+                <t t-set="head_web">
+                    <meta charset="utf-8"/>
+                    <meta http-equiv="cleartype" content="on"/>
+                    <meta name="MobileOptimized" content="320"/>
+                    <meta name="HandheldFriendly" content="True"/>
+                    <meta name="apple-mobile-web-app-capable" content="yes"/>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+
+                    <script type="text/javascript">
+                        hexya.session_info =<t t-raw="session_info"/>;
+                    </script>
+
+                    <t t-call="web.assets_common_css"/>
+                    <t t-call="web.assets_backend_css"/>
+                    <t t-call="web.assets_common_js"/>
+                    <t t-call="web.assets_backend_js"/>
+
+                    <t t-call="web.webclient_script"/>
+                </t>
+                <t t-set="head" t-value="head_web |add:head"/>
+                <t t-set="body_classname" t-value="'drawer drawer--left o_web_client'"/>
+
+                <header role="banner">
+                    <nav id="hexyaAppDrawer" class="app-drawer-nav drawer-nav" role="navigation">
+                        <t t-call="web.menu"/>
+                    </nav>
+
+                    <nav class="navbar navbar-default main-nav"
+                         role="navigation"
+                         groups="base_group_user,base_group_portal">
+                        <div class="container-fluid">
+
+                            <div class="navbar-header">
+
+                                <a class="drawer-toggle navbar-collapse collapse btn btn-default app-drawer-toggle"
+                                   accesskey="A">
+                                    <span class="sr-only">Toggle App Drawer</span>
+                                    <i class="fa fa-th fa-lg app-drawer-icon-open"
+                                       t-translation="off"
+                                       aria-hidden="true"> </i>
+                                </a>
+
+                                <button type="button"
+                                        class="app-drawer-toggle drawer-toggle pull-left navbar-toggle collapsed">
+                                    <span class="sr-only">Toggle App Drawer</span>
+                                    <div class="fa fa-th fa-lg app-drawer-icon-open"> </div>
+                                </button>
+
+                                <button type="button"
+                                        id="hexyaMenuBarToggle"
+                                        class="navbar-toggle collapsed pull-right"
+                                        data-toggle="collapse"
+                                        data-target="#hexyaMenuBarNav">
+                                    <span class="sr-only">Toggle Navigation</span>
+                                    <i class="fa fa-bars fa-lg"
+                                       t-translation="off"
+                                       aria-hidden="true"> </i>
+                                </button>
+
+                            </div>
+
+                            <div class="collapse navbar-collapse"
+                                 id="hexyaMenuBarNav"
+                                 data-parent="#hexyaMenuBarToggle"
+                                 aria-expanded="false">
+                                <div class="o_sub_menu"
+                                     groups="base_group_user,base_group_portal">
+                                    <t t-call="web.menu_secondary"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nav navbar-nav navbar-right navbar-systray o_menu_systray">
+                            <ul class="nav navbar-nav navbar-right navbar-systray-item oe_user_menu_placeholder"> </ul>
+                            <ul class="nav navbar-nav navbar-right navbar-systray-item oe_systray"> </ul>
+                        </div>
+                    </nav>
+
+                </header>
+
+                <div class="o_main">
+                    <div id="app-sidebar" class="app-sidebar-panel">
+                        <div class="app-sidebar navbar-collapse collapse">
+                            <a class="o_sub_menu_logo" t-attf-href="/web/{% if debug %}?debug={% endif %}">
+                                <span class="oe_logo_edit">Edit Company data</span>
+                                <img src='/web/binary/company_logo'/>
+                            </a>
+                            <ul id="sidebar" class="app-sidebar-menu">
+                                <li class="nav-item" t-as="menu" t-foreach="menu_data.Children" >
+                                    <a t-attf-href="/web/{% if debug %}?debug={% endif %}#menu_id={{ menu.ID }}&amp;action={% if menu.HasAction %}{{ menu.ActionID}}{% endif %}"
+                                       t-attf-class="nav-link{% if menu.HasChildren %} nav-toggle{% endif %}"
+                                       t-att-data-menu="menu.ID"
+                                       t-att-data-menu-xmlid="menu.ID"
+                                       t-attf-data-action-model="{% if menu.HasAction %}{{ menu.ActionModel }}{% endif %}"
+                                       t-attf-data-action-id="{% if menu.HasAction %}{{ menu.ActionID }}{% endif %}">
+                                        <img t-attf-src="/web/menu/{{ menu.ID }}" t-att-alt="menu.Name" class="app-sidebar-menuitem" t-att-title="menu.Name"/>
+                                        <span class="title" >
+                                            <t t-esc="menu.Name"/>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="o_main_content"> </div>
+                </div>
+            </t>
+        </template>
+
+        <!--
+            Optional Bundle for PDFJS lib
+            Since PDFJS is quite huge (40000 lines), please only load it when it is necessary.
+            For now, it is only use to display the PDF slide Viewer during an embed.
+            Bundlized, the size is reduced to 3000 lines.
+        -->
+        <template id="pdf_js_lib" name="PDF JS Library">
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/shared/util.js"> </script>
+
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/display/api.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/display/metadata.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/display/canvas.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/display/webgl.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/display/pattern_helper.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/display/font_loader.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/display/annotation_helper.js"> </script>
+            <!-- files normally dynamically loaded in worker_loader.js -->
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/network.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/chunked_stream.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/pdf_manager.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/core.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/obj.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/charsets.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/annotation.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/function.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/colorspace.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/crypto.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/pattern.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/evaluator.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/cmap.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/fonts.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/font_renderer.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/glyphlist.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/image.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/metrics.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/parser.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/ps_parser.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/stream.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/worker.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/arithmetic_decoder.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/jpg.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/jpx.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/jbig2.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/bidi.js"> </script>
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/core/murmurhash3.js"> </script>
+            <!--
+                NOTE JEM : PDFJS not-minified load its assets dynamically. Not minify, this lib is huge (4000 lines).
+                To load PDFJS using hexya bundle, we create a custom worker_loader, to avoid reloading all the assets (core/*.js) dynamically.
+                Loading all this assets in a bundle can be problematic in debug mode, since we don't wait all assets to be loaded to start using PDFJS. That's why, in debug mode, we use the native loader, otherwise our custom loader is used.
+            -->
+            <t t-if="not debug">
+                <script>
+                    // Use Odoo PDFJS Loader, to avoid dynamic assets loading
+                    PDFJS.workerSrc = '/static/web/lib/pdfjs/worker_loader_by_odoo.js';
+                    PDFJS.disableWorker = true;
+                </script>
+            </t>
+            <t t-if="debug">
+                <script>
+                    // Specify the main script used to create a new PDF.JS web worker.
+                    // In production, leave this undefined or change it to point to the
+                    // combined `pdf.worker.js` file.
+                    PDFJS.workerSrc = '/static/web/lib/pdfjs/src/worker_loader.js';
+                </script>
+            </t>
+            <!--
+                If no loader defined, this file will try to load pdf.worker.js (in build/).
+                It will crash since we don't use the minified version of PDFJS
+            -->
+            <script type="text/javascript" src="/static/web/lib/pdfjs/src/pdf.js"> </script>
+        </template>
+    </data>
+</hexya>

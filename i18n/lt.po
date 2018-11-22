@@ -1,0 +1,1352 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. field:Filter.Action
+msgid "Action"
+msgstr "Veiksmas"
+
+#. custom: web
+#: base.xml:0
+msgid "$(this).addClass('o_error');"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "...Upload in progress..."
+msgstr "...Įkeliama..."
+
+#. custom: web
+#: base.xml:0
+msgid "99+"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Activate Assets Debugging"
+msgstr "Aktyvuoti klaidų taisymą"
+
+#. custom: web
+#: base.xml:0
+msgid "Add Custom Filter"
+msgstr "Pridėti papildomą filtrą"
+
+#. custom: web
+#: base.xml:0
+msgid "Add custom group"
+msgstr "Pridėti papildomą grupę"
+
+#. custom: web
+#: base.xml:0
+msgid "Add..."
+msgstr "Pridėti..."
+
+#. custom: web
+#: base.xml:0
+msgid "All users"
+msgstr "Visiems"
+
+#. custom: web
+#: base_common.xml:0
+msgid "(no string)"
+msgstr "(nėra eilutės)"
+
+#. custom: web
+#: base_common.xml:0
+msgid "(nolabel)"
+msgstr "(be pavadinimo)"
+
+#. custom: web
+#: base_common.xml:0
+msgid "-"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid ":"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Action ID:"
+msgstr "Veiksmo ID:"
+
+#. field:Filter.Context
+msgid "Context"
+msgstr ""
+
+#. resource:base_actions_ir_filters_view
+msgid "Filters"
+msgstr "Filtrai"
+
+#. resource:base_ir_filters_view_search
+msgid "Filters visible only for one user"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Attachment :"
+msgstr "Priedas:"
+
+#. custom: web
+#: base.xml:0
+msgid "Available fields"
+msgstr "Galimi laukai"
+
+#. custom: web
+#: base_common.xml:0
+msgid ""
+"Button\n"
+"                <t t-if=\"widget.string\">: </t>\n"
+"                <t t-if=\"!widget.string\"> (no string)</t>"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Clear Events"
+msgstr "Išvalyti įvykius"
+
+#. custom: web
+#: base.xml:0
+msgid "Condition:"
+msgstr "Sąlyga"
+
+#. custom: web
+#: base.xml:0
+msgid "Confirm New Password"
+msgstr "Patvirtinti naują slaptažodį"
+
+#. custom: web
+#: base.xml:0
+msgid "Day"
+msgstr "Data"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Button Type:"
+msgstr "Mygtuko tipas:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Change default:"
+msgstr "Keisti numatytąsias reikšmes:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Context:"
+msgstr "Kontekstas:"
+
+#. field:Filter.IsDefault
+msgid "Default filter"
+msgstr ""
+
+#. custom: web
+#: debug_manager.js:134
+msgid "%d requests (%d ms) %d queries (%d ms)"
+msgstr "%d kreipimaisi (%d ms) %d užklausos (%d ms)"
+
+#. custom: web
+#: base.xml:0
+msgid "Enable Technical Features"
+msgstr "Įgalinti technines galimybes"
+
+#. custom: web
+#: debug_manager.js:321
+msgid "No metadata available"
+msgstr "Nėra medaduomenų"
+
+#. custom: web
+#: dialog.js:168
+msgid "Alert"
+msgstr "Įspėjimas"
+
+#. field:Company.DashboardBackground
+msgid "Dashboard Background"
+msgstr ""
+
+#. field:Filter.Domain
+msgid "Domain"
+msgstr ""
+
+#. field:Filter.Name
+#. resource:base_ir_filters_view_search
+msgid "Filter Name"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Created by :"
+msgstr "Sukūrė:"
+
+#. custom: web
+#: base.xml:0
+msgid "Creation Date:"
+msgstr "Sukūrimo data:"
+
+#. custom: web
+#: base.xml:0
+msgid "Creation User:"
+msgstr "Sukūrė naudotojas:"
+
+#. custom: web
+#: base.xml:0
+msgid "Default:"
+msgstr "Numatyta:"
+
+#. custom: web
+#: base.xml:0
+msgid "Delete"
+msgstr "Ištrinti"
+
+#. custom: web
+#: base.xml:0
+msgid "Disable Technical Features"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Edit"
+msgstr "Keisti"
+
+#. custom: web
+#: base.xml:0
+msgid "Export Formats :"
+msgstr "Eksportavimo formatai:"
+
+#. custom: web
+#: base.xml:0
+msgid "Export Type :"
+msgstr "Eksportavimo tipas:"
+
+#. custom: web
+#: base.xml:0
+msgid "Export all Data"
+msgstr "Eksportuoti visus duomenis"
+
+#. custom: web
+#: form_widgets.js:637
+msgid "Activate"
+msgstr "Aktyvuoti"
+
+#. resource:base_ir_filters_view_search
+msgid "Filters created by myself"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "Filters shared with all users"
+msgstr ""
+
+#. field:User.ID
+#. field:CommonMixin.ID
+#. field:Company.ID
+#. field:Filter.ID
+msgid "ID"
+msgstr "ID"
+
+#. custom: web
+#: base.xml:0
+msgid "ID:"
+msgstr "Identifikatorius:"
+
+#. custom: web
+#: base.xml:0
+msgid "Import-Compatible Export"
+msgstr "Importuoti tinkamas eksportavimas"
+
+#. custom: web
+#: base.xml:0
+msgid "Latest Modification Date:"
+msgstr "Paskutinio keitimo data:"
+
+#. custom: web
+#: base.xml:0
+msgid "Latest Modification by:"
+msgstr "Paskutinį kartą keitė:"
+
+#. custom: web
+#: base.xml:0
+msgid "Leave the Developer Tools"
+msgstr "Palikti Kūrėjo įrankius"
+
+#. custom: web
+#: base.xml:0
+msgid "Log out"
+msgstr "Atsijungti"
+
+#. custom: web
+#: base.xml:0
+msgid "Manage Filters"
+msgstr "Tvarkyti filtrus"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Field:"
+msgstr "Laukas:"
+
+#. field:Filter.ResModel
+#. resource:base_ir_filters_view_search
+msgid "Model"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "My filters"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Method:"
+msgstr "Metodas:"
+
+#. custom: web
+#: form_common.js:236
+msgid "Create and Edit..."
+msgstr "Sukurti ir keisti..."
+
+#. custom: web
+#: base.xml:0
+msgid "Modified by :"
+msgstr "Pakeistas:"
+
+#. custom: web
+#: base.xml:0
+msgid "Month"
+msgstr "Mėnuo"
+
+#. custom: web
+#: base.xml:0
+msgid "More"
+msgstr "Daugiau"
+
+#. custom: web
+#: base.xml:0
+msgid "Move Down"
+msgstr "Perkelti žemiau"
+
+#. custom: web
+#: base.xml:0
+msgid "Move Up"
+msgstr "Perkelti aukščiau"
+
+#. custom: web
+#: base.xml:0
+msgid "New Password"
+msgstr "Naujas slaptažodis"
+
+#. custom: web
+#: base.xml:0
+msgid "No Update:"
+msgstr "Nėra atnaujinimo:"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"No data available for this pivot table.  Try to add some records, or make sure\n"
+"        that there is at least one measure and no active filter in the search bar."
+msgstr "Nėra šiaip suvestinei lentelei pasiekiamų duomenų. Pabandykite pridėti įrašų arba įsitikinkite, kad yra bent vienas matavimas ir paieškos laukelyje nėra aktyvių filtrų."
+
+#. custom: web
+#: base.xml:0
+msgid "No data to display."
+msgstr "Rodymui nėra duomenų."
+
+#. custom: web
+#: dialog.js:193
+msgid "Confirmation"
+msgstr "Patvirtinimas"
+
+#. custom: web
+#: base.xml:0
+msgid "Quarter"
+msgstr "Ketvirtis"
+
+#. custom: web
+#: base.xml:0
+msgid "Run JS Tests"
+msgstr "Paleisti JS testus"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Domain:"
+msgstr "Domenas:"
+
+#. custom: web
+#: data_export.js:199
+msgid "Export Data"
+msgstr "Eksportuoti duomenis"
+
+#. custom: web
+#: data_export.js:201
+msgid "Export To File"
+msgstr "Eksportuoti į failą"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Modifiers:"
+msgstr "Modifikatoriai:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Size:"
+msgstr "Dydis:"
+
+#. custom: web
+#: debug_manager.js:241
+msgid "Fields of %s"
+msgstr "Laukai %s"
+
+#. custom: web
+#: formats.js:173
+msgid "'%s' is not a correct datetime"
+msgstr "'%s' nėra teisingas datos ir laiko formatas"
+
+#. custom: web
+#: form_relational_widgets.js:1378 base.xml:0
+msgid "Add"
+msgstr "Pridėti"
+
+#. custom: web
+#: debug_manager.js:183
+msgid "JS Tests"
+msgstr "JS testai"
+
+#. custom: web
+#: debug_manager.js:326
+msgid "Metadata (%s)"
+msgstr ""
+
+#. custom: web
+#: form_common.js:245
+msgid "No results to show..."
+msgstr "Nėra rezultatų..."
+
+#. custom: web
+#: form_common.js:874
+msgid " & Close"
+msgstr " & uždaryti"
+
+#. custom: web
+#: formats.js:192
+msgid "'%s' is not a correct time"
+msgstr "'%s' netinkamas laiko formatas"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Relation:"
+msgstr "Sąryšis:"
+
+#. custom: web
+#: form_relational_widgets.js:1018
+msgid "Add an item"
+msgstr "Pridėti objektą"
+
+#. custom: web
+#: form_relational_widgets.js:1122
+msgid "Action Button"
+msgstr "Veiksmo mygtukas"
+
+#. custom: web
+#: form_relational_widgets.js:1305
+msgid "Add: "
+msgstr "Pridėti: "
+
+#. custom: web
+#: form_widgets.js:642
+msgid "Archived"
+msgstr "Archyvuojamas"
+
+#. custom: web
+#: form_widgets.js:1131
+msgid "Save As..."
+msgstr "Įrašyti kaip..."
+
+#. custom: web
+#: form_widgets.js:1251
+msgid "Could not display the selected image."
+msgstr "Nepavyko parodyti pasirinkto vaizdo."
+
+#. custom: web
+#: formats.js:75
+msgid "(%d records)"
+msgstr "(%d įrašai)"
+
+#. custom: web
+#: form_common.js:281
+msgid "Search: "
+msgstr "Ieškoti: "
+
+#. custom: web
+#: form_common.js:1054
+msgid "Select"
+msgstr "Pasirinkti"
+
+#. custom: web
+#: list_common.js:133
+msgid "Can't convert value %s to context"
+msgstr "Negalima konvertuoti vertės %s kontekste"
+
+#. custom: web
+#: list_view.js:1024
+msgid "Could not find id in dataset"
+msgstr "Nepavyko rasti ID duomenų rinkinyje"
+
+#. custom: web
+#: form_relational_widgets.js:25
+msgid "Create a %s"
+msgstr "Sukurti %s"
+
+#. custom: web
+#: form_upgrade_widgets.js:51
+msgid "Hexya Enterprise"
+msgstr ""
+
+#. custom: web
+#: form_widgets.js:635
+msgid "Deactivate"
+msgstr "Deaktyvuoti"
+
+#. custom: web
+#: form_view.js:1300
+msgid "Field '%s' specified in view could not be found."
+msgstr "Luakas '%s' nurodytas užklausoje nerastas."
+
+#. custom: web
+#: form_widgets.js:1094
+msgid "File upload"
+msgstr "Nusiųsti failą"
+
+#. custom: web
+#: list_view.js:1863
+msgid "Download \\\"%s\\\""
+msgstr ""
+
+#. custom: web
+#: form_view.js:301
+msgid "Form"
+msgstr "Forma"
+
+#. custom: web
+#: formats.js:187
+msgid "'%s' is not a correct date"
+msgstr "'%s' nėra teisingas datos formatas"
+
+#. custom: web
+#: base.xml:0
+msgid "Old Password"
+msgstr "Senas slaptažodis"
+
+#. custom: web
+#: formats.js:132
+msgid "'%s' is not a correct integer"
+msgstr "'%s' nėra sveikasis skaičius"
+
+#. custom: web
+#: form_view.js:733
+msgid "Do you really want to delete this record?"
+msgstr "Ar tikrai norite ištrinti šį įrašą?"
+
+#. custom: web
+#: form_widgets.js:1114
+msgid "File Upload"
+msgstr "Failo įkėlimas"
+
+#. custom: web
+#: form_widgets.js:636
+msgid "Inactive"
+msgstr "Neaktyvus"
+
+#. custom: web
+#: base.xml:0
+msgid "Please note that only the selected ids will be exported."
+msgstr "Atkreipkite dėmesį, kad bus eksportuojami tik pasirinkti ID."
+
+#. custom: web
+#: base.xml:0
+msgid "Save as:"
+msgstr "Įrašyti kaip:"
+
+#. custom: web
+#: form_widgets.js:1251
+msgid "Image"
+msgstr "Paveikslėlis"
+
+#. custom: web
+#: formats.js:144
+msgid "'%s' is not a correct float"
+msgstr "'%s' neteisingas skaičius su kableliu"
+
+#. custom: web
+#: list_view.js:287
+msgid "Export"
+msgstr "Eksportuoti"
+
+#. field:Filter.Sort
+msgid "Sort"
+msgstr ""
+
+#. custom: web
+#: list_view.js:543
+msgid "Do you really want to remove these records?"
+msgstr "Ar tikrai norite ištrinti šiuos įrašus?"
+
+#. custom: web
+#: list_view.js:1847
+msgid "Download"
+msgstr "Atsisiųsti"
+
+#. custom: web
+#: loading.js:46
+msgid "Loading"
+msgstr "Kraunama"
+
+#. custom: web
+#: loading.js:44
+msgid "Loading (%d)"
+msgstr "Kraunama (%d)"
+
+#. custom: web
+#: base.xml:0
+msgid "Not shown in kanban"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Only you"
+msgstr "Tik man"
+
+#. custom: web
+#: base.xml:0
+msgid "Please pay attention that all records matching your search filter will be exported. Not only the selected ids."
+msgstr "Atkreipkite dėmesį, kad visi duomenys, atitinkantys jūsų paieškos filtrą, bus eksportuoti. Net tik pasirinkti ID."
+
+#. custom: web
+#: base.xml:0
+msgid "Preferences"
+msgstr "Nustatymai"
+
+#. custom: web
+#: base.xml:0
+msgid "Remove"
+msgstr "Pašalinti"
+
+#. custom: web
+#: base.xml:0
+msgid "Remove All"
+msgstr "Ištrinti viską"
+
+#. custom: web
+#: base.xml:0
+msgid "Save current search"
+msgstr "Išsaugoti filtrą"
+
+#. custom: web
+#: base.xml:0
+msgid "Save fields list"
+msgstr "Įrašyti laukų sarašą"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Object:"
+msgstr "Objektas:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "On change:"
+msgstr "Pakeitus:"
+
+#. custom: web
+#: graph_widget.js:94
+msgid "No data to display"
+msgstr "Rodymui nėra duomenų"
+
+#. custom: web
+#: form_relational_widgets.js:327
+msgid "No value found for the field %s for value %s"
+msgstr ""
+
+#. custom: web
+#: data_export.js:167
+msgid "Please enter save field list name"
+msgstr "Prašome įvesti saugomo lauko sąrašo pavadinimą"
+
+#. custom: web
+#: data_export.js:435
+msgid "Please select fields to export..."
+msgstr "Pasirinkite eksportuotinus laukus"
+
+#. resource:base_ir_filters_view_search
+msgid "Shared"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Saved exports:"
+msgstr "Išsaugoti duomenys:"
+
+#. custom: web
+#: base.xml:0
+msgid "Set Defaults"
+msgstr "Nustatyti numatytuosius"
+
+#. custom: web
+#: misc.js:12
+msgid "Loading..."
+msgstr "Kraunama..."
+
+#. custom: web
+#: data_export.js:421
+msgid "Please select fields to save export list..."
+msgstr "Prašome pasirinkti laukus eksportuojamo sąrašo išsaugojimui..."
+
+#. custom: web
+#: form_common.js:211
+msgid "Search More..."
+msgstr "Ieškoti daugiau..."
+
+#. custom: web
+#: form_common.js:889
+msgid "Save & New"
+msgstr "Įrašyti ir kurti naują"
+
+#. custom: web
+#: form_common.js:1103
+msgid "Selected domain"
+msgstr "Pasirinktas domenas"
+
+#. field:User.SidebarVisible
+msgid "Show App Sidebar"
+msgstr ""
+
+#. custom: web
+#: form_relational_widgets.js:326
+msgid "Render"
+msgstr ""
+
+#. custom: web
+#: form_view.js:315
+msgid "New"
+msgstr "Nauja"
+
+#. custom: web
+#: form_view.js:1128
+msgid "Save default"
+msgstr "Įrašyti numatytąją reikšmę"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Selection:"
+msgstr "Pasirinkimas:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Special:"
+msgstr "Specialus:"
+
+#. custom: web
+#: form_view.js:1125
+msgid "Set Default"
+msgstr "Numatytosios reikšmės"
+
+#. custom: web
+#: graph_widget.js:252
+msgid "Not enough data points"
+msgstr "Nepakanka duomenų taškų"
+
+#. custom: web
+#: list_view.js:931
+msgid "Setting 'id' attribute on existing record %s"
+msgstr "Nustatomas 'id'  atributas esamam įrašui %s"
+
+#. custom: web
+#: misc.js:13
+msgid "Still loading..."
+msgstr "Vis dar kraunama..."
+
+#. custom: web
+#: misc.js:14
+msgid "Still loading...<br />Please be patient."
+msgstr "Vis dar kraunama...<br />Būkite kantrūs."
+
+#. custom: web
+#: base.xml:0
+msgid "Technical Translation"
+msgstr "Techninis vertimas"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "/web/binary/upload_attachment"
+msgstr ""
+
+#. help:Filter.Action
+msgid "The menu action this filter applies to. When left empty the filter applies to all menus for this model."
+msgstr ""
+
+#. help:Filter.User
+msgid "The user this filter is private to. When left empty the filter is public and available to all users."
+msgstr ""
+
+#. custom: web
+#: form_widgets.js:1093
+msgid "The selected file exceed the maximum file size of %s."
+msgstr "Pasirinktas failas viršija maksimalų failo dydį %s."
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"This wizard will export all data that matches the current search criteria to a CSV file.\n"
+"        You can export all data or only the fields that can be reimported after modification."
+msgstr ""
+"Šis vedlys išeksportuos visus duomenis, kurie sutampa su paieškos užklausa, į CSV failą.\n"
+"Galite "
+
+#. custom: web
+#: form_relational_widgets.js:1123
+msgid "The o2m record must be saved before an action can be used"
+msgstr ""
+
+#. custom: web
+#: search_menus.js:252
+msgid "Are you sure that you want to remove this filter?"
+msgstr "Ar tikrai norite pašalinti šį filtrą?"
+
+#. field:Filter.User
+#. resource:base_ir_filters_view_search
+#. resource:base_ir_filters_view_search
+msgid "User"
+msgstr ""
+
+#. custom: web
+#: misc.js:18
+msgid "Maybe you should consider reloading the application by pressing F5..."
+msgstr "Gal jūs turėtumėte apsvarstyti puslapio perkrovimą paspausdami F5 ..."
+
+#. custom: web
+#: search_inputs.js:331
+msgid "No"
+msgstr "Ne"
+
+#. custom: web
+#: utils.js:143
+msgid "Node [%s] is not a JSONified XML node"
+msgstr ""
+
+#. resource:base_menu_ir_filters
+msgid "User-defined Filters"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Toggle Timelines"
+msgstr "Perjungti laiko juostas"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"Unhandled widget\n"
+"    <t t-js=\"dict\">console.warn('Unhandled widget', dict.widget);</t>"
+msgstr ""
+
+#. custom: web
+#: data.js:1138
+msgid "Unnamed"
+msgstr "Be pavadinimo"
+
+#. custom: web
+#: base.xml:0
+msgid "Update translations"
+msgstr "Atnaujinti vertimus"
+
+#. custom: web
+#: base.xml:0
+msgid "Upload your file"
+msgstr "Įkelkite savo failą"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Uploading..."
+msgstr "Įkeliama..."
+
+#. custom: web
+#: base.xml:0
+msgid "View Fields"
+msgstr "Užklausos laukai"
+
+#. custom: web
+#: base.xml:0
+msgid "View Metadata"
+msgstr "Žiūrėti metaduomenis"
+
+#. custom: web
+#: base.xml:0
+msgid "Week"
+msgstr "Savaitė"
+
+#. custom: web
+#: base.xml:0
+msgid "Whoops, you shouldn't have come up to here..."
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "XML ID:"
+msgstr "XML identifikatorius:"
+
+#. custom: web
+#: base.xml:0
+msgid "Year"
+msgstr "Metai"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"You have updated <strong><t t-esc=\"field.string\"/></strong> (<t t-esc=\"lang\"/>).\n"
+"            <a class=\"oe_field_translate\" t-att-name=\"field.name\" href=\"#\">Update translations</a>"
+msgstr ""
+
+#. custom: web
+#: view_manager.js:223
+msgid " view couldn't be loaded"
+msgstr "nepavyko įkelti rodinio"
+
+#. custom: web
+#: form_relational_widgets.js:740
+msgid "View type '%s' is not supported in X2Many."
+msgstr ""
+
+#. custom: web
+#: search_inputs.js:553 search_view.js:205
+msgid " or "
+msgstr "arba"
+
+#. custom: web
+#: time.js:192
+msgid "'%s' is not a correct date, datetime nor time"
+msgstr "'%s' nėra teisinga datos, datos ir laiko arba tik laiko formatas"
+
+#. custom: web
+#: time.js:204
+msgid "'%s' is not convertible to date, datetime nor time"
+msgstr "'%s' nėra konvertuojamas į datos, datos ir laiko ar tik laiko formatą"
+
+#. custom: web
+#: form_widgets.js:634 form_widgets.js:640
+msgid "Active"
+msgstr "Aktyvus"
+
+#. custom: web
+#: base.xml:0 base.xml:0 base.xml:0
+msgid "?"
+msgstr ""
+
+#. custom: web
+#: utils.js:284
+msgid "Bytes,Kb,Mb,Gb,Tb,Pb,Eb,Zb,Yb"
+msgstr "Bitai,Kb,Mb,Gb,Tb,Pb,Eb,Zb,Yb"
+
+#. custom: web
+#: abstract_web_client.js:124 crash_manager.js:123
+msgid "Client Error"
+msgstr "Programos klaida"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Apply"
+msgstr "Taikyti"
+
+#. custom: web
+#: form_widgets.js:641 list_view.js:288
+msgid "Archive"
+msgstr "Archyvuoti"
+
+#. custom: web
+#: change_password.js:14 base.xml:0
+msgid "Change Password"
+msgstr "Pakeisti slaptažodį"
+
+#. custom: web
+#: form_common.js:868 form_view.js:1127 data_export.js:202
+msgid "Close"
+msgstr "Uždaryti"
+
+#. custom: web
+#: misc.js:15
+msgid "Don't leave yet,<br />it's still loading..."
+msgstr "Neišeikite kolkas <br /> puslapis vis dar kraunamas ..."
+
+#. custom: web
+#: pyeval.js:1023
+msgid "Evaluation Error"
+msgstr "Vertinimo klaida"
+
+#. custom: web
+#: search_menus.js:91
+msgid "Filter with same name already exists."
+msgstr "Filtras su tokiu pačiu pavadinimu jau yra."
+
+#. custom: web
+#: pivot_view.js:831
+msgid "For Excel compatibility, data cannot be exported if there are more than 256 columns.\\n\\nTip: try to flip axis, filter further or reduce the number of measures."
+msgstr ""
+
+#. custom: web
+#: priority.js:49
+msgid "High"
+msgstr "Aukštas"
+
+#. custom: web
+#: pyeval.js:1027
+msgid "Local evaluation failure\\n%s\\n\\n%s"
+msgstr ""
+
+#. custom: web
+#: priority.js:48
+msgid "Low"
+msgstr "Žemas"
+
+#. custom: web
+#: priority.js:47
+msgid "Normal"
+msgstr "Įprasta"
+
+#. custom: web
+#: progress_bar.js:78
+msgid "Only Integer Value should be valid."
+msgstr "Turėtų būti leidžiami tik sveikieji skaičiai"
+
+#. custom: web
+#: search_inputs.js:360
+msgid "Search %(field)s at: %(value)s"
+msgstr "Ieškoti %(field)s ties: %(value)s"
+
+#. custom: web
+#: utils.js:179
+msgid "Could not serialize XML"
+msgstr "Negalima serijuoti XML"
+
+#. custom: web
+#: data.js:1075
+msgid "Unknown operator %s in domain %s"
+msgstr "Nežinomas operatorius %s domene %s"
+
+#. custom: web
+#: form_relational_widgets.js:47
+msgid "You are creating a new %s, are you sure it does not exist yet?"
+msgstr "Jūs kuriate naują %s, esate tikras, kad tokio dar nėra?"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Measures <span class=\"caret\"/>"
+msgstr ""
+
+#. custom: web
+#: priority.js:50
+msgid "Very High"
+msgstr "Labai aukštas"
+
+#. custom: web
+#: form_common.js:1049 base.xml:0
+msgid "Create"
+msgstr "Sukurti"
+
+#. custom: web
+#: base_common.xml:0
+msgid "×"
+msgstr ""
+
+#. custom: web
+#: pyeval.js:991
+msgid "Unknown nonliteral type "
+msgstr "Nežinomas tipas "
+
+#. custom: web
+#: search_inputs.js:330
+msgid "Yes"
+msgstr "Taip"
+
+#. custom: web
+#: form_common.js:281 form_relational_widgets.js:1080
+msgid "Create: "
+msgstr "Sukurti: "
+
+#. custom: web
+#: form_view.js:887
+msgid "The following fields are invalid:"
+msgstr "Šių laukų reikšmės neteisingos:"
+
+#. custom: web
+#: form_relational_widgets.js:1595
+msgid "The type of the field '%s' must be a many2many field with a relation to 'ir.attachment' model."
+msgstr "Lauko '%s' tipas turi būti many2many laukas su santykiu su 'ir.attachment' modeliu."
+
+#. custom: web
+#: crash_manager.js:57
+msgid "Your Hexya session expired. Please refresh the current web page."
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "or"
+msgstr "arba"
+
+#. custom: web
+#: form_view.js:301
+msgid "The record could not be found in the database."
+msgstr "Nepavyko rasti įrašą duomenų bazėje."
+
+#. custom: web
+#: form_view.js:756
+msgid "The record has been modified, your changes will be discarded. Are you sure you want to leave this page ?"
+msgstr ""
+
+#. custom: web
+#: form_widgets.js:862
+msgid "Timezone Mismatch : The timezone of your browser doesn't match the selected one. The time in Hexya is displayed according to your field timezone."
+msgstr ""
+
+#. custom: web
+#: sidebar.js:217
+msgid "Do you really want to delete this attachment ?"
+msgstr "Ar tikrai norite ištrinti šį priedą?"
+
+#. custom: web
+#: search_menus.js:84
+msgid "Filter name is required."
+msgstr "Filtro pavadinimas yra privalomas."
+
+#. custom: web
+#: graph_widget.js:208 graph_widget.js:216
+msgid "Invalid data"
+msgstr "Netinkami duomenys"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Type:"
+msgstr "Tipas:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Widget:"
+msgstr "Valdiklis:"
+
+#. custom: web
+#: base_common.xml:0
+msgid ""
+"[<t t-esc=\"option[0]\"/>]\n"
+"                    <t t-if=\"option[1]\"> - </t>\n"
+"                    <t t-esc=\"option[1]\"/>"
+msgstr ""
+
+#. custom: web
+#: data.js:1083
+msgid "Unknown field %s in domain %s"
+msgstr "Nežinomas laukas %s domene %s"
+
+#. custom: web
+#: data.js:1121
+msgid "Unsupported operator %s in domain %s"
+msgstr "Neplaikomas operatorius %s domene %s"
+
+#. custom: web
+#: form_upgrade_widgets.js:34
+msgid "Upgrade now"
+msgstr "Atnaujinti dabar"
+
+#. custom: web
+#: form_widgets.js:1131
+msgid "The field is empty, there's nothing to save !"
+msgstr "Laukas tuščias, niekas neišsaugota!"
+
+#. custom: web
+#: graph_view.js:86 graph_widget.js:21 pivot_view.js:182 base.xml:0 base.xml:0
+msgid "Count"
+msgstr "Skaičiuoti"
+
+#. custom: web
+#: base.xml:0
+msgid "console.warn('Unhandled widget', dict.widget);"
+msgstr ""
+
+#. custom: web
+#: form_view.js:1304
+msgid "Widget type '%s' is not implemented"
+msgstr "Valdiklis '%s' neįdiegtas"
+
+#. custom: web
+#: misc.js:17
+msgid "Take a minute to get a coffee,<br />because it's loading..."
+msgstr "Minutėlę palaukite,<br />kraunama..."
+
+#. custom: web
+#: list_view_editable.js:122
+msgid "The line has been modified, your changes will be discarded. Are you sure you want to discard the changes ?"
+msgstr ""
+
+#. custom: web
+#: form_widgets.js:1114
+msgid "There was a problem while uploading your file"
+msgstr "Įkeliant failą kilo problema"
+
+#. custom: web
+#: list_view.js:1086
+msgid "Unknown m2m command %s"
+msgstr "Nežinomas m2m komanda %s"
+
+#. custom: web
+#: progress_bar.js:78
+msgid "Wrong value entered!"
+msgstr "Įvesta bloga vertė!"
+
+#. custom: web
+#: list_view.js:676
+msgid "You must select at least one record."
+msgstr "Turite pasirinkti bent vieną įrašą."
+
+#. custom: web
+#: base.xml:0
+msgid "overflow-x: hidden"
+msgstr ""
+
+#. custom: web
+#: search_inputs.js:551
+msgid "Filter"
+msgstr "Filtras"
+
+#. custom: web
+#: search_inputs.js:698
+msgid "Group By"
+msgstr "Grupuoti pagal"
+
+#. custom: web
+#: view_manager.js:437
+msgid "Failed to evaluate search criterions"
+msgstr "Nepavyko įvertinti paieškos kriterijų"
+
+#. custom: web
+#: debug_manager.js:339 base.xml:0
+msgid "Fields View Get"
+msgstr "Gauti laukų peržiūrą"
+
+#. custom: web
+#: search_inputs.js:451
+msgid "M2O search fields do not currently handle multiple default values"
+msgstr "M2O paieškos laukai šiuo metu negali apdoroti kelių numatytųjų reikšmių"
+
+#. custom: web
+#: search_menus.js:251
+msgid "This filter is global and will be removed for everybody if you continue."
+msgstr "Šis filtras yra bendras ir bus pašalintas visiems jei tęsite."
+
+#. custom: web
+#: form_common.js:1096 search_menus.js:177
+msgid "Custom Filter"
+msgstr "Pasirinktinis filtras"
+
+#. custom: web
+#: form_common.js:874 base.xml:0 base.xml:0 base.xml:0
+msgid "Save"
+msgstr "Išsaugoti"
+
+#. custom: web
+#: form_widgets.js:643 list_view.js:289
+msgid "Unarchive"
+msgstr "Išimti iš archyvo"
+
+#. custom: web
+#: sidebar.js:131
+msgid "You must choose at least one record."
+msgstr "Turite pasirinkti bent vieną įrašą."
+
+#. custom: web
+#: crash_manager.js:170 dialog.js:182 form_common.js:1046 form_upgrade_widgets.js:40 base.xml:0
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#. custom: web
+#: form_common.js:868 base.xml:0 base.xml:0
+msgid "Discard"
+msgstr "Atmesti"
+
+#. custom: web
+#: view_manager.js:223 search_menus.js:84 search_menus.js:91
+msgid "Error"
+msgstr "Klaida"
+
+#. custom: web
+#: form_view.xml:0
+msgid "e"
+msgstr ""
+
+#. custom: web
+#: search_inputs.js:245
+msgid "not a valid number"
+msgstr "neteisingas numeris"
+
+#. custom: web
+#: search_inputs.js:192 search_inputs.js:211 search_inputs.js:402
+msgid "Search %(field)s for: %(value)s"
+msgstr "Ieškoti %(field)s: %(value)s"
+
+#. custom: web
+#: crash_manager.js:107 form_view.js:761 list_view.js:676 sidebar.js:131
+msgid "Warning"
+msgstr "Įspėjimas"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"var $div = $(document.createElement('div')).attr('t-if', this.attr('t-if')).addClass('o_form_field_monetary');\n"
+"        this.clone(true).appendTo($div);\n"
+"        this.replaceWith($div);"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"var message = (d.message !== undefined) ? d.message : d.error.data.message;\n"
+"            d.html_error = context.engine.tools.html_escape(message).replace(/\\n/g, '<br/>');"
+msgstr ""
+
+#. custom: web
+#: dialog.js:40 dialog.js:158 dialog.js:176 base.xml:0
+msgid "Ok"
+msgstr "Gerai"
+
+#. custom: web
+#: misc.js:16
+msgid "You may not believe it,<br />but the application is actually loading..."
+msgstr "Jūs galite nepatikėti, <br /> tačiau programa iš tikrųjų kraunama ..."
+
+#. custom: web
+#: search_inputs.js:230
+msgid "not a valid integer"
+msgstr "neteisingas sveikasis skaičius"
+
+#. custom: web
+#: pivot_view.js:526 pivot_view.js:555
+msgid "Total"
+msgstr "Viso"
+
+#. custom: web
+#: graph_widget.js:79 list_view.js:1379 list_view.js:1385 pivot_view.js:508
+msgid "Undefined"
+msgstr "Neapibrėžta"
+
+#. custom: web
+#: utils.js:302
+msgid "kMGTPE"
+msgstr ""
+
+#. custom: web
+#: form_relational_widgets.js:153 form_relational_widgets.js:921 form_relational_widgets.js:1104 form_relational_widgets.js:1321
+msgid "Open: "
+msgstr "Atverti: "
+

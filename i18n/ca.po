@@ -1,0 +1,1350 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. field:Filter.Action
+msgid "Action"
+msgstr "Acció"
+
+#. field:Filter.Domain
+msgid "Domain"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "$(this).addClass('o_error');"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "...Upload in progress..."
+msgstr "...Carrega en progrés..."
+
+#. custom: web
+#: base.xml:0
+msgid "99+"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Activate Assets Debugging"
+msgstr "Activar depuració d'actius"
+
+#. custom: web
+#: base.xml:0
+msgid "Add Custom Filter"
+msgstr "Afegir un filtre personalitzat"
+
+#. custom: web
+#: base.xml:0
+msgid "Add custom group"
+msgstr "Afegeix un grup personalitzat"
+
+#. custom: web
+#: base.xml:0
+msgid "Add..."
+msgstr "Afegeix..."
+
+#. custom: web
+#: base.xml:0
+msgid "All users"
+msgstr "Tots els usuaris"
+
+#. custom: web
+#: base.xml:0
+msgid "Attachment :"
+msgstr "Adjunts:"
+
+#. custom: web
+#: base.xml:0
+msgid "Available fields"
+msgstr "Camps disponibles"
+
+#. custom: web
+#: base.xml:0
+msgid "Clear Events"
+msgstr "Netejar esdeveniments"
+
+#. field:Filter.Context
+msgid "Context"
+msgstr ""
+
+#. field:Company.DashboardBackground
+msgid "Dashboard Background"
+msgstr ""
+
+#. field:Filter.IsDefault
+msgid "Default filter"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Condition:"
+msgstr "Condició:"
+
+#. custom: web
+#: base.xml:0
+msgid "Confirm New Password"
+msgstr "Confirmar nova contrasenya"
+
+#. custom: web
+#: base.xml:0
+msgid "Created by :"
+msgstr "Creat per:"
+
+#. custom: web
+#: base.xml:0
+msgid "Creation Date:"
+msgstr "Data de creació:"
+
+#. custom: web
+#: base.xml:0
+msgid "Creation User:"
+msgstr "Usuari de creació:"
+
+#. custom: web
+#: base.xml:0
+msgid "Day"
+msgstr "Dia"
+
+#. custom: web
+#: base.xml:0
+msgid "Default:"
+msgstr "Per defecte:"
+
+#. custom: web
+#: base.xml:0
+msgid "Delete"
+msgstr "Elimina"
+
+#. custom: web
+#: base_common.xml:0
+msgid "(no string)"
+msgstr "(sense cadena)"
+
+#. custom: web
+#: base_common.xml:0
+msgid "(nolabel)"
+msgstr "(sense etiqueta)"
+
+#. custom: web
+#: base_common.xml:0
+msgid "-"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid ":"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Action ID:"
+msgstr "ID de l'acció:"
+
+#. custom: web
+#: base_common.xml:0
+msgid ""
+"Button\n"
+"                <t t-if=\"widget.string\">: </t>\n"
+"                <t t-if=\"!widget.string\"> (no string)</t>"
+msgstr ""
+
+#. custom: web
+#: dialog.js:168
+msgid "Alert"
+msgstr "Alerta"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Button Type:"
+msgstr "Tipus de botó:"
+
+#. custom: web
+#: form_common.js:874
+msgid " & Close"
+msgstr "& Tanca"
+
+#. custom: web
+#: base.xml:0
+msgid "Export Type :"
+msgstr "Exportar tipus :"
+
+#. custom: web
+#: debug_manager.js:134
+msgid "%d requests (%d ms) %d queries (%d ms)"
+msgstr "%d sol·licituds (%d ms) %d consultes (%d ms)"
+
+#. custom: web
+#: form_relational_widgets.js:1018
+msgid "Add an item"
+msgstr "Afegeix un element"
+
+#. custom: web
+#: form_relational_widgets.js:1122
+msgid "Action Button"
+msgstr "Botó d'acció"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "/web/binary/upload_attachment"
+msgstr ""
+
+#. custom: web
+#: form_relational_widgets.js:1305
+msgid "Add: "
+msgstr "Afegeix:"
+
+#. custom: web
+#: formats.js:75
+msgid "(%d records)"
+msgstr "(%d registres)"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Context:"
+msgstr ""
+
+#. custom: web
+#: form_relational_widgets.js:25
+msgid "Create a %s"
+msgstr "Crear un %s"
+
+#. custom: web
+#: form_common.js:236
+msgid "Create and Edit..."
+msgstr "Crear i editar..."
+
+#. custom: web
+#: base.xml:0
+msgid "Disable Technical Features"
+msgstr "Desactivar característiques tècniques"
+
+#. custom: web
+#: base.xml:0
+msgid "Enable Technical Features"
+msgstr "Habilitar característiques tècniques"
+
+#. custom: web
+#: data_export.js:199
+msgid "Export Data"
+msgstr "Exportar dades"
+
+#. custom: web
+#: form_common.js:889
+msgid "Save & New"
+msgstr "Guardar i Nou"
+
+#. custom: web
+#: search_menus.js:252
+msgid "Are you sure that you want to remove this filter?"
+msgstr "Està segur que vol eliminar aquest filtre?"
+
+#. custom: web
+#: list_common.js:133
+msgid "Can't convert value %s to context"
+msgstr "No es pot convertir el valor %s a context"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Change default:"
+msgstr "Canviar per defecte:"
+
+#. custom: web
+#: dialog.js:193
+msgid "Confirmation"
+msgstr "Confirmació"
+
+#. custom: web
+#: utils.js:179
+msgid "Could not serialize XML"
+msgstr "No s'ha pogut serialitzar l'XML"
+
+#. custom: web
+#: form_widgets.js:635
+msgid "Deactivate"
+msgstr "Desactivar"
+
+#. custom: web
+#: formats.js:132
+msgid "'%s' is not a correct integer"
+msgstr "'%s' no és un enter correcte"
+
+#. custom: web
+#: base.xml:0
+msgid "Export all Data"
+msgstr "Exportar totes les dades"
+
+#. custom: web
+#: form_widgets.js:637
+msgid "Activate"
+msgstr "Activar"
+
+#. custom: web
+#: formats.js:173
+msgid "'%s' is not a correct datetime"
+msgstr "'%s' no és una data i hora correcta"
+
+#. custom: web
+#: formats.js:144
+msgid "'%s' is not a correct float"
+msgstr "'%s' no és un float correcte"
+
+#. custom: web
+#: form_widgets.js:642
+msgid "Archived"
+msgstr "Arxivat"
+
+#. custom: web
+#: formats.js:187
+msgid "'%s' is not a correct date"
+msgstr "'%s' no és una data correcta"
+
+#. custom: web
+#: time.js:192
+msgid "'%s' is not a correct date, datetime nor time"
+msgstr "'%s' no és una data, data i hora ni hora correcta"
+
+#. custom: web
+#: formats.js:192
+msgid "'%s' is not a correct time"
+msgstr "'%s' no és una hora correcta"
+
+#. custom: web
+#: list_view.js:1847
+msgid "Download"
+msgstr "Descarregar"
+
+#. custom: web
+#: list_view.js:676
+msgid "You must select at least one record."
+msgstr "Ha de seleccionar almenys un registre."
+
+#. custom: web
+#: time.js:204
+msgid "'%s' is not convertible to date, datetime nor time"
+msgstr "'%s' no es convertible a data, data i hora ni hora correcta"
+
+#. custom: web
+#: utils.js:284
+msgid "Bytes,Kb,Mb,Gb,Tb,Pb,Eb,Zb,Yb"
+msgstr ""
+
+#. custom: web
+#: form_view.js:733
+msgid "Do you really want to delete this record?"
+msgstr "Està segur d'eliminar aquest registre?"
+
+#. custom: web
+#: base.xml:0
+msgid "Edit"
+msgstr "Editar"
+
+#. custom: web
+#: base.xml:0
+msgid "Export Formats :"
+msgstr "Exportar formats:"
+
+#. custom: web
+#: view_manager.js:223
+msgid " view couldn't be loaded"
+msgstr "no s'ha pogut carregar la vista"
+
+#. custom: web
+#: form_widgets.js:1251
+msgid "Could not display the selected image."
+msgstr "No es pot mostrar la imatge seleccionada."
+
+#. custom: web
+#: list_view.js:1024
+msgid "Could not find id in dataset"
+msgstr "No s'ha pogut trobar un dataset"
+
+#. custom: web
+#: sidebar.js:217
+msgid "Do you really want to delete this attachment ?"
+msgstr "Està segur d'eliminar aquest adjunt?"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Domain:"
+msgstr "Domini:"
+
+#. custom: web
+#: list_view.js:287
+msgid "Export"
+msgstr "Exportar"
+
+#. custom: web
+#: data_export.js:201
+msgid "Export To File"
+msgstr "Exportar a un fitxer"
+
+#. custom: web
+#: misc.js:15
+msgid "Don't leave yet,<br />it's still loading..."
+msgstr "No te'n vagis encara,<br />encara està carregant..."
+
+#. custom: web
+#: pyeval.js:1023
+msgid "Evaluation Error"
+msgstr "Error d'avaluació"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Field:"
+msgstr "Camp:"
+
+#. custom: web
+#: list_view.js:543
+msgid "Do you really want to remove these records?"
+msgstr "Està segur que vol eliminar aquests registres?"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Apply"
+msgstr "Aplicar"
+
+#. custom: web
+#: view_manager.js:437
+msgid "Failed to evaluate search criterions"
+msgstr "Fallat en avaluar els criteris de cerca"
+
+#. custom: web
+#: form_view.js:1300
+msgid "Field '%s' specified in view could not be found."
+msgstr "Camp '%s' especificat en la vista pot no ser trobada."
+
+#. custom: web
+#: priority.js:49
+msgid "High"
+msgstr "Alta"
+
+#. custom: web
+#: base.xml:0
+msgid "New Password"
+msgstr "Nova Contrasenya"
+
+#. custom: web
+#: data.js:1138
+msgid "Unnamed"
+msgstr "Sense nom"
+
+#. custom: web
+#: form_upgrade_widgets.js:34
+msgid "Upgrade now"
+msgstr "Actualitzar ara"
+
+#. custom: web
+#: list_view.js:1863
+msgid "Download \\\"%s\\\""
+msgstr ""
+
+#. custom: web
+#: change_password.js:14 base.xml:0
+msgid "Change Password"
+msgstr "Canvia contrasenya"
+
+#. custom: web
+#: abstract_web_client.js:124 crash_manager.js:123
+msgid "Client Error"
+msgstr "Error de client"
+
+#. custom: web
+#: debug_manager.js:339 base.xml:0
+msgid "Fields View Get"
+msgstr "Obtenir camps de vista"
+
+#. field:Filter.Name
+#. resource:base_ir_filters_view_search
+msgid "Filter Name"
+msgstr ""
+
+#. resource:base_actions_ir_filters_view
+msgid "Filters"
+msgstr "Filtres"
+
+#. resource:base_ir_filters_view_search
+msgid "Filters created by myself"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "Filters shared with all users"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "Filters visible only for one user"
+msgstr ""
+
+#. field:User.ID
+#. field:CommonMixin.ID
+#. field:Company.ID
+#. field:Filter.ID
+msgid "ID"
+msgstr "ID"
+
+#. custom: web
+#: base.xml:0
+msgid "ID:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Import-Compatible Export"
+msgstr "Importació-Exportació Compatible"
+
+#. custom: web
+#: base.xml:0
+msgid "Latest Modification Date:"
+msgstr "Última data de modificació:"
+
+#. custom: web
+#: base.xml:0
+msgid "Latest Modification by:"
+msgstr "Última modificació per:"
+
+#. custom: web
+#: base.xml:0
+msgid "Leave the Developer Tools"
+msgstr "Abandonar les eines de desenvolupament"
+
+#. custom: web
+#: base.xml:0
+msgid "Log out"
+msgstr "Tancar sessió"
+
+#. custom: web
+#: base.xml:0
+msgid "Manage Filters"
+msgstr "Gestionar filtres"
+
+#. field:Filter.ResModel
+#. resource:base_ir_filters_view_search
+msgid "Model"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Modified by :"
+msgstr "Modificat per:"
+
+#. custom: web
+#: base.xml:0
+msgid "Month"
+msgstr "Mes"
+
+#. custom: web
+#: base.xml:0
+msgid "More"
+msgstr "més"
+
+#. custom: web
+#: base.xml:0
+msgid "Move Down"
+msgstr "Moure avall"
+
+#. custom: web
+#: base.xml:0
+msgid "Move Up"
+msgstr "Moure amunt"
+
+#. resource:base_ir_filters_view_search
+msgid "My filters"
+msgstr ""
+
+#. custom: web
+#: form_widgets.js:1251
+msgid "Image"
+msgstr "Imatge"
+
+#. custom: web
+#: base.xml:0
+msgid "No Update:"
+msgstr "Cap actualització"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"No data available for this pivot table.  Try to add some records, or make sure\n"
+"        that there is at least one measure and no active filter in the search bar."
+msgstr "No hi han dades disponibles per aquesta taula pivot. Intenti agregar uns registres,o asseguri's que almenys hagi seleccionat una mesura i que no hi hagi filtres actius en la barra de filtres."
+
+#. custom: web
+#: base.xml:0
+msgid "No data to display."
+msgstr "Sense dades que mostrar."
+
+#. custom: web
+#: base.xml:0
+msgid "Not shown in kanban"
+msgstr "Sense mostrar en kanban"
+
+#. custom: web
+#: base.xml:0
+msgid "Old Password"
+msgstr "Contrasenya antiga"
+
+#. custom: web
+#: base.xml:0
+msgid "Only you"
+msgstr "Només tu"
+
+#. custom: web
+#: base.xml:0
+msgid "Please note that only the selected ids will be exported."
+msgstr "Tingui en compte que només s'exportaran els registres seleccionats."
+
+#. custom: web
+#: base.xml:0
+msgid "Remove All"
+msgstr "Eliminar tot"
+
+#. custom: web
+#: base.xml:0
+msgid "Save current search"
+msgstr "Guardar la cerca actual"
+
+#. custom: web
+#: base.xml:0
+msgid "Save fields list"
+msgstr "Guardar la llista de camps"
+
+#. custom: web
+#: base.xml:0
+msgid "Saved exports:"
+msgstr "Exportacions guardades:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Method:"
+msgstr "Mètode:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Modifiers:"
+msgstr "Modificadors:"
+
+#. custom: web
+#: base.xml:0
+msgid "Please pay attention that all records matching your search filter will be exported. Not only the selected ids."
+msgstr "Por favor, tingui en compte que tots els registres que compleixen el filtre de cerca seran exportats, no només els seleccionats."
+
+#. custom: web
+#: base.xml:0
+msgid "Quarter"
+msgstr "Trimestre"
+
+#. custom: web
+#: base.xml:0
+msgid "Run JS Tests"
+msgstr "Corre els testos JS"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Object:"
+msgstr "Objecte:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "On change:"
+msgstr "Al canviar:"
+
+#. custom: web
+#: data_export.js:167
+msgid "Please enter save field list name"
+msgstr "Si us plau, introdueixi el nom de la llista de camps a guardar"
+
+#. custom: web
+#: debug_manager.js:321
+msgid "No metadata available"
+msgstr "Cap metadada disponible"
+
+#. custom: web
+#: debug_manager.js:326
+msgid "Metadata (%s)"
+msgstr "Metadada (%s)"
+
+#. custom: web
+#: form_common.js:245
+msgid "No results to show..."
+msgstr "No hi ha resultats per mostrar..."
+
+#. custom: web
+#: data_export.js:435
+msgid "Please select fields to export..."
+msgstr "Per favor, seleccioni els camps a exportar"
+
+#. custom: web
+#: debug_manager.js:241
+msgid "Fields of %s"
+msgstr "Camps per %s"
+
+#. custom: web
+#: base.xml:0
+msgid "Preferences"
+msgstr "Preferències"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Relation:"
+msgstr "Relació:"
+
+#. custom: web
+#: debug_manager.js:183
+msgid "JS Tests"
+msgstr "Testos JS"
+
+#. custom: web
+#: data_export.js:421
+msgid "Please select fields to save export list..."
+msgstr "Per favor, seleccioni els camps a exportar"
+
+#. custom: web
+#: base.xml:0
+msgid "Remove"
+msgstr "Elimina"
+
+#. custom: web
+#: base.xml:0
+msgid "Save as:"
+msgstr "Guardar com:"
+
+#. custom: web
+#: form_common.js:211
+msgid "Search More..."
+msgstr "Cercar mes..."
+
+#. custom: web
+#: form_common.js:281
+msgid "Search: "
+msgstr "Cercar:"
+
+#. resource:base_ir_filters_view_search
+msgid "Shared"
+msgstr ""
+
+#. field:User.SidebarVisible
+msgid "Show App Sidebar"
+msgstr ""
+
+#. field:Filter.Sort
+msgid "Sort"
+msgstr ""
+
+#. help:Filter.Action
+msgid "The menu action this filter applies to. When left empty the filter applies to all menus for this model."
+msgstr ""
+
+#. help:Filter.User
+msgid "The user this filter is private to. When left empty the filter is public and available to all users."
+msgstr ""
+
+#. custom: web
+#: search_inputs.js:451
+msgid "M2O search fields do not currently handle multiple default values"
+msgstr "Els camps de cerca M2O no suporten actualment valors per defecte"
+
+#. custom: web
+#: form_relational_widgets.js:327
+msgid "No value found for the field %s for value %s"
+msgstr "Cap valor trobat per al camp %s pel valor %s"
+
+#. custom: web
+#: form_widgets.js:641 list_view.js:288
+msgid "Archive"
+msgstr "Arxiva"
+
+#. custom: web
+#: form_view.js:1125
+msgid "Set Default"
+msgstr "Establir per defecte"
+
+#. custom: web
+#: graph_widget.js:252
+msgid "Not enough data points"
+msgstr "No hi ha prou punts de dades"
+
+#. custom: web
+#: form_widgets.js:1131
+msgid "Save As..."
+msgstr "Guardar com..."
+
+#. custom: web
+#: list_view.js:931
+msgid "Setting 'id' attribute on existing record %s"
+msgstr "Establint atribut 'id' en registre %s existent"
+
+#. custom: web
+#: search_inputs.js:551
+msgid "Filter"
+msgstr "Filtre"
+
+#. custom: web
+#: search_inputs.js:698
+msgid "Group By"
+msgstr "Agrupar per"
+
+#. custom: web
+#: misc.js:12
+msgid "Loading..."
+msgstr "Carregant ..."
+
+#. custom: web
+#: misc.js:14
+msgid "Still loading...<br />Please be patient."
+msgstr "Encara carregant... <br /> Si us plau, sigui pacient."
+
+#. custom: web
+#: search_inputs.js:331
+msgid "No"
+msgstr ""
+
+#. custom: web
+#: utils.js:302
+msgid "kMGTPE"
+msgstr ""
+
+#. custom: web
+#: form_common.js:1049 base.xml:0
+msgid "Create"
+msgstr "Crea"
+
+#. custom: web
+#: form_widgets.js:1114
+msgid "File Upload"
+msgstr "Pujar arxiu"
+
+#. custom: web
+#: form_common.js:1103
+msgid "Selected domain"
+msgstr "Seleccioni domini"
+
+#. custom: web
+#: base.xml:0
+msgid "Upload your file"
+msgstr "Carregar el teu arxiu"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"var message = (d.message !== undefined) ? d.message : d.error.data.message;\n"
+"            d.html_error = context.engine.tools.html_escape(message).replace(/\\n/g, '<br/>');"
+msgstr ""
+
+#. custom: web
+#: form_widgets.js:1094
+msgid "File upload"
+msgstr "Pujar arxiu"
+
+#. custom: web
+#: pivot_view.js:831
+msgid "For Excel compatibility, data cannot be exported if there are more than 256 columns.\\n\\nTip: try to flip axis, filter further or reduce the number of measures."
+msgstr ""
+
+#. custom: web
+#: crash_manager.js:57
+msgid "Your Hexya session expired. Please refresh the current web page."
+msgstr ""
+
+#. custom: web
+#: form_relational_widgets.js:326
+msgid "Render"
+msgstr "Generar"
+
+#. custom: web
+#: form_common.js:281 form_relational_widgets.js:1080
+msgid "Create: "
+msgstr "Crear:"
+
+#. custom: web
+#: form_widgets.js:634 form_widgets.js:640
+msgid "Active"
+msgstr "Actiu"
+
+#. custom: web
+#: form_relational_widgets.js:1123
+msgid "The o2m record must be saved before an action can be used"
+msgstr "El registre O2M ha de guardar-se abans que una acció pugui ser utilitzada"
+
+#. custom: web
+#: form_upgrade_widgets.js:51
+msgid "Hexya Enterprise"
+msgstr ""
+
+#. custom: web
+#: form_widgets.js:636
+msgid "Inactive"
+msgstr "Inactiu"
+
+#. custom: web
+#: loading.js:44
+msgid "Loading (%d)"
+msgstr "Carregant (%d)"
+
+#. custom: web
+#: form_relational_widgets.js:1378 base.xml:0
+msgid "Add"
+msgstr "Afegeix"
+
+#. custom: web
+#: search_menus.js:91
+msgid "Filter with same name already exists."
+msgstr "Ja existeix un filtre amb el mateix nom."
+
+#. custom: web
+#: search_inputs.js:553 search_view.js:205
+msgid " or "
+msgstr "o"
+
+#. custom: web
+#: form_common.js:868 form_view.js:1127 data_export.js:202
+msgid "Close"
+msgstr "Tancar"
+
+#. custom: web
+#: misc.js:18
+msgid "Maybe you should consider reloading the application by pressing F5..."
+msgstr "Potser podria considerar tornar a carregar l'aplicació prement F5 ..."
+
+#. custom: web
+#: form_view.js:315
+msgid "New"
+msgstr "Nou"
+
+#. custom: web
+#: graph_widget.js:94
+msgid "No data to display"
+msgstr "Sense dades que mostrar"
+
+#. custom: web
+#: priority.js:48
+msgid "Low"
+msgstr "Baixa"
+
+#. custom: web
+#: form_widgets.js:1131
+msgid "The field is empty, there's nothing to save !"
+msgstr "Aquest camp és buit, no hi ha res a guardar!"
+
+#. custom: web
+#: pyeval.js:1027
+msgid "Local evaluation failure\\n%s\\n\\n%s"
+msgstr ""
+
+#. custom: web
+#: search_menus.js:84
+msgid "Filter name is required."
+msgstr "Es requereix un nom pel filtre."
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Measures <span class=\"caret\"/>"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0 base.xml:0
+msgid "?"
+msgstr ""
+
+#. custom: web
+#: form_common.js:1096 search_menus.js:177
+msgid "Custom Filter"
+msgstr "Filtre personalitzat"
+
+#. custom: web
+#: form_view.js:301
+msgid "Form"
+msgstr "Formulari"
+
+#. custom: web
+#: loading.js:46
+msgid "Loading"
+msgstr "Carregant "
+
+#. custom: web
+#: utils.js:143
+msgid "Node [%s] is not a JSONified XML node"
+msgstr ""
+
+#. custom: web
+#: view_manager.js:223 search_menus.js:84 search_menus.js:91
+msgid "Error"
+msgstr ""
+
+#. custom: web
+#: graph_widget.js:208 graph_widget.js:216
+msgid "Invalid data"
+msgstr "Dades invalides"
+
+#. custom: web
+#: priority.js:47
+msgid "Normal"
+msgstr ""
+
+#. custom: web
+#: form_common.js:868 base.xml:0 base.xml:0
+msgid "Discard"
+msgstr "Rebutgi"
+
+#. custom: web
+#: dialog.js:40 dialog.js:158 dialog.js:176 base.xml:0
+msgid "Ok"
+msgstr "Acepta"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Selection:"
+msgstr "Selecció:"
+
+#. custom: web
+#: base.xml:0
+msgid "Set Defaults"
+msgstr "Establir per defectes"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Size:"
+msgstr "Mida:"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Special:"
+msgstr "Especial:"
+
+#. custom: web
+#: base.xml:0
+msgid "Technical Translation"
+msgstr "Traducció tècnica"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"This wizard will export all data that matches the current search criteria to a CSV file.\n"
+"        You can export all data or only the fields that can be reimported after modification."
+msgstr "Aquest assistent exporta totes les dades que encaixes amb els criteris de filtre actuals a un arxiu CSV. Pot exportar totes les dades o només els camps que poden ser reimportats després de modificar-los."
+
+#. custom: web
+#: base.xml:0
+msgid "Toggle Timelines"
+msgstr "Intercanviar cronograma"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"Unhandled widget\n"
+"    <t t-js=\"dict\">console.warn('Unhandled widget', dict.widget);</t>"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Type:"
+msgstr "Tipus:"
+
+#. custom: web
+#: data.js:1083
+msgid "Unknown field %s in domain %s"
+msgstr "Camp desconegut %s al domini %s"
+
+#. custom: web
+#: form_common.js:1054
+msgid "Select"
+msgstr "Seleccionar"
+
+#. custom: web
+#: form_view.js:756
+msgid "The record has been modified, your changes will be discarded. Are you sure you want to leave this page ?"
+msgstr "El registre ha estat modificat i els seus canvis es perdran. Està segur que vol abandonar aquesta pàgina?"
+
+#. custom: web
+#: base.xml:0
+msgid "View Fields"
+msgstr "Veure camps"
+
+#. custom: web
+#: base.xml:0
+msgid "Week"
+msgstr "Setmana"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"var $div = $(document.createElement('div')).attr('t-if', this.attr('t-if')).addClass('o_form_field_monetary');\n"
+"        this.clone(true).appendTo($div);\n"
+"        this.replaceWith($div);"
+msgstr ""
+
+#. custom: web
+#: form_relational_widgets.js:47
+msgid "You are creating a new %s, are you sure it does not exist yet?"
+msgstr "Està creant un nou %s, està segur que no existeix ja?"
+
+#. custom: web
+#: form_relational_widgets.js:740
+msgid "View type '%s' is not supported in X2Many."
+msgstr "Tipus de vista '%s' no està suportat en X2Many."
+
+#. custom: web
+#: progress_bar.js:78
+msgid "Only Integer Value should be valid."
+msgstr "Només es vàlid un valor sencer."
+
+#. field:Filter.User
+#. resource:base_ir_filters_view_search
+#. resource:base_ir_filters_view_search
+msgid "User"
+msgstr ""
+
+#. custom: web
+#: data.js:1121
+msgid "Unsupported operator %s in domain %s"
+msgstr "Operador %s no suportat al domini %s"
+
+#. resource:base_menu_ir_filters
+msgid "User-defined Filters"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Update translations"
+msgstr "Actualitzar traduccions"
+
+#. custom: web
+#: form_common.js:874 base.xml:0 base.xml:0 base.xml:0
+msgid "Save"
+msgstr "Desar"
+
+#. custom: web
+#: base.xml:0
+msgid "View Metadata"
+msgstr "Veure metadades"
+
+#. custom: web
+#: base.xml:0
+msgid "Whoops, you shouldn't have come up to here..."
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Year"
+msgstr "Any"
+
+#. custom: web
+#: form_view.js:887
+msgid "The following fields are invalid:"
+msgstr "Els següents camps són invàlids:"
+
+#. custom: web
+#: form_view.js:1128
+msgid "Save default"
+msgstr "Guardar per defecte"
+
+#. custom: web
+#: misc.js:13
+msgid "Still loading..."
+msgstr "Encara carregant..."
+
+#. custom: web
+#: misc.js:17
+msgid "Take a minute to get a coffee,<br />because it's loading..."
+msgstr "Agafi's un minut per anar a fer un cafè, <br /> perquè està carregant..."
+
+#. custom: web
+#: list_view_editable.js:122
+msgid "The line has been modified, your changes will be discarded. Are you sure you want to discard the changes ?"
+msgstr "La línia ha estat modificada. Els canvis seran descartats. Està segur que vol descartar els canvis?"
+
+#. custom: web
+#: form_relational_widgets.js:1595
+msgid "The type of the field '%s' must be a many2many field with a relation to 'ir.attachment' model."
+msgstr "El tipus de camp '%s' ha de ser un camp many2many amb una relació a 'ir.attachment' model."
+
+#. custom: web
+#: form_view.js:301
+msgid "The record could not be found in the database."
+msgstr "El registre no s'ha trobat en la base de dades"
+
+#. custom: web
+#: form_widgets.js:1093
+msgid "The selected file exceed the maximum file size of %s."
+msgstr "El fitxer seleccionat excedeix la màxima mida d'arxiu %s."
+
+#. custom: web
+#: form_widgets.js:862
+msgid "Timezone Mismatch : The timezone of your browser doesn't match the selected one. The time in Hexya is displayed according to your field timezone."
+msgstr ""
+
+#. custom: web
+#: form_widgets.js:1114
+msgid "There was a problem while uploading your file"
+msgstr "Hi ha hagut un problema pujant el fitxer."
+
+#. custom: web
+#: data.js:1075
+msgid "Unknown operator %s in domain %s"
+msgstr "Operador %s desconegut al domini %s"
+
+#. custom: web
+#: form_view.js:1304
+msgid "Widget type '%s' is not implemented"
+msgstr "El tipus de widget '%s' no està implementat"
+
+#. custom: web
+#: priority.js:50
+msgid "Very High"
+msgstr "Molt alta"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Widget:"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "×"
+msgstr ""
+
+#. custom: web
+#: list_view.js:1086
+msgid "Unknown m2m command %s"
+msgstr "Comanda m2m desconegut %s"
+
+#. custom: web
+#: form_view.xml:0
+msgid "e"
+msgstr ""
+
+#. custom: web
+#: pivot_view.js:526 pivot_view.js:555
+msgid "Total"
+msgstr ""
+
+#. custom: web
+#: progress_bar.js:78
+msgid "Wrong value entered!"
+msgstr "Valor introduït incorrecte!"
+
+#. custom: web
+#: form_relational_widgets.js:153 form_relational_widgets.js:921 form_relational_widgets.js:1104 form_relational_widgets.js:1321
+msgid "Open: "
+msgstr "Obre "
+
+#. custom: web
+#: search_menus.js:251
+msgid "This filter is global and will be removed for everybody if you continue."
+msgstr "Aquest filtre es global i s'eliminara de tots els usuaris si continua.Aquest filtre és global i s'eliminarà de tots els usuaris si continua."
+
+#. custom: web
+#: form_widgets.js:643 list_view.js:289
+msgid "Unarchive"
+msgstr "Desarxivar"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Uploading..."
+msgstr "Pujant..."
+
+#. custom: web
+#: base.xml:0
+msgid "or"
+msgstr "o"
+
+#. custom: web
+#: base.xml:0
+msgid "overflow-x: hidden"
+msgstr ""
+
+#. custom: web
+#: crash_manager.js:170 dialog.js:182 form_common.js:1046 form_upgrade_widgets.js:40 base.xml:0
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#. custom: web
+#: base.xml:0
+msgid "XML ID:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"You have updated <strong><t t-esc=\"field.string\"/></strong> (<t t-esc=\"lang\"/>).\n"
+"            <a class=\"oe_field_translate\" t-att-name=\"field.name\" href=\"#\">Update translations</a>"
+msgstr ""
+
+#. custom: web
+#: misc.js:16
+msgid "You may not believe it,<br />but the application is actually loading..."
+msgstr "Vostè no ho creurà, <br /> però l'aplicació realment està carregant..."
+
+#. custom: web
+#: base_common.xml:0
+msgid ""
+"[<t t-esc=\"option[0]\"/>]\n"
+"                    <t t-if=\"option[1]\"> - </t>\n"
+"                    <t t-esc=\"option[1]\"/>"
+msgstr ""
+
+#. custom: web
+#: pyeval.js:991
+msgid "Unknown nonliteral type "
+msgstr "Tipus no literal desconegut"
+
+#. custom: web
+#: graph_view.js:86 graph_widget.js:21 pivot_view.js:182 base.xml:0 base.xml:0
+msgid "Count"
+msgstr "Comptar"
+
+#. custom: web
+#: base.xml:0
+msgid "console.warn('Unhandled widget', dict.widget);"
+msgstr ""
+
+#. custom: web
+#: search_inputs.js:230
+msgid "not a valid integer"
+msgstr "decimal invàlid"
+
+#. custom: web
+#: search_inputs.js:245
+msgid "not a valid number"
+msgstr "nombre invàlid"
+
+#. custom: web
+#: search_inputs.js:360
+msgid "Search %(field)s at: %(value)s"
+msgstr "Cercar %(field)s en:%(value)s"
+
+#. custom: web
+#: search_inputs.js:330
+msgid "Yes"
+msgstr "Sí"
+
+#. custom: web
+#: sidebar.js:131
+msgid "You must choose at least one record."
+msgstr "Heu de seleccionar almenys un registre."
+
+#. custom: web
+#: search_inputs.js:192 search_inputs.js:211 search_inputs.js:402
+msgid "Search %(field)s for: %(value)s"
+msgstr "Cercar %(field)s per: %(value)s"
+
+#. custom: web
+#: graph_widget.js:79 list_view.js:1379 list_view.js:1385 pivot_view.js:508
+msgid "Undefined"
+msgstr "Indefinit"
+
+#. custom: web
+#: crash_manager.js:107 form_view.js:761 list_view.js:676 sidebar.js:131
+msgid "Warning"
+msgstr "Avís"
+
