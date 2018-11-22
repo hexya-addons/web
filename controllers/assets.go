@@ -15,7 +15,6 @@ import (
 	"github.com/hexya-erp/hexya/src/models/security"
 	"github.com/hexya-erp/hexya/src/server"
 	"github.com/hexya-erp/hexya/src/tools/assets"
-	"github.com/hexya-erp/hexya/src/tools/generate"
 	"github.com/hexya-erp/pool/h"
 	"github.com/hexya-erp/pool/q"
 )
@@ -27,7 +26,7 @@ func getAssetTempFile(asset string) string {
 func createCSSAssets(files []string, asset string, includePaths ...string) {
 	var readers []io.Reader
 	for _, fileName := range files {
-		filePath := filepath.Join(generate.HexyaDir, "hexya", "server", fileName)
+		filePath := filepath.Join(server.ResourceDir, fileName)
 		f, err := os.Open(filePath)
 		if err != nil {
 			log.Panic("Error while reading less file", "filename", fileName, "error", err)
@@ -60,7 +59,7 @@ func AssetsCommonCSS(c *server.Context) {
 func AssetsBackendCSS(c *server.Context) {
 	fName := getAssetTempFile(backendCSSRoute)
 	if _, err := os.Stat(fName); err != nil {
-		bootstrapDir := filepath.Join(generate.HexyaDir, "hexya", "server", "static", "web", "lib", "bootstrap", "less")
+		bootstrapDir := filepath.Join(server.ResourceDir, "static", "web", "lib", "bootstrap", "less")
 		createCSSAssets(append(LessHelpers, BackendLess...), backendCSSRoute, bootstrapDir)
 	}
 	c.File(fName)
@@ -70,7 +69,7 @@ func AssetsBackendCSS(c *server.Context) {
 func AssetsFrontendCSS(c *server.Context) {
 	fName := getAssetTempFile(frontendCSSRoute)
 	if _, err := os.Stat(fName); err != nil {
-		bootstrapDir := filepath.Join(generate.HexyaDir, "hexya", "server", "static", "web", "lib", "bootstrap", "less")
+		bootstrapDir := filepath.Join(server.ResourceDir, "static", "web", "lib", "bootstrap", "less")
 		createCSSAssets(append(LessHelpers, FrontendLess...), frontendCSSRoute, bootstrapDir)
 	}
 	c.File(fName)

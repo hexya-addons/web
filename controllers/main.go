@@ -10,7 +10,6 @@ import (
 
 	"github.com/hexya-erp/hexya/src/controllers"
 	"github.com/hexya-erp/hexya/src/server"
-	"github.com/hexya-erp/hexya/src/tools/generate"
 	"github.com/hexya-erp/hexya/src/tools/hweb"
 	"github.com/hexya-erp/hexya/src/tools/logging"
 )
@@ -261,7 +260,7 @@ func init() {
 		assets.AddController(http.MethodGet, "/frontend.css", AssetsFrontendCSS)
 	}
 
-	root.AddStatic("/static", filepath.Join(generate.HexyaDir, "hexya", "server", "static"))
+	root.AddStatic("/static", filepath.Join(server.ResourceDir, "static"))
 	root.AddController(http.MethodGet, "/dashboard", Dashboard)
 	web := root.AddGroup("/web")
 	{

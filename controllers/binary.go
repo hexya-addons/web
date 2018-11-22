@@ -14,7 +14,6 @@ import (
 	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/hexya/src/models/security"
 	"github.com/hexya-erp/hexya/src/server"
-	"github.com/hexya-erp/hexya/src/tools/generate"
 	"github.com/hexya-erp/pool/h"
 )
 
@@ -36,7 +35,7 @@ func CompanyLogo(c *server.Context) {
 	}
 	res, err := base64.StdEncoding.DecodeString(img)
 	if err != nil || img == "" {
-		c.File(filepath.Join(generate.HexyaDir, "hexya", "server", "static", "web", "src", "img", "nologo.png"))
+		c.File(filepath.Join(server.ResourceDir, "static", "web", "src", "img", "nologo.png"))
 		return
 	}
 	c.Data(http.StatusOK, "image/png", res)
@@ -55,7 +54,7 @@ func Image(c *server.Context) {
 		return
 	}
 	if img.(string) == "" {
-		c.File(filepath.Join(generate.HexyaDir, "hexya", "server", "static", "web", "src", "img", "placeholder.png"))
+		c.File(filepath.Join(server.ResourceDir, "static", "web", "src", "img", "placeholder.png"))
 		return
 	}
 	res, err := base64.StdEncoding.DecodeString(img.(string))
@@ -71,9 +70,9 @@ func MenuImage(c *server.Context) {
 	menuID := c.Param("menu_id")
 	menu := menus.Registry.GetByID(menuID)
 	if menu != nil && menu.WebIcon != "" {
-		fp := filepath.Join(generate.HexyaDir, "hexya", "server", menu.WebIcon)
+		fp := filepath.Join(server.ResourceDir, menu.WebIcon)
 		c.File(fp)
 		return
 	}
-	c.File(filepath.Join(generate.HexyaDir, "hexya", "server", "static", "web", "src", "img", "placeholder.png"))
+	c.File(filepath.Join(server.ResourceDir, "static", "web", "src", "img", "placeholder.png"))
 }

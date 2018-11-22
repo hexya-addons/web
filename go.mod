@@ -8,7 +8,7 @@ require (
 	github.com/gin-gonic/gin v1.3.0
 	github.com/golang/protobuf v1.2.0 // indirect
 	github.com/gorilla/sessions v1.1.3 // indirect
-	github.com/hexya-addons/base v0.0.0-20181122202443-4682efa9269e
+	github.com/hexya-addons/base v0.0.0-20181122213206-5caf98e4fe64
 	github.com/json-iterator/go v1.1.5 // indirect
 	github.com/mattn/go-isatty v0.0.4 // indirect
 	github.com/mitchellh/mapstructure v1.1.2 // indirect

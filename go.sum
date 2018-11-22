@@ -33,6 +33,8 @@ github.com/hexya-addons/base v0.0.0-20181122141345-d966bf34a56f h1:qC+jxKIMPQ05+
 github.com/hexya-addons/base v0.0.0-20181122141345-d966bf34a56f/go.mod h1:tAoXl12ek0sBx2F0I4vVmBdSY92Gu4laCDj1l/otNMo=
 github.com/hexya-addons/base v0.0.0-20181122202443-4682efa9269e h1:rEy8jAZV/hIg06RD7p0F6BFG9LJ3tSQL9QiRT15Yp0I=
 github.com/hexya-addons/base v0.0.0-20181122202443-4682efa9269e/go.mod h1:tAoXl12ek0sBx2F0I4vVmBdSY92Gu4laCDj1l/otNMo=
+github.com/hexya-addons/base v0.0.0-20181122213206-5caf98e4fe64 h1:MvwsKA8IxR9Lb7bAjXOLM7rIZ7kL0nvynXhoVifjv1k=
+github.com/hexya-addons/base v0.0.0-20181122213206-5caf98e4fe64/go.mod h1:tAoXl12ek0sBx2F0I4vVmBdSY92Gu4laCDj1l/otNMo=
 github.com/hexya-erp/hexya v0.0.0-20181115174755-e39a67f67504 h1:LOrUlFRQNHDiBNhXtenDD9S4L/K7RRYgY9NOOMsGjrE=
 github.com/hexya-erp/pool v0.0.0-20181122153626-b6c54970e37f h1:/ObBU/veqY4A59uMaroY6iIPBNP324BsHt4kR7XxzCo=
 github.com/json-iterator/go v1.1.5 h1:gL2yXlmiIo4+t+y32d4WGwOjKGYcGOuyrg46vadswDE=
