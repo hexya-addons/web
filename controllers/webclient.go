@@ -45,7 +45,7 @@ func BootstrapTranslations(c *server.Context) {
 	}{}
 	c.BindRPCParams(&params)
 	res := gin.H{
-		"lang_parameters": i18n.GetLangParameters(params.Lang),
+		"lang_parameters": i18n.GetLocale(params.Lang),
 		"modules":         scripts.ListModuleTranslations(params.Lang),
 		"multi_lang":      true,
 	}
