@@ -242,6 +242,13 @@ var (
 
 func init() {
 	log = logging.GetLogger("web/controllers")
+}
+
+// RegisterRoutes register all controllers for the web module.
+// This function is called from the web PreInit function so that
+// server.ResourceDir is set before calling this function, but
+// controllers.Bootstrap is not, yet.
+func RegisterRoutes() {
 	os.Remove(getAssetTempFile(commonCSSRoute))
 	os.Remove(getAssetTempFile(backendCSSRoute))
 	os.Remove(getAssetTempFile(frontendCSSRoute))

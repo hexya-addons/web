@@ -29,7 +29,7 @@ import (
 // QWeb returns a concatenation of all client qweb templates
 func QWeb(c *server.Context) {
 	mods := strings.Split(c.Query("mods"), ",")
-	fileNames := tools.ListStaticFiles("src/xml", mods, true)
+	fileNames := tools.ListStaticFiles(server.ResourceDir, "src/xml", mods, true)
 	res, _, err := xmlutils.ConcatXML(fileNames)
 	if err != nil {
 		c.Error(fmt.Errorf("error while generating client side QWeb: %s", err.Error()))
@@ -59,7 +59,7 @@ func CSSList(c *server.Context) {
 	}{}
 	c.BindRPCParams(&Params)
 	mods := strings.Split(Params.Mods, ",")
-	fileNames := tools.ListStaticFiles("src/css", mods, false)
+	fileNames := tools.ListStaticFiles(server.ResourceDir, "src/css", mods, false)
 	c.RPC(http.StatusOK, fileNames)
 }
 
@@ -70,7 +70,7 @@ func JSList(c *server.Context) {
 	}{}
 	c.BindRPCParams(&Params)
 	mods := strings.Split(Params.Mods, ",")
-	fileNames := tools.ListStaticFiles("src/js", mods, false)
+	fileNames := tools.ListStaticFiles(server.ResourceDir, "src/js", mods, false)
 	c.RPC(http.StatusOK, fileNames)
 }
 

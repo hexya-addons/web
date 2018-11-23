@@ -17,6 +17,7 @@ package web
 import (
 	// Loading dependencies as blank imports
 	_ "github.com/hexya-addons/base"
+	"github.com/hexya-addons/web/controllers"
 	"github.com/hexya-erp/hexya/src/i18n/translations"
 
 	// Loading controllers package
@@ -37,8 +38,10 @@ var log logging.Logger
 func init() {
 	log = logging.GetLogger("web")
 	server.RegisterModule(&server.Module{
-		Name:     MODULE_NAME,
-		PostInit: func() {},
+		Name: MODULE_NAME,
+		PreInit: func() {
+			controllers.RegisterRoutes()
+		},
 	})
 
 	translations.RegisterRuleSet(MODULE_NAME, &translations.RuleSet{
