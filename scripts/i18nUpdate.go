@@ -130,6 +130,9 @@ func walk(nodes []Node, f func(Node, string) (bool, string), str string) {
 
 func updateFuncXML(messages translations.MessageMap, lang, filePath, moduleName string) translations.MessageMap {
 	data, err := ioutil.ReadFile(filePath)
+	if err != nil {
+		panic(fmt.Errorf("unable to read file %s: %s", filePath, err))
+	}
 	buf := bytes.NewBuffer(data)
 	dec := xml.NewDecoder(buf)
 	var n Node

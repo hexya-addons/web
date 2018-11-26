@@ -47,6 +47,10 @@ func Image(c *server.Context) {
 	model := c.Query("model")
 	field := c.Query("field")
 	id, err := strconv.ParseInt(c.Query("id"), 10, 64)
+	if err != nil {
+		c.Error(fmt.Errorf("unable to read image ID: %s", err))
+		return
+	}
 	uid := c.Session().Get("uid").(int64)
 	img, gErr := getFieldValue(uid, id, model, field)
 	if gErr != nil {
