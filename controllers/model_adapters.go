@@ -80,7 +80,7 @@ func onchangeAdapter(rc *models.RecordCollection, method string, args []interfac
 	params.Values = rc.Call("ProcessWriteValues", params.Values).(models.FieldMap)
 	res := rc.Call("Onchange", params).(models.OnchangeResult)
 	fInfos := rc.Call("FieldsGet", models.FieldsGetArgs{})
-	res.Value = rc.Call("AddNamesToRelations", res.Value.FieldMap(), fInfos).(models.FieldMapper)
+	res.Value = rc.Call("AddNamesToRelations", res.Value.Underlying(), fInfos).(models.FieldMapper)
 	return res
 
 }
@@ -156,7 +156,7 @@ func getFiltersAdapter(rc *models.RecordCollection, method string, args []interf
 	// We make the slice to be sure not to have nil returned
 	res := make([]models.FieldMap, 0)
 	for _, rec := range rc.Records() {
-		fd := rec.Call("GetFilters").(models.FieldMapper).FieldMap()
+		fd := rec.Call("GetFilters").(models.FieldMapper).Underlying()
 		fm := make(models.FieldMap)
 		for _, fn := range []string{"Name", "IsDefault", "Domain", "Context", "User", "Sort"} {
 			fm[fn] = fd[fn]

@@ -48,18 +48,17 @@ func init() {
 		})
 
 	filterModel.Methods().Copy().Extend("",
-		func(rs h.FilterSet, overrides *h.FilterData, fieldsToUnset ...models.FieldNamer) h.FilterSet {
+		func(rs h.FilterSet, overrides *h.FilterData) h.FilterSet {
 			rs.EnsureOne()
-			vals, fieldsToUnset := rs.DataStruct(overrides.FieldMap(fieldsToUnset...))
-			vals.Name = fmt.Sprintf("%s (copy)", rs.Name())
-			return rs.Super().Copy(overrides, fieldsToUnset...)
+			overrides.SetName(fmt.Sprintf("%s (copy)", rs.Name()))
+			return rs.Super().Copy(overrides)
 		})
 
 	filterModel.Methods().CreateOrReplace().DeclareMethod(
 		`CreateOrReplace creates or updates the filter with the given parameters.
 		Filter is considered the same if it has the same name (case insensitive) and the same user (if it has one).`,
 		func(rs h.FilterSet, vals models.FieldMapper) h.FilterSet {
-			fMap := vals.FieldMap()
+			fMap := vals.Underlying()
 			if fDomain, exists := fMap["domain"]; exists {
 				fMap["domain"] = strutils.MarshalToJSONString(fDomain)
 				fMap["domain"] = strings.Replace(fDomain.(string), "false", "False", -1)
@@ -68,43 +67,44 @@ func init() {
 			if fContext, exists := fMap["context"]; exists {
 				fMap["context"] = strutils.MarshalToJSONString(fContext)
 			}
-			values, _ := rs.DataStruct(fMap)
-			currentFilters := rs.GetFilters(values.ResModel, values.Action)
+			var values h.FilterData
+			fMap.ConvertToModelData(rs, &values)
+			currentFilters := rs.GetFilters(values.ResModel(), values.Action())
 			var matchingFilters []*h.FilterData
 			for _, filter := range currentFilters {
-				if strings.ToLower(filter.Name) != strings.ToLower(values.Name) {
+				if strings.ToLower(filter.Name()) != strings.ToLower(values.Name()) {
 					continue
 				}
-				if !filter.User.Equals(values.User) {
+				if !filter.User().Equals(values.User()) {
 					continue
 				}
 				matchingFilters = append(matchingFilters, filter)
 			}
 
-			if values.IsDefault {
-				if !values.User.IsEmpty() {
+			if values.IsDefault() {
+				if !values.User().IsEmpty() {
 					// Setting new default: any other default that belongs to the user
 					// should be turned off
-					actionCondition := rs.GetActionCondition(values.Action)
+					actionCondition := rs.GetActionCondition(values.Action())
 					defaults := h.Filter().Search(rs.Env(), actionCondition.
-						And().ResModel().Equals(values.ResModel).
-						And().User().Equals(values.User).
+						And().ResModel().Equals(values.ResModel()).
+						And().User().Equals(values.User()).
 						And().IsDefault().Equals(true))
 					if !defaults.IsEmpty() {
 						defaults.SetIsDefault(false)
 					}
 				} else {
-					rs.CheckGlobalDefault(values, matchingFilters)
+					rs.CheckGlobalDefault(&values, matchingFilters)
 				}
 			}
 			if len(matchingFilters) > 0 {
 				// When a filter exists for the same (name, model, user) triple, we simply
 				// replace its definition (considering action_id irrelevant here)
-				matchingFilter := h.Filter().Browse(rs.Env(), []int64{matchingFilters[0].ID})
-				matchingFilter.Write(values)
+				matchingFilter := h.Filter().Browse(rs.Env(), []int64{matchingFilters[0].ID()})
+				matchingFilter.Write(&values)
 				return matchingFilter
 			}
-			return rs.Create(values)
+			return rs.Create(&values)
 		})
 
 	filterModel.Methods().CheckGlobalDefault().DeclareMethod(
@@ -116,17 +116,16 @@ func init() {
 	       have to explicitly remove the current default before setting a new one)
 
 	       This method should only be called if 'vals' is trying to set 'IsDefault'`,
-		func(rs h.FilterSet, vals *h.FilterData, matchingFilters []*h.FilterData) {
-			values, _ := rs.DataStruct(vals.FieldMap())
-			actionCondition := rs.GetActionCondition(values.Action)
+		func(rs h.FilterSet, values *h.FilterData, matchingFilters []*h.FilterData) {
+			actionCondition := rs.GetActionCondition(values.Action())
 			defaults := h.Filter().Search(rs.Env(), actionCondition.
-				And().ResModel().Equals(values.ResModel).
+				And().ResModel().Equals(values.ResModel()).
 				And().User().IsNull().
 				And().IsDefault().Equals(true))
 			if defaults.IsEmpty() {
 				return
 			}
-			if len(matchingFilters) > 0 && matchingFilters[0].ID == defaults.ID() {
+			if len(matchingFilters) > 0 && matchingFilters[0].ID() == defaults.ID() {
 				return
 			}
 			log.Panic("There is already a shared filter set as default for this model, delete or change it before setting a new default", "model", values.ResModel)
