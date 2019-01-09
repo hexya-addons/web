@@ -64,9 +64,8 @@ func writeAdapter(rc *models.RecordCollection, method string, args []interface{}
 		log.Panic("Expected arg for Write method to be models.FieldMap", "argType", fmt.Sprintf("%T", args[0]))
 	}
 	fMap := models.FieldMap(data)
-	fieldsToUnset := fMap.FieldNames()
 	fMap = rc.Call("ProcessWriteValues", fMap).(models.FieldMap)
-	res := rc.Call("Write", fMap, fieldsToUnset)
+	res := rc.Call("Write", fMap)
 	return res
 }
 
