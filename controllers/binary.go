@@ -25,12 +25,12 @@ func CompanyLogo(c *server.Context) {
 	case info == nil:
 		// Not connected. Get image of administrator company
 		models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
-			img = h.User().NewSet(env).Browse([]int64{security.SuperUserID}).Company().LogoWeb()
+			img = h.User().NewSet(env).BrowseOne(security.SuperUserID).Company().LogoWeb()
 		})
 	default:
 		// Connected. Get image of session's company
 		models.ExecuteInNewEnvironment(info.UID, func(env models.Environment) {
-			img = h.Company().NewSet(env).Browse([]int64{info.CompanyID}).LogoWeb()
+			img = h.Company().NewSet(env).BrowseOne(info.CompanyID).LogoWeb()
 		})
 	}
 	res, err := base64.StdEncoding.DecodeString(img)

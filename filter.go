@@ -42,7 +42,7 @@ func init() {
 				AndCond(actionCondition).
 				AndCond(q.Filter().UserFilteredOn(q.User().ID().Equals(rs.Env().Uid())).
 					Or().User().IsNull()))
-			userContext := h.User().Browse(rs.Env(), []int64{rs.Env().Uid()}).ContextGet()
+			userContext := h.User().BrowseOne(rs.Env(), rs.Env().Uid()).ContextGet()
 			res := filters.WithNewContext(userContext).All()
 			return res
 		})
@@ -82,7 +82,7 @@ func init() {
 			}
 
 			if values.IsDefault() {
-				if !values.User().IsEmpty() {
+				if values.User().IsNotEmpty() {
 					// Setting new default: any other default that belongs to the user
 					// should be turned off
 					actionCondition := rs.GetActionCondition(values.Action())
@@ -90,7 +90,7 @@ func init() {
 						And().ResModel().Equals(values.ResModel()).
 						And().User().Equals(values.User()).
 						And().IsDefault().Equals(true))
-					if !defaults.IsEmpty() {
+					if defaults.IsNotEmpty() {
 						defaults.SetIsDefault(false)
 					}
 				} else {
@@ -100,7 +100,7 @@ func init() {
 			if len(matchingFilters) > 0 {
 				// When a filter exists for the same (name, model, user) triple, we simply
 				// replace its definition (considering action_id irrelevant here)
-				matchingFilter := h.Filter().Browse(rs.Env(), []int64{matchingFilters[0].ID()})
+				matchingFilter := h.Filter().BrowseOne(rs.Env(), matchingFilters[0].ID())
 				matchingFilter.Write(&values)
 				return matchingFilter
 			}
