@@ -6,6 +6,7 @@ package web
 import (
 	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/pool/h"
+	"github.com/hexya-erp/pool/m"
 )
 
 func init() {
@@ -16,14 +17,14 @@ func init() {
 	})
 
 	h.User().Methods().SelfWritableFields().Extend("",
-		func(rs h.UserSet) map[string]bool {
+		func(rs m.UserSet) map[string]bool {
 			res := rs.Super().SelfWritableFields()
 			res["SidebarVisible"] = true
 			return res
 		})
 
 	h.User().Methods().SelfReadableFields().Extend("",
-		func(rs h.UserSet) map[string]bool {
+		func(rs m.UserSet) map[string]bool {
 			res := rs.Super().SelfReadableFields()
 			res["SidebarVisible"] = true
 			return res

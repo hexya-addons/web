@@ -10,6 +10,7 @@ import (
 	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/hexya/src/tools/strutils"
 	"github.com/hexya-erp/pool/h"
+	"github.com/hexya-erp/pool/m"
 	"github.com/hexya-erp/pool/q"
 )
 
@@ -36,7 +37,7 @@ func init() {
 
 	filterModel.Methods().GetFilters().DeclareMethod(
 		`GetFilters returns the filters for the given model and actionID for the current user`,
-		func(rs h.FilterSet, modelName, actionID string) []*h.FilterData {
+		func(rs m.FilterSet, modelName, actionID string) []m.FilterData {
 			actionCondition := rs.GetActionCondition(actionID)
 			filters := h.Filter().Search(rs.Env(), q.Filter().ResModel().Equals(modelName).
 				AndCond(actionCondition).
@@ -48,7 +49,7 @@ func init() {
 		})
 
 	filterModel.Methods().Copy().Extend("",
-		func(rs h.FilterSet, overrides *h.FilterData) h.FilterSet {
+		func(rs m.FilterSet, overrides m.FilterData) m.FilterSet {
 			rs.EnsureOne()
 			overrides.SetName(fmt.Sprintf("%s (copy)", rs.Name()))
 			return rs.Super().Copy(overrides)
@@ -57,7 +58,7 @@ func init() {
 	filterModel.Methods().CreateOrReplace().DeclareMethod(
 		`CreateOrReplace creates or updates the filter with the given parameters.
 		Filter is considered the same if it has the same name (case insensitive) and the same user (if it has one).`,
-		func(rs h.FilterSet, vals models.FieldMapper) h.FilterSet {
+		func(rs m.FilterSet, vals models.FieldMapper) m.FilterSet {
 			fMap := vals.Underlying()
 			if fDomain, exists := fMap["domain"]; exists {
 				fMap["domain"] = strutils.MarshalToJSONString(fDomain)
@@ -67,10 +68,9 @@ func init() {
 			if fContext, exists := fMap["context"]; exists {
 				fMap["context"] = strutils.MarshalToJSONString(fContext)
 			}
-			var values h.FilterData
-			fMap.ConvertToModelData(rs, &values)
+			values := h.Filter().NewData(fMap)
 			currentFilters := rs.GetFilters(values.ResModel(), values.Action())
-			var matchingFilters []*h.FilterData
+			var matchingFilters []m.FilterData
 			for _, filter := range currentFilters {
 				if strings.ToLower(filter.Name()) != strings.ToLower(values.Name()) {
 					continue
@@ -94,17 +94,17 @@ func init() {
 						defaults.SetIsDefault(false)
 					}
 				} else {
-					rs.CheckGlobalDefault(&values, matchingFilters)
+					rs.CheckGlobalDefault(values, matchingFilters)
 				}
 			}
 			if len(matchingFilters) > 0 {
 				// When a filter exists for the same (name, model, user) triple, we simply
 				// replace its definition (considering action_id irrelevant here)
 				matchingFilter := h.Filter().BrowseOne(rs.Env(), matchingFilters[0].ID())
-				matchingFilter.Write(&values)
+				matchingFilter.Write(values)
 				return matchingFilter
 			}
-			return rs.Create(&values)
+			return rs.Create(values)
 		})
 
 	filterModel.Methods().CheckGlobalDefault().DeclareMethod(
@@ -116,7 +116,7 @@ func init() {
 	       have to explicitly remove the current default before setting a new one)
 
 	       This method should only be called if 'vals' is trying to set 'IsDefault'`,
-		func(rs h.FilterSet, values *h.FilterData, matchingFilters []*h.FilterData) {
+		func(rs m.FilterSet, values m.FilterData, matchingFilters []m.FilterData) {
 			actionCondition := rs.GetActionCondition(values.Action())
 			defaults := h.Filter().Search(rs.Env(), actionCondition.
 				And().ResModel().Equals(values.ResModel()).
@@ -134,7 +134,7 @@ func init() {
 	filterModel.Methods().GetActionCondition().DeclareMethod(
 		`GetActionCondition returns a condition for matching filters that are visible in the
 		same context (menu/view) as the given action.`,
-		func(rs h.FilterSet, action string) q.FilterCondition {
+		func(rs m.FilterSet, action string) q.FilterCondition {
 			if action != "" {
 				// filters specific to this menu + global ones
 				return q.Filter().Action().Equals(action).Or().Action().IsNull()

@@ -20,6 +20,7 @@ import (
 	"github.com/hexya-erp/hexya/src/tools/strutils"
 	"github.com/hexya-erp/hexya/src/views"
 	"github.com/hexya-erp/pool/h"
+	"github.com/hexya-erp/pool/m"
 	"github.com/hexya-erp/pool/q"
 )
 
@@ -28,8 +29,8 @@ func init() {
 
 	commonMixin.Methods().AddNamesToRelations().DeclareMethod(
 		`AddNameToRelations returns the given FieldMap after getting the name of all 2one relation ids`,
-		func(rs h.CommonMixinSet, fMap models.FieldMap, fInfos map[string]*models.FieldInfo) models.FieldMap {
-			fMap = fMap.JSONized(rs.Model().Underlying())
+		func(rs m.CommonMixinSet, fMap models.FieldMap, fInfos map[string]*models.FieldInfo) models.FieldMap {
+			fMap = fMap.JSONized(rs.Collection().Model())
 			for fName, value := range fMap {
 				fi := fInfos[fName]
 				switch v := value.(type) {
@@ -57,7 +58,7 @@ func init() {
 				case int64:
 					if fi.Type.Is2OneRelationType() {
 						if v != 0 {
-							rSet := rs.Env().Pool(fi.Relation).Search(rs.Model().Field("id").Equals(v))
+							rSet := rs.Env().Pool(fi.Relation).Search(rs.Collection().Model().Field("id").Equals(v))
 							value = [2]interface{}{v, rSet.Call("NameGet").(string)}
 						} else {
 							value = false
@@ -96,10 +97,10 @@ func init() {
 	commonMixin.Methods().ProcessWriteValues().DeclareMethod(
 		`ProcessWriteValues updates the given data values for Write method to be
 		compatible with the ORM, in particular for relation fields`,
-		func(rs h.CommonMixinSet, fMap models.FieldMap) models.FieldMap {
+		func(rs m.CommonMixinSet, fMap models.FieldMap) models.FieldMap {
 			fInfos := rs.FieldsGet(models.FieldsGetArgs{})
 			for f, v := range fMap {
-				fJSON := rs.Model().JSONizeFieldName(f)
+				fJSON := rs.Collection().Model().JSONizeFieldName(f)
 				if _, exists := fInfos[fJSON]; !exists {
 					log.Panic("Unable to find field", "model", rs.ModelName(), "field", f)
 				}
@@ -133,12 +134,12 @@ func init() {
 		It returns a first FieldMap to be used as argument to the Create method, and 
 		a second map to be used with a subsequent call to PostProcessCreateValues (for
 		updating FKs pointing to the newly created record).`,
-		func(rs h.CommonMixinSet, fMap models.FieldMap) (models.FieldMap, models.FieldMap) {
+		func(rs m.CommonMixinSet, fMap models.FieldMap) (models.FieldMap, models.FieldMap) {
 			createMap := make(models.FieldMap)
 			deferredMap := make(models.FieldMap)
 			fInfos := rs.FieldsGet(models.FieldsGetArgs{})
 			for f, v := range fMap {
-				fJSON := rs.Model().JSONizeFieldName(f)
+				fJSON := rs.Collection().Model().JSONizeFieldName(f)
 				if _, exists := fInfos[fJSON]; !exists {
 					log.Panic("Unable to find field", "model", rs.ModelName(), "field", f)
 				}
@@ -170,13 +171,13 @@ func init() {
 		
 		This method is meant to be called with the second returned value of ProcessCreateValues
 		after record creation.`,
-		func(rs h.CommonMixinSet, fMap models.FieldMap) {
+		func(rs m.CommonMixinSet, fMap models.FieldMap) {
 			if len(fMap) == 0 {
 				return
 			}
 			fInfos := rs.FieldsGet(models.FieldsGetArgs{})
 			for f, v := range fMap {
-				fJSON := rs.Model().JSONizeFieldName(f)
+				fJSON := rs.Collection().Model().JSONizeFieldName(f)
 				if _, exists := fInfos[fJSON]; !exists {
 					log.Panic("Unable to find field", "model", rs.ModelName(), "field", f)
 				}
@@ -193,7 +194,7 @@ func init() {
 	commonMixin.Methods().ExecuteO2MActions().DeclareMethod(
 		`ExecuteO2MActions executes the actions on one2many fields given by
 		the list of triplets received from the client`,
-		func(rs h.CommonMixinSet, fieldName string, info *models.FieldInfo, value interface{}) interface{} {
+		func(rs m.CommonMixinSet, fieldName string, info *models.FieldInfo, value interface{}) interface{} {
 			switch v := value.(type) {
 			case []interface{}:
 				relSet := rs.Env().Pool(info.Relation)
@@ -252,7 +253,7 @@ func init() {
 	commonMixin.Methods().NormalizeM2MData().DeclareMethod(
 		`NormalizeM2MData converts the list of triplets received from the client into the final list of ids
 		to keep in the Many2Many relationship of this model through the given field.`,
-		func(rs h.CommonMixinSet, fieldName string, info *models.FieldInfo, value interface{}) interface{} {
+		func(rs m.CommonMixinSet, fieldName string, info *models.FieldInfo, value interface{}) interface{} {
 			switch v := value.(type) {
 			case []interface{}:
 				resSet := rs.Env().Pool(info.Relation)
@@ -287,7 +288,7 @@ func init() {
 		`GetFormviewID returns an view id to open the document with.
 		This method is meant to be overridden in addons that want
  		to give specific view ids for example.`,
-		func(rs h.CommonMixinSet) string {
+		func(rs m.CommonMixinSet) string {
 			return ""
 		})
 
@@ -295,7 +296,7 @@ func init() {
 		`GetFormviewAction returns an action to open the document.
 		This method is meant to be overridden in addons that want
 		to give specific view ids for example.`,
-		func(rs h.CommonMixinSet) *actions.Action {
+		func(rs m.CommonMixinSet) *actions.Action {
 			viewID := rs.GetFormviewId()
 			return &actions.Action{
 				Type:        actions.ActionActWindow,
@@ -313,7 +314,7 @@ func init() {
 		`FieldsViewGet is the base implementation of the 'FieldsViewGet' method which
 		gets the detailed composition of the requested view like fields, mixin,
 		view architecture.`,
-		func(rs h.CommonMixinSet, args webdata.FieldsViewGetParams) *webdata.FieldsViewData {
+		func(rs m.CommonMixinSet, args webdata.FieldsViewGetParams) *webdata.FieldsViewData {
 			lang := rs.Env().Context().GetString("lang")
 			view := views.Registry.GetByID(args.ViewID)
 			if view == nil {
@@ -337,7 +338,7 @@ func init() {
 			}
 			// Sub views
 			for field, sViews := range view.SubViews {
-				fJSON := rs.Model().JSONizeFieldName(field)
+				fJSON := rs.Collection().Model().JSONizeFieldName(field)
 				relRS := rs.Env().Pool(fInfos[fJSON].Relation)
 				if res.Fields[fJSON].Views == nil {
 					res.Fields[fJSON].Views = make(map[string]interface{})
@@ -359,7 +360,7 @@ func init() {
 
 	commonMixin.Methods().LoadViews().DeclareMethod(
 		`LoadViews returns the data for all the views and filters required in the parameters.`,
-		func(rs h.CommonMixinSet, args webdata.LoadViewsArgs) *webdata.LoadViewsData {
+		func(rs m.CommonMixinSet, args webdata.LoadViewsArgs) *webdata.LoadViewsData {
 			var res webdata.LoadViewsData
 			res.FieldsViews = make(map[views.ViewType]*webdata.FieldsViewData)
 			for _, viewTuple := range args.Views {
@@ -390,7 +391,7 @@ func init() {
 
 	commonMixin.Methods().GetToolbar().DeclareMethod(
 		`GetToolbar returns a toolbar populated with the actions linked to this model`,
-		func(rs h.CommonMixinSet) webdata.Toolbar {
+		func(rs m.CommonMixinSet) webdata.Toolbar {
 			var res webdata.Toolbar
 			for _, a := range actions.Registry.GetActionLinksForModel(rs.ModelName()) {
 				switch a.Type {
@@ -404,7 +405,7 @@ func init() {
 	commonMixin.Methods().ProcessView().DeclareMethod(
 		`ProcessView makes all the necessary modifications to the view
 		arch and returns the new xml string.`,
-		func(rs h.CommonMixinSet, arch *etree.Element, fieldInfos map[string]*models.FieldInfo) string {
+		func(rs m.CommonMixinSet, arch *etree.Element, fieldInfos map[string]*models.FieldInfo) string {
 			// Copy arch into a new document
 			doc := etree.NewDocument()
 			activeArch := arch.Copy()
@@ -423,7 +424,7 @@ func init() {
 	commonMixin.Methods().ManageGroupsOnFields().DeclareMethod(
 		`ManageGroupsOnFields adds the invisible attribute to fields nodes if the current
 		user does not belong to one of the groups of the 'groups' attribute`,
-		func(rs h.CommonMixinSet, doc *etree.Document, fieldInfos map[string]*models.FieldInfo) {
+		func(rs m.CommonMixinSet, doc *etree.Document, fieldInfos map[string]*models.FieldInfo) {
 			for _, fieldTag := range doc.FindElements("//field") {
 				groupsString := fieldTag.SelectAttrValue("groups", "")
 				if groupsString == "" {
@@ -446,7 +447,7 @@ func init() {
 
 	commonMixin.Methods().AddModifiers().DeclareMethod(
 		`AddModifiers adds the modifiers attribute nodes to given xml doc.`,
-		func(rs h.CommonMixinSet, doc *etree.Document, fieldInfos map[string]*models.FieldInfo) {
+		func(rs m.CommonMixinSet, doc *etree.Document, fieldInfos map[string]*models.FieldInfo) {
 			allModifiers := make(map[*etree.Element]map[string]interface{})
 			// Process attrs on all nodes
 			for _, attrsTag := range doc.FindElements("[@attrs]") {
@@ -496,7 +497,7 @@ func init() {
 		- 'invisible', 'readonly' and 'required' attributes in field tags
 		- 'ReadOnly' and 'Required' parameters of the model's field'
 		It returns the modified map.`,
-		func(rs h.CommonMixinSet, element *etree.Element, fieldInfos map[string]*models.FieldInfo, modifiers map[string]interface{}) map[string]interface{} {
+		func(rs m.CommonMixinSet, element *etree.Element, fieldInfos map[string]*models.FieldInfo, modifiers map[string]interface{}) map[string]interface{} {
 			fieldName := element.SelectAttr("name").Value
 			// Check if we have the modifier as attribute in the field node
 			for modifier := range modifiers {
@@ -581,7 +582,7 @@ func init() {
 
 	commonMixin.Methods().SearchRead().DeclareMethod(
 		`SearchRead retrieves database records according to the filters defined in params.`,
-		func(rs h.CommonMixinSet, params webdata.SearchParams) []models.FieldMap {
+		func(rs m.CommonMixinSet, params webdata.SearchParams) []models.FieldMap {
 			rSet := rs.AddDomainLimitOffset(params.Domain, models.ConvertLimitToInt(params.Limit), params.Offset, params.Order)
 
 			records := rSet.Read(params.Fields)
@@ -615,7 +616,7 @@ func init() {
 
 	commonMixin.Methods().ReadGroup().DeclareMethod(
 		`Get a list of record aggregates according to the given parameters.`,
-		func(rs h.CommonMixinSet, params webdata.ReadGroupParams) []models.FieldMap {
+		func(rs m.CommonMixinSet, params webdata.ReadGroupParams) []models.FieldMap {
 			rSet := rs.AddDomainLimitOffset(params.Domain, models.ConvertLimitToInt(params.Limit), params.Offset, params.Order)
 			rSet = rSet.GroupBy(models.ConvertToFieldNameSlice(params.GroupBy)...)
 			// We don't want aggregates as CommonMixin Aggregate, so we switch to RecordCollection
@@ -623,7 +624,7 @@ func init() {
 			res := make([]models.FieldMap, len(aggregates))
 			fInfos := rSet.FieldsGet(models.FieldsGetArgs{})
 			for i, ag := range aggregates {
-				line := rs.AddNamesToRelations(ag.Values, fInfos)
+				line := rs.AddNamesToRelations(ag.Values.FieldMap, fInfos)
 				line["__count"] = ag.Count
 				line["__domain"] = ag.Condition.Serialize()
 				res[i] = line
@@ -633,7 +634,7 @@ func init() {
 
 	commonMixin.Methods().SearchDomain().DeclareMethod(
 		`SearchDomain execute a search on the given domain.`,
-		func(rs h.CommonMixinSet, domain domains.Domain) h.CommonMixinSet {
+		func(rs m.CommonMixinSet, domain domains.Domain) m.CommonMixinSet {
 			cond := q.CommonMixinCondition{
 				Condition: domains.ParseDomain(domain),
 			}
@@ -646,7 +647,7 @@ func init() {
 
 			operation must be one of "read", "create", "unlink", "write".
 			`,
-		func(rs h.CommonMixinSet, args webdata.CheckAccessRightsArgs) bool {
+		func(rs m.CommonMixinSet, args webdata.CheckAccessRightsArgs) bool {
 			switch args.Operation {
 			case "read":
 				return rs.CheckExecutionPermission(h.CommonMixin().Methods().Read().Underlying(), !args.RaiseException)

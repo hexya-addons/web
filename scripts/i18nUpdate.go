@@ -143,7 +143,7 @@ func updateFuncXML(messages translations.MessageMap, lang, filePath, moduleName 
 	walk([]Node{n}, func(n Node, xmlPath string) (bool, string) {
 		content := strings.TrimSpace(string(n.Content))
 		for _, attr := range n.Attrs {
-			if strutils.IsInStringSlice(attr.Name.Local, []string{`title`, `alt`, `label`, `placeholder`}) && len(attr.Value) > 0 {
+			if strutils.IsIn(attr.Name.Local, `title`, `alt`, `label`, `placeholder`) && len(attr.Value) > 0 {
 				addToTranslationMap(messages, lang, moduleName, attr.Value, filepath.Base(filePath), 0)
 			}
 		}

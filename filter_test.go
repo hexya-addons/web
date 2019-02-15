@@ -313,7 +313,7 @@ func TestReadGroup(t *testing.T) {
 					Aggregates(q.Filter().Name(), q.Filter().User())
 				var oneFalse bool
 				for _, r := range res {
-					if r.Values.User().IsEmpty() {
+					if r.Values().User().IsEmpty() {
 						oneFalse = true
 						break
 					}
