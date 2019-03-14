@@ -31,7 +31,7 @@ func TestMain(m *testing.M) {
 
 func TestDomains(t *testing.T) {
 	Convey("Testing Domains", t, func() {
-		models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
+		_ = models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
 			Convey("Creating users", func() {
 				userJohnData := models.FieldMap{
 					"Name":    "John Smith",
@@ -127,6 +127,28 @@ func TestDomains(t *testing.T) {
 				So(fmt.Sprintf("%v", cond.Serialize()), ShouldEqual, fmt.Sprintf("%v", dom4))
 				dom1Users := env.Pool("User").Search(cond)
 				So(dom1Users.Len(), ShouldEqual, 3)
+			})
+			Convey("Testing ParseString", func() {
+				dom5Str := `[('Name', "ilike", 'john')]`
+				dom5 := Domain{
+					0: []interface{}{"Name", "ilike", "john"},
+				}
+				dom6Str := `[("Val", "<", 123.5), ("Val", ">", -10)]`
+				dom6 := Domain{
+					0: []interface{}{"Val", "<", 123.5},
+					1: []interface{}{"Val", ">", -10},
+				}
+				dom7Str := `['|', ("Name", "ilike", 'john'), '&', ["Val", "<", 123.5], ("Val", ">", -10)]`
+				dom7 := Domain{
+					0: "|",
+					1: []interface{}{"Name", "ilike", "john"},
+					2: "&",
+					3: []interface{}{"Val", "<", 123.5},
+					4: []interface{}{"Val", ">", -10},
+				}
+				So(ParseString(dom5Str).String(), ShouldEqual, dom5.String())
+				So(ParseString(dom6Str).String(), ShouldEqual, dom6.String())
+				So(ParseString(dom7Str).String(), ShouldEqual, dom7.String())
 			})
 		})
 	})

@@ -19,11 +19,13 @@ import (
 	"database/sql/driver"
 	"encoding/json"
 	"fmt"
+	"strconv"
 	"strings"
 
 	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/hexya/src/models/operator"
 	"github.com/hexya-erp/hexya/src/tools/logging"
+	"github.com/hexya-erp/hexya/src/tools/strutils"
 )
 
 // A Domain is a list of search criteria (DomainTerm) in the form of
@@ -200,6 +202,156 @@ func getConditionMethod(cond *models.Condition, op DomainPrefixOperator) func(*m
 		log.Panic("Unknown prefix operator", "operator", op)
 	}
 	return nil
+}
+
+// findNextIndexIgnore returns the index of the first occcurence of b, while ignoring parts of the string that are
+// enclosed in the key-value of each entry in ignore map
+func findNextIndexIgnore(str []byte, b byte, ignore map[byte]byte) int {
+	var index int
+	for len(str) > 0 && str[0] != 0 {
+		c := str[0]
+		if c == b {
+			return index
+		} else if v, ok := ignore[c]; ok {
+			i := findNextIndexIgnore(str[1:], v, ignore) + 2
+			index += i
+			str = str[i:]
+		} else {
+			index++
+			str = str[1:]
+		}
+	}
+	return index
+}
+
+// Returns a slice of strings, splited with the split string, while ignoring parts of the strings that are
+// enclosed in the key-value of each entry in ingore map
+// May need to be moved elsewhere (in hexya?)
+func splitIgnoreParenthesis(str string, split byte, ignore map[byte]byte) []string {
+	var out []string
+	var cur []byte
+	s := []byte(str)
+
+	for len(s) > 0 && s[0] != 0 {
+		c := s[0]
+		if c == split {
+			out = append(out, string(cur))
+			cur = []byte{}
+			s = s[1:]
+		} else if v, ok := ignore[c]; ok {
+			index := findNextIndexIgnore(s[1:], v, ignore) + 2
+			cur = append(cur, s[:index]...)
+			s = s[index:]
+		} else {
+			cur = append(cur, s[0])
+			s = s[1:]
+		}
+	}
+	out = append(out, string(cur))
+	return out
+}
+
+// ContainsOnly returns true if the given str contains only characters from the given set
+func ContainsOnly(str string, set string) bool {
+	for _, s := range []byte(str) {
+		inSet := false
+		for _, b := range []byte(set) {
+			if s == b {
+				inSet = true
+			}
+		}
+		if !inSet {
+			return false
+		}
+	}
+	return true
+}
+
+// CleanStringQuotes returns a string without both side string quotes (if it has any)
+func CleanStringQuotes(str string) string {
+	if strutils.StartsAndEndsWith(str, "\"", "\"") {
+		return strings.TrimSuffix(strings.TrimPrefix(str, "\""), "\"")
+	} else if strutils.StartsAndEndsWith(str, "'", "'") {
+		return strings.TrimSuffix(strings.TrimPrefix(str, "'"), "'")
+	}
+	return str
+}
+
+func parseUnknownBasicVar(str string) interface{} {
+	str = strings.TrimSpace(str)
+	if strutils.StartsAndEndsWith(str, "\"", "\"") || strutils.StartsAndEndsWith(str, "'", "'") {
+		// string
+		return CleanStringQuotes(str)
+	}
+	switch {
+	case str == "True" || str == "true":
+		// positive boolean
+		return true
+	case str == "False" || str == "false":
+		// negative boolean
+		return false
+	case ContainsOnly(str, "-0123456789"):
+		// integer
+		v, err := strconv.Atoi(str)
+		if err != nil {
+			panic(err)
+		}
+		return v
+	case ContainsOnly(str, "-01232456789."):
+		//float
+		v, err := strconv.ParseFloat(str, 64)
+		if err != nil {
+			panic(err)
+		}
+		return v
+	default:
+		// unknown
+		return nil
+	}
+}
+
+// ParseString returns a Domain that corresponds to the supposedly well formatted domain given as a string
+func ParseString(str string) *Domain {
+	var out Domain
+	var ignoreMap = map[byte]byte{
+		'"':  '"',
+		'\'': '\'',
+		'(':  ')',
+		'{':  '}',
+		'[':  ']',
+	}
+	// remove border brackets
+	str = strings.TrimSuffix(strings.TrimPrefix(str, "["), "]")
+	// split to get all domain terms
+	tuples := splitIgnoreParenthesis(str, ',', ignoreMap)
+	for _, tuple := range tuples {
+		tuple = strings.TrimSpace(tuple)
+		if []byte(tuple)[0] == '(' {
+			tuple = strings.TrimSuffix(strings.TrimPrefix(tuple, "("), ")")
+		} else if []byte(tuple)[0] == '[' {
+			tuple = strings.TrimSuffix(strings.TrimPrefix(tuple, "["), "]")
+		}
+		terms := splitIgnoreParenthesis(tuple, ',', ignoreMap)
+		if len(terms) == 1 {
+			// terms is a DomainPrefixOperator
+			s := CleanStringQuotes(terms[0])
+			out = append(out, s)
+		} else if len(terms) == 3 {
+			// terms is a DomainTerm
+			for i, t := range terms {
+				terms[i] = strings.TrimSpace(t)
+			}
+			var domainTerm []interface{}
+			field := CleanStringQuotes(terms[0])
+			domainTerm = append(domainTerm, field)
+			op := CleanStringQuotes(terms[1])
+			domainTerm = append(domainTerm, op)
+			value := parseUnknownBasicVar(terms[2])
+			domainTerm = append(domainTerm, value)
+			out = append(out, domainTerm)
+		}
+	}
+	return &out
 }
 
 func init() {
