@@ -107,8 +107,8 @@ func (rf *RecordIDWithName) UnmarshalJSON(data []byte) error {
 
 // SearchReadResult is the result struct for the searchRead function.
 type SearchReadResult struct {
-	Records []models.FieldMap `json:"records"`
-	Length  int               `json:"length"`
+	Records []models.RecordData `json:"records"`
+	Length  int                 `json:"length"`
 }
 
 // LoadViewsArgs is the argument struct for the LoadViews method.

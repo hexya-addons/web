@@ -37,11 +37,11 @@ func CallButton(c *server.Context) {
 	}
 }
 
-// SearchRead returns Records from the database
-func SearchRead(c *server.Context) {
+// SearchReadController returns Records from the database
+func SearchReadController(c *server.Context) {
 	uid := c.Session().Get("uid").(int64)
-	var params searchReadParams
+	var params SearchReadParams
 	c.BindRPCParams(&params)
-	res, err := searchRead(uid, params)
+	res, err := SearchRead(uid, params)
 	c.RPC(http.StatusOK, res, err)
 }

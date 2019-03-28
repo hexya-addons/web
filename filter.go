@@ -58,8 +58,8 @@ func init() {
 	filterModel.Methods().CreateOrReplace().DeclareMethod(
 		`CreateOrReplace creates or updates the filter with the given parameters.
 		Filter is considered the same if it has the same name (case insensitive) and the same user (if it has one).`,
-		func(rs m.FilterSet, vals models.FieldMapper) m.FilterSet {
-			fMap := vals.Underlying()
+		func(rs m.FilterSet, vals models.RecordData) m.FilterSet {
+			fMap := vals.Underlying().FieldMap
 			if fDomain, exists := fMap["domain"]; exists {
 				fMap["domain"] = strutils.MarshalToJSONString(fDomain)
 				fMap["domain"] = strings.Replace(fDomain.(string), "false", "False", -1)
