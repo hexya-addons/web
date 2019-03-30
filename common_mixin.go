@@ -32,7 +32,7 @@ func init() {
 		func(rs m.CommonMixinSet, data models.RecordData, fInfos map[string]*models.FieldInfo) models.RecordData {
 			for _, fName := range data.Underlying().Keys() {
 				fi := fInfos[fName]
-				value, _ := data.Underlying().Get(fName)
+				value := data.Underlying().Get(fName)
 				switch v := value.(type) {
 				case models.RecordSet:
 					relRS := v.Collection().WithEnv(rs.Env())
@@ -106,7 +106,7 @@ func init() {
 		func(rs m.CommonMixinSet, data models.RecordData) models.RecordData {
 			fInfos := rs.FieldsGet(models.FieldsGetArgs{})
 			for _, f := range data.Underlying().Keys() {
-				v, _ := data.Underlying().Get(f)
+				v := data.Underlying().Get(f)
 				fJSON := rs.Collection().Model().JSONizeFieldName(f)
 				if _, exists := fInfos[fJSON]; !exists {
 					log.Panic("Unable to find field", "model", rs.ModelName(), "field", f)
@@ -147,7 +147,7 @@ func init() {
 			deferredMap := models.NewModelData(data.Underlying().Model)
 			fInfos := rs.FieldsGet(models.FieldsGetArgs{})
 			for _, f := range data.Underlying().Keys() {
-				v, _ := data.Underlying().Get(f)
+				v := data.Underlying().Get(f)
 				fJSON := rs.Collection().Model().JSONizeFieldName(f)
 				if _, exists := fInfos[fJSON]; !exists {
 					log.Panic("Unable to find field", "model", rs.ModelName(), "field", f)
@@ -187,7 +187,7 @@ func init() {
 			}
 			fInfos := rs.FieldsGet(models.FieldsGetArgs{})
 			for _, f := range data.Underlying().Keys() {
-				v, _ := data.Underlying().Get(f)
+				v := data.Underlying().Get(f)
 				fJSON := rs.Collection().Model().JSONizeFieldName(f)
 				if _, exists := fInfos[fJSON]; !exists {
 					log.Panic("Unable to find field", "model", rs.ModelName(), "field", f)

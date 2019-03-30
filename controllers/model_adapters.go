@@ -92,8 +92,8 @@ func readAdapter(rc *models.RecordCollection, method string, args []interface{})
 	res := rc.Call("Read", params).([]models.RecordData)
 	for i, data := range res {
 		// Getting rec, which is this RecordSet but with its real type (not CommonMixinSet)
-		id, _ := data.Underlying().Get("ID")
-		rec := rc.Env().Pool(rc.ModelName()).Search(rc.Model().Field("ID").Equals(id.(int64)))
+		id := data.Underlying().Get("ID").(int64)
+		rec := rc.Env().Pool(rc.ModelName()).Search(rc.Model().Field("ID").Equals(id))
 		fInfos := rec.Call("FieldsGet", models.FieldsGetArgs{})
 		res[i] = rec.Call("AddNamesToRelations", data, fInfos).(models.RecordData)
 	}
@@ -110,8 +110,8 @@ func searchReadAdapter(rc *models.RecordCollection, method string, args []interf
 	res := rc.Call("SearchRead", params).([]models.RecordData)
 	for i, data := range res {
 		// Getting rec, which is this RecordSet but with its real type (not CommonMixinSet)
-		id, _ := data.Underlying().Get("ID")
-		rec := rc.Env().Pool(rc.ModelName()).Search(rc.Model().Field("ID").Equals(id.(int64)))
+		id := data.Underlying().Get("ID").(int64)
+		rec := rc.Env().Pool(rc.ModelName()).Search(rc.Model().Field("ID").Equals(id))
 		fInfos := rec.Call("FieldsGet", models.FieldsGetArgs{})
 		res[i] = rec.Call("AddNamesToRelations", data, fInfos).(models.RecordData)
 	}
