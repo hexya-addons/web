@@ -27,11 +27,11 @@ func Test2ManyRelations(t *testing.T) {
 
 				rc := env.Pool("User")
 				controllers.MethodAdapters["Create"](rc, "Create", []interface{}{
-					models.FieldMap{
+					models.NewModelData(rc.Model(), models.FieldMap{
 						"Name":   "Test User",
 						"Login":  "test_user",
 						"Groups": groupsData,
-					},
+					}),
 				})
 				user := h.User().Search(env, q.User().Login().Equals("test_user"))
 				So(user.Len(), ShouldEqual, 1)

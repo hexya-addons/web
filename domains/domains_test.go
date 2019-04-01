@@ -32,46 +32,47 @@ func TestMain(m *testing.M) {
 func TestDomains(t *testing.T) {
 	Convey("Testing Domains", t, func() {
 		_ = models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
+		models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
+			userModel := models.Registry.MustGet("User")
+			profileModel := models.Registry.MustGet("Profile")
 			Convey("Creating users", func() {
-				userJohnData := models.FieldMap{
-					"Name":    "John Smith",
-					"Email":   "jsmith@example.com",
-					"IsStaff": true,
-					"Nums":    1,
-				}
+				userJohnData := models.NewModelData(userModel).
+					Set("Name", "John Smith").
+					Set("Email", "jsmith@example.com").
+					Set("IsStaff", true).
+					Set("Nums", 1)
 				env.Pool("User").Call("Create", userJohnData)
 
-				userJaneProfileData := models.FieldMap{
-					"Age":     24,
-					"Money":   12345,
-					"Street":  "165 5th Avenue",
-					"City":    "New York",
-					"Zip":     "0305",
-					"Country": "USA",
-				}
+				userJaneProfileData := models.NewModelData(profileModel).
+					Set("Age", 24).
+					Set("Money", 12345).
+					Set("Street", "165 5th Avenue").
+					Set("City", "New York").
+					Set("Zip", "0305").
+					Set("Country", "USA")
 				profile := env.Pool("Profile").Call("Create", userJaneProfileData).(models.RecordSet).Collection()
-				userJaneData := models.FieldMap{
-					"Name":    "Jane Smith",
-					"Email":   "jane.smith@example.com",
-					"Profile": profile,
-					"Nums":    2,
-				}
+
+				userJaneData := models.NewModelData(userModel).
+					Set("Name", "Jane Smith").
+					Set("Email", "jane.smith@example.com").
+					Set("Profile", profile).
+					Set("Nums", 2)
 				env.Pool("User").Call("Create", userJaneData)
 
-				userWillData := models.FieldMap{
-					"Name":    "Will Smith",
-					"Email":   "will.smith@example.com",
-					"IsStaff": true,
-					"Nums":    3,
-				}
+				userWillData := models.NewModelData(userModel).
+					Set("Name", "Will Smith").
+					Set("Email", "will.smith@example.com").
+					Set("IsStaff", true).
+					Set("Nums", 3)
+
 				env.Pool("User").Call("Create", userWillData)
 
-				martinProfile := env.Pool("Profile").Call("Create", models.FieldMap{"Age": 45})
-				userData := models.FieldMap{
-					"Name":    "Martin Weston",
-					"Email":   "mweston@example.com",
-					"Profile": martinProfile,
-				}
+				martinProfile := env.Pool("Profile").Call("Create",
+					models.NewModelData(profileModel).Set("Age", 45))
+				userData := models.NewModelData(userModel).
+					Set("Name", "Martin Weston").
+					Set("Email", "mweston@example.com").
+					Set("Profile", martinProfile)
 				user := env.Pool("User").Call("Create", userData).(models.RecordSet).Collection()
 				So(user.Get("Profile").(models.RecordSet).Collection().Get("Age"), ShouldEqual, 45)
 			})

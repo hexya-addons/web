@@ -28,11 +28,11 @@ func init() {
 	commonMixin := h.CommonMixin()
 
 	commonMixin.Methods().AddNamesToRelations().DeclareMethod(
-		`AddNameToRelations returns the given FieldMap after getting the name of all 2one relation ids`,
-		func(rs m.CommonMixinSet, fMap models.FieldMap, fInfos map[string]*models.FieldInfo) models.FieldMap {
-			fMap = fMap.JSONized(rs.Collection().Model())
-			for fName, value := range fMap {
+		`AddNameToRelations returns the given RecordData after getting the name of all 2one relation ids`,
+		func(rs m.CommonMixinSet, data models.RecordData, fInfos map[string]*models.FieldInfo) models.RecordData {
+			for _, fName := range data.Underlying().Keys() {
 				fi := fInfos[fName]
+				value := data.Underlying().Get(fName)
 				switch v := value.(type) {
 				case models.RecordSet:
 					relRS := v.Collection().WithEnv(rs.Env())
@@ -53,7 +53,7 @@ func init() {
 						for i, val := range v.Collection().Records() {
 							displayNames[i] = val.Call("NameGet").(string)
 						}
-						fMap[fName+"__display"] = strings.Join(displayNames, ", ")
+						data.Underlying().FieldMap[fName+"__display"] = strings.Join(displayNames, ", ")
 					}
 				case int64:
 					if fi.Type.Is2OneRelationType() {
@@ -65,9 +65,9 @@ func init() {
 						}
 					}
 				}
-				fMap[fName] = value
+				data.Underlying().Set(fName, value)
 			}
-			return fMap
+			return data
 		})
 
 	commonMixin.Methods().NameSearch().DeclareMethod(
@@ -78,18 +78,24 @@ func init() {
 		This is used for example to provide suggestions based on a partial
 		value for a relational field. Sometimes be seen as the inverse
 		function of NameGet but it is not guaranteed to be.`,
-		func(rc *models.RecordCollection, params webdata.NameSearchParams) []webdata.RecordIDWithName {
-			searchRs := rc.Call("SearchByName",
+		func(rs m.CommonMixinSet, params webdata.NameSearchParams) []webdata.RecordIDWithName {
+			searchRs := rs.SearchByName(
 				params.Name,
 				params.Operator,
-				domains.ParseDomain(params.Args),
-				models.ConvertLimitToInt(params.Limit)).(models.RecordSet).Collection()
+				q.CommonMixinCondition{
+					Condition: domains.ParseDomain(params.Args),
+				},
+				models.ConvertLimitToInt(params.Limit))
 			searchRs.Load("ID", "DisplayName")
 
 			res := make([]webdata.RecordIDWithName, searchRs.Len())
 			for i, rec := range searchRs.Records() {
-				res[i].ID = rec.Get("id").(int64)
-				res[i].Name = rec.Get("display_name").(string)
+				res[i].ID = rec.ID()
+				name := rec.Collection().String()
+				if _, ok := models.Registry.MustGet(rec.Collection().ModelName()).Fields().Get("DisplayName"); ok {
+					name = rec.Get("DisplayName").(string)
+				}
+				res[i].Name = name
 			}
 			return res
 		})
@@ -97,9 +103,10 @@ func init() {
 	commonMixin.Methods().ProcessWriteValues().DeclareMethod(
 		`ProcessWriteValues updates the given data values for Write method to be
 		compatible with the ORM, in particular for relation fields`,
-		func(rs m.CommonMixinSet, fMap models.FieldMap) models.FieldMap {
+		func(rs m.CommonMixinSet, data models.RecordData) models.RecordData {
 			fInfos := rs.FieldsGet(models.FieldsGetArgs{})
-			for f, v := range fMap {
+			for _, f := range data.Underlying().Keys() {
+				v := data.Underlying().Get(f)
 				fJSON := rs.Collection().Model().JSONizeFieldName(f)
 				if _, exists := fInfos[fJSON]; !exists {
 					log.Panic("Unable to find field", "model", rs.ModelName(), "field", f)
@@ -114,17 +121,18 @@ func init() {
 						log.Panic("Unable to cast field value", "error", err, "model", rs.ModelName(), "field", f, "value", fInfos[fJSON])
 					}
 					if id == 0 {
-						fMap[f] = nil
+						data.Underlying().Set(f, nil)
 						continue
 					}
-					fMap[f] = id
+					resSet := rs.Env().Pool(fInfos[fJSON].Relation).Call("BrowseOne", id).(models.RecordSet).Collection()
+					data.Underlying().Set(f, resSet)
 				case fieldtype.Many2Many:
-					fMap[f] = rs.NormalizeM2MData(f, fInfos[fJSON], v)
+					data.Underlying().Set(f, rs.NormalizeM2MData(f, fInfos[fJSON], v))
 				case fieldtype.One2Many:
-					fMap[f] = rs.ExecuteO2MActions(f, fInfos[fJSON], v)
+					data.Underlying().Set(f, rs.ExecuteO2MActions(f, fInfos[fJSON], v))
 				}
 			}
-			return fMap
+			return data
 		})
 
 	commonMixin.Methods().ProcessCreateValues().DeclareMethod(
@@ -134,11 +142,12 @@ func init() {
 		It returns a first FieldMap to be used as argument to the Create method, and 
 		a second map to be used with a subsequent call to PostProcessCreateValues (for
 		updating FKs pointing to the newly created record).`,
-		func(rs m.CommonMixinSet, fMap models.FieldMap) (models.FieldMap, models.FieldMap) {
-			createMap := make(models.FieldMap)
-			deferredMap := make(models.FieldMap)
+		func(rs m.CommonMixinSet, data models.RecordData) (models.RecordData, models.RecordData) {
+			createMap := models.NewModelData(data.Underlying().Model)
+			deferredMap := models.NewModelData(data.Underlying().Model)
 			fInfos := rs.FieldsGet(models.FieldsGetArgs{})
-			for f, v := range fMap {
+			for _, f := range data.Underlying().Keys() {
+				v := data.Underlying().Get(f)
 				fJSON := rs.Collection().Model().JSONizeFieldName(f)
 				if _, exists := fInfos[fJSON]; !exists {
 					log.Panic("Unable to find field", "model", rs.ModelName(), "field", f)
@@ -153,14 +162,15 @@ func init() {
 						log.Panic("Unable to cast field value", "error", err, "model", rs.ModelName(), "field", f, "value", fInfos[fJSON])
 					}
 					if id == 0 {
-						createMap[f] = nil
+						createMap.Set(f, nil)
 						continue
 					}
-					createMap[f] = id
+					resSet := rs.Env().Pool(fInfos[fJSON].Relation).Call("BrowseOne", id).(models.RecordSet).Collection()
+					createMap.Set(f, resSet)
 				case fieldtype.One2Many, fieldtype.Many2Many:
-					deferredMap[f] = v
+					deferredMap.Set(f, v)
 				default:
-					createMap[f] = v
+					createMap.Set(f, v)
 				}
 			}
 			return createMap, deferredMap
@@ -171,24 +181,25 @@ func init() {
 		
 		This method is meant to be called with the second returned value of ProcessCreateValues
 		after record creation.`,
-		func(rs m.CommonMixinSet, fMap models.FieldMap) {
-			if len(fMap) == 0 {
+		func(rs m.CommonMixinSet, data models.RecordData) {
+			if len(data.Underlying().Keys()) == 0 {
 				return
 			}
 			fInfos := rs.FieldsGet(models.FieldsGetArgs{})
-			for f, v := range fMap {
+			for _, f := range data.Underlying().Keys() {
+				v := data.Underlying().Get(f)
 				fJSON := rs.Collection().Model().JSONizeFieldName(f)
 				if _, exists := fInfos[fJSON]; !exists {
 					log.Panic("Unable to find field", "model", rs.ModelName(), "field", f)
 				}
 				switch fInfos[fJSON].Type {
 				case fieldtype.Many2Many:
-					fMap[f] = rs.NormalizeM2MData(f, fInfos[fJSON], v)
+					data.Underlying().Set(f, rs.NormalizeM2MData(f, fInfos[fJSON], v))
 				case fieldtype.One2Many:
-					fMap[f] = rs.ExecuteO2MActions(f, fInfos[fJSON], v)
+					data.Underlying().Set(f, rs.ExecuteO2MActions(f, fInfos[fJSON], v))
 				}
 			}
-			rs.Call("Write", fMap)
+			rs.Call("Write", data)
 		})
 
 	commonMixin.Methods().ExecuteO2MActions().DeclareMethod(
@@ -205,22 +216,22 @@ func init() {
 				// We assume we have a list of triplets from client
 				for _, triplet := range v {
 					action := int(triplet.([]interface{})[0].(float64))
-					var values models.FieldMap
+					var values models.RecordData
 					switch val := triplet.([]interface{})[2].(type) {
 					case bool:
 					case map[string]interface{}:
-						values = models.FieldMap(val)
+						values = models.NewModelData(relSet.Model(), models.FieldMap(val))
 					case models.FieldMap:
-						values = val
+						values = models.NewModelData(relSet.Model(), val)
 					}
 					switch action {
 					case 0:
 						// Add reverse FK to point to this RecordSet if this is not the case
-						values.Set(info.ReverseFK, rs.ID(), relSet.Model())
+						values.Underlying().Set(info.ReverseFK, rs.ID())
 						// Create a new record with values
 						res := relSet.CallMulti("ProcessCreateValues", values)
-						cMap := res[0].(models.FieldMap)
-						dMap := res[1].(models.FieldMap)
+						cMap := res[0].(models.RecordData)
+						dMap := res[1].(models.RecordData)
 						newRec := relSet.Call("Create", cMap).(models.RecordSet).Collection()
 						newRec.Call("PostProcessCreateValues", dMap)
 						recs = recs.Union(newRec)
@@ -228,7 +239,7 @@ func init() {
 						// Update the id record with the given values
 						id := int(triplet.([]interface{})[1].(float64))
 						rec := relSet.Search(relSet.Model().Field("ID").Equals(id))
-						values = relSet.Call("ProcessWriteValues", values).(models.FieldMap)
+						values = relSet.Call("ProcessWriteValues", values).(models.RecordData)
 						rec.Call("Write", values)
 						// add rec to recs in case we are in create
 						recs = recs.Union(rec)
@@ -245,7 +256,7 @@ func init() {
 						recs = recs.Subtract(rec)
 					}
 				}
-				return recs.Ids()
+				return recs
 			}
 			return value
 		})
@@ -277,7 +288,7 @@ func init() {
 						for i, id := range idList {
 							ids[i] = int64(id.(float64))
 						}
-						return ids
+						return resSet.Call("Browse", ids).(models.RecordSet).Collection()
 					}
 				}
 			}
@@ -582,7 +593,7 @@ func init() {
 
 	commonMixin.Methods().SearchRead().DeclareMethod(
 		`SearchRead retrieves database records according to the filters defined in params.`,
-		func(rs m.CommonMixinSet, params webdata.SearchParams) []models.FieldMap {
+		func(rs m.CommonMixinSet, params webdata.SearchParams) []models.RecordData {
 			rSet := rs.AddDomainLimitOffset(params.Domain, models.ConvertLimitToInt(params.Limit), params.Offset, params.Order)
 
 			records := rSet.Read(params.Fields)
@@ -624,10 +635,10 @@ func init() {
 			res := make([]models.FieldMap, len(aggregates))
 			fInfos := rSet.FieldsGet(models.FieldsGetArgs{})
 			for i, ag := range aggregates {
-				line := rs.AddNamesToRelations(ag.Values.FieldMap, fInfos)
-				line["__count"] = ag.Count
-				line["__domain"] = ag.Condition.Serialize()
-				res[i] = line
+				line := rs.AddNamesToRelations(ag.Values, fInfos)
+				line.Underlying().Set("__count", ag.Count)
+				line.Underlying().Set("__domain", ag.Condition.Serialize())
+				res[i] = line.Underlying().FieldMap
 			}
 			return res
 		})

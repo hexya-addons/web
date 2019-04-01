@@ -30,7 +30,12 @@ import (
 var (
 	log               logging.Logger
 	typeSubstitutions = map[reflect.Type]reflect.Type{
-		reflect.TypeOf((*models.FieldMapper)(nil)).Elem(): reflect.TypeOf(models.FieldMap{}),
+		reflect.TypeOf((*models.RecordData)(nil)).Elem(): reflect.TypeOf(models.FieldMap{}),
+	}
+	typePostProcess = map[reflect.Type]interface{}{
+		reflect.TypeOf((*models.RecordData)(nil)).Elem(): func(rs models.RecordSet, arg models.FieldMap) models.RecordData {
+			return models.NewModelData(rs.Collection().Model(), arg)
+		},
 	}
 )
 
@@ -72,12 +77,12 @@ func Execute(uid int64, params CallParams) (res interface{}, rError error) {
 				fnArgs = make([]interface{}, 1)
 				argStructValue := reflect.New(fnSecondArgType).Elem()
 				putParamsValuesInStruct(&argStructValue, parms)
-				putKWValuesInStruct(&argStructValue, params.KWArgs)
+				putKWValuesInStruct(&argStructValue, rs, params.KWArgs)
 				fnArgs[0] = argStructValue.Interface()
 			} else {
 				// Second argument is not a struct, so we parse directly in the function args
 				fnArgs = make([]interface{}, len(parms))
-				err := putParamsValuesInArgs(&fnArgs, rs.MethodType(methodName), parms)
+				err := putParamsValuesInArgs(&fnArgs, rs, methodName, parms)
 				if err != nil {
 					log.Panic(err.Error(), "method", methodName, "args", parms)
 				}
@@ -131,7 +136,7 @@ func putParamsValuesInStruct(structValue *reflect.Value, parms []json.RawMessage
 			// We deliberately continue here to have default value if there is an error
 			// This is to manage cases where the given data type is inconsistent (such
 			// false instead of [] or object{}).
-			log.Debug("Unable to unmarshal argument", "error", err)
+			log.Debug("Unable to unmarshal argument", "param", string(parms[i]), "error", err)
 			continue
 		}
 		argStructValue.Field(i).Set(fieldPtrValue.Elem())
@@ -140,25 +145,38 @@ func putParamsValuesInStruct(structValue *reflect.Value, parms []json.RawMessage
 
 // putKWValuesInStruct decodes kwArgs and sets the fields of the structValue
 // with the values of kwArgs, mapping each field with its entry in kwArgs.
-func putKWValuesInStruct(structValue *reflect.Value, kwArgs map[string]json.RawMessage) {
+func putKWValuesInStruct(structValue *reflect.Value, rs models.RecordSet, kwArgs map[string]json.RawMessage) {
 	argStructValue := *structValue
 	for k, v := range kwArgs {
 		field := getStructFieldByJSONTag(argStructValue, k)
 		if field.IsValid() {
-			if err := unmarshalJSONValue(reflect.ValueOf(v), field); err != nil {
+			targetType := field.Elem().Type()
+			origTargetType := targetType
+			if val, ok := typeSubstitutions[targetType]; ok {
+				targetType = val
+			}
+			dest := reflect.New(targetType)
+			if err := unmarshalJSONValue(reflect.ValueOf(v), dest); err != nil {
 				// We deliberately continue here to have default value if there is an error
 				// This is to manage cases where the given data type is inconsistent (such
 				// false instead of [] or object{}).
-				log.Debug("Unable to unmarshal argument", "error", err)
+				log.Debug("Unable to unmarshal argument", "param", string(v), "error", err)
 				continue
 			}
+			if _, ok := typePostProcess[origTargetType]; ok {
+				fnct := reflect.ValueOf(typePostProcess[origTargetType])
+				ppVal := fnct.Call([]reflect.Value{reflect.ValueOf(rs), dest.Elem()})
+				dest = ppVal[0]
+			}
+			field.Elem().Set(dest.Elem())
 		}
 	}
 }
 
 // putParamsValuesInArgs decodes parms and sets fnArgs with the types of methodType arguments
 // and the values of parms, in order.
-func putParamsValuesInArgs(fnArgs *[]interface{}, methodType reflect.Type, parms []json.RawMessage) error {
+func putParamsValuesInArgs(fnArgs *[]interface{}, rs models.RecordSet, methodName string, parms []json.RawMessage) error {
+	methodType := rs.Collection().MethodType(methodName)
 	numArgs := methodType.NumIn() - 1
 	for i := 0; i < len(parms); i++ {
 		if (methodType.IsVariadic() && len(parms) < numArgs-1) ||
@@ -167,6 +185,7 @@ func putParamsValuesInArgs(fnArgs *[]interface{}, methodType reflect.Type, parms
 			return fmt.Errorf("wrong number of args in non-struct function args (%d instead of %d)", len(parms), numArgs)
 		}
 		methInType := methodType.In(i + 1)
+		origMethInType := methInType
 		if val, ok := typeSubstitutions[methInType]; ok {
 			methInType = val
 		}
@@ -174,10 +193,16 @@ func putParamsValuesInArgs(fnArgs *[]interface{}, methodType reflect.Type, parms
 		resValue := reflect.New(methInType)
 		if err := unmarshalJSONValue(argsValue, resValue); err != nil {
 			// Same remark as above
-			log.Debug("Unable to unmarshal argument", "error", err)
+			log.Debug("Unable to unmarshal argument", "param", string(parms[i]), "error", err)
 			continue
 		}
-		(*fnArgs)[i] = resValue.Elem().Interface()
+		res := resValue.Elem().Interface()
+		if _, ok := typePostProcess[origMethInType]; ok {
+			fnct := reflect.ValueOf(typePostProcess[origMethInType])
+			ppVal := fnct.Call([]reflect.Value{reflect.ValueOf(rs), resValue.Elem()})
+			res = ppVal[0].Interface()
+		}
+		(*fnArgs)[i] = res
 	}
 	return nil
 }
@@ -223,7 +248,7 @@ func extractContext(params CallParams) types.Context {
 	var ctx types.Context
 	if ok {
 		if err := json.Unmarshal(ctxStr, &ctx); err != nil {
-			log.Panic("Unable to JSON unmarshal context", "context_string", ctxStr)
+			log.Panic("Unable to JSON unmarshal context", "context_string", string(ctxStr))
 		}
 	}
 	return ctx
@@ -248,8 +273,8 @@ func getFieldValue(uid, id int64, model, field string) (res interface{}, rError 
 	return
 }
 
-// searchReadParams is the args struct for the searchRead function.
-type searchReadParams struct {
+// SearchReadParams is the args struct for the searchRead function.
+type SearchReadParams struct {
 	Context types.Context  `json:"context"`
 	Domain  domains.Domain `json:"domain"`
 	Fields  []string       `json:"fields"`
@@ -259,8 +284,8 @@ type searchReadParams struct {
 	Sort    string         `json:"sort"`
 }
 
-// searchRead retrieves database records according to the filters defined in params.
-func searchRead(uid int64, params searchReadParams) (res *webdata.SearchReadResult, rError error) {
+// SearchRead retrieves database records according to the filters defined in params.
+func SearchRead(uid int64, params SearchReadParams) (res *webdata.SearchReadResult, rError error) {
 	checkUser(uid)
 	rError = models.ExecuteInNewEnvironment(uid, func(env models.Environment) {
 		model := odooproxy.ConvertModelName(params.Model)
@@ -272,14 +297,10 @@ func searchRead(uid int64, params searchReadParams) (res *webdata.SearchReadResu
 			Limit:  params.Limit,
 			Order:  params.Sort,
 		}
-		records := searchReadAdapter(rs, "SearchRead", []interface{}{srp}).([]models.FieldMap)
-		if records == nil {
-			// Client expect [] and not null in JSON.
-			records = []models.FieldMap{}
-		}
+		data := searchReadAdapter(rs, "SearchRead", []interface{}{srp}).([]models.RecordData)
 		length := rs.Call("AddDomainLimitOffset", srp.Domain, 0, srp.Offset, srp.Order).(models.RecordSet).Collection().SearchCount()
 		res = &webdata.SearchReadResult{
-			Records: records,
+			Records: data,
 			Length:  length,
 		}
 	})

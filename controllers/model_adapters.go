@@ -42,14 +42,13 @@ func checkMethod(method, expected string, args []interface{}, numArgs int) {
 // createAdapter adapts json object received from client to Create's FieldMap argument.
 func createAdapter(rc *models.RecordCollection, method string, args []interface{}) interface{} {
 	checkMethod(method, "Create", args, 1)
-	data, ok := args[0].(models.FieldMap)
+	data, ok := args[0].(models.RecordData)
 	if !ok {
-		log.Panic("Expected arg for Create method to be FieldMap", "argType", fmt.Sprintf("%T", args[0]))
+		log.Panic("Expected arg for Create method to be RecordData", "argType", fmt.Sprintf("%T", args[0]))
 	}
-	fMap := models.FieldMap(data)
-	pcv := rc.CallMulti("ProcessCreateValues", fMap)
-	cMap := pcv[0].(models.FieldMap)
-	dMap := pcv[1].(models.FieldMap)
+	pcv := rc.CallMulti("ProcessCreateValues", data)
+	cMap := pcv[0].(models.RecordData)
+	dMap := pcv[1].(models.RecordData)
 	res := rc.WithContext("skip_check_constraints", true).Call("Create", cMap).(models.RecordSet).Collection()
 	res.Call("PostProcessCreateValues", dMap)
 	res.WithContext("skip_check_constraints", false).CheckConstraints()
@@ -59,13 +58,12 @@ func createAdapter(rc *models.RecordCollection, method string, args []interface{
 // writeAdapter adapts json object received from client to Write's FieldMap and []FieldNamer argument.
 func writeAdapter(rc *models.RecordCollection, method string, args []interface{}) interface{} {
 	checkMethod(method, "Write", args, 1)
-	data, ok := args[0].(models.FieldMap)
+	data, ok := args[0].(models.RecordData)
 	if !ok {
 		log.Panic("Expected arg for Write method to be models.FieldMap", "argType", fmt.Sprintf("%T", args[0]))
 	}
-	fMap := models.FieldMap(data)
-	fMap = rc.Call("ProcessWriteValues", fMap).(models.FieldMap)
-	res := rc.Call("Write", fMap)
+	data = rc.Call("ProcessWriteValues", data).(models.RecordData)
+	res := rc.Call("Write", data)
 	return res
 }
 
@@ -76,10 +74,10 @@ func onchangeAdapter(rc *models.RecordCollection, method string, args []interfac
 	if !ok {
 		log.Panic("Expected arg for Onchange method to be OnchangeParams", "argType", fmt.Sprintf("%T", args[0]))
 	}
-	params.Values = rc.Call("ProcessWriteValues", params.Values).(models.FieldMap)
+	params.Values = rc.Call("ProcessWriteValues", params.Values).(models.RecordData)
 	res := rc.Call("Onchange", params).(models.OnchangeResult)
 	fInfos := rc.Call("FieldsGet", models.FieldsGetArgs{})
-	res.Value = rc.Call("AddNamesToRelations", res.Value.Underlying(), fInfos).(models.FieldMapper)
+	res.Value = rc.Call("AddNamesToRelations", res.Value, fInfos).(models.RecordData)
 	return res
 
 }
@@ -91,13 +89,13 @@ func readAdapter(rc *models.RecordCollection, method string, args []interface{})
 	if !ok {
 		log.Panic("Expected arg for Read method to be []string", "argType", fmt.Sprintf("%T", args[0]))
 	}
-	res := rc.Call("Read", params).([]models.FieldMap)
-	for i, fMap := range res {
+	res := rc.Call("Read", params).([]models.RecordData)
+	for i, data := range res {
 		// Getting rec, which is this RecordSet but with its real type (not CommonMixinSet)
-		id, _ := fMap.Get("ID", rc.Model())
-		rec := rc.Env().Pool(rc.ModelName()).Search(rc.Model().Field("ID").Equals(id.(int64)))
+		id := data.Underlying().Get("ID").(int64)
+		rec := rc.Env().Pool(rc.ModelName()).Search(rc.Model().Field("ID").Equals(id))
 		fInfos := rec.Call("FieldsGet", models.FieldsGetArgs{})
-		res[i] = rec.Call("AddNamesToRelations", fMap, fInfos).(models.FieldMap)
+		res[i] = rec.Call("AddNamesToRelations", data, fInfos).(models.RecordData)
 	}
 	return res
 }
@@ -109,13 +107,13 @@ func searchReadAdapter(rc *models.RecordCollection, method string, args []interf
 	if !ok {
 		log.Panic("Expected arg for SearchRead method to be webdata.SearchParams", "argType", fmt.Sprintf("%T", args[0]))
 	}
-	res := rc.Call("SearchRead", params).([]models.FieldMap)
-	for i, fMap := range res {
+	res := rc.Call("SearchRead", params).([]models.RecordData)
+	for i, data := range res {
 		// Getting rec, which is this RecordSet but with its real type (not CommonMixinSet)
-		id, _ := fMap.Get("ID", rc.Model())
-		rec := rc.Env().Pool(rc.ModelName()).Search(rc.Model().Field("ID").Equals(id.(int64)))
+		id := data.Underlying().Get("ID").(int64)
+		rec := rc.Env().Pool(rc.ModelName()).Search(rc.Model().Field("ID").Equals(id))
 		fInfos := rec.Call("FieldsGet", models.FieldsGetArgs{})
-		res[i] = rec.Call("AddNamesToRelations", fMap, fInfos).(models.FieldMap)
+		res[i] = rec.Call("AddNamesToRelations", data, fInfos).(models.RecordData)
 	}
 	return res
 }

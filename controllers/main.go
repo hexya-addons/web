@@ -303,7 +303,7 @@ func RegisterRoutes() {
 		dataset := web.AddGroup("/dataset")
 		{
 			dataset.AddController(http.MethodPost, "/call_kw/*path", CallKW)
-			dataset.AddController(http.MethodPost, "/search_read", SearchRead)
+			dataset.AddController(http.MethodPost, "/search_read", SearchReadController)
 			dataset.AddController(http.MethodPost, "/call_button", CallButton)
 		}
 		action := web.AddGroup("/action")
