@@ -251,8 +251,8 @@ func splitIgnoreParenthesis(str string, split byte, ignore map[byte]byte) []stri
 	return out
 }
 
-// ContainsOnly returns true if the given str contains only characters from the given set
-func ContainsOnly(str string, set string) bool {
+// containsOnly returns true if the given str contains only characters from the given set
+func containsOnly(str string, set string) bool {
 	for _, s := range []byte(str) {
 		inSet := false
 		for _, b := range []byte(set) {
@@ -267,8 +267,8 @@ func ContainsOnly(str string, set string) bool {
 	return true
 }
 
-// CleanStringQuotes returns a string without both side string quotes (if it has any)
-func CleanStringQuotes(str string) string {
+// cleanStringQuotes returns a string without both side string quotes (if it has any)
+func cleanStringQuotes(str string) string {
 	if strutils.StartsAndEndsWith(str, "\"", "\"") {
 		return strings.TrimSuffix(strings.TrimPrefix(str, "\""), "\"")
 	} else if strutils.StartsAndEndsWith(str, "'", "'") {
@@ -281,7 +281,7 @@ func parseUnknownBasicVar(str string) interface{} {
 	str = strings.TrimSpace(str)
 	if strutils.StartsAndEndsWith(str, "\"", "\"") || strutils.StartsAndEndsWith(str, "'", "'") {
 		// string
-		return CleanStringQuotes(str)
+		return cleanStringQuotes(str)
 	}
 	switch {
 	case str == "True" || str == "true":
@@ -290,14 +290,14 @@ func parseUnknownBasicVar(str string) interface{} {
 	case str == "False" || str == "false":
 		// negative boolean
 		return false
-	case ContainsOnly(str, "-0123456789"):
+	case containsOnly(str, "-0123456789"):
 		// integer
 		v, err := strconv.Atoi(str)
 		if err != nil {
 			panic(err)
 		}
 		return v
-	case ContainsOnly(str, "-01232456789."):
+	case containsOnly(str, "-01232456789."):
 		//float
 		v, err := strconv.ParseFloat(str, 64)
 		if err != nil {
@@ -334,7 +334,7 @@ func ParseString(str string) *Domain {
 		terms := splitIgnoreParenthesis(tuple, ',', ignoreMap)
 		if len(terms) == 1 {
 			// terms is a DomainPrefixOperator
-			s := CleanStringQuotes(terms[0])
+			s := cleanStringQuotes(terms[0])
 			out = append(out, s)
 		} else if len(terms) == 3 {
 			// terms is a DomainTerm
@@ -342,9 +342,9 @@ func ParseString(str string) *Domain {
 				terms[i] = strings.TrimSpace(t)
 			}
 			var domainTerm []interface{}
-			field := CleanStringQuotes(terms[0])
+			field := cleanStringQuotes(terms[0])
 			domainTerm = append(domainTerm, field)
-			op := CleanStringQuotes(terms[1])
+			op := cleanStringQuotes(terms[1])
 			domainTerm = append(domainTerm, op)
 			value := parseUnknownBasicVar(terms[2])
 			domainTerm = append(domainTerm, value)
