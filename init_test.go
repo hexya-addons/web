@@ -10,5 +10,5 @@ import (
 )
 
 func TestMain(m *testing.M) {
-	tests.RunTests(m, "web")
+	tests.RunTests(m, "web", nil)
 }

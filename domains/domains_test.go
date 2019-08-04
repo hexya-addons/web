@@ -26,7 +26,7 @@ import (
 )
 
 func TestMain(m *testing.M) {
-	tests.RunTests(m, "domains")
+	tests.RunTests(m, "domains", nil)
 }
 
 func TestDomains(t *testing.T) {

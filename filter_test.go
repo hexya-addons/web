@@ -50,15 +50,19 @@ func TestGetFilters(t *testing.T) {
 			Convey("Test Global Filters", func() {
 				h.Filter().Create(env, h.Filter().NewData().
 					SetName("a").
+					SetUser(nil).
 					SetResModel("Filter"))
 				h.Filter().Create(env, h.Filter().NewData().
 					SetName("b").
+					SetUser(nil).
 					SetResModel("Filter"))
 				h.Filter().Create(env, h.Filter().NewData().
 					SetName("c").
+					SetUser(nil).
 					SetResModel("Filter"))
 				h.Filter().Create(env, h.Filter().NewData().
 					SetName("d").
+					SetUser(nil).
 					SetResModel("Filter"))
 				filters := h.Filter().NewSet(env).Sudo(demoUser.ID()).GetFilters("Filter", "")
 				So(filters, ShouldHaveLength, 4)
@@ -75,6 +79,7 @@ func TestGetFilters(t *testing.T) {
 			Convey("Test No Third Party Filters", func() {
 				h.Filter().Create(env, h.Filter().NewData().
 					SetName("a").
+					SetUser(nil).
 					SetResModel("Filter"))
 				h.Filter().Create(env, h.Filter().NewData().
 					SetName("b").
@@ -223,12 +228,15 @@ func TestGlobalDefaults(t *testing.T) {
 			Convey("New Filter Not Default", func() {
 				h.Filter().Create(env, h.Filter().NewData().
 					SetName("a").
+					SetUser(h.User().NewSet(env)).
 					SetResModel("Filter"))
 				h.Filter().Create(env, h.Filter().NewData().
 					SetName("b").
+					SetUser(h.User().NewSet(env)).
 					SetResModel("Filter"))
 				h.Filter().NewSet(env).Sudo(demoUser.ID()).CreateOrReplace(h.Filter().NewData().
 					SetName("c").
+					SetUser(h.User().NewSet(env)).
 					SetResModel("Filter").
 					SetIsDefault(true))
 				filters := h.Filter().NewSet(env).Sudo(demoUser.ID()).GetFilters("Filter", "")
@@ -249,10 +257,12 @@ func TestGlobalDefaults(t *testing.T) {
 			Convey("Update Filter Set Default", func() {
 				h.Filter().Create(env, h.Filter().NewData().
 					SetName("a").
+					SetUser(nil).
 					SetResModel("Filter"))
 				h.Filter().Create(env, h.Filter().NewData().
 					SetName("b").
 					SetResModel("Filter").
+					SetUser(nil).
 					SetIsDefault(true))
 				So(func() {
 					h.Filter().NewSet(env).Sudo(demoUser.ID()).CreateOrReplace(h.Filter().NewData().
