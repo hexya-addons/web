@@ -49,9 +49,9 @@ func createAdapter(rc *models.RecordCollection, method string, args []interface{
 	pcv := rc.CallMulti("ProcessCreateValues", data)
 	cMap := pcv[0].(models.RecordData)
 	dMap := pcv[1].(models.RecordData)
-	res := rc.WithContext("skip_check_constraints", true).Call("Create", cMap).(models.RecordSet).Collection()
+	res := rc.WithContext("hexya_skip_check_constraints", true).Call("Create", cMap).(models.RecordSet).Collection()
 	res.Call("PostProcessCreateValues", dMap)
-	res.WithContext("skip_check_constraints", false).CheckConstraints()
+	res.WithContext("hexya_skip_check_constraints", false).CheckConstraints()
 	return res
 }
 
