@@ -1,13 +1,14 @@
 module github.com/hexya-addons/web
 
+go 1.13
+
 require (
 	github.com/beevik/etree v1.1.0
 	github.com/gin-contrib/sessions v0.0.0-20190101140330-dc5246754963
 	github.com/gin-gonic/gin v1.3.0
-	github.com/hexya-addons/base v0.0.22
-	github.com/hexya-erp/hexya v0.0.27
+	github.com/hexya-addons/base v0.0.30
+	github.com/hexya-erp/hexya v0.0.30
+	github.com/hexya-erp/pool v1.0.2
 	github.com/smartystreets/goconvey v0.0.0-20190306220146-200a235640ff
 	github.com/spf13/viper v1.3.1
-	go.uber.org/atomic v1.4.0 // indirect
-	go.uber.org/multierr v1.1.0 // indirect
 )
