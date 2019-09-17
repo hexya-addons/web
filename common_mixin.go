@@ -39,7 +39,10 @@ func init() {
 					switch {
 					case fi.Type.Is2OneRelationType():
 						if rcId := relRS.Get("ID"); rcId != int64(0) {
-							value = [2]interface{}{rcId, relRS.Call("NameGet").(string)}
+							value = webdata.RecordIDWithName{
+								ID:   rcId.(int64),
+								Name: relRS.Call("NameGet").(string),
+							}
 						} else {
 							value = false
 						}
@@ -59,7 +62,10 @@ func init() {
 					if fi.Type.Is2OneRelationType() {
 						if v != 0 {
 							rSet := rs.Env().Pool(fi.Relation).Search(rs.Collection().Model().Field("id").Equals(v))
-							value = [2]interface{}{v, rSet.Call("NameGet").(string)}
+							value = webdata.RecordIDWithName{
+								ID:   v,
+								Name: rSet.Call("NameGet").(string),
+							}
 						} else {
 							value = false
 						}

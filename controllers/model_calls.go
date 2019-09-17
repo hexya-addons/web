@@ -105,17 +105,7 @@ func Execute(uid int64, params CallParams) (res interface{}, rError error) {
 			}
 			res = newRes.Interface()
 		}
-		// Return ID(s) if res is a *RecordSet
-		if rec, ok := res.(models.RecordSet); ok {
-			switch {
-			case rec.IsEmpty():
-				res = []int64{}
-			case rec.Len() == 1:
-				res = rec.Ids()[0]
-			default:
-				res = rec.Ids()
-			}
-		}
+		res = convertReturnedValue(rs, res)
 	})
 
 	return
@@ -271,6 +261,27 @@ func getFieldValue(uid, id int64, model, field string) (res interface{}, rError 
 	})
 
 	return
+}
+
+// convertReturnedValue converts the values returned by the ORM
+// in a suitable JSON format for the client
+func convertReturnedValue(rs models.RecordSet, res interface{}) interface{} {
+	switch val := res.(type) {
+	case models.RecordSet:
+		// Return ID(s) if res is a *RecordSet
+		switch {
+		case val.IsEmpty():
+			res = []int64{}
+		case val.Len() == 1:
+			res = val.Ids()[0]
+		default:
+			res = val.Ids()
+		}
+	case models.RecordData:
+		fInfos := rs.Call("FieldsGet", models.FieldsGetArgs{})
+		res = rs.Call("AddNamesToRelations", res, fInfos).(models.RecordData)
+	}
+	return res
 }
 
 // SearchReadParams is the args struct for the searchRead function.
