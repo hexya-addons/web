@@ -607,7 +607,7 @@ func init() {
 		})
 
 	commonMixin.Methods().AddDomainLimitOffset().DeclareMethod(
-		`AddDomainLimitOffsetOrder adds the given domain, limit, offset
+		`AddDomainLimitOffset adds the given domain, limit, offset
 		and order to the current RecordSet query.`,
 		func(rc *models.RecordCollection, domain domains.Domain, limit int, offset int, order string) *models.RecordCollection {
 			rSet := rc

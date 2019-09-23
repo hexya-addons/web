@@ -115,6 +115,9 @@ func searchReadAdapter(rc *models.RecordCollection, method string, args []interf
 		fInfos := rec.Call("FieldsGet", models.FieldsGetArgs{})
 		res[i] = rec.Call("AddNamesToRelations", data, fInfos).(models.RecordData)
 	}
+	if res == nil {
+		res = []models.RecordData{}
+	}
 	return res
 }
 

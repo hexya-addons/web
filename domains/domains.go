@@ -183,7 +183,13 @@ func addTerm(cond *models.Condition, term DomainTerm, op DomainPrefixOperator) *
 		log.Panic("Malformed domain term", "term", term)
 	}
 	fieldName := term[0].(string)
-	optr := operator.Operator(term[1].(string))
+	var optr operator.Operator
+	switch t := term[1].(type) {
+	case string:
+		optr = operator.Operator(t)
+	case operator.Operator:
+		optr = t
+	}
 	value := term[2]
 	newCond := models.Condition{}.And().Field(fieldName).AddOperator(optr, value)
 	cond = getConditionMethod(newCond, op)(cond)
