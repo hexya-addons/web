@@ -12,6 +12,7 @@ import (
 	"github.com/hexya-addons/web/webdata"
 	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/hexya/src/models/security"
+	"github.com/hexya-erp/pool/h"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
@@ -207,29 +208,28 @@ func TestExecute(t *testing.T) {
 					json.RawMessage(`[]`),
 				},
 				KWArgs: map[string]json.RawMessage{
-					"values": json.RawMessage(`{"id":false,"active":true,"image_medium":false,"is_company":false,
-"commercial_partner_id":3,"company_type":"person","name":false,"parent_id":3,"company_name":false,
+					"values": json.RawMessage(`{"id":false,"active":true,"image":false,"is_company":false,
+"commercial_partner_id":false,"company_type":false,"name":false,"parent_id":false,"company_name":false,
 "type":"contact","street":false,"street2":false,"city":false,"state_id":false,"zip":false,"country_id":false,
 "website":false,"categories_ids":[],"function":false,"phone":false,"mobile":false,"fax":false,"users_ids":[],
 "email":false,"title_id":false,"lang":"en_US","children_ids":[],"comment":false,"customer":true,"user_id":false,
-"supplier":false,"ref":false,"company_id":false}`),
-					"field_name": json.RawMessage(`["active","image_medium","is_company","commercial_partner_id",
+"supplier":false,"ref":false,"company_id":1}`),
+					"field_name": json.RawMessage(`["active","image","is_company","commercial_partner_id",
 "company_type","name","parent_id","company_name","type","street","street2","city","state_id","zip","country_id",
 "website","categories_ids","function","phone","mobile","fax","users_ids","email","title_id","lang","children_ids",
-"comment","customer","user_id",
-"supplier","ref","company_id"]`),
-					"field_onchange": json.RawMessage(`{"active":"","image_medium":"","is_company":"",
-"commercial_partner_id":"","company_type":"1","name":"","parent_id":"1","company_name":"","type":"","street":"",
-"street2":"","city":"","state_id":"","zip":"","country_id":"","website":"","categories_ids":"","function":"",
-"phone":"","mobile":"","fax":"","users_ids":"","email":"1","title_id":"","lang":"","children_ids":"",
-"children_ids.city":"","children_ids.comment":"","children_ids.country_id":"","children_ids.customer":"",
-"children_ids.email":"1","children_ids.function":"","children_ids.image":"","children_ids.lang":"",
-"children_ids.mobile":"","children_ids.name":"","children_ids.phone":"","children_ids.state_id":"",
-"children_ids.street":"","children_ids.street2":"","children_ids.supplier":"","children_ids.title_id":"",
-"children_ids.type":"","children_ids.zip":"","children_ids.active":"","children_ids.display_name":"",
-"children_ids.is_company":"","children_ids.parent_id":"1","children_ids.user_id":"","comment":"",
-"customer":"","user_id":"","supplier":"","ref":"","company_id":""}`),
-					"context": json.RawMessage(`{"company_id":1,"lang":"en_US","tz":"","uid":1,
+"comment","customer","user_id","supplier","ref","company_id"]`),
+					"field_onchange": json.RawMessage(`{"active":"1","image":"","is_company":"1",
+"commercial_partner_id":"1","company_type":"1","name":"1","parent_id":"1","company_name":"1","type":"1","street":"",
+"street2":"","city":"","state_id":"","zip":"","country_id":"1","website":"","categories_ids":"","function":"","phone":"",
+"mobile":"","fax":"","users_ids":"","users_ids.login_date":"","users_ids.lang":"","users_ids.name":"","users_ids.login":"1",
+"email":"1","title_id":"","lang":"","children_ids":"1","children_ids.comment":"","children_ids.function":"",
+"children_ids.color":"","children_ids.image":"","children_ids.street":"","children_ids.city":"",
+"children_ids.display_name":"","children_ids.zip":"","children_ids.title_id":"","children_ids.country_id":"1",
+"children_ids.parent_id":"1","children_ids.supplier":"","children_ids.email":"1","children_ids.is_company":"1",
+"children_ids.customer":"","children_ids.fax":"","children_ids.street2":"","children_ids.lang":"",
+"children_ids.name":"1","children_ids.phone":"","children_ids.mobile":"","children_ids.type":"1",
+"children_ids.state_id":"","comment":"","customer":"","user_id":"","supplier":"","ref":"","company_id":""}`),
+					"context": json.RawMessage(`{"company_id":1,"lang":"en_US","tz":"Europe/Brussels","uid":1,
 "search_default_customer":true,"params":{"action":"base_action_partner_form"}}`),
 				},
 			})
@@ -237,12 +237,14 @@ func TestExecute(t *testing.T) {
 			ocr, ok := res.(models.OnchangeResult)
 			So(ok, ShouldBeTrue)
 			fm := ocr.Value.Underlying().FieldMap
-			So(fm, ShouldHaveLength, 7)
-			So(fm, ShouldContainKey, "is_company")
-			So(fm["is_company"], ShouldBeFalse)
+			So(fm, ShouldHaveLength, 2)
+			So(fm, ShouldContainKey, "company_type")
+			So(fm, ShouldContainKey, "commercial_partner_id")
+			So(fm["company_type"], ShouldEqual, "person")
+			So(fm["commercial_partner_id"], ShouldBeFalse)
 		})
 
-		Convey("Onchange call on Partner during modification", func() {
+		Convey("Onchange call on Partner during modification of company_type", func() {
 			res, err := controllers.Execute(security.SuperUserID, controllers.CallParams{
 				Model:  "Partner",
 				Method: "onchange",
@@ -250,25 +252,25 @@ func TestExecute(t *testing.T) {
 					json.RawMessage(`[]`),
 				},
 				KWArgs: map[string]json.RawMessage{
-					"values": json.RawMessage(`{"id":false,"active":true,"image_medium":false,"is_company":false,
-"commercial_partner_id":3,"company_type":"company","name":false,"parent_id":3,"company_name":false,
+					"values": json.RawMessage(`{"id":false,"active":true,"image":false,"is_company":false,
+"commercial_partner_id":false,"company_type":"company","name":false,"parent_id":false,"company_name":false,
 "type":"contact","street":false,"street2":false,"city":false,"state_id":false,"zip":false,"country_id":false,
 "website":false,"categories_ids":[],"function":false,"phone":false,"mobile":false,"fax":false,"users_ids":[],
 "email":false,"title_id":false,"lang":"en_US","children_ids":[],"comment":false,"customer":true,"user_id":false,
-"supplier":false,"ref":false,"company_id":false}`),
+"supplier":false,"ref":false,"company_id":1}`),
 					"field_name": json.RawMessage(`["company_type"]`),
-					"field_onchange": json.RawMessage(`{"active":"","image_medium":"","is_company":"",
-"commercial_partner_id":"","company_type":"1","name":"","parent_id":"1","company_name":"","type":"","street":"",
-"street2":"","city":"","state_id":"","zip":"","country_id":"","website":"","categories_ids":"","function":"",
-"phone":"","mobile":"","fax":"","users_ids":"","email":"1","title_id":"","lang":"","children_ids":"",
-"children_ids.city":"","children_ids.comment":"","children_ids.country_id":"","children_ids.customer":"",
-"children_ids.email":"1","children_ids.function":"","children_ids.image":"","children_ids.lang":"",
-"children_ids.mobile":"","children_ids.name":"","children_ids.phone":"","children_ids.state_id":"",
-"children_ids.street":"","children_ids.street2":"","children_ids.supplier":"","children_ids.title_id":"",
-"children_ids.type":"","children_ids.zip":"","children_ids.active":"","children_ids.display_name":"",
-"children_ids.is_company":"","children_ids.parent_id":"1","children_ids.user_id":"","comment":"","customer":"",
-"user_id":"","supplier":"","ref":"","company_id":""}`),
-					"context": json.RawMessage(`{"company_id":1,"lang":"en_US","tz":"","uid":1,
+					"field_onchange": json.RawMessage(`{"active":"1","image":"","is_company":"1",
+"commercial_partner_id":"1","company_type":"1","name":"1","parent_id":"1","company_name":"1","type":"1","street":"",
+"street2":"","city":"","state_id":"","zip":"","country_id":"1","website":"","categories_ids":"","function":"",
+"phone":"","mobile":"","fax":"","users_ids":"","users_ids.login_date":"","users_ids.lang":"","users_ids.name":"",
+"users_ids.login":"1","email":"1","title_id":"","lang":"","children_ids":"1","children_ids.comment":"",
+"children_ids.function":"","children_ids.color":"","children_ids.image":"","children_ids.street":"",
+"children_ids.city":"","children_ids.display_name":"","children_ids.zip":"","children_ids.title_id":"",
+"children_ids.country_id":"1","children_ids.parent_id":"1","children_ids.supplier":"","children_ids.email":"1",
+"children_ids.is_company":"1","children_ids.customer":"","children_ids.fax":"","children_ids.street2":"","
+children_ids.lang":"","children_ids.name":"1","children_ids.phone":"","children_ids.mobile":"","children_ids.type":"1",
+"children_ids.state_id":"","comment":"","customer":"","user_id":"","supplier":"","ref":"","company_id":""}`),
+					"context": json.RawMessage(`{"company_id":1,"lang":"en_US","tz":"Europe/Brussels","uid":1,
 "search_default_customer":true,"params":{"action":"base_action_partner_form"}}`),
 				},
 			})
@@ -276,10 +278,72 @@ func TestExecute(t *testing.T) {
 			ocr, ok := res.(models.OnchangeResult)
 			So(ok, ShouldBeTrue)
 			fm := ocr.Value.Underlying().FieldMap
-			So(fm, ShouldHaveLength, 1)
+			So(fm, ShouldHaveLength, 2)
 			So(fm, ShouldContainKey, "is_company")
+			So(fm, ShouldContainKey, "commercial_partner_id")
 			So(fm["is_company"], ShouldBeTrue)
+			So(fm["commercial_partner_id"], ShouldBeFalse)
+		})
 
+		Convey("Onchange call on Partner during modification of parent_id", func() {
+			var nickID, agrolaitID, belgiumID int64
+			So(models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
+				nick := h.Partner().Create(env, h.Partner().NewData().SetName("Nicolas"))
+				nickID = nick.ID()
+				agrolait := h.Partner().NewSet(env).GetRecord("base_res_partner_2")
+				agrolaitID = agrolait.ID()
+				belgiumID = h.Country().NewSet(env).GetRecord("base_be").ID()
+			}), ShouldBeNil)
+			So(nickID, ShouldNotEqual, 0)
+			So(agrolaitID, ShouldNotEqual, 0)
+			res, err := controllers.Execute(security.SuperUserID, controllers.CallParams{
+				Model:  "Partner",
+				Method: "onchange",
+				Args: []json.RawMessage{
+					json.RawMessage(`[]`),
+				},
+				KWArgs: map[string]json.RawMessage{
+					"values": json.RawMessage(fmt.Sprintf(`{"id":%d,"active":true,"image":"16.51 Kb",
+"is_company":false,"commercial_partner_id":%d,"company_type":"person","name":"Nicolas","parent_id":%d,
+"company_name":false,"type":"contact","street":false,"street2":false,"city":false,"state_id":false,"zip":false,
+"country_id":false,"website":false,"categories_ids":[],"function":false,"phone":false,"mobile":false,"fax":false,
+"users_ids":[],"email":false,"title_id":false,"lang":"en_US","children_ids":[],"comment":false,"customer":true,
+"user_id":false,"supplier":false,"ref":false,"company_id":1}`, nickID, nickID, agrolaitID)),
+					"field_name": json.RawMessage(`["parent_id"]`),
+					"field_onchange": json.RawMessage(`{"active":"1","image":"","is_company":"1",
+"commercial_partner_id":"1","company_type":"1","name":"1","parent_id":"1","company_name":"1","type":"1","street":"",
+"street2":"","city":"","state_id":"","zip":"","country_id":"1","website":"","categories_ids":"","function":"",
+"phone":"","mobile":"","fax":"","users_ids":"","users_ids.login_date":"","users_ids.lang":"","users_ids.name":"",
+"users_ids.login":"1","email":"1","title_id":"","lang":"","children_ids":"1","children_ids.comment":"",
+"children_ids.function":"","children_ids.color":"","children_ids.image":"","children_ids.street":"",
+"children_ids.city":"","children_ids.display_name":"","children_ids.zip":"","children_ids.title_id":"",
+"children_ids.country_id":"1","children_ids.parent_id":"1","children_ids.supplier":"","children_ids.email":"1",
+"children_ids.is_company":"1","children_ids.customer":"","children_ids.fax":"","children_ids.street2":"","
+children_ids.lang":"","children_ids.name":"1","children_ids.phone":"","children_ids.mobile":"","children_ids.type":"1",
+"children_ids.state_id":"","comment":"","customer":"","user_id":"","supplier":"","ref":"","company_id":""}`),
+					"context": json.RawMessage(`{"company_id":1,"lang":"en_US","tz":"Europe/Brussels","uid":1,
+"search_default_customer":true,"params":{"action":"base_action_partner_form"}}`),
+				},
+			})
+			So(err, ShouldBeNil)
+			ocr, ok := res.(models.OnchangeResult)
+			So(ok, ShouldBeTrue)
+			fm := ocr.Value.Underlying().FieldMap
+			So(fm, ShouldHaveLength, 5)
+			So(fm, ShouldContainKey, "city")
+			So(fm, ShouldContainKey, "street")
+			So(fm, ShouldContainKey, "country_id")
+			So(fm, ShouldContainKey, "zip")
+			So(fm, ShouldContainKey, "commercial_partner_id")
+			So(fm["city"], ShouldEqual, "Wavre")
+			So(fm["street"], ShouldEqual, "69 rue de Namur")
+			So(fm["country_id"], ShouldHaveSameTypeAs, webdata.RecordIDWithName{})
+			So(fm["country_id"].(webdata.RecordIDWithName).ID, ShouldEqual, belgiumID)
+			So(fm["country_id"].(webdata.RecordIDWithName).Name, ShouldEqual, "Belgium")
+			So(fm["zip"], ShouldEqual, "1300")
+			So(fm["commercial_partner_id"], ShouldHaveSameTypeAs, webdata.RecordIDWithName{})
+			So(fm["commercial_partner_id"].(webdata.RecordIDWithName).ID, ShouldEqual, agrolaitID)
+			So(fm["commercial_partner_id"].(webdata.RecordIDWithName).Name, ShouldEqual, "Agrolait")
 		})
 
 		Convey("NameSearch on Country", func() {
