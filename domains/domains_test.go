@@ -30,6 +30,11 @@ func TestMain(m *testing.M) {
 }
 
 func TestDomains(t *testing.T) {
+	email := models.NewFieldName("Email", "email")
+	isStaff := models.NewFieldName("IsStaff", "is_staff")
+	nums := models.NewFieldName("Nums", "nums")
+	age := models.NewFieldName("Age", "age")
+	profile := models.NewFieldName("Profile", "profile_id")
 	Convey("Testing Domains", t, func() {
 		_ = models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
 			models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
@@ -37,55 +42,55 @@ func TestDomains(t *testing.T) {
 				profileModel := models.Registry.MustGet("Profile")
 				Convey("Creating users", func() {
 					userJohnData := models.NewModelData(userModel).
-						Set("Name", "John Smith").
-						Set("Email", "jsmith@example.com").
-						Set("IsStaff", true).
-						Set("Nums", 1)
+						Set(models.Name, "John Smith").
+						Set(email, "jsmith@example.com").
+						Set(isStaff, true).
+						Set(nums, 1)
 					env.Pool("User").Call("Create", userJohnData)
 
 					userJaneProfileData := models.NewModelData(profileModel).
-						Set("Age", 24).
-						Set("Money", 12345).
-						Set("Street", "165 5th Avenue").
-						Set("City", "New York").
-						Set("Zip", "0305").
-						Set("Country", "USA")
-					profile := env.Pool("Profile").Call("Create", userJaneProfileData).(models.RecordSet).Collection()
+						Set(age, 24).
+						Set(models.NewFieldName("Money", "money"), 12345).
+						Set(models.NewFieldName("Street", "street"), "165 5th Avenue").
+						Set(models.NewFieldName("City", "city"), "New York").
+						Set(models.NewFieldName("Zip", "zip"), "0305").
+						Set(models.NewFieldName("Country", "country"), "USA")
+					janeProfile := env.Pool("Profile").Call("Create", userJaneProfileData).(models.RecordSet).Collection()
 
 					userJaneData := models.NewModelData(userModel).
-						Set("Name", "Jane Smith").
-						Set("Email", "jane.smith@example.com").
-						Set("Profile", profile).
-						Set("Nums", 2)
+						Set(models.Name, "Jane Smith").
+						Set(email, "jane.smith@example.com").
+						Set(profile, janeProfile).
+						Set(nums, 2)
 					env.Pool("User").Call("Create", userJaneData)
 
 					userWillData := models.NewModelData(userModel).
-						Set("Name", "Will Smith").
-						Set("Email", "will.smith@example.com").
-						Set("IsStaff", true).
-						Set("Nums", 3)
+						Set(models.Name, "Will Smith").
+						Set(email, "will.smith@example.com").
+						Set(isStaff, true).
+						Set(nums, 3)
 
 					env.Pool("User").Call("Create", userWillData)
 
 					martinProfile := env.Pool("Profile").Call("Create",
-						models.NewModelData(profileModel).Set("Age", 45))
+						models.NewModelData(profileModel).Set(age, 45))
 					userData := models.NewModelData(userModel).
-						Set("Name", "Martin Weston").
-						Set("Email", "mweston@example.com").
-						Set("Profile", martinProfile)
+						Set(models.Name, "Martin Weston").
+						Set(email, "mweston@example.com").
+						Set(profile, martinProfile)
 					user := env.Pool("User").Call("Create", userData).(models.RecordSet).Collection()
-					So(user.Get("Profile").(models.RecordSet).Collection().Get("Age"), ShouldEqual, 45)
+					So(user.Get(profile).(models.RecordSet).Collection().Get(age), ShouldEqual, 45)
 				})
 				Convey("Testing simple [(A), (B)] domain", func() {
 					dom1 := []interface{}{
 						0: []interface{}{"Name", "like", "Smith"},
 						1: []interface{}{"Age", "=", 24},
 					}
-					cond := ParseDomain(dom1)
-					So(fmt.Sprintf("%v", cond.Serialize()), ShouldEqual, "[& [Age = 24] [Name like Smith]]")
+					cond := ParseDomain(dom1, userModel)
+					So(fmt.Sprintf("%v", cond.Serialize()), ShouldEqual, "[& [age = 24] [name like Smith]]")
 					dom1Users := env.Pool("User").Search(cond)
 					So(dom1Users.Len(), ShouldEqual, 1)
-					So(dom1Users.Get("Name"), ShouldEqual, "Jane Smith")
+					So(dom1Users.Get(models.Name), ShouldEqual, "Jane Smith")
 				})
 				Convey("Testing ['|', (A), (B)] domain", func() {
 					dom2 := []interface{}{
@@ -93,13 +98,13 @@ func TestDomains(t *testing.T) {
 						1: []interface{}{"Name", "like", "Will"},
 						2: []interface{}{"Email", "ilike", "Jane.Smith"},
 					}
-					cond := ParseDomain(dom2)
-					So(fmt.Sprintf("%v", cond.Serialize()), ShouldEqual, fmt.Sprintf("%v", dom2))
+					cond := ParseDomain(dom2, userModel)
+					So(fmt.Sprintf("%v", cond.Serialize()), ShouldEqual, "[| [name like Will] [email ilike Jane.Smith]]")
 					dom2Users := env.Pool("User").Search(cond).OrderBy("Name")
 					So(dom2Users.Len(), ShouldEqual, 2)
 					userRecs := dom2Users.Records()
-					So(userRecs[0].Get("Name"), ShouldEqual, "Jane Smith")
-					So(userRecs[1].Get("Name"), ShouldEqual, "Will Smith")
+					So(userRecs[0].Get(models.Name), ShouldEqual, "Jane Smith")
+					So(userRecs[1].Get(models.Name), ShouldEqual, "Will Smith")
 				})
 				Convey("Testing ['|', (A), '&' , (B), (C), (D)] domain", func() {
 					dom3 := []interface{}{
@@ -110,11 +115,11 @@ func TestDomains(t *testing.T) {
 						4: []interface{}{"Age", "<", 25},
 						5: []interface{}{"Email", "not like", "will.smith"},
 					}
-					cond := ParseDomain(dom3)
-					So(fmt.Sprintf("%v", cond.Serialize()), ShouldEqual, "[& | & [Age < 25] [Age > 0] [Name like Will] [Email not like will.smith]]")
+					cond := ParseDomain(dom3, userModel)
+					So(fmt.Sprintf("%v", cond.Serialize()), ShouldEqual, "[& | & [age < 25] [age > 0] [name like Will] [email not like will.smith]]")
 					dom3Users := env.Pool("User").Search(cond).OrderBy("Name")
 					So(dom3Users.Len(), ShouldEqual, 1)
-					So(dom3Users.Get("Name"), ShouldEqual, "Jane Smith")
+					So(dom3Users.Get(models.Name), ShouldEqual, "Jane Smith")
 				})
 				Convey("Testing ['|', '|', (A), (B), (C)] domain", func() {
 					dom4 := []interface{}{
@@ -124,8 +129,8 @@ func TestDomains(t *testing.T) {
 						3: []interface{}{"Name", "ilike", "jane"},
 						4: []interface{}{"Name", "ilike", "will"},
 					}
-					cond := ParseDomain(dom4)
-					So(fmt.Sprintf("%v", cond.Serialize()), ShouldEqual, fmt.Sprintf("%v", dom4))
+					cond := ParseDomain(dom4, userModel)
+					So(fmt.Sprintf("%v", cond.Serialize()), ShouldEqual, "[| | [name ilike john] [name ilike jane] [name ilike will]]")
 					dom1Users := env.Pool("User").Search(cond)
 					So(dom1Users.Len(), ShouldEqual, 3)
 				})

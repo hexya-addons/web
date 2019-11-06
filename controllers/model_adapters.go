@@ -8,8 +8,9 @@ import (
 
 	"github.com/hexya-addons/web/domains"
 	"github.com/hexya-addons/web/odooproxy"
-	"github.com/hexya-addons/web/webdata"
+	"github.com/hexya-addons/web/webtypes"
 	"github.com/hexya-erp/hexya/src/models"
+	"github.com/hexya-erp/pool/m"
 )
 
 // MethodAdapters is a map giving the adapter to call for each method
@@ -75,9 +76,12 @@ func onchangeAdapter(rc *models.RecordCollection, method string, args []interfac
 		log.Panic("Expected arg for Onchange method to be OnchangeParams", "argType", fmt.Sprintf("%T", args[0]))
 	}
 	params.Values = rc.Call("ProcessWriteValues", params.Values).(models.RecordData)
-	res := rc.Call("Onchange", params).(models.OnchangeResult)
+	mRes := rc.Call("Onchange", params).(models.OnchangeResult)
 	fInfos := rc.Call("FieldsGet", models.FieldsGetArgs{})
-	res.Value = rc.Call("AddNamesToRelations", res.Value, fInfos).(models.RecordData)
+	var res webtypes.OnChangeResult
+	res.Value = rc.Call("AddNamesToRelations", mRes.Value, fInfos).(models.RecordData)
+	res.Filters = rc.Call("PostProcessFilters", mRes.Filters).(map[string][]interface{})
+	res.Warning = mRes.Warning
 	return res
 
 }
@@ -85,15 +89,15 @@ func onchangeAdapter(rc *models.RecordCollection, method string, args []interfac
 // readAdapter add names to relation of the result.
 func readAdapter(rc *models.RecordCollection, method string, args []interface{}) interface{} {
 	checkMethod(method, "Read", args, 1)
-	params, ok := args[0].([]string)
+	params, ok := args[0].(models.FieldNames)
 	if !ok {
-		log.Panic("Expected arg for Read method to be []string", "argType", fmt.Sprintf("%T", args[0]))
+		log.Panic("Expected arg for Read method to be models.FieldNames", "argType", fmt.Sprintf("%T", args[0]))
 	}
 	res := rc.Call("Read", params).([]models.RecordData)
 	for i, data := range res {
 		// Getting rec, which is this RecordSet but with its real type (not CommonMixinSet)
-		id := data.Underlying().Get("ID").(int64)
-		rec := rc.Env().Pool(rc.ModelName()).Search(rc.Model().Field("ID").Equals(id))
+		id := data.Underlying().Get(models.ID).(int64)
+		rec := rc.Env().Pool(rc.ModelName()).Search(rc.Model().Field(models.ID).Equals(id))
 		fInfos := rec.Call("FieldsGet", models.FieldsGetArgs{})
 		res[i] = rec.Call("AddNamesToRelations", data, fInfos).(models.RecordData)
 	}
@@ -103,15 +107,15 @@ func readAdapter(rc *models.RecordCollection, method string, args []interface{})
 // searchReadAdapter add names to relation of the result.
 func searchReadAdapter(rc *models.RecordCollection, method string, args []interface{}) interface{} {
 	checkMethod(method, "SearchRead", args, 1)
-	params, ok := args[0].(webdata.SearchParams)
+	params, ok := args[0].(webtypes.SearchParams)
 	if !ok {
 		log.Panic("Expected arg for SearchRead method to be webdata.SearchParams", "argType", fmt.Sprintf("%T", args[0]))
 	}
 	res := rc.Call("SearchRead", params).([]models.RecordData)
 	for i, data := range res {
 		// Getting rec, which is this RecordSet but with its real type (not CommonMixinSet)
-		id := data.Underlying().Get("ID").(int64)
-		rec := rc.Env().Pool(rc.ModelName()).Search(rc.Model().Field("ID").Equals(id))
+		id := data.Underlying().Get(models.ID).(int64)
+		rec := rc.Env().Pool(rc.ModelName()).Search(rc.Model().Field(models.ID).Equals(id))
 		fInfos := rec.Call("FieldsGet", models.FieldsGetArgs{})
 		res[i] = rec.Call("AddNamesToRelations", data, fInfos).(models.RecordData)
 	}
@@ -155,13 +159,9 @@ func getFiltersAdapter(rc *models.RecordCollection, method string, args []interf
 	checkMethod(method, "GetFilters", args, 2)
 	// We make the slice to be sure not to have nil returned
 	res := make([]models.FieldMap, 0)
-	for _, rec := range rc.Records() {
-		fd := rec.Call("GetFilters").(models.FieldMapper).Underlying()
-		fm := make(models.FieldMap)
-		for _, fn := range []string{"Name", "IsDefault", "Domain", "Context", "User", "Sort"} {
-			fm[fn] = fd[fn]
-		}
-		res = append(res, fm)
+	filters := rc.Call("GetFilters", args...).([]m.FilterData)
+	for _, fd := range filters {
+		res = append(res, fd.Underlying().FieldMap)
 	}
 	return res
 }

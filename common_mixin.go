@@ -5,19 +5,21 @@ package web
 
 import (
 	"encoding/json"
+	"reflect"
 	"strconv"
 	"strings"
 
 	"github.com/beevik/etree"
 	"github.com/hexya-addons/web/controllers"
 	"github.com/hexya-addons/web/domains"
-	"github.com/hexya-addons/web/webdata"
+	"github.com/hexya-addons/web/webtypes"
 	"github.com/hexya-erp/hexya/src/actions"
 	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/hexya/src/models/fieldtype"
 	"github.com/hexya-erp/hexya/src/models/security"
 	"github.com/hexya-erp/hexya/src/tools/nbutils"
 	"github.com/hexya-erp/hexya/src/tools/strutils"
+	"github.com/hexya-erp/hexya/src/tools/typesutils"
 	"github.com/hexya-erp/hexya/src/views"
 	"github.com/hexya-erp/pool/h"
 	"github.com/hexya-erp/pool/m"
@@ -30,16 +32,16 @@ func init() {
 	commonMixin.Methods().AddNamesToRelations().DeclareMethod(
 		`AddNameToRelations returns the given RecordData after getting the name of all 2one relation ids`,
 		func(rs m.CommonMixinSet, data models.RecordData, fInfos map[string]*models.FieldInfo) models.RecordData {
-			for _, fName := range data.Underlying().Keys() {
-				fi := fInfos[fName]
+			for _, fName := range data.Underlying().FieldNames() {
+				fi := fInfos[fName.JSON()]
 				value := data.Underlying().Get(fName)
 				switch v := value.(type) {
 				case models.RecordSet:
 					relRS := v.Collection().WithEnv(rs.Env())
 					switch {
 					case fi.Type.Is2OneRelationType():
-						if rcId := relRS.Get("ID"); rcId != int64(0) {
-							value = webdata.RecordIDWithName{
+						if rcId := relRS.Get(models.ID); rcId != int64(0) {
+							value = webtypes.RecordIDWithName{
 								ID:   rcId.(int64),
 								Name: relRS.Call("NameGet").(string),
 							}
@@ -56,13 +58,13 @@ func init() {
 						for i, val := range v.Collection().Records() {
 							displayNames[i] = val.Call("NameGet").(string)
 						}
-						data.Underlying().FieldMap[fName+"__display"] = strings.Join(displayNames, ", ")
+						data.Underlying().FieldMap[fName.JSON()+"__display"] = strings.Join(displayNames, ", ")
 					}
 				case int64:
 					if fi.Type.Is2OneRelationType() {
 						if v != 0 {
-							rSet := rs.Env().Pool(fi.Relation).Search(rs.Collection().Model().Field("id").Equals(v))
-							value = webdata.RecordIDWithName{
+							rSet := rs.Env().Pool(fi.Relation).Search(rs.Collection().Model().Field(models.ID).Equals(v))
+							value = webtypes.RecordIDWithName{
 								ID:   v,
 								Name: rSet.Call("NameGet").(string),
 							}
@@ -84,22 +86,23 @@ func init() {
 		This is used for example to provide suggestions based on a partial
 		value for a relational field. Sometimes be seen as the inverse
 		function of NameGet but it is not guaranteed to be.`,
-		func(rs m.CommonMixinSet, params webdata.NameSearchParams) []webdata.RecordIDWithName {
+		func(rs m.CommonMixinSet, params webtypes.NameSearchParams) []webtypes.RecordIDWithName {
+			displayNameField := rs.Collection().Model().FieldName("DisplayName")
 			searchRs := rs.SearchByName(
 				params.Name,
 				params.Operator,
 				q.CommonMixinCondition{
-					Condition: domains.ParseDomain(params.Args),
+					Condition: domains.ParseDomain(params.Args, rs.Collection().Model()),
 				},
 				models.ConvertLimitToInt(params.Limit))
-			searchRs.Load("ID", "DisplayName")
+			searchRs.Load(models.ID, displayNameField)
 
-			res := make([]webdata.RecordIDWithName, searchRs.Len())
+			res := make([]webtypes.RecordIDWithName, searchRs.Len())
 			for i, rec := range searchRs.Records() {
 				res[i].ID = rec.ID()
 				name := rec.Collection().String()
 				if _, ok := models.Registry.MustGet(rec.Collection().ModelName()).Fields().Get("DisplayName"); ok {
-					name = rec.Get("DisplayName").(string)
+					name = rec.Get(displayNameField).(string)
 				}
 				res[i].Name = name
 			}
@@ -111,31 +114,34 @@ func init() {
 		compatible with the ORM, in particular for relation fields`,
 		func(rs m.CommonMixinSet, data models.RecordData) models.RecordData {
 			fInfos := rs.FieldsGet(models.FieldsGetArgs{})
-			for _, f := range data.Underlying().Keys() {
+			for _, f := range data.Underlying().FieldNames() {
 				v := data.Underlying().Get(f)
-				fJSON := rs.Collection().Model().JSONizeFieldName(f)
-				if _, exists := fInfos[fJSON]; !exists {
+				if _, exists := fInfos[f.JSON()]; !exists {
 					log.Panic("Unable to find field", "model", rs.ModelName(), "field", f)
 				}
-				switch fInfos[fJSON].Type {
+				switch fInfos[f.JSON()].Type {
 				case fieldtype.Many2One, fieldtype.One2One:
 					if _, isRs := v.(models.RecordSet); isRs {
 						continue
 					}
 					id, err := nbutils.CastToInteger(v)
 					if err != nil {
-						log.Panic("Unable to cast field value", "error", err, "model", rs.ModelName(), "field", f, "value", fInfos[fJSON])
+						log.Panic("Unable to cast field value", "error", err, "model", rs.ModelName(), "field", f, "value", fInfos[f.JSON()])
 					}
 					if id == 0 {
 						data.Underlying().Set(f, nil)
 						continue
 					}
-					resSet := rs.Env().Pool(fInfos[fJSON].Relation).Call("BrowseOne", id).(models.RecordSet).Collection()
+					resSet := rs.Env().Pool(fInfos[f.JSON()].Relation).Call("BrowseOne", id).(models.RecordSet).Collection()
 					data.Underlying().Set(f, resSet)
 				case fieldtype.Many2Many:
-					data.Underlying().Set(f, rs.NormalizeM2MData(f, fInfos[fJSON], v))
+					data.Underlying().Set(f, rs.NormalizeM2MData(f, fInfos[f.JSON()], v))
 				case fieldtype.One2Many:
-					data.Underlying().Set(f, rs.ExecuteO2MActions(f, fInfos[fJSON], v))
+					data.Underlying().Set(f, rs.ExecuteO2MActions(f, fInfos[f.JSON()], v))
+				case fieldtype.Integer:
+					val := reflect.New(fInfos[f.JSON()].GoType).Interface()
+					typesutils.Convert(v, val, false)
+					data.Underlying().Set(f, reflect.ValueOf(val).Elem().Interface())
 				}
 			}
 			return data
@@ -152,29 +158,32 @@ func init() {
 			createMap := models.NewModelData(data.Underlying().Model)
 			deferredMap := models.NewModelData(data.Underlying().Model)
 			fInfos := rs.FieldsGet(models.FieldsGetArgs{})
-			for _, f := range data.Underlying().Keys() {
+			for _, f := range data.Underlying().FieldNames() {
 				v := data.Underlying().Get(f)
-				fJSON := rs.Collection().Model().JSONizeFieldName(f)
-				if _, exists := fInfos[fJSON]; !exists {
+				if _, exists := fInfos[f.JSON()]; !exists {
 					log.Panic("Unable to find field", "model", rs.ModelName(), "field", f)
 				}
-				switch fInfos[fJSON].Type {
+				switch fInfos[f.JSON()].Type {
 				case fieldtype.Many2One, fieldtype.One2One:
 					if _, isRs := v.(models.RecordSet); isRs {
 						continue
 					}
 					id, err := nbutils.CastToInteger(v)
 					if err != nil {
-						log.Panic("Unable to cast field value", "error", err, "model", rs.ModelName(), "field", f, "value", fInfos[fJSON])
+						log.Panic("Unable to cast field value", "error", err, "model", rs.ModelName(), "field", f, "value", fInfos[f.JSON()])
 					}
 					if id == 0 {
 						createMap.Set(f, nil)
 						continue
 					}
-					resSet := rs.Env().Pool(fInfos[fJSON].Relation).Call("BrowseOne", id).(models.RecordSet).Collection()
+					resSet := rs.Env().Pool(fInfos[f.JSON()].Relation).Call("BrowseOne", id).(models.RecordSet).Collection()
 					createMap.Set(f, resSet)
 				case fieldtype.One2Many, fieldtype.Many2Many:
 					deferredMap.Set(f, v)
+				case fieldtype.Integer:
+					val := reflect.New(fInfos[f.JSON()].GoType).Interface()
+					typesutils.Convert(v, val, false)
+					createMap.Set(f, reflect.ValueOf(val).Elem().Interface())
 				default:
 					createMap.Set(f, v)
 				}
@@ -192,17 +201,16 @@ func init() {
 				return
 			}
 			fInfos := rs.FieldsGet(models.FieldsGetArgs{})
-			for _, f := range data.Underlying().Keys() {
+			for _, f := range data.Underlying().FieldNames() {
 				v := data.Underlying().Get(f)
-				fJSON := rs.Collection().Model().JSONizeFieldName(f)
-				if _, exists := fInfos[fJSON]; !exists {
+				if _, exists := fInfos[f.JSON()]; !exists {
 					log.Panic("Unable to find field", "model", rs.ModelName(), "field", f)
 				}
-				switch fInfos[fJSON].Type {
+				switch fInfos[f.JSON()].Type {
 				case fieldtype.Many2Many:
-					data.Underlying().Set(f, rs.NormalizeM2MData(f, fInfos[fJSON], v))
+					data.Underlying().Set(f, rs.NormalizeM2MData(f, fInfos[f.JSON()], v))
 				case fieldtype.One2Many:
-					data.Underlying().Set(f, rs.ExecuteO2MActions(f, fInfos[fJSON], v))
+					data.Underlying().Set(f, rs.ExecuteO2MActions(f, fInfos[f.JSON()], v))
 				}
 			}
 			rs.Call("Write", data)
@@ -211,7 +219,7 @@ func init() {
 	commonMixin.Methods().ExecuteO2MActions().DeclareMethod(
 		`ExecuteO2MActions executes the actions on one2many fields given by
 		the list of triplets received from the client`,
-		func(rs m.CommonMixinSet, fieldName string, info *models.FieldInfo, value interface{}) interface{} {
+		func(rs m.CommonMixinSet, fieldName models.FieldName, info *models.FieldInfo, value interface{}) interface{} {
 			switch v := value.(type) {
 			case []interface{}:
 				relSet := rs.Env().Pool(info.Relation)
@@ -226,14 +234,14 @@ func init() {
 					switch val := triplet.([]interface{})[2].(type) {
 					case bool:
 					case map[string]interface{}:
-						values = models.NewModelData(relSet.Model(), models.FieldMap(val))
+						values = models.NewModelData(relSet.Model(), val)
 					case models.FieldMap:
 						values = models.NewModelData(relSet.Model(), val)
 					}
 					switch action {
 					case 0:
 						// Add reverse FK to point to this RecordSet if this is not the case
-						values.Underlying().Set(info.ReverseFK, rs.ID())
+						values.Underlying().Set(values.Underlying().Model.FieldName(info.ReverseFK), rs.ID())
 						// Create a new record with values
 						res := relSet.CallMulti("ProcessCreateValues", values)
 						cMap := res[0].(models.RecordData)
@@ -244,7 +252,7 @@ func init() {
 					case 1:
 						// Update the id record with the given values
 						id := int(triplet.([]interface{})[1].(float64))
-						rec := relSet.Search(relSet.Model().Field("ID").Equals(id))
+						rec := relSet.Search(relSet.Model().Field(models.ID).Equals(id))
 						values = relSet.Call("ProcessWriteValues", values).(models.RecordData)
 						rec.Call("Write", values)
 						// add rec to recs in case we are in create
@@ -252,13 +260,13 @@ func init() {
 					case 2:
 						// Remove and delete the id record
 						id := int(triplet.([]interface{})[1].(float64))
-						rec := relSet.Search(relSet.Model().Field("ID").Equals(id))
+						rec := relSet.Search(relSet.Model().Field(models.ID).Equals(id))
 						recs = recs.Subtract(rec)
 						rec.Call("Unlink")
 					case 3:
 						// Detach the id record
 						id := int(triplet.([]interface{})[1].(float64))
-						rec := relSet.Search(relSet.Model().Field("ID").Equals(id))
+						rec := relSet.Search(relSet.Model().Field(models.ID).Equals(id))
 						recs = recs.Subtract(rec)
 					}
 				}
@@ -270,7 +278,7 @@ func init() {
 	commonMixin.Methods().NormalizeM2MData().DeclareMethod(
 		`NormalizeM2MData converts the list of triplets received from the client into the final list of ids
 		to keep in the Many2Many relationship of this model through the given field.`,
-		func(rs m.CommonMixinSet, fieldName string, info *models.FieldInfo, value interface{}) interface{} {
+		func(rs m.CommonMixinSet, fieldName models.FieldName, info *models.FieldInfo, value interface{}) interface{} {
 			switch v := value.(type) {
 			case []interface{}:
 				resSet := rs.Env().Pool(info.Relation)
@@ -331,7 +339,7 @@ func init() {
 		`FieldsViewGet is the base implementation of the 'FieldsViewGet' method which
 		gets the detailed composition of the requested view like fields, mixin,
 		view architecture.`,
-		func(rs m.CommonMixinSet, args webdata.FieldsViewGetParams) *webdata.FieldsViewData {
+		func(rs m.CommonMixinSet, args webtypes.FieldsViewGetParams) *webtypes.FieldsViewData {
 			lang := rs.Env().Context().GetString("lang")
 			view := views.Registry.GetByID(args.ViewID)
 			if view == nil {
@@ -339,12 +347,12 @@ func init() {
 			}
 			cols := make([]models.FieldName, len(view.Fields))
 			for i, f := range view.Fields {
-				cols[i] = models.FieldName(f.String())
+				cols[i] = rs.Collection().Model().FieldName(f)
 			}
 			fInfos := rs.FieldsGet(models.FieldsGetArgs{Fields: cols})
 			arch := rs.ProcessView(view.Arch(lang), fInfos)
 			toolbar := rs.GetToolbar()
-			res := webdata.FieldsViewData{
+			res := webtypes.FieldsViewData{
 				Name:    view.Name,
 				Arch:    arch,
 				ViewID:  args.ViewID,
@@ -363,10 +371,10 @@ func init() {
 				for svType, sv := range sViews {
 					sCols := make([]models.FieldName, len(sv.Fields))
 					for i, f := range sv.Fields {
-						sCols[i] = models.FieldName(f.String())
+						sCols[i] = relRS.Model().FieldName(f)
 					}
 					svFields := relRS.Call("FieldsGet", models.FieldsGetArgs{Fields: sCols}).(map[string]*models.FieldInfo)
-					res.Fields[fJSON].Views[string(svType)] = &webdata.SubViewData{
+					res.Fields[fJSON].Views[string(svType)] = &webtypes.SubViewData{
 						Fields: svFields,
 						Arch:   relRS.Call("ProcessView", sv.Arch(lang), svFields).(string),
 					}
@@ -377,9 +385,9 @@ func init() {
 
 	commonMixin.Methods().LoadViews().DeclareMethod(
 		`LoadViews returns the data for all the views and filters required in the parameters.`,
-		func(rs m.CommonMixinSet, args webdata.LoadViewsArgs) *webdata.LoadViewsData {
-			var res webdata.LoadViewsData
-			res.FieldsViews = make(map[views.ViewType]*webdata.FieldsViewData)
+		func(rs m.CommonMixinSet, args webtypes.LoadViewsArgs) *webtypes.LoadViewsData {
+			var res webtypes.LoadViewsData
+			res.FieldsViews = make(map[views.ViewType]*webtypes.FieldsViewData)
 			for _, viewTuple := range args.Views {
 				vType := viewTuple.Type
 				if vType == views.ViewTypeList {
@@ -389,7 +397,7 @@ func init() {
 				if vType == views.ViewTypeSearch {
 					toolbar = false
 				}
-				res.FieldsViews[viewTuple.Type] = rs.FieldsViewGet(webdata.FieldsViewGetParams{
+				res.FieldsViews[viewTuple.Type] = rs.FieldsViewGet(webtypes.FieldsViewGetParams{
 					Toolbar:  toolbar,
 					ViewType: string(vType),
 					ViewID:   viewTuple.ID,
@@ -408,8 +416,8 @@ func init() {
 
 	commonMixin.Methods().GetToolbar().DeclareMethod(
 		`GetToolbar returns a toolbar populated with the actions linked to this model`,
-		func(rs m.CommonMixinSet) webdata.Toolbar {
-			var res webdata.Toolbar
+		func(rs m.CommonMixinSet) webtypes.Toolbar {
+			var res webtypes.Toolbar
 			for _, a := range actions.Registry.GetActionLinksForModel(rs.ModelName()) {
 				switch a.Type {
 				case actions.ActionActWindow, actions.ActionServer:
@@ -587,7 +595,7 @@ func init() {
 				log.Panic("Invalid attrs definition", "model", rc.ModelName(), "error", err, "attrs", attrStr)
 			}
 			for modifier := range modifiers {
-				cond := domains.ParseDomain(attrs[modifier])
+				cond := domains.ParseDomain(attrs[modifier], rc.Model())
 				if cond.IsEmpty() {
 					continue
 				}
@@ -599,10 +607,13 @@ func init() {
 
 	commonMixin.Methods().SearchRead().DeclareMethod(
 		`SearchRead retrieves database records according to the filters defined in params.`,
-		func(rs m.CommonMixinSet, params webdata.SearchParams) []models.RecordData {
+		func(rs m.CommonMixinSet, params webtypes.SearchParams) []models.RecordData {
 			rSet := rs.AddDomainLimitOffset(params.Domain, models.ConvertLimitToInt(params.Limit), params.Offset, params.Order)
-
-			records := rSet.Read(params.Fields)
+			fields := make([]models.FieldName, len(params.Fields))
+			for i, v := range params.Fields {
+				fields[i] = rSet.Collection().Model().FieldName(v)
+			}
+			records := rSet.Read(fields)
 			return records
 		})
 
@@ -611,7 +622,7 @@ func init() {
 		and order to the current RecordSet query.`,
 		func(rc *models.RecordCollection, domain domains.Domain, limit int, offset int, order string) *models.RecordCollection {
 			rSet := rc
-			if searchCond := domains.ParseDomain(domain); !searchCond.IsEmpty() {
+			if searchCond := domains.ParseDomain(domain, rSet.Model()); !searchCond.IsEmpty() {
 				rSet = rSet.Call("Search", searchCond).(models.RecordSet).Collection()
 			} else {
 				rSet = rSet.Call("SearchAll").(models.RecordSet).Collection()
@@ -631,19 +642,38 @@ func init() {
 			return rSet
 		})
 
+	commonMixin.Methods().PostProcessFilters().DeclareMethod(
+		`PostProcessFilters transforms a map[models.FieldName]models.Conditioner 
+		in a map[string][]interface{} which acts as a map of domains.`,
+		func(rs m.CommonMixinSet, in map[models.FieldName]models.Conditioner) map[string][]interface{} {
+			res := make(map[string][]interface{})
+			for k, v := range in {
+				res[k.JSON()] = v.Underlying().Serialize()
+			}
+			return res
+		})
+
 	commonMixin.Methods().ReadGroup().DeclareMethod(
 		`Get a list of record aggregates according to the given parameters.`,
-		func(rs m.CommonMixinSet, params webdata.ReadGroupParams) []models.FieldMap {
+		func(rs m.CommonMixinSet, params webtypes.ReadGroupParams) []models.FieldMap {
 			rSet := rs.AddDomainLimitOffset(params.Domain, models.ConvertLimitToInt(params.Limit), params.Offset, params.Order)
-			rSet = rSet.GroupBy(models.ConvertToFieldNameSlice(params.GroupBy)...)
+			gb := make([]models.FieldName, len(params.GroupBy))
+			for i, v := range params.GroupBy {
+				gb[i] = rSet.Collection().Model().FieldName(v)
+			}
+			fields := make([]models.FieldName, len(params.Fields))
+			for i, v := range params.Fields {
+				fields[i] = rSet.Collection().Model().FieldName(v)
+			}
+			rSet = rSet.GroupBy(gb...)
 			// We don't want aggregates as CommonMixin Aggregate, so we switch to RecordCollection
-			aggregates := rSet.Call("Aggregates", models.ConvertToFieldNameSlice(params.Fields)).([]models.GroupAggregateRow)
+			aggregates := rSet.Call("Aggregates", fields).([]models.GroupAggregateRow)
 			res := make([]models.FieldMap, len(aggregates))
 			fInfos := rSet.FieldsGet(models.FieldsGetArgs{})
 			for i, ag := range aggregates {
 				line := rs.AddNamesToRelations(ag.Values, fInfos)
-				line.Underlying().Set("__count", ag.Count)
-				line.Underlying().Set("__domain", ag.Condition.Serialize())
+				line.Underlying().Set(models.NewFieldName("__count", "__count"), ag.Count)
+				line.Underlying().Set(models.NewFieldName("__domain", "__domain"), ag.Condition.Serialize())
 				res[i] = line.Underlying().FieldMap
 			}
 			return res
@@ -653,7 +683,7 @@ func init() {
 		`SearchDomain execute a search on the given domain.`,
 		func(rs m.CommonMixinSet, domain domains.Domain) m.CommonMixinSet {
 			cond := q.CommonMixinCondition{
-				Condition: domains.ParseDomain(domain),
+				Condition: domains.ParseDomain(domain, rs.Collection().Model()),
 			}
 			return rs.Search(cond)
 		})
@@ -664,7 +694,7 @@ func init() {
 
 			operation must be one of "read", "create", "unlink", "write".
 			`,
-		func(rs m.CommonMixinSet, args webdata.CheckAccessRightsArgs) bool {
+		func(rs m.CommonMixinSet, args webtypes.CheckAccessRightsArgs) bool {
 			switch args.Operation {
 			case "read":
 				return rs.CheckExecutionPermission(h.CommonMixin().Methods().Read().Underlying(), !args.RaiseException)

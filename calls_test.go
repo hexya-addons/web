@@ -9,8 +9,9 @@ import (
 	"testing"
 
 	"github.com/hexya-addons/web/controllers"
-	"github.com/hexya-addons/web/webdata"
+	"github.com/hexya-addons/web/webtypes"
 	"github.com/hexya-erp/hexya/src/models"
+	"github.com/hexya-erp/hexya/src/models/operator"
 	"github.com/hexya-erp/hexya/src/models/security"
 	"github.com/hexya-erp/pool/h"
 	. "github.com/smartystreets/goconvey/convey"
@@ -71,13 +72,13 @@ func TestExecute(t *testing.T) {
 			So(ok, ShouldBeTrue)
 			So(srr, ShouldHaveLength, 1)
 			So(srr[0].Underlying().Keys(), ShouldContain, "company_id")
-			n := srr[0].Underlying().Get("name")
+			n := srr[0].Underlying().Get(models.NewFieldName("Name", "name"))
 			So(n, ShouldEqual, "User")
-			c := srr[0].Underlying().Get("company_id")
-			cID, _ := c.(webdata.RecordIDWithName)
+			c := srr[0].Underlying().Get(models.NewFieldName("Company", "company_id"))
+			cID, _ := c.(webtypes.RecordIDWithName)
 			So(cID.ID, ShouldEqual, newCompanyID)
 			So(cID.Name, ShouldEqual, "Company4")
-			a := srr[0].Underlying().Get("active")
+			a := srr[0].Underlying().Get(models.NewFieldName("Active", "active"))
 			So(a, ShouldBeTrue)
 		})
 
@@ -141,11 +142,11 @@ func TestExecute(t *testing.T) {
 			So(rr, ShouldHaveLength, 1)
 			So(ok, ShouldBeTrue)
 			So(rr[0].Underlying().Keys(), ShouldContain, "display_name")
-			n := rr[0].Underlying().Get("name")
+			n := rr[0].Underlying().Get(models.NewFieldName("Name", "name"))
 			So(n, ShouldEqual, "Company4")
-			id := rr[0].Underlying().Get("id")
+			id := rr[0].Underlying().Get(models.ID)
 			So(id, ShouldEqual, newCompanyID)
-			dn := rr[0].Underlying().Get("display_name")
+			dn := rr[0].Underlying().Get(models.NewFieldName("DisplayName", "display_name"))
 			So(dn, ShouldEqual, "Company4")
 		})
 
@@ -193,9 +194,9 @@ func TestExecute(t *testing.T) {
 			So(rr.Underlying().FieldMap, ShouldContainKey, "active")
 			So(rr.Underlying().FieldMap["active"], ShouldBeTrue)
 			So(rr.Underlying().FieldMap, ShouldContainKey, "company_id")
-			So(rr.Underlying().FieldMap["company_id"], ShouldHaveSameTypeAs, webdata.RecordIDWithName{})
-			So(rr.Underlying().FieldMap["company_id"].(webdata.RecordIDWithName).ID, ShouldEqual, 1)
-			So(rr.Underlying().FieldMap["company_id"].(webdata.RecordIDWithName).Name, ShouldEqual, "Your Company")
+			So(rr.Underlying().FieldMap["company_id"], ShouldHaveSameTypeAs, webtypes.RecordIDWithName{})
+			So(rr.Underlying().FieldMap["company_id"].(webtypes.RecordIDWithName).ID, ShouldEqual, 1)
+			So(rr.Underlying().FieldMap["company_id"].(webtypes.RecordIDWithName).Name, ShouldEqual, "Your Company")
 			So(rr.Underlying().FieldMap, ShouldContainKey, "lang")
 			So(rr.Underlying().FieldMap["lang"], ShouldEqual, "en_US")
 		})
@@ -234,7 +235,7 @@ func TestExecute(t *testing.T) {
 				},
 			})
 			So(err, ShouldBeNil)
-			ocr, ok := res.(models.OnchangeResult)
+			ocr, ok := res.(webtypes.OnChangeResult)
 			So(ok, ShouldBeTrue)
 			fm := ocr.Value.Underlying().FieldMap
 			So(fm, ShouldHaveLength, 2)
@@ -242,6 +243,7 @@ func TestExecute(t *testing.T) {
 			So(fm, ShouldContainKey, "commercial_partner_id")
 			So(fm["company_type"], ShouldEqual, "person")
 			So(fm["commercial_partner_id"], ShouldBeFalse)
+			So(ocr.Warning, ShouldBeEmpty)
 		})
 
 		Convey("Onchange call on Partner during modification of company_type", func() {
@@ -267,15 +269,15 @@ func TestExecute(t *testing.T) {
 "children_ids.function":"","children_ids.color":"","children_ids.image":"","children_ids.street":"",
 "children_ids.city":"","children_ids.display_name":"","children_ids.zip":"","children_ids.title_id":"",
 "children_ids.country_id":"1","children_ids.parent_id":"1","children_ids.supplier":"","children_ids.email":"1",
-"children_ids.is_company":"1","children_ids.customer":"","children_ids.fax":"","children_ids.street2":"","
-children_ids.lang":"","children_ids.name":"1","children_ids.phone":"","children_ids.mobile":"","children_ids.type":"1",
+"children_ids.is_company":"1","children_ids.customer":"","children_ids.fax":"","children_ids.street2":"",
+"children_ids.lang":"","children_ids.name":"1","children_ids.phone":"","children_ids.mobile":"","children_ids.type":"1",
 "children_ids.state_id":"","comment":"","customer":"","user_id":"","supplier":"","ref":"","company_id":""}`),
 					"context": json.RawMessage(`{"company_id":1,"lang":"en_US","tz":"Europe/Brussels","uid":1,
 "search_default_customer":true,"params":{"action":"base_action_partner_form"}}`),
 				},
 			})
 			So(err, ShouldBeNil)
-			ocr, ok := res.(models.OnchangeResult)
+			ocr, ok := res.(webtypes.OnChangeResult)
 			So(ok, ShouldBeTrue)
 			fm := ocr.Value.Underlying().FieldMap
 			So(fm, ShouldHaveLength, 2)
@@ -283,12 +285,65 @@ children_ids.lang":"","children_ids.name":"1","children_ids.phone":"","children_
 			So(fm, ShouldContainKey, "commercial_partner_id")
 			So(fm["is_company"], ShouldBeTrue)
 			So(fm["commercial_partner_id"], ShouldBeFalse)
+			So(ocr.Warning, ShouldBeEmpty)
+		})
+
+		Convey("Onchange call on Partner during modification of country", func() {
+			var belgiumID int64
+			So(models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
+				belgiumID = h.Country().NewSet(env).GetRecord("base_be").ID()
+			}), ShouldBeNil)
+			res, err := controllers.Execute(security.SuperUserID, controllers.CallParams{
+				Model:  "Partner",
+				Method: "onchange",
+				Args: []json.RawMessage{
+					json.RawMessage(`[]`),
+				},
+				KWArgs: map[string]json.RawMessage{
+					"values": json.RawMessage(fmt.Sprintf(`{"id":false,"active":true,"image":false,"is_company":false,
+"commercial_partner_id":false,"company_type":"company","name":false,"parent_id":false,"company_name":false,
+"type":"contact","street":false,"street2":false,"city":false,"state_id":false,"zip":false,"country_id":%d,
+"website":false,"categories_ids":[],"function":false,"phone":false,"mobile":false,"fax":false,"users_ids":[],
+"email":false,"title_id":false,"lang":"en_US","children_ids":[],"comment":false,"customer":true,"user_id":false,
+"supplier":false,"ref":false,"company_id":1}`, belgiumID)),
+					"field_name": json.RawMessage(`["country_id"]`),
+					"field_onchange": json.RawMessage(`{"active":"1","image":"","is_company":"1",
+"commercial_partner_id":"1","company_type":"1","name":"1","parent_id":"1","company_name":"1","type":"1","street":"",
+"street2":"","city":"","state_id":"","zip":"","country_id":"1","website":"","categories_ids":"","function":"",
+"phone":"","mobile":"","fax":"","users_ids":"","users_ids.login_date":"","users_ids.lang":"","users_ids.name":"",
+"users_ids.login":"1","email":"1","title_id":"","lang":"","children_ids":"1","children_ids.comment":"",
+"children_ids.function":"","children_ids.color":"","children_ids.image":"","children_ids.street":"",
+"children_ids.city":"","children_ids.display_name":"","children_ids.zip":"","children_ids.title_id":"",
+"children_ids.country_id":"1","children_ids.parent_id":"1","children_ids.supplier":"","children_ids.email":"1",
+"children_ids.is_company":"1","children_ids.customer":"","children_ids.fax":"","children_ids.street2":"",
+"children_ids.lang":"","children_ids.name":"1","children_ids.phone":"","children_ids.mobile":"","children_ids.type":"1",
+"children_ids.state_id":"","comment":"","customer":"","user_id":"","supplier":"","ref":"","company_id":""}`),
+					"context": json.RawMessage(`{"company_id":1,"lang":"en_US","tz":"Europe/Brussels","uid":1,
+"search_default_customer":true,"params":{"action":"base_action_partner_form"}}`),
+				},
+			})
+			So(err, ShouldBeNil)
+			ocr, ok := res.(webtypes.OnChangeResult)
+			So(ok, ShouldBeTrue)
+			fm := ocr.Value.Underlying().FieldMap
+			So(fm, ShouldHaveLength, 2)
+			So(fm, ShouldContainKey, "is_company")
+			So(fm, ShouldContainKey, "commercial_partner_id")
+			So(fm["is_company"], ShouldBeTrue)
+			So(fm["commercial_partner_id"], ShouldBeFalse)
+			So(ocr.Warning, ShouldBeEmpty)
+			So(ocr.Filters, ShouldContainKey, "state_id")
+			So(ocr.Filters["state_id"], ShouldResemble, []interface{}{
+				[]interface{}{"country_id", operator.Operator("="), belgiumID}})
 		})
 
 		Convey("Onchange call on Partner during modification of parent_id", func() {
 			var nickID, agrolaitID, belgiumID int64
 			So(models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
-				nick := h.Partner().Create(env, h.Partner().NewData().SetName("Nicolas"))
+				asusTek := h.Partner().NewSet(env).GetRecord("base_res_partner_1")
+				nick := h.Partner().Create(env, h.Partner().NewData().
+					SetName("Nicolas").
+					SetParent(asusTek))
 				nickID = nick.ID()
 				agrolait := h.Partner().NewSet(env).GetRecord("base_res_partner_2")
 				agrolaitID = agrolait.ID()
@@ -318,15 +373,15 @@ children_ids.lang":"","children_ids.name":"1","children_ids.phone":"","children_
 "children_ids.function":"","children_ids.color":"","children_ids.image":"","children_ids.street":"",
 "children_ids.city":"","children_ids.display_name":"","children_ids.zip":"","children_ids.title_id":"",
 "children_ids.country_id":"1","children_ids.parent_id":"1","children_ids.supplier":"","children_ids.email":"1",
-"children_ids.is_company":"1","children_ids.customer":"","children_ids.fax":"","children_ids.street2":"","
-children_ids.lang":"","children_ids.name":"1","children_ids.phone":"","children_ids.mobile":"","children_ids.type":"1",
+"children_ids.is_company":"1","children_ids.customer":"","children_ids.fax":"","children_ids.street2":"",
+"children_ids.lang":"","children_ids.name":"1","children_ids.phone":"","children_ids.mobile":"","children_ids.type":"1",
 "children_ids.state_id":"","comment":"","customer":"","user_id":"","supplier":"","ref":"","company_id":""}`),
 					"context": json.RawMessage(`{"company_id":1,"lang":"en_US","tz":"Europe/Brussels","uid":1,
 "search_default_customer":true,"params":{"action":"base_action_partner_form"}}`),
 				},
 			})
 			So(err, ShouldBeNil)
-			ocr, ok := res.(models.OnchangeResult)
+			ocr, ok := res.(webtypes.OnChangeResult)
 			So(ok, ShouldBeTrue)
 			fm := ocr.Value.Underlying().FieldMap
 			So(fm, ShouldHaveLength, 5)
@@ -337,13 +392,17 @@ children_ids.lang":"","children_ids.name":"1","children_ids.phone":"","children_
 			So(fm, ShouldContainKey, "commercial_partner_id")
 			So(fm["city"], ShouldEqual, "Wavre")
 			So(fm["street"], ShouldEqual, "69 rue de Namur")
-			So(fm["country_id"], ShouldHaveSameTypeAs, webdata.RecordIDWithName{})
-			So(fm["country_id"].(webdata.RecordIDWithName).ID, ShouldEqual, belgiumID)
-			So(fm["country_id"].(webdata.RecordIDWithName).Name, ShouldEqual, "Belgium")
+			So(fm["country_id"], ShouldHaveSameTypeAs, webtypes.RecordIDWithName{})
+			So(fm["country_id"].(webtypes.RecordIDWithName).ID, ShouldEqual, belgiumID)
+			So(fm["country_id"].(webtypes.RecordIDWithName).Name, ShouldEqual, "Belgium")
 			So(fm["zip"], ShouldEqual, "1300")
-			So(fm["commercial_partner_id"], ShouldHaveSameTypeAs, webdata.RecordIDWithName{})
-			So(fm["commercial_partner_id"].(webdata.RecordIDWithName).ID, ShouldEqual, agrolaitID)
-			So(fm["commercial_partner_id"].(webdata.RecordIDWithName).Name, ShouldEqual, "Agrolait")
+			So(fm["commercial_partner_id"], ShouldHaveSameTypeAs, webtypes.RecordIDWithName{})
+			So(fm["commercial_partner_id"].(webtypes.RecordIDWithName).ID, ShouldEqual, agrolaitID)
+			So(fm["commercial_partner_id"].(webtypes.RecordIDWithName).Name, ShouldEqual, "Agrolait")
+			So(ocr.Warning, ShouldEqual, `Changing the company of a contact should only be done if it
+was never correctly set. If an existing contact starts working for a new
+company then a new contact should be created under that new
+company. You can use the "Discard" button to abandon this change.`)
 		})
 
 		Convey("NameSearch on Country", func() {
@@ -360,7 +419,7 @@ children_ids.lang":"","children_ids.name":"1","children_ids.phone":"","children_
 				},
 			})
 			So(err, ShouldBeNil)
-			rin, ok := res.([]webdata.RecordIDWithName)
+			rin, ok := res.([]webtypes.RecordIDWithName)
 			So(ok, ShouldBeTrue)
 			So(rin, ShouldHaveLength, 8)
 			So(rin[0].ID, ShouldEqual, 1)

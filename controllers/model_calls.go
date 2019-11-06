@@ -21,7 +21,7 @@ import (
 
 	"github.com/hexya-addons/web/domains"
 	"github.com/hexya-addons/web/odooproxy"
-	"github.com/hexya-addons/web/webdata"
+	"github.com/hexya-addons/web/webtypes"
 	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/hexya/src/models/types"
 	"github.com/hexya-erp/hexya/src/tools/logging"
@@ -214,12 +214,12 @@ func createRecordCollection(env models.Environment, params CallParams) (rc *mode
 			// Unable to unmarshal in a list of IDs, trying with a single id
 			var id float64
 			if err = json.Unmarshal(params.Args[0], &id); err == nil {
-				rc = rc.Search(rc.Model().Field("ID").Equals(id))
+				rc = rc.Search(rc.Model().Field(models.ID).Equals(id))
 				single = true
 				idsParsed = true
 			}
 		} else {
-			rc = rc.Search(rc.Model().Field("ID").In(ids))
+			rc = rc.Search(rc.Model().Field(models.ID).In(ids))
 			idsParsed = true
 		}
 	}
@@ -257,7 +257,7 @@ func getFieldValue(uid, id int64, model, field string) (res interface{}, rError 
 	rError = models.ExecuteInNewEnvironment(uid, func(env models.Environment) {
 		model = odooproxy.ConvertModelName(model)
 		rc := env.Pool(model)
-		res = rc.Search(rc.Model().Field("ID").Equals(id)).Get(field)
+		res = rc.Search(rc.Model().Field(models.ID).Equals(id)).Get(rc.Model().FieldName(field))
 	})
 
 	return
@@ -296,12 +296,12 @@ type SearchReadParams struct {
 }
 
 // SearchRead retrieves database records according to the filters defined in params.
-func SearchRead(uid int64, params SearchReadParams) (res *webdata.SearchReadResult, rError error) {
+func SearchRead(uid int64, params SearchReadParams) (res *webtypes.SearchReadResult, rError error) {
 	checkUser(uid)
 	rError = models.ExecuteInNewEnvironment(uid, func(env models.Environment) {
 		model := odooproxy.ConvertModelName(params.Model)
 		rs := env.Pool(model).WithNewContext(&params.Context)
-		srp := webdata.SearchParams{
+		srp := webtypes.SearchParams{
 			Domain: params.Domain,
 			Fields: params.Fields,
 			Offset: params.Offset,
@@ -310,7 +310,7 @@ func SearchRead(uid int64, params SearchReadParams) (res *webdata.SearchReadResu
 		}
 		data := searchReadAdapter(rs, "SearchRead", []interface{}{srp}).([]models.RecordData)
 		length := rs.Call("AddDomainLimitOffset", srp.Domain, 0, srp.Offset, srp.Order).(models.RecordSet).Collection().SearchCount()
-		res = &webdata.SearchReadResult{
+		res = &webtypes.SearchReadResult{
 			Records: data,
 			Length:  length,
 		}

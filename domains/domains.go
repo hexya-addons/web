@@ -113,20 +113,20 @@ var log logging.Logger
 
 // ParseDomain gets Domain and parses it into a RecordSet query Condition.
 // Returns an empty condition if the domain is []
-func ParseDomain(dom Domain) *models.Condition {
-	res := parseDomain(&dom)
+func ParseDomain(dom Domain, model *models.Model) *models.Condition {
+	res := parseDomain(&dom, model)
 	if res == nil {
 		return &models.Condition{}
 	}
 	for len(dom) > 0 {
-		res = models.Condition{}.AndCond(res).AndCond(parseDomain(&dom))
+		res = models.Condition{}.AndCond(res).AndCond(parseDomain(&dom, model))
 	}
 	return res
 }
 
 // parseDomain is the internal recursive function making all the job of
 // ParseDomain. The given domain through pointer is deleted during operation.
-func parseDomain(dom *Domain) *models.Condition {
+func parseDomain(dom *Domain, model *models.Model) *models.Condition {
 	if len(*dom) == 0 {
 		return nil
 	}
@@ -146,11 +146,11 @@ func parseDomain(dom *Domain) *models.Condition {
 	case string:
 		// We have a unary operator '|' or '&', so this is an included condition
 		// We have AndCond because this is the first term.
-		res = res.AndCond(parseDomain(dom))
+		res = res.AndCond(parseDomain(dom, model))
 	case []interface{}:
 		// We have a domain leaf ['field', 'op', value]
 		term := DomainTerm(ft)
-		res = addTerm(res, term, currentOp)
+		res = addTerm(res, term, currentOp, model)
 		*dom = (*dom)[1:]
 	}
 
@@ -163,13 +163,13 @@ func parseDomain(dom *Domain) *models.Condition {
 			// We have a unary operator '|' or '&', so this is an included condition
 			switch currentOp {
 			case PREFIX_OR:
-				res = res.OrCond(parseDomain(dom))
+				res = res.OrCond(parseDomain(dom, model))
 			default:
-				res = res.AndCond(parseDomain(dom))
+				res = res.AndCond(parseDomain(dom, model))
 			}
 		case []interface{}:
 			term := DomainTerm(secondTerm.([]interface{}))
-			res = addTerm(res, term, currentOp)
+			res = addTerm(res, term, currentOp, model)
 			*dom = (*dom)[1:]
 		}
 	}
@@ -178,7 +178,7 @@ func parseDomain(dom *Domain) *models.Condition {
 
 // addTerm parses the given DomainTerm and adds it to the given condition with the given
 // prefix operator. Returns the new condition.
-func addTerm(cond *models.Condition, term DomainTerm, op DomainPrefixOperator) *models.Condition {
+func addTerm(cond *models.Condition, term DomainTerm, op DomainPrefixOperator, model *models.Model) *models.Condition {
 	if len(term) != 3 {
 		log.Panic("Malformed domain term", "term", term)
 	}
@@ -191,7 +191,7 @@ func addTerm(cond *models.Condition, term DomainTerm, op DomainPrefixOperator) *
 		optr = t
 	}
 	value := term[2]
-	newCond := models.Condition{}.And().Field(fieldName).AddOperator(optr, value)
+	newCond := models.Condition{}.And().Field(model.FieldName(fieldName)).AddOperator(optr, value)
 	cond = getConditionMethod(newCond, op)(cond)
 	return cond
 }
