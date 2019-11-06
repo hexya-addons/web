@@ -62,8 +62,8 @@ func init() {
 			fMap := vals.Underlying().FieldMap
 			if fDomain, exists := fMap["domain"]; exists {
 				fMap["domain"] = strutils.MarshalToJSONString(fDomain)
-				fMap["domain"] = strings.Replace(fDomain.(string), "false", "False", -1)
-				fMap["domain"] = strings.Replace(fDomain.(string), "true", "True", -1)
+				fMap["domain"] = strings.Replace(fMap["domain"].(string), "false", "False", -1)
+				fMap["domain"] = strings.Replace(fMap["domain"].(string), "true", "True", -1)
 			}
 			if fContext, exists := fMap["context"]; exists {
 				fMap["context"] = strutils.MarshalToJSONString(fContext)

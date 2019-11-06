@@ -1,7 +1,7 @@
 // Copyright 2017 NDP Systèmes. All Rights Reserved.
 // See LICENSE file for full licensing details.
 
-package webdata
+package webtypes
 
 import (
 	"encoding/json"
@@ -136,4 +136,11 @@ type LoadViewsData struct {
 type CheckAccessRightsArgs struct {
 	Operation      string `json:"operation"`
 	RaiseException bool   `json:"raise_exception"`
+}
+
+// OnChangeResult is the result struct type of the Onchange function
+type OnChangeResult struct {
+	Value   models.RecordData        `json:"value"`
+	Warning string                   `json:"warning"`
+	Filters map[string][]interface{} `json:"domain"`
 }
