@@ -56,7 +56,6 @@ type Toolbar struct {
 
 // ReadGroupParams is the args struct for the ReadGroup method
 type ReadGroupParams struct {
-	//domain, fields, groupby, offset=0, limit=None, context=None, orderby=False, lazy=True
 	Domain  domains.Domain `json:"domain"`
 	Fields  []string       `json:"fields"`
 	GroupBy []string       `json:"groupby"`
@@ -90,7 +89,7 @@ func (rf RecordIDWithName) MarshalJSON() ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	return []byte(res), nil
+	return res, nil
 }
 
 // UnmarshalJSON for RecordIDWithName type
@@ -122,7 +121,6 @@ type LoadViewsOptions struct {
 	Toolbar     bool   `json:"toolbar"`
 	LoadFilters bool   `json:"load_filters"`
 	ActionID    string `json:"action_id"`
-	LoadFields  bool   `json:"load_fields"`
 }
 
 // LoadViewsData is the result struct of the LoadViews method

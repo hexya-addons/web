@@ -5,11 +5,14 @@ package web
 
 import (
 	"github.com/hexya-erp/hexya/src/models"
+	"github.com/hexya-erp/hexya/src/models/fields"
 	"github.com/hexya-erp/pool/h"
 )
 
+var fields_Company = map[string]models.FieldDefinition{
+	"DashboardBackground": fields.Binary{},
+}
+
 func init() {
-	h.Company().AddFields(map[string]models.FieldDefinition{
-		"DashboardBackground": models.BinaryField{},
-	})
+	h.Company().AddFields(fields_Company)
 }

@@ -94,6 +94,7 @@ func readAdapter(rc *models.RecordCollection, method string, args []interface{})
 		log.Panic("Expected arg for Read method to be models.FieldNames", "argType", fmt.Sprintf("%T", args[0]))
 	}
 	res := rc.Call("Read", params).([]models.RecordData)
+	fmt.Println("RA>", res)
 	for i, data := range res {
 		// Getting rec, which is this RecordSet but with its real type (not CommonMixinSet)
 		id := data.Underlying().Get(models.ID).(int64)
@@ -101,6 +102,7 @@ func readAdapter(rc *models.RecordCollection, method string, args []interface{})
 		fInfos := rec.Call("FieldsGet", models.FieldsGetArgs{})
 		res[i] = rec.Call("AddNamesToRelations", data, fInfos).(models.RecordData)
 	}
+	fmt.Println("RA2>", res)
 	return res
 }
 

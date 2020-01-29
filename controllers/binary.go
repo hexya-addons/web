@@ -71,7 +71,7 @@ func Image(c *server.Context) {
 
 // MenuImage serves the image for the given menu
 func MenuImage(c *server.Context) {
-	menuID := c.Param("menu_id")
+	menuID, _ := strconv.ParseInt(c.Param("menu_id"), 10, 64)
 	menu := menus.Registry.GetByID(menuID)
 	if menu != nil && menu.WebIcon != "" {
 		fp := filepath.Join(server.ResourceDir, menu.WebIcon)

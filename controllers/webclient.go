@@ -8,12 +8,13 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"os"
 	"path"
+	"path/filepath"
 	"strings"
 
 	"github.com/gin-gonic/gin"
 	"github.com/hexya-addons/web/scripts"
+	"github.com/hexya-erp/hexya/src/actions"
 	"github.com/hexya-erp/hexya/src/i18n"
 	"github.com/hexya-erp/hexya/src/menus"
 	"github.com/hexya-erp/hexya/src/models"
@@ -34,22 +35,34 @@ func QWeb(c *server.Context) {
 	if err != nil {
 		c.Error(fmt.Errorf("error while generating client side QWeb: %s", err.Error()))
 	}
-	c.String(http.StatusOK, string(res))
+	c.Data(http.StatusOK, "application/xml; charset=utf-8", res)
 }
 
-// BootstrapTranslations returns data about the current language
-func BootstrapTranslations(c *server.Context) {
-	params := struct {
-		Lang    string   `json:"lang"`
-		Modules []string `json:"mods"`
-	}{}
-	c.BindRPCParams(&params)
+// Translations returns data about the current language
+func Translations(c *server.Context) {
+	lang := c.Query("lang")
 	res := gin.H{
-		"lang_parameters": i18n.GetLocale(params.Lang),
-		"modules":         scripts.ListModuleTranslations(params.Lang),
+		"lang_parameters": i18n.GetLocale(lang),
+		"modules":         scripts.ListModuleTranslations(lang),
 		"multi_lang":      true,
 	}
-	c.RPC(http.StatusOK, res)
+	c.JSON(http.StatusOK, res)
+}
+
+// LoadMenus returns the menus of the application as JSON
+func LoadMenus(c *server.Context) {
+	lang := c.Query("lang")
+	var allRootMenuIds []int64
+	for _, menu := range menus.Registry.All() {
+		allRootMenuIds = append(allRootMenuIds, menu.ID)
+	}
+	rootMenu := gin.H{
+		"name":         "root",
+		"parent_id":    parentTuple{"-1", ""},
+		"children":     getMenuTree(menus.Registry.Menus, lang),
+		"all_menu_ids": allRootMenuIds,
+	}
+	c.JSON(http.StatusOK, rootMenu)
 }
 
 // CSSList returns the list of CSS files
@@ -90,18 +103,16 @@ func LoadLocale(c *server.Context) {
 	lang := c.Param("lang")
 	var outstr string
 	langFull := strings.ToLower(strings.Replace(lang, "_", "-", -1))
-	jsPath := fmt.Sprintf("%s/src/github.com/hexya-erp/hexya/src/server/static/web/lib/moment/locale/%s.js", os.Getenv("GOPATH"), langFull)
-	content, err := ioutil.ReadFile(jsPath)
-	var err2 error
+	jsPath := filepath.Join(server.ResourceDir, "static", "web", "lib", "comment", "locale")
+	jsPathFull := filepath.Join(jsPath, fmt.Sprintf("%s.js", langFull))
+	content, err := ioutil.ReadFile(jsPathFull)
 	if err != nil {
 		langShort := strings.Split(lang, "_")[0]
-		jsPath = fmt.Sprintf("%s/src/github.com/hexya-erp/hexya/src/server/static/web/lib/moment/locale/%s.js", os.Getenv("GOPATH"), langShort)
-		content, err2 = ioutil.ReadFile(jsPath)
+		jsPathShort := filepath.Join(jsPath, fmt.Sprintf("%s.js", langShort))
+		content, _ = ioutil.ReadFile(jsPathShort)
 	}
 	if len(content) > 2 {
 		outstr = string(content)
-	} else {
-		outstr = fmt.Sprintf("LOCALE NOT FOUND FOR '%s'\n%s\n%s", lang, err, err2)
 	}
 	c.Header("Content-Type", "application/javascript")
 	c.String(http.StatusOK, outstr)
@@ -110,13 +121,24 @@ func LoadLocale(c *server.Context) {
 
 // A Menu is the representation of a single menu item
 type Menu struct {
-	ID          string
-	Name        string
-	Children    []Menu
-	ActionID    string
-	ActionModel string
-	HasChildren bool
-	HasAction   bool
+	ID       int64                `json:"id"`
+	XMLID    string               `json:"xmlid"`
+	Name     string               `json:"name"`
+	Children []Menu               `json:"children"`
+	Action   actions.ActionString `json:"action"`
+	Parent   parentTuple          `json:"parent_id"`
+	Sequence uint8                `json:"sequence"`
+}
+
+// a parentTuple is an array of two strings that marshals itself as "false" if empty
+type parentTuple [2]string
+
+// MarshalJSON method for the parentTuple type. Marshals itself as "false" if empty.
+func (pt parentTuple) MarshalJSON() ([]byte, error) {
+	if pt == [2]string{} {
+		return json.Marshal(false)
+	}
+	return json.Marshal([2]string(pt))
 }
 
 // getMenuTree returns a tree of menus with all their descendants
@@ -124,26 +146,31 @@ type Menu struct {
 func getMenuTree(menus []*menus.Menu, lang string) []Menu {
 	res := make([]Menu, len(menus))
 	for i, m := range menus {
-		var children []Menu
+		// We deliberately instantiate an empty slice so that it gets JSON marshalled as []
+		children := []Menu{}
 		if m.HasChildren {
 			children = getMenuTree(m.Children.Menus, lang)
-		}
-		var model string
-		if m.HasAction {
-			model = m.Action.Model
 		}
 		name := m.Name
 		if lang != "" {
 			name = m.TranslatedName(lang)
 		}
+		parent := parentTuple{}
+		if m.Parent != nil {
+			parent = parentTuple{m.ParentID, m.Parent.Name}
+		}
+		var aString actions.ActionString
+		if m.Action != nil {
+			aString = m.Action.ActionString()
+		}
 		res[i] = Menu{
-			ID:          m.ID,
-			Name:        name,
-			ActionID:    m.ActionID,
-			ActionModel: model,
-			Children:    children,
-			HasAction:   m.HasAction,
-			HasChildren: m.HasChildren,
+			ID:       m.ID,
+			XMLID:    m.XMLID,
+			Parent:   parent,
+			Name:     name,
+			Action:   aString,
+			Children: children,
+			Sequence: m.Sequence,
 		}
 	}
 	return res
@@ -158,12 +185,6 @@ func WebClient(c *server.Context) {
 			lang = user.ContextGet().GetString("lang")
 		})
 	}
-	rootMenu := Menu{
-		Name:        "root",
-		Children:    getMenuTree(menus.Registry.Menus, lang),
-		HasAction:   false,
-		HasChildren: true,
-	}
 
 	siBytes, err := json.Marshal(GetSessionInfoStruct(c.Session()))
 	if err != nil {
@@ -177,16 +198,11 @@ func WebClient(c *server.Context) {
 	}
 
 	data := hweb.Context{
-		"menu_data":          rootMenu,
 		"modules":            string(modBytes),
 		"session_info":       string(siBytes),
-		"debug":              false,
-		"commonCSS":          CommonCSS,
+		"debug":              "",
 		"commonCompiledCSS":  commonCSSRoute,
-		"commonJS":           CommonJS,
-		"backendCSS":         BackendCSS,
 		"backendCompiledCSS": backendCSSRoute,
-		"backendJS":          BackendJS,
 	}
 	templateName := strings.TrimPrefix(path.Join(lang, "web.webclient_bootstrap"), "/")
 	c.HTML(http.StatusOK, templateName, data)

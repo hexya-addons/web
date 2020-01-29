@@ -9,6 +9,7 @@ import (
 
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
+	"github.com/hexya-addons/web/webtypes"
 	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/hexya/src/models/security"
 	"github.com/hexya-erp/hexya/src/models/types"
@@ -18,23 +19,39 @@ import (
 	"github.com/spf13/viper"
 )
 
+// UserCompanies for the se
+type UserCompanies struct {
+	CurrentCompany   webtypes.RecordIDWithName   `json:"current_company"`
+	AllowedCompanies []webtypes.RecordIDWithName `json:"allowed_companies"`
+}
+
 // SessionInfo gathers all information about the current session
 type SessionInfo struct {
-	SessionID   int64                  `json:"session_id"`
-	UID         int64                  `json:"uid"`
-	UserContext map[string]interface{} `json:"user_context"`
-	DB          string                 `json:"db"`
-	UserName    string                 `json:"username"`
-	CompanyID   int64                  `json:"company_id"`
-	Name        string                 `json:"name"`
+	SessionID                int64                  `json:"session_id"`
+	UID                      int64                  `json:"uid"`
+	UserContext              map[string]interface{} `json:"user_context"`
+	DB                       string                 `json:"db"`
+	UserName                 string                 `json:"username"`
+	CompanyID                int64                  `json:"company_id"`
+	Name                     string                 `json:"name"`
+	IsSystem                 bool                   `json:"is_system"`
+	IsAdmin                  bool                   `json:"is_admin"`
+	PartnerDisplayName       string                 `json:"partner_display_name"`
+	PartnerID                int64                  `json:"partner_id"`
+	UserCompanies            UserCompanies          `json:"user_companies"`
+	WebBaseURL               string                 `json:"web.base.url"`
+	ShowEffect               bool                   `json:"show_effect"`
+	DisplaySwitchCompanyMenu bool                   `json:"display_switch_company_menu"`
+	CacheHashes              map[string]string      `json:"cache_hashes"`
 }
 
 // GetSessionInfoStruct returns a struct with information about the given session
 func GetSessionInfoStruct(sess sessions.Session) *SessionInfo {
 	var (
-		userContext *types.Context
-		companyID   int64
-		userName    string
+		userContext   *types.Context
+		companyID     int64
+		userCompanies UserCompanies
+		userName      string
 	)
 	if sess.Get("uid") != nil {
 		models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
@@ -42,15 +59,33 @@ func GetSessionInfoStruct(sess sessions.Session) *SessionInfo {
 			userContext = user.ContextGet()
 			companyID = user.Company().ID()
 			userName = user.Name()
+			userCompanies = UserCompanies{
+				CurrentCompany: webtypes.RecordIDWithName{
+					ID:   companyID,
+					Name: user.Company().Name(),
+				},
+			}
+			for _, company := range user.Companies().Records() {
+				userCompanies.AllowedCompanies = append(userCompanies.AllowedCompanies, webtypes.RecordIDWithName{
+					ID:   company.ID(),
+					Name: company.Name(),
+				})
+			}
 		})
 		return &SessionInfo{
-			SessionID:   sess.Get("ID").(int64),
-			UID:         sess.Get("uid").(int64),
-			UserContext: userContext.ToMap(),
-			DB:          viper.GetString("DB.Name"),
-			UserName:    sess.Get("login").(string),
-			CompanyID:   companyID,
-			Name:        userName,
+			SessionID:     sess.Get("ID").(int64),
+			UID:           sess.Get("uid").(int64),
+			UserContext:   userContext.ToMap(),
+			DB:            viper.GetString("DB.Name"),
+			UserName:      sess.Get("login").(string),
+			CompanyID:     companyID,
+			Name:          userName,
+			UserCompanies: userCompanies,
+			CacheHashes: map[string]string{
+				"load_menus":   "1",
+				"qweb":         "2",
+				"translations": "3",
+			},
 		}
 	}
 	return nil

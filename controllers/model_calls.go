@@ -56,7 +56,7 @@ func Execute(uid int64, params CallParams) (res interface{}, rError error) {
 	rError = models.ExecuteInNewEnvironment(uid, func(env models.Environment) {
 
 		// Create RecordSet from Environment
-		rs, parms, single := createRecordCollection(env, params)
+		rs, parms, _ := createRecordCollection(env, params)
 		ctx := extractContext(params)
 		rs = rs.WithNewContext(&ctx)
 
@@ -96,15 +96,15 @@ func Execute(uid int64, params CallParams) (res interface{}, rError error) {
 			res = rs.Call(methodName, fnArgs...)
 		}
 
-		resVal := reflect.ValueOf(res)
-		if single && resVal.Kind() == reflect.Slice {
-			// Return only the first element of the slice if called with only one id.
-			newRes := reflect.New(resVal.Type().Elem()).Elem()
-			if resVal.Len() > 0 {
-				newRes.Set(resVal.Index(0))
-			}
-			res = newRes.Interface()
-		}
+		// resVal := reflect.ValueOf(res)
+		// if single && resVal.Kind() == reflect.Slice {
+		// 	// Return only the first element of the slice if called with only one id.
+		// 	newRes := reflect.New(resVal.Type().Elem()).Elem()
+		// 	if resVal.Len() > 0 {
+		// 		newRes.Set(resVal.Index(0))
+		// 	}
+		// 	res = newRes.Interface()
+		// }
 		res = convertReturnedValue(rs, res)
 	})
 

@@ -27,7 +27,7 @@ func ActionLoad(c *server.Context) {
 	}
 
 	params := struct {
-		ActionID          string         `json:"action_id"`
+		ActionID          int64          `json:"action_id"`
 		AdditionalContext *types.Context `json:"additional_context"`
 	}{}
 	c.BindRPCParams(&params)
@@ -43,7 +43,7 @@ func ActionRun(c *server.Context) {
 		Context  *types.Context `json:"context"`
 	}{}
 	c.BindRPCParams(&params)
-	action := actions.Registry.MustGetById(params.ActionID)
+	action := actions.Registry.MustGetByXMLId(params.ActionID)
 
 	// Process context ids into args
 	var ids []int64
