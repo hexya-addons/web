@@ -176,6 +176,7 @@ func RegisterRoutes() {
 	{
 		web.AddMiddleWare(LoginRequired)
 		web.AddController(http.MethodGet, "/", WebClient)
+		web.AddController(http.MethodGet, "/image/:model/:id/:field/*any", Image)
 		web.AddController(http.MethodGet, "/image", Image)
 		web.AddController(http.MethodGet, "/menu/:menu_id", MenuImage)
 

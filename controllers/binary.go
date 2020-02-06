@@ -44,9 +44,13 @@ func CompanyLogo(c *server.Context) {
 // Image serves the image stored in the database (base64 encoded)
 // in the given model and given field
 func Image(c *server.Context) {
-	model := c.Query("model")
-	field := c.Query("field")
-	id, err := strconv.ParseInt(c.Query("id"), 10, 64)
+	getFunc := c.Param
+	if _, ok := c.Params.Get("model"); !ok {
+		getFunc = c.Query
+	}
+	model := getFunc("model")
+	field := getFunc("field")
+	id, err := strconv.ParseInt(getFunc("id"), 10, 64)
 	if err != nil {
 		c.Error(fmt.Errorf("unable to read image ID: %s", err))
 		return
