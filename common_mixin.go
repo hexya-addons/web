@@ -50,11 +50,6 @@ func commonMixin_AddNameToRelations(rs m.CommonMixinSet, data models.RecordData,
 				} else {
 					value = []int64{}
 				}
-				displayNames := make([]string, v.Len())
-				for i, val := range v.Collection().Records() {
-					displayNames[i] = val.Call("NameGet").(string)
-				}
-				data.Underlying().FieldMap[fName.JSON()+"__display"] = strings.Join(displayNames, ", ")
 			}
 		case int64:
 			if fi.Type.Is2OneRelationType() {
@@ -64,6 +59,42 @@ func commonMixin_AddNameToRelations(rs m.CommonMixinSet, data models.RecordData,
 						ID:   v,
 						Name: rSet.Call("NameGet").(string),
 					}
+				} else {
+					value = false
+				}
+			}
+		}
+		data.Underlying().Set(fName, value)
+	}
+	return data
+}
+
+// FormatRelationFields returns the given data with all relation fields converted to int64 or []int64
+func commonMixin_FormatRelationFields(rs m.CommonMixinSet, data models.RecordData, fInfos map[string]*models.FieldInfo) models.RecordData {
+	for _, fName := range data.Underlying().FieldNames() {
+		fi := fInfos[fName.JSON()]
+		value := data.Underlying().Get(fName)
+		switch v := value.(type) {
+		case models.RecordSet:
+			relRS := v.Collection().WithEnv(rs.Env())
+			switch {
+			case fi.Type.Is2OneRelationType():
+				if rcId := relRS.Get(models.ID); rcId != int64(0) {
+					value = rcId.(int64)
+				} else {
+					value = false
+				}
+			case fi.Type.Is2ManyRelationType():
+				if v.Len() > 0 {
+					value = v.Ids()
+				} else {
+					value = []int64{}
+				}
+			}
+		case int64:
+			if fi.Type.Is2OneRelationType() {
+				if v != 0 {
+					value = v
 				} else {
 					value = false
 				}
@@ -117,6 +148,9 @@ func commonMixin_ProcessWriteValues(rs m.CommonMixinSet, data models.RecordData)
 		case fieldtype.Many2One, fieldtype.One2One:
 			if _, isRs := v.(models.RecordSet); isRs {
 				continue
+			}
+			if tuple, ok := v.([]interface{}); ok {
+				v = tuple[0]
 			}
 			id, err := nbutils.CastToInteger(v)
 			if err != nil {
@@ -681,6 +715,7 @@ func commonMixin_CheckAccessRights(rs m.CommonMixinSet, args webtypes.CheckAcces
 
 func init() {
 	h.CommonMixin().NewMethod("AddNamesToRelations", commonMixin_AddNameToRelations)
+	h.CommonMixin().NewMethod("FormatRelationFields", commonMixin_FormatRelationFields)
 	h.CommonMixin().NewMethod("NameSearch", commonMixin_NameSearch)
 	h.CommonMixin().NewMethod("ProcessWriteValues", commonMixin_ProcessWriteValues)
 	h.CommonMixin().NewMethod("ProcessCreateValues", commonMixin_ProcessCreateValues)

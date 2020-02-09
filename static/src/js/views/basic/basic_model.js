@@ -4046,9 +4046,8 @@ var BasicModel = AbstractModel.extend({
             full: true,
         };
         if (fields.length === 1) {
-            fields = fields[0];
             // if only one field changed, add its context to the RPC context
-            options.fieldName = fields;
+            options.fieldName = fields[0];
         }
         var context = this._getContext(record, options);
         var currentData = this._generateOnChangeData(record, {changesOnly: false});

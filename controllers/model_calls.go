@@ -28,13 +28,17 @@ import (
 )
 
 var (
-	log               logging.Logger
-	typeSubstitutions = map[reflect.Type]reflect.Type{
+	log logging.Logger
+	// TypeSubstitutions maps interface types to appropriate concrete types to unmarshal into.
+	//
+	// All types that implement the interface type will use the given concrete type.
+	TypeSubstitutions = map[reflect.Type]reflect.Type{
 		reflect.TypeOf((*models.RecordData)(nil)).Elem(): reflect.TypeOf(models.FieldMap{}),
 	}
-	typePostProcess = map[reflect.Type]interface{}{
-		reflect.TypeOf((*models.RecordData)(nil)).Elem(): func(rs models.RecordSet, arg models.FieldMap) models.RecordData {
-			return models.NewModelData(rs.Collection().Model(), arg)
+	// TypePostProcess maps interface types to a function to apply after unmarshalling.
+	TypePostProcess = map[reflect.Type]interface{}{
+		reflect.TypeOf((*models.RecordData)(nil)).Elem(): func(rs models.RecordSet, arg models.FieldMap) interface{} {
+			return models.NewModelData(rs.Collection().Model(), arg).Wrap()
 		},
 	}
 )
@@ -76,7 +80,7 @@ func Execute(uid int64, params CallParams) (res interface{}, rError error) {
 				// 2nd argument is a struct,
 				fnArgs = make([]interface{}, 1)
 				argStructValue := reflect.New(fnSecondArgType).Elem()
-				putParamsValuesInStruct(&argStructValue, parms)
+				putParamsValuesInStruct(&argStructValue, rs, parms)
 				putKWValuesInStruct(&argStructValue, rs, params.KWArgs)
 				fnArgs[0] = argStructValue.Interface()
 			} else {
@@ -113,7 +117,7 @@ func Execute(uid int64, params CallParams) (res interface{}, rError error) {
 
 // putParamsValuesInStruct decodes parms and sets the fields of the structValue
 // with the values of parms, in order.
-func putParamsValuesInStruct(structValue *reflect.Value, parms []json.RawMessage) {
+func putParamsValuesInStruct(structValue *reflect.Value, rs models.RecordSet, parms []json.RawMessage) {
 	argStructValue := *structValue
 	for i := 0; i < argStructValue.NumField(); i++ {
 		if len(parms) <= i {
@@ -122,7 +126,7 @@ func putParamsValuesInStruct(structValue *reflect.Value, parms []json.RawMessage
 		}
 		argsValue := reflect.ValueOf(parms[i])
 		fieldPtrValue := reflect.New(argStructValue.Type().Field(i).Type)
-		if err := unmarshalJSONValue(argsValue, fieldPtrValue); err != nil {
+		if err := unmarshalJSONValue(argsValue, fieldPtrValue, rs); err != nil {
 			// We deliberately continue here to have default value if there is an error
 			// This is to manage cases where the given data type is inconsistent (such
 			// false instead of [] or object{}).
@@ -140,23 +144,13 @@ func putKWValuesInStruct(structValue *reflect.Value, rs models.RecordSet, kwArgs
 	for k, v := range kwArgs {
 		field := getStructFieldByJSONTag(argStructValue, k)
 		if field.IsValid() {
-			targetType := field.Elem().Type()
-			origTargetType := targetType
-			if val, ok := typeSubstitutions[targetType]; ok {
-				targetType = val
-			}
-			dest := reflect.New(targetType)
-			if err := unmarshalJSONValue(reflect.ValueOf(v), dest); err != nil {
+			dest := reflect.New(field.Elem().Type())
+			if err := unmarshalJSONValue(reflect.ValueOf(v), dest, rs); err != nil {
 				// We deliberately continue here to have default value if there is an error
 				// This is to manage cases where the given data type is inconsistent (such
 				// false instead of [] or object{}).
 				log.Debug("Unable to unmarshal argument", "param", string(v), "error", err)
 				continue
-			}
-			if _, ok := typePostProcess[origTargetType]; ok {
-				fnct := reflect.ValueOf(typePostProcess[origTargetType])
-				ppVal := fnct.Call([]reflect.Value{reflect.ValueOf(rs), dest.Elem()})
-				dest = ppVal[0]
 			}
 			field.Elem().Set(dest.Elem())
 		}
@@ -175,23 +169,14 @@ func putParamsValuesInArgs(fnArgs *[]interface{}, rs models.RecordSet, methodNam
 			return fmt.Errorf("wrong number of args in non-struct function args (%d instead of %d)", len(parms), numArgs)
 		}
 		methInType := methodType.In(i + 1)
-		origMethInType := methInType
-		if val, ok := typeSubstitutions[methInType]; ok {
-			methInType = val
-		}
 		argsValue := reflect.ValueOf(parms[i])
 		resValue := reflect.New(methInType)
-		if err := unmarshalJSONValue(argsValue, resValue); err != nil {
+		if err := unmarshalJSONValue(argsValue, resValue, rs); err != nil {
 			// Same remark as above
 			log.Debug("Unable to unmarshal argument", "param", string(parms[i]), "error", err)
 			continue
 		}
 		res := resValue.Elem().Interface()
-		if _, ok := typePostProcess[origMethInType]; ok {
-			fnct := reflect.ValueOf(typePostProcess[origMethInType])
-			ppVal := fnct.Call([]reflect.Value{reflect.ValueOf(rs), resValue.Elem()})
-			res = ppVal[0].Interface()
-		}
 		(*fnArgs)[i] = res
 	}
 	return nil
@@ -202,34 +187,45 @@ func putParamsValuesInArgs(fnArgs *[]interface{}, rs models.RecordSet, methodNam
 // of ids, then it is used to populate the RecordCollection. Otherwise, it returns an empty
 // RecordCollection. This function also returns the remaining arguments after id(s) have been
 // parsed, and a boolean value set to true if the RecordSet has only one ID.
-func createRecordCollection(env models.Environment, params CallParams) (rc *models.RecordCollection, remainingParams []json.RawMessage, single bool) {
+func createRecordCollection(env models.Environment, params CallParams) (*models.RecordCollection, []json.RawMessage, bool) {
 	modelName := odooproxy.ConvertModelName(params.Model)
-	rc = env.Pool(modelName)
+	rc := env.Pool(modelName)
 
 	// Try to parse the first argument of Args as id or ids.
-	var idsParsed bool
-	var ids []float64
+	var (
+		single    bool
+		idsParsed bool
+		id        int64
+		ids       []int64
+		rin       webtypes.RecordIDWithName
+		rins      []webtypes.RecordIDWithName
+	)
 	if len(params.Args) > 0 {
-		if err := json.Unmarshal(params.Args[0], &ids); err != nil {
-			// Unable to unmarshal in a list of IDs, trying with a single id
-			var id float64
-			if err = json.Unmarshal(params.Args[0], &id); err == nil {
-				rc = rc.Search(rc.Model().Field(models.ID).Equals(id))
-				single = true
-				idsParsed = true
+		switch {
+		case json.Unmarshal(params.Args[0], &rins) == nil:
+			for _, r := range rins {
+				ids = append(ids, r.ID)
 			}
-		} else {
+			fallthrough
+		case json.Unmarshal(params.Args[0], &ids) == nil:
 			rc = rc.Search(rc.Model().Field(models.ID).In(ids))
+			idsParsed = true
+		case json.Unmarshal(params.Args[0], &rin) == nil:
+			id = rin.ID
+			fallthrough
+		case json.Unmarshal(params.Args[0], &id) == nil:
+			rc = rc.Search(rc.Model().Field(models.ID).Equals(id))
+			single = true
 			idsParsed = true
 		}
 	}
 
-	remainingParams = params.Args
+	remainingParams := params.Args
 	if idsParsed {
 		// We remove ids already parsed from args
 		remainingParams = remainingParams[1:]
 	}
-	return
+	return rc, remainingParams, single
 }
 
 // extractContext extracts the context from the given params and returns it.
@@ -238,7 +234,7 @@ func extractContext(params CallParams) types.Context {
 	var ctx types.Context
 	if ok {
 		if err := json.Unmarshal(ctxStr, &ctx); err != nil {
-			log.Panic("Unable to JSON unmarshal context", "context_string", string(ctxStr))
+			log.Panic("Unable to JSON unmarshal context", "context_string", string(ctxStr), "error", err)
 		}
 	}
 	return ctx
@@ -279,7 +275,7 @@ func convertReturnedValue(rs models.RecordSet, res interface{}) interface{} {
 		}
 	case models.RecordData:
 		fInfos := rs.Call("FieldsGet", models.FieldsGetArgs{})
-		res = rs.Call("AddNamesToRelations", res, fInfos).(models.RecordData)
+		res = rs.Call("FormatRelationFields", res, fInfos).(models.RecordData)
 	}
 	return res
 }
@@ -320,16 +316,33 @@ func SearchRead(uid int64, params SearchReadParams) (res *webtypes.SearchReadRes
 
 // unmarshalJSONValue unmarshals the given data as a Value of type []byte into
 // the dst Value. dst must be a pointer Value.
-func unmarshalJSONValue(data, dst reflect.Value) error {
+//
+// If dst is an interface, its is passed through TypesSubstitutions are applied.
+func unmarshalJSONValue(data, dst reflect.Value, rs models.RecordSet) error {
 	if dst.Type().Kind() != reflect.Ptr {
 		log.Panic("dst must be a pointer value", "data", data, "dst", dst)
 	}
-	umArgs := []reflect.Value{data, reflect.New(dst.Type().Elem())}
-	res := reflect.ValueOf(json.Unmarshal).Call(umArgs)[0]
+	dstType := dst.Type().Elem()
+	var mapType reflect.Type
+	for intType, destType := range TypeSubstitutions {
+		if dstType.Implements(intType) {
+			dstType = destType
+			mapType = intType
+			break
+		}
+	}
+	dest := reflect.New(dstType)
+	res := reflect.ValueOf(json.Unmarshal).Call([]reflect.Value{data, dest})[0]
 	if res.Interface() != nil {
 		return res.Interface().(error)
 	}
-	dst.Elem().Set(umArgs[1].Elem())
+
+	if f, ok := TypePostProcess[mapType]; ok {
+		fnct := reflect.ValueOf(f)
+		ppVal := fnct.Call([]reflect.Value{reflect.ValueOf(rs), dest.Elem()})
+		dest = ppVal[0]
+	}
+	dst.Elem().Set(dest.Elem())
 	return nil
 }
 

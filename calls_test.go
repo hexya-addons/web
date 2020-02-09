@@ -24,9 +24,9 @@ func TestExecute(t *testing.T) {
 			res, err := controllers.Execute(security.SuperUserID, controllers.CallParams{
 				Model:  "Company",
 				Method: "create",
-				Args: []json.RawMessage{json.RawMessage(`{"logo": false, "name": "Company4", "tagline": false, 
+				Args: []json.RawMessage{json.RawMessage(`{"logo": false, "name": "Company4", 
 "street": false, "street2": false, "city": false, "state_id": false, "zip": false, "country_id": false, 
-"website": false, "phone": false, "fax": false, "email": false, "vat": false, "company_registry": false, 
+"website": false, "phone": false, "email": false, "vat": false, "company_registry": false, 
 "parent_id": false, "currency_id": 45}`)},
 				KWArgs: map[string]json.RawMessage{
 					"context": json.RawMessage(`{"company_id":1,"lang":"en_US","tz":"","uid":1,"params":{"action":"base_action_res_company_form"}}`)},
@@ -43,7 +43,7 @@ func TestExecute(t *testing.T) {
 				Method: "create",
 				Args: []json.RawMessage{json.RawMessage(fmt.Sprintf(`{"active":true,"image":false,"name":"User","email":false,
 "login":"user@example.com","company_ids":[[6,false,[%d]]],"company_id":%d,"group_ids":[],"lang":false,"tz":false,
-"action_id":false,"signature":false,"parent_id":3,"user_id":1,"categories_ids":[]}`, newCompanyID, newCompanyID))},
+"action_id":false,"signature":false,"parent_id":3,"user_id":1,"category_ids":[]}`, newCompanyID, newCompanyID))},
 				KWArgs: map[string]json.RawMessage{
 					"context": json.RawMessage(`{"company_id":1,"lang":"en_US","tz":"","uid":1,"params":{"action":"base_action_res_users"}}`),
 				},
@@ -88,12 +88,12 @@ func TestExecute(t *testing.T) {
 				Method: "create",
 				Args: []json.RawMessage{json.RawMessage(`{"active":true,"image_medium":false,"is_company":false,
 "company_type":"person","name":"Nicolas PIGANEAU","parent_id":3,"company_name":false,"type":"contact","website":false,
-"categories_ids":[],"function":false,"phone":false,"mobile":false,"fax":false,"users_ids":[],"email":false,
-"title_id":false,"lang":"en_US","children_ids":[],"comment":false,"customer":true,"user_id":1,"supplier":false,
+"category_ids":[],"function":false,"phone":false,"mobile":false,"user_ids":[],"email":false,
+"title_id":false,"lang":"en_US","children_ids":[],"comment":false,"user_id":1,
 "ref":false,"company_id":false}`)},
 				KWArgs: map[string]json.RawMessage{
 					"context": json.RawMessage(`{"company_id":1,"lang":"en_US","tz":"","uid":1,
-"search_default_customer":true,"params":{"action":"base_action_partner_form"}}`),
+"params":{"action":"base_action_partner_form"}}`),
 				},
 			})
 			So(err, ShouldBeNil)
@@ -112,11 +112,11 @@ func TestExecute(t *testing.T) {
 					json.RawMessage(`{"company_type":"company","children_ids":[[0,false,{"type":"contact",
 "street":"31 Hong Kong street","street2":false,"city":"Taipei","state_id":false,"zip":"106","country_id":221,
 "name":"Nick Jr","title_id":false,"function":false,"email":false,"phone":false,"mobile":false,"comment":false,
-"supplier":false,"customer":true,"lang":"en_US","image":false}]]}`),
+"lang":"en_US","image":false}]]}`),
 				},
 				KWArgs: map[string]json.RawMessage{
 					"context": json.RawMessage(`{"company_id":1,"lang":"en_US","tz":"","uid":1,
-"search_default_customer":true,"params":{"action":"base_action_partner_form"}}`),
+"params":{"action":"base_action_partner_form"}}`),
 				},
 			})
 			So(err, ShouldBeNil)
@@ -150,25 +150,23 @@ func TestExecute(t *testing.T) {
 			So(dn, ShouldEqual, "Company4")
 		})
 
-		Convey("DefaultGet on Partner", func() {
+		Convey("DefaultGet on User", func() {
 			res, err := controllers.Execute(security.SuperUserID, controllers.CallParams{
-				Model:  "Partner",
+				Model:  "User",
 				Method: "default_get",
 				Args: []json.RawMessage{
-					json.RawMessage(`["active","categories_ids","children_ids","city","comment","commercial_partner_id",
-"company_id","company_name","company_type","country_id","customer","email","fax","function","image_medium","is_company",
-"lang","mobile","name","parent_id","phone","ref","state_id","street","street2","supplier","title_id","type","user_id",
-"users_ids","website","zip"]`),
+					json.RawMessage(`["id","groups_count","accesses_count","rules_count","active_partner","partner_id","image_1920","name","email","login","company_ids","company_id","companies_count","active","lang","tz","tz_offset","action_id","signature"]`),
 				},
 				KWArgs: map[string]json.RawMessage{
-					"context": json.RawMessage(`{"company_id":1,"lang":"en_US","tz":"","uid":1,
-"params":{"action":"base_action_partner_form","menu_id":"menu_partner","_push_me":false},
-"search_default_customer":true}`),
+					"context": json.RawMessage(`{"company_id":1,"lang":"en_US","tz":"Europe/Brussels","uid":1,"allowed_company_ids":[1],
+"params":{"action":"base_action_partner_form","menu_id":"menu_partner","_push_me":false}}`),
 				},
 			})
 			So(err, ShouldBeNil)
 			rr, ok := res.(models.RecordData)
 			So(ok, ShouldBeTrue)
+			So(rr.Underlying().FieldMap, ShouldContainKey, "company_id")
+			So(rr.Underlying().FieldMap["company_id"], ShouldEqual, 1)
 			So(rr.Underlying().FieldMap, ShouldContainKey, "active")
 			So(rr.Underlying().FieldMap["active"], ShouldBeTrue)
 			So(rr.Underlying().FieldMap, ShouldContainKey, "is_company")
@@ -194,9 +192,8 @@ func TestExecute(t *testing.T) {
 			So(rr.Underlying().FieldMap, ShouldContainKey, "active")
 			So(rr.Underlying().FieldMap["active"], ShouldBeTrue)
 			So(rr.Underlying().FieldMap, ShouldContainKey, "company_id")
-			So(rr.Underlying().FieldMap["company_id"], ShouldHaveSameTypeAs, webtypes.RecordIDWithName{})
-			So(rr.Underlying().FieldMap["company_id"].(webtypes.RecordIDWithName).ID, ShouldEqual, 1)
-			So(rr.Underlying().FieldMap["company_id"].(webtypes.RecordIDWithName).Name, ShouldEqual, "Your Company")
+			So(rr.Underlying().FieldMap["company_id"], ShouldHaveSameTypeAs, int64(1))
+			So(rr.Underlying().FieldMap["company_id"], ShouldEqual, 1)
 			So(rr.Underlying().FieldMap, ShouldContainKey, "lang")
 			So(rr.Underlying().FieldMap["lang"], ShouldEqual, "en_US")
 		})
@@ -212,26 +209,26 @@ func TestExecute(t *testing.T) {
 					"values": json.RawMessage(`{"id":false,"active":true,"image":false,"is_company":false,
 "commercial_partner_id":false,"company_type":false,"name":false,"parent_id":false,"company_name":false,
 "type":"contact","street":false,"street2":false,"city":false,"state_id":false,"zip":false,"country_id":false,
-"website":false,"categories_ids":[],"function":false,"phone":false,"mobile":false,"fax":false,"users_ids":[],
-"email":false,"title_id":false,"lang":"en_US","children_ids":[],"comment":false,"customer":true,"user_id":false,
-"supplier":false,"ref":false,"company_id":1}`),
+"website":false,"category_ids":[],"function":false,"phone":false,"mobile":false,"user_ids":[],
+"email":false,"title_id":false,"lang":"en_US","children_ids":[],"comment":false,"user_id":false,
+"ref":false,"company_id":1}`),
 					"field_name": json.RawMessage(`["active","image","is_company","commercial_partner_id",
 "company_type","name","parent_id","company_name","type","street","street2","city","state_id","zip","country_id",
-"website","categories_ids","function","phone","mobile","fax","users_ids","email","title_id","lang","children_ids",
-"comment","customer","user_id","supplier","ref","company_id"]`),
+"website","category_ids","function","phone","mobile","user_ids","email","title_id","lang","children_ids",
+"comment","user_id","ref","company_id"]`),
 					"field_onchange": json.RawMessage(`{"active":"1","image":"","is_company":"1",
 "commercial_partner_id":"1","company_type":"1","name":"1","parent_id":"1","company_name":"1","type":"1","street":"",
-"street2":"","city":"","state_id":"","zip":"","country_id":"1","website":"","categories_ids":"","function":"","phone":"",
-"mobile":"","fax":"","users_ids":"","users_ids.login_date":"","users_ids.lang":"","users_ids.name":"","users_ids.login":"1",
+"street2":"","city":"","state_id":"","zip":"","country_id":"1","website":"","category_ids":"","function":"","phone":"",
+"mobile":"","user_ids":"","user_ids.login_date":"","user_ids.lang":"","user_ids.name":"","user_ids.login":"1",
 "email":"1","title_id":"","lang":"","children_ids":"1","children_ids.comment":"","children_ids.function":"",
 "children_ids.color":"","children_ids.image":"","children_ids.street":"","children_ids.city":"",
 "children_ids.display_name":"","children_ids.zip":"","children_ids.title_id":"","children_ids.country_id":"1",
-"children_ids.parent_id":"1","children_ids.supplier":"","children_ids.email":"1","children_ids.is_company":"1",
-"children_ids.customer":"","children_ids.fax":"","children_ids.street2":"","children_ids.lang":"",
+"children_ids.parent_id":"1","children_ids.email":"1","children_ids.is_company":"1",
+"children_ids.street2":"","children_ids.lang":"",
 "children_ids.name":"1","children_ids.phone":"","children_ids.mobile":"","children_ids.type":"1",
-"children_ids.state_id":"","comment":"","customer":"","user_id":"","supplier":"","ref":"","company_id":""}`),
+"children_ids.state_id":"","comment":"","user_id":"","ref":"","company_id":""}`),
 					"context": json.RawMessage(`{"company_id":1,"lang":"en_US","tz":"Europe/Brussels","uid":1,
-"search_default_customer":true,"params":{"action":"base_action_partner_form"}}`),
+"params":{"action":"base_action_partner_form"}}`),
 				},
 			})
 			So(err, ShouldBeNil)
@@ -257,23 +254,23 @@ func TestExecute(t *testing.T) {
 					"values": json.RawMessage(`{"id":false,"active":true,"image":false,"is_company":false,
 "commercial_partner_id":false,"company_type":"company","name":false,"parent_id":false,"company_name":false,
 "type":"contact","street":false,"street2":false,"city":false,"state_id":false,"zip":false,"country_id":false,
-"website":false,"categories_ids":[],"function":false,"phone":false,"mobile":false,"fax":false,"users_ids":[],
-"email":false,"title_id":false,"lang":"en_US","children_ids":[],"comment":false,"customer":true,"user_id":false,
-"supplier":false,"ref":false,"company_id":1}`),
+"website":false,"category_ids":[],"function":false,"phone":false,"mobile":false,"user_ids":[],
+"email":false,"title_id":false,"lang":"en_US","children_ids":[],"comment":false,"user_id":false,
+"ref":false,"company_id":1}`),
 					"field_name": json.RawMessage(`["company_type"]`),
 					"field_onchange": json.RawMessage(`{"active":"1","image":"","is_company":"1",
 "commercial_partner_id":"1","company_type":"1","name":"1","parent_id":"1","company_name":"1","type":"1","street":"",
-"street2":"","city":"","state_id":"","zip":"","country_id":"1","website":"","categories_ids":"","function":"",
-"phone":"","mobile":"","fax":"","users_ids":"","users_ids.login_date":"","users_ids.lang":"","users_ids.name":"",
-"users_ids.login":"1","email":"1","title_id":"","lang":"","children_ids":"1","children_ids.comment":"",
+"street2":"","city":"","state_id":"","zip":"","country_id":"1","website":"","category_ids":"","function":"",
+"phone":"","mobile":"","user_ids":"","user_ids.login_date":"","user_ids.lang":"","user_ids.name":"",
+"user_ids.login":"1","email":"1","title_id":"","lang":"","children_ids":"1","children_ids.comment":"",
 "children_ids.function":"","children_ids.color":"","children_ids.image":"","children_ids.street":"",
 "children_ids.city":"","children_ids.display_name":"","children_ids.zip":"","children_ids.title_id":"",
-"children_ids.country_id":"1","children_ids.parent_id":"1","children_ids.supplier":"","children_ids.email":"1",
-"children_ids.is_company":"1","children_ids.customer":"","children_ids.fax":"","children_ids.street2":"",
+"children_ids.country_id":"1","children_ids.parent_id":"1","children_ids.email":"1",
+"children_ids.is_company":"1","children_ids.street2":"",
 "children_ids.lang":"","children_ids.name":"1","children_ids.phone":"","children_ids.mobile":"","children_ids.type":"1",
-"children_ids.state_id":"","comment":"","customer":"","user_id":"","supplier":"","ref":"","company_id":""}`),
+"children_ids.state_id":"","comment":"","user_id":"","ref":"","company_id":""}`),
 					"context": json.RawMessage(`{"company_id":1,"lang":"en_US","tz":"Europe/Brussels","uid":1,
-"search_default_customer":true,"params":{"action":"base_action_partner_form"}}`),
+"params":{"action":"base_action_partner_form"}}`),
 				},
 			})
 			So(err, ShouldBeNil)
@@ -303,23 +300,23 @@ func TestExecute(t *testing.T) {
 					"values": json.RawMessage(fmt.Sprintf(`{"id":false,"active":true,"image":false,"is_company":false,
 "commercial_partner_id":false,"company_type":"company","name":false,"parent_id":false,"company_name":false,
 "type":"contact","street":false,"street2":false,"city":false,"state_id":false,"zip":false,"country_id":%d,
-"website":false,"categories_ids":[],"function":false,"phone":false,"mobile":false,"fax":false,"users_ids":[],
-"email":false,"title_id":false,"lang":"en_US","children_ids":[],"comment":false,"customer":true,"user_id":false,
-"supplier":false,"ref":false,"company_id":1}`, belgiumID)),
+"website":false,"category_ids":[],"function":false,"phone":false,"mobile":false,"user_ids":[],
+"email":false,"title_id":false,"lang":"en_US","children_ids":[],"comment":false,"user_id":false,
+"ref":false,"company_id":1}`, belgiumID)),
 					"field_name": json.RawMessage(`["country_id"]`),
 					"field_onchange": json.RawMessage(`{"active":"1","image":"","is_company":"1",
 "commercial_partner_id":"1","company_type":"1","name":"1","parent_id":"1","company_name":"1","type":"1","street":"",
-"street2":"","city":"","state_id":"","zip":"","country_id":"1","website":"","categories_ids":"","function":"",
-"phone":"","mobile":"","fax":"","users_ids":"","users_ids.login_date":"","users_ids.lang":"","users_ids.name":"",
-"users_ids.login":"1","email":"1","title_id":"","lang":"","children_ids":"1","children_ids.comment":"",
+"street2":"","city":"","state_id":"","zip":"","country_id":"1","website":"","category_ids":"","function":"",
+"phone":"","mobile":"","user_ids":"","user_ids.login_date":"","user_ids.lang":"","user_ids.name":"",
+"user_ids.login":"1","email":"1","title_id":"","lang":"","children_ids":"1","children_ids.comment":"",
 "children_ids.function":"","children_ids.color":"","children_ids.image":"","children_ids.street":"",
 "children_ids.city":"","children_ids.display_name":"","children_ids.zip":"","children_ids.title_id":"",
-"children_ids.country_id":"1","children_ids.parent_id":"1","children_ids.supplier":"","children_ids.email":"1",
-"children_ids.is_company":"1","children_ids.customer":"","children_ids.fax":"","children_ids.street2":"",
+"children_ids.country_id":"1","children_ids.parent_id":"1","children_ids.email":"1",
+"children_ids.is_company":"1","children_ids.street2":"",
 "children_ids.lang":"","children_ids.name":"1","children_ids.phone":"","children_ids.mobile":"","children_ids.type":"1",
-"children_ids.state_id":"","comment":"","customer":"","user_id":"","supplier":"","ref":"","company_id":""}`),
+"children_ids.state_id":"","comment":"","user_id":"","ref":"","company_id":""}`),
 					"context": json.RawMessage(`{"company_id":1,"lang":"en_US","tz":"Europe/Brussels","uid":1,
-"search_default_customer":true,"params":{"action":"base_action_partner_form"}}`),
+"params":{"action":"base_action_partner_form"}}`),
 				},
 			})
 			So(err, ShouldBeNil)
@@ -361,23 +358,23 @@ func TestExecute(t *testing.T) {
 					"values": json.RawMessage(fmt.Sprintf(`{"id":%d,"active":true,"image":"16.51 Kb",
 "is_company":false,"commercial_partner_id":%d,"company_type":"person","name":"Nicolas","parent_id":%d,
 "company_name":false,"type":"contact","street":false,"street2":false,"city":false,"state_id":false,"zip":false,
-"country_id":false,"website":false,"categories_ids":[],"function":false,"phone":false,"mobile":false,"fax":false,
-"users_ids":[],"email":false,"title_id":false,"lang":"en_US","children_ids":[],"comment":false,"customer":true,
-"user_id":false,"supplier":false,"ref":false,"company_id":1}`, nickID, nickID, agrolaitID)),
+"country_id":false,"website":false,"category_ids":[],"function":false,"phone":false,"mobile":false,
+"user_ids":[],"email":false,"title_id":false,"lang":"en_US","children_ids":[],"comment":false,
+"user_id":false,"ref":false,"company_id":1}`, nickID, nickID, agrolaitID)),
 					"field_name": json.RawMessage(`["parent_id"]`),
 					"field_onchange": json.RawMessage(`{"active":"1","image":"","is_company":"1",
 "commercial_partner_id":"1","company_type":"1","name":"1","parent_id":"1","company_name":"1","type":"1","street":"",
-"street2":"","city":"","state_id":"","zip":"","country_id":"1","website":"","categories_ids":"","function":"",
-"phone":"","mobile":"","fax":"","users_ids":"","users_ids.login_date":"","users_ids.lang":"","users_ids.name":"",
-"users_ids.login":"1","email":"1","title_id":"","lang":"","children_ids":"1","children_ids.comment":"",
+"street2":"","city":"","state_id":"","zip":"","country_id":"1","website":"","category_ids":"","function":"",
+"phone":"","mobile":"","user_ids":"","user_ids.login_date":"","user_ids.lang":"","user_ids.name":"",
+"user_ids.login":"1","email":"1","title_id":"","lang":"","children_ids":"1","children_ids.comment":"",
 "children_ids.function":"","children_ids.color":"","children_ids.image":"","children_ids.street":"",
 "children_ids.city":"","children_ids.display_name":"","children_ids.zip":"","children_ids.title_id":"",
-"children_ids.country_id":"1","children_ids.parent_id":"1","children_ids.supplier":"","children_ids.email":"1",
-"children_ids.is_company":"1","children_ids.customer":"","children_ids.fax":"","children_ids.street2":"",
+"children_ids.country_id":"1","children_ids.parent_id":"1","children_ids.email":"1",
+"children_ids.is_company":"1","children_ids.street2":"",
 "children_ids.lang":"","children_ids.name":"1","children_ids.phone":"","children_ids.mobile":"","children_ids.type":"1",
-"children_ids.state_id":"","comment":"","customer":"","user_id":"","supplier":"","ref":"","company_id":""}`),
+"children_ids.state_id":"","comment":"","user_id":"","ref":"","company_id":""}`),
 					"context": json.RawMessage(`{"company_id":1,"lang":"en_US","tz":"Europe/Brussels","uid":1,
-"search_default_customer":true,"params":{"action":"base_action_partner_form"}}`),
+"params":{"action":"base_action_partner_form"}}`),
 				},
 			})
 			So(err, ShouldBeNil)

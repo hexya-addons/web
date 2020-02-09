@@ -5,11 +5,13 @@ package webtypes
 
 import (
 	"encoding/json"
+	"fmt"
 
 	"github.com/hexya-addons/web/domains"
 	"github.com/hexya-erp/hexya/src/actions"
 	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/hexya/src/models/operator"
+	"github.com/hexya-erp/hexya/src/tools/nbutils"
 	"github.com/hexya-erp/hexya/src/views"
 )
 
@@ -94,13 +96,20 @@ func (rf RecordIDWithName) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON for RecordIDWithName type
 func (rf *RecordIDWithName) UnmarshalJSON(data []byte) error {
-	var arr [2]interface{}
+	var (
+		arr [2]interface{}
+		ok  bool
+	)
 	err := json.Unmarshal(data, &arr)
 	if err != nil {
 		return err
 	}
-	rf.ID = arr[0].(int64)
-	rf.Name = arr[1].(string)
+	if rf.ID, err = nbutils.CastToInteger(arr[0]); err != nil {
+		return fmt.Errorf("unable to unmarshal RecordIDWithName: %s", string(data))
+	}
+	if rf.Name, ok = arr[1].(string); !ok {
+		return fmt.Errorf("unable to unmarshal RecordIDWithName: %s", string(data))
+	}
 	return nil
 }
 
