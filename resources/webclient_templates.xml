@@ -110,6 +110,7 @@
             <script type="text/javascript" src="/static/web/src/js/widgets/colorpicker_dialog.js"> </script>
             <script type="text/javascript" src="/static/web/src/js/widgets/translation_dialog.js"> </script>
             <script type="text/javascript" src="/static/web/src/js/libs/zoomhexya.js"> </script>
+            <script type="text/javascript" src="/static/web/src/js/web_responsive.js"> </script>
         </template>
 
         <template id="web.assets_common_lazy" inherit_id="web.assets_common_js" primary="True">
@@ -762,6 +763,7 @@
                     </script>
                 </t>
                 <t t-set="body_classname" t-value="'o_web_client'"/>
+<!--                <t t-set="body_classname" t-value="'o_web_client o_chatter_position_' + session_info.user_context.chatter_position"/>-->
             </t>
         </template>
 

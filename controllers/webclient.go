@@ -21,6 +21,7 @@ import (
 	"github.com/hexya-erp/hexya/src/models/security"
 	"github.com/hexya-erp/hexya/src/server"
 	"github.com/hexya-erp/hexya/src/tools"
+	"github.com/hexya-erp/hexya/src/tools/b64image"
 	"github.com/hexya-erp/hexya/src/tools/hweb"
 	"github.com/hexya-erp/hexya/src/tools/xmlutils"
 	"github.com/hexya-erp/pool/h"
@@ -121,13 +122,14 @@ func LoadLocale(c *server.Context) {
 
 // A Menu is the representation of a single menu item
 type Menu struct {
-	ID       int64                `json:"id"`
-	XMLID    string               `json:"xmlid"`
-	Name     string               `json:"name"`
-	Children []Menu               `json:"children"`
-	Action   actions.ActionString `json:"action"`
-	Parent   parentTuple          `json:"parent_id"`
-	Sequence uint8                `json:"sequence"`
+	ID          int64                `json:"id"`
+	XMLID       string               `json:"xmlid"`
+	Name        string               `json:"name"`
+	Children    []Menu               `json:"children"`
+	Action      actions.ActionString `json:"action"`
+	Parent      parentTuple          `json:"parent_id"`
+	Sequence    uint8                `json:"sequence"`
+	WebIconData string               `json:"web_icon_data"`
 }
 
 // a parentTuple is an array of two strings that marshals itself as "false" if empty
@@ -163,14 +165,23 @@ func getMenuTree(menus []*menus.Menu, lang string) []Menu {
 		if m.Action != nil {
 			aString = m.Action.ActionString()
 		}
+		var iconData string
+		if m.WebIcon != "" {
+			var err error
+			iconData, err = b64image.ReadAll(filepath.Join(server.ResourceDir, m.WebIcon))
+			if err != nil {
+				log.Warn("error while loading menu image", "menu", m.Name, "image", m.WebIcon, "error", err)
+			}
+		}
 		res[i] = Menu{
-			ID:       m.ID,
-			XMLID:    m.XMLID,
-			Parent:   parent,
-			Name:     name,
-			Action:   aString,
-			Children: children,
-			Sequence: m.Sequence,
+			ID:          m.ID,
+			XMLID:       m.XMLID,
+			Parent:      parent,
+			Name:        name,
+			Action:      aString,
+			Children:    children,
+			Sequence:    m.Sequence,
+			WebIconData: iconData,
 		}
 	}
 	return res

@@ -27,11 +27,17 @@ func ActionLoad(c *server.Context) {
 	}
 
 	params := struct {
-		ActionID          int64          `json:"action_id"`
+		ActionID          interface{}    `json:"action_id"`
 		AdditionalContext *types.Context `json:"additional_context"`
 	}{}
 	c.BindRPCParams(&params)
-	action := *actions.Registry.MustGetById(params.ActionID)
+	var action actions.Action
+	switch actionID := params.ActionID.(type) {
+	case string:
+		action = *actions.Registry.MustGetByXMLID(actionID)
+	case float64:
+		action = *actions.Registry.MustGetById(int64(actionID))
+	}
 	action.Name = action.TranslatedName(lang)
 	c.RPC(http.StatusOK, action)
 }

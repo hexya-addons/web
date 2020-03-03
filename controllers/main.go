@@ -124,6 +124,7 @@ var (
 		"/static/web/src/scss/ribbon.scss",
 		"/static/web/src/scss/base_settings.scss",
 		"/static/web/src/scss/report_backend.scss",
+		"/static/web/src/scss/web_responsive.scss",
 	}
 	// FrontendScss is the list of Less assets to import by the web client
 	// that are specific to the frontend. All scss assets are

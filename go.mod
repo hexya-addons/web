@@ -12,3 +12,5 @@ require (
 	github.com/smartystreets/goconvey v0.0.0-20190306220146-200a235640ff
 	github.com/spf13/viper v1.5.0
 )
+
+replace github.com/hexya-erp/pool v1.0.2 => /home/npiganeau/Progs/hexya/hexya-addons/web/pool
