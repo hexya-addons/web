@@ -662,26 +662,103 @@ func commonMixin_PostProcessFilters(rs m.CommonMixinSet, in map[models.FieldName
 	return res
 }
 
+// WebReadGroup returns the result of a read_group (and optionally search for and read records inside each
+// group), and the total number of groups matching the search domain.
+func commonMixin_WebReadGroup(rs m.CommonMixinSet, params webtypes.WebReadGroupParams) webtypes.WebReadGroupResult {
+	groups := rs.WebReadGroupPrivate(params)
+	limit := models.ConvertLimitToInt(params.Limit)
+	var length int
+	switch {
+	case len(groups) == 0:
+	case limit > 0 && len(groups) == limit:
+		allGroups := rs.ReadGroup(webtypes.ReadGroupParams{
+			Domain:  params.Domain,
+			Fields:  []string{"display_name"},
+			GroupBy: params.GroupBy,
+			Lazy:    true,
+		})
+		length = len(allGroups)
+	default:
+		length = len(groups) + params.Offset
+	}
+	return webtypes.WebReadGroupResult{
+		Groups: groups,
+		Length: length,
+	}
+}
+
+// WebReadGroupPrivate performs a read_group and optionally a web_search_read for each group.
+func commonMixin_WebReadGroupPrivate(rs m.CommonMixinSet, params webtypes.WebReadGroupParams) []models.FieldMap {
+	groups := rs.ReadGroup(webtypes.ReadGroupParams{
+		Domain:  params.Domain,
+		Fields:  params.Fields,
+		GroupBy: params.GroupBy,
+		Offset:  params.Offset,
+		Limit:   params.Limit,
+		Order:   params.Order,
+		Lazy:    params.Lazy,
+	})
+	if params.Expand && len(params.GroupBy) == 1 {
+		for i, group := range groups {
+			groups[i]["__data"] = rs.WebSearchRead(webtypes.SearchParams{
+				Domain: group["__domain"].(domains.Domain),
+				Fields: params.Fields,
+				Offset: 0,
+				Limit:  params.ExpandLimit,
+				Order:  params.ExpandOrder,
+			})
+		}
+	}
+	return groups
+}
+
+// WebSearchRead performs a search_read and a search_count.
+func commonMixin_WebSearchRead(rs m.CommonMixinSet, params webtypes.SearchParams) webtypes.SearchReadResult {
+	records := rs.SearchRead(params)
+	if len(records) == 0 {
+		return webtypes.SearchReadResult{}
+	}
+	limit := models.ConvertLimitToInt(params.Limit)
+	length := len(records) + params.Offset
+	if limit > 0 && len(records) == limit {
+		length = rs.AddDomainLimitOffset(params.Domain, -1, 0, params.Order).SearchCount()
+	}
+	return webtypes.SearchReadResult{
+		Length:  length,
+		Records: records,
+	}
+}
+
 // ReadGroup gets a list of record aggregates according to the given parameters.
 func commonMixin_ReadGroup(rs m.CommonMixinSet, params webtypes.ReadGroupParams) []models.FieldMap {
 	rSet := rs.AddDomainLimitOffset(params.Domain, models.ConvertLimitToInt(params.Limit), params.Offset, params.Order)
-	gb := make([]models.FieldName, len(params.GroupBy))
+	gb := make(models.FieldNames, len(params.GroupBy))
 	for i, v := range params.GroupBy {
 		gb[i] = rSet.Collection().Model().FieldName(v)
 	}
+	effGB := gb
+	countFieldPrefix := "_"
+	if params.Lazy {
+		effGB = gb[:1]
+		countFieldPrefix = gb[0].JSON()
+	}
+	countFieldName := countFieldPrefix + "_count"
 	fields := make([]models.FieldName, len(params.Fields))
 	for i, v := range params.Fields {
 		fields[i] = rSet.Collection().Model().FieldName(v)
 	}
-	rSet = rSet.GroupBy(gb...)
+	rSet = rSet.GroupBy(effGB[0])
 	// We don't want aggregates as CommonMixin Aggregate, so we switch to RecordCollection
 	aggregates := rSet.Call("Aggregates", fields).([]models.GroupAggregateRow)
 	res := make([]models.FieldMap, len(aggregates))
 	fInfos := rSet.FieldsGet(models.FieldsGetArgs{})
 	for i, ag := range aggregates {
 		line := rs.AddNamesToRelations(ag.Values, fInfos)
-		line.Underlying().Set(models.NewFieldName("__count", "__count"), ag.Count)
+		line.Underlying().Set(models.NewFieldName(countFieldName, countFieldName), ag.Count)
 		line.Underlying().Set(models.NewFieldName("__domain", "__domain"), ag.Condition.Serialize())
+		if len(gb) > 1 {
+			line.Underlying().Set(models.NewFieldName("__context", "__context"), models.FieldMap{"group_by": gb[1:].JSON()})
+		}
 		res[i] = line.Underlying().FieldMap
 	}
 	return res
@@ -735,6 +812,9 @@ func init() {
 	h.CommonMixin().NewMethod("SearchRead", commonMixin_SearchRead)
 	h.CommonMixin().NewMethod("AddDomainLimitOffset", commonMixin_AddDomainLimitOffset)
 	h.CommonMixin().NewMethod("PostProcessFilters", commonMixin_PostProcessFilters)
+	h.CommonMixin().NewMethod("WebReadGroup", commonMixin_WebReadGroup)
+	h.CommonMixin().NewMethod("WebReadGroupPrivate", commonMixin_WebReadGroupPrivate)
+	h.CommonMixin().NewMethod("WebSearchRead", commonMixin_WebSearchRead)
 	h.CommonMixin().NewMethod("ReadGroup", commonMixin_ReadGroup)
 	h.CommonMixin().NewMethod("SearchDomain", commonMixin_SearchDomain)
 	h.CommonMixin().NewMethod("CheckAccessRights", commonMixin_CheckAccessRights)

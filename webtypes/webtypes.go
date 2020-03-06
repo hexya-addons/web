@@ -67,6 +67,26 @@ type ReadGroupParams struct {
 	Lazy    bool           `json:"lazy"`
 }
 
+// WebReadGroupParams is the args struct for the WebReadGroup method
+type WebReadGroupParams struct {
+	Domain      domains.Domain `json:"domain"`
+	Fields      []string       `json:"fields"`
+	GroupBy     []string       `json:"groupby"`
+	Limit       interface{}    `json:"limit"`
+	Offset      int            `json:"offset"`
+	Order       string         `json:"orderby"`
+	Lazy        bool           `json:"lazy"`
+	Expand      bool           `json:"expand"`
+	ExpandLimit interface{}    `json:"expand_limit"`
+	ExpandOrder string         `json:"expand_orderby"`
+}
+
+// WebReadGroupResult is the result type of the WebReadGroup method
+type WebReadGroupResult struct {
+	Groups []models.FieldMap `json:"groups"`
+	Length int               `json:"length"`
+}
+
 // NameSearchParams is the args struct for the NameSearch function
 type NameSearchParams struct {
 	Args     domains.Domain    `json:"args"`
