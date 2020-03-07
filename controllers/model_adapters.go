@@ -10,7 +10,6 @@ import (
 	"github.com/hexya-addons/web/odooproxy"
 	"github.com/hexya-addons/web/webtypes"
 	"github.com/hexya-erp/hexya/src/models"
-	"github.com/hexya-erp/pool/m"
 )
 
 // MethodAdapters is a map giving the adapter to call for each method
@@ -22,7 +21,6 @@ var MethodAdapters = map[string]methodAdapter{
 	"SearchRead": searchReadAdapter,
 	"FieldsGet":  fieldsGetAdapter,
 	"NameGet":    nameGetAdapter,
-	"GetFilters": getFiltersAdapter,
 }
 
 // A methodAdapter can modify calls made by the odoo client
@@ -150,18 +148,6 @@ func nameGetAdapter(rc *models.RecordCollection, method string, args []interface
 			rec.Ids()[0],
 			rec.Call("NameGet").(string),
 		})
-	}
-	return res
-}
-
-// getFiltersAdapter returns the result as a slice of FieldMap.
-func getFiltersAdapter(rc *models.RecordCollection, method string, args []interface{}) interface{} {
-	checkMethod(method, "GetFilters", args, 2)
-	// We make the slice to be sure not to have nil returned
-	res := make([]models.FieldMap, 0)
-	filters := rc.Call("GetFilters", args...).([]m.FilterData)
-	for _, fd := range filters {
-		res = append(res, fd.Underlying().FieldMap)
 	}
 	return res
 }

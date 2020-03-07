@@ -159,6 +159,9 @@ return core.Class.extend({
      */
     create_filter: function (filter) {
         var self = this;
+        if (typeof(filter.context) != 'string') {
+            filter.context = JSON.stringify(filter.context)
+        }
         return rpc.query({
                 args: [filter],
                 model: 'ir.filters',

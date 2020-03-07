@@ -26,14 +26,14 @@ var fields_Filter = map[string]models.FieldDefinition{
 	"Sort":      fields.Text{Required: true, Default: models.DefaultValue("[]")},
 	"ResModel":  fields.Char{String: "Model", Required: true, JSON: "model_id"},
 	"IsDefault": fields.Boolean{String: "Default filter"},
-	"Action": fields.Char{
+	"Action": fields.Integer{
 		Help: `The menu action this filter applies to. When left empty the filter applies to all menus for this model.`,
 		JSON: "action_id"},
 	"Active": fields.Boolean{Default: models.DefaultValue(true), Required: true},
 }
 
 // GetFilters returns the filters for the given model and actionID for the current user
-func filter_GetFilters(rs m.FilterSet, modelName, actionID string) []m.FilterData {
+func filter_GetFilters(rs m.FilterSet, modelName string, actionID int64) []m.FilterData {
 	actionCondition := rs.GetActionCondition(actionID)
 	filters := h.Filter().Search(rs.Env(), q.Filter().ResModel().Equals(modelName).
 		AndCond(actionCondition).
@@ -52,17 +52,14 @@ func filter_Copy(rs m.FilterSet, overrides m.FilterData) m.FilterSet {
 
 // CreateOrReplace creates or updates the filter with the given parameters.
 // Filter is considered the same if it has the same name (case insensitive) and the same user (if it has one).
-func filter_CreateOrReplace(rs m.FilterSet, vals models.RecordData) m.FilterSet {
-	fMap := vals.Underlying().FieldMap
-	if fDomain, exists := fMap["domain"]; exists {
-		fMap["domain"] = strutils.MarshalToJSONString(fDomain)
-		fMap["domain"] = strings.Replace(fMap["domain"].(string), "false", "False", -1)
-		fMap["domain"] = strings.Replace(fMap["domain"].(string), "true", "True", -1)
+func filter_CreateOrReplace(rs m.FilterSet, vals m.FilterData) m.FilterSet {
+	if vals.HasDomain() {
+		dom := strutils.MarshalToJSONString(vals.Domain())
+		dom = strings.Replace(dom, "false", "False", -1)
+		dom = strings.Replace(dom, "true", "True", -1)
+		vals.SetDomain(dom)
 	}
-	if fContext, exists := fMap["context"]; exists {
-		fMap["context"] = strutils.MarshalToJSONString(fContext)
-	}
-	values := h.Filter().NewData(fMap)
+	values := vals
 	currentFilters := rs.GetFilters(values.ResModel(), values.Action())
 	var matchingFilters []m.FilterData
 	for _, filter := range currentFilters {
@@ -126,8 +123,8 @@ func filter_CheckGlobalDefault(rs m.FilterSet, values m.FilterData, matchingFilt
 
 // GetActionCondition returns a condition for matching filters that are visible in the
 // same context (menu/view) as the given action.
-func filter_GetActionCondition(_ m.FilterSet, action string) q.FilterCondition {
-	if action != "" {
+func filter_GetActionCondition(_ m.FilterSet, action int64) q.FilterCondition {
+	if action != 0 {
 		// filters specific to this menu + global ones
 		return q.Filter().Action().Equals(action).Or().Action().IsNull()
 	}
