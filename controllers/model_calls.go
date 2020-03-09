@@ -16,6 +16,7 @@ package controllers
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"reflect"
 
@@ -39,19 +40,22 @@ var (
 	// TypePostProcess maps interface types to a function to apply after unmarshalling.
 	TypePostProcess = map[reflect.Type]interface{}{
 		reflect.TypeOf((*models.RecordData)(nil)).Elem(): func(rs models.RecordSet, arg models.FieldMap) interface{} {
-			arg = removeSixTuple(arg)
-			return models.NewModelDataFromRS(rs, arg).Wrap()
+			return makeModelData(rs, arg).Wrap()
 		},
 	}
 )
 
-// removeSixTuple changes a [(6, 0, [ids])] tuple to [ids].
+// makeModelData creates a *model.ModelData from a models.FieldMap.
+//
+// - Changes [(6, 0, [ids])] tuple to [ids]
+// - Removes [[0, 0, {data}]] and returns them as separate FieldMaps
+//
 // This method expects a FieldMap directly unmarhsalled from JSON.
-func removeSixTuple(arg models.FieldMap) models.FieldMap {
-	res := make(models.FieldMap)
-fieldLoop:
+func makeModelData(rs models.RecordSet, arg models.FieldMap) *models.ModelData {
+	fm := make(models.FieldMap)
+	cFM := make(map[string]*models.ModelData)
 	for f, a := range arg {
-		res[f] = a
+		fm[f] = a
 		l, ok := a.([]interface{})
 		if !ok {
 			continue
@@ -66,27 +70,62 @@ fieldLoop:
 		if len(t) != 3 {
 			continue
 		}
-		if t0, err := nbutils.CastToInteger(t[0]); err != nil || t0 != 6 {
+		t0, err := nbutils.CastToInteger(t[0])
+		if err != nil {
 			continue
 		}
 		if t1, err := nbutils.CastToInteger(t[1]); err != nil || t1 != 0 {
 			continue
 		}
-		ids, ok := t[2].([]interface{})
-		if !ok {
-			continue
-		}
-		intIds := make([]int64, len(ids))
-		for i, id := range ids {
-			intId, err := nbutils.CastToInteger(id)
+		switch t0 {
+		case 0:
+			data, err := extractZeroData(rs, t[2])
 			if err != nil {
-				continue fieldLoop
+				continue
 			}
-			intIds[i] = intId
+			cFM[f] = data
+			delete(fm, f)
+		case 6:
+			ids, err := extractSixIds(t[2])
+			if err != nil {
+				continue
+			}
+			fm[f] = ids
 		}
-		res[f] = intIds
+	}
+
+	res := models.NewModelDataFromRS(rs, fm)
+	for f, md := range cFM {
+		res.Create(rs.Collection().Model().FieldName(f), md)
 	}
 	return res
+}
+
+// extractZeroData takes a map of data from a [0, 0, data] tuple and returns a ModelData.
+func extractZeroData(rs models.RecordSet, data interface{}) (*models.ModelData, error) {
+	fm, ok := data.(map[string]interface{})
+	if !ok {
+		return nil, errors.New("extractZeroData: data is not map[string]interface{}")
+	}
+	res := makeModelData(rs, fm)
+	return res, nil
+}
+
+// extractSixIds takes a list of ids from a [6, 0, [ids]] tuple and retunrs the ids
+func extractSixIds(rawIds interface{}) ([]int64, error) {
+	ids, ok := rawIds.([]interface{})
+	if !ok {
+		return nil, errors.New("extractSixIds: rawIds is not []interface{}")
+	}
+	intIds := make([]int64, len(ids))
+	for i, id := range ids {
+		intId, err := nbutils.CastToInteger(id)
+		if err != nil {
+			return nil, fmt.Errorf("extractSixIds: %s", err)
+		}
+		intIds[i] = intId
+	}
+	return intIds, nil
 }
 
 // CallParams is the arguments' struct for the Execute function.

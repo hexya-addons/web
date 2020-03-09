@@ -10,10 +10,12 @@ import (
 
 	"github.com/hexya-addons/web/controllers"
 	"github.com/hexya-addons/web/webtypes"
+	"github.com/hexya-erp/hexya/src/actions"
 	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/hexya/src/models/operator"
 	"github.com/hexya-erp/hexya/src/models/security"
 	"github.com/hexya-erp/pool/h"
+	"github.com/hexya-erp/pool/m"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
@@ -434,6 +436,42 @@ company. You can use the "Discard" button to abandon this change.`)
 			So(err, ShouldBeNil)
 			So(res.Length, ShouldEqual, 173)
 			So(res.Records, ShouldHaveLength, 10)
+		})
+
+		Convey("CreateOrUpdate filter on users", func() {
+			action := actions.Registry.MustGetByXMLID("base_action_res_users")
+			res, err := controllers.Execute(security.SuperUserID, controllers.CallParams{
+				Model:  "ir.filters",
+				Method: "create_or_replace",
+				Args: []json.RawMessage{
+					json.RawMessage(fmt.Sprintf(`{"name":"Users","context":"{\"group_by\":[\"lang\",\"name\"]}","domain":"[]","is_default":true,"user_id":1,"model_id":"res.users","action_id":%d,"sort":"[]"}`, action.ID)),
+				},
+			})
+			So(err, ShouldBeNil)
+			id, ok := res.(int64)
+			So(ok, ShouldBeTrue)
+			So(id, ShouldEqual, 1)
+
+		})
+
+		Convey("GetFilters on users", func() {
+			action := actions.Registry.MustGetByXMLID("base_action_res_users")
+			res2, err := controllers.Execute(security.SuperUserID, controllers.CallParams{
+				Model:  "ir.filters",
+				Method: "get_filters",
+				Args: []json.RawMessage{
+					json.RawMessage(`"User"`),
+					json.RawMessage(fmt.Sprintf("%d", action.ID)),
+				},
+			})
+			So(err, ShouldBeNil)
+			filters, ok := res2.([]m.FilterData)
+			So(ok, ShouldBeTrue)
+			So(filters, ShouldHaveLength, 1)
+			f := filters[0]
+			So(f.Name(), ShouldEqual, "Users")
+			So(f.IsDefault(), ShouldBeTrue)
+			So(f.Action(), ShouldEqual, action.ID)
 		})
 	})
 }

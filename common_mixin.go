@@ -192,7 +192,8 @@ func commonMixin_ProcessCreateValues(rs m.CommonMixinSet, data models.RecordData
 		}
 		switch fInfos[f.JSON()].Type {
 		case fieldtype.Many2One, fieldtype.One2One:
-			if _, isRs := v.(models.RecordSet); isRs {
+			if vRs, isRs := v.(models.RecordSet); isRs {
+				createMap.Set(f, vRs)
 				continue
 			}
 			id, err := nbutils.CastToInteger(v)
@@ -303,9 +304,9 @@ func commonMixin_ExecuteO2MActions(rs m.CommonMixinSet, fieldName models.FieldNa
 // NormalizeM2MData converts the list of triplets received from the client into the final list of ids
 // to keep in the Many2Many relationship of this model through the given field.
 func commonMixin_NormalizeM2MData(rs m.CommonMixinSet, fieldName models.FieldName, info *models.FieldInfo, value interface{}) interface{} {
+	resSet := rs.Env().Pool(info.Relation)
 	switch v := value.(type) {
 	case []interface{}:
-		resSet := rs.Env().Pool(info.Relation)
 		if len(v) == 0 {
 			return resSet
 		}
@@ -424,6 +425,7 @@ func commonMixin_LoadViews(rs m.CommonMixinSet, args webtypes.LoadViewsArgs) *we
 		})
 	}
 	if args.Options.LoadFilters {
+		// TODO: doesn't work
 		res.Filters = controllers.MethodAdapters["GetFilters"](h.Filter().NewSet(rs.Env()).Collection(),
 			"GetFilters",
 			[]interface{}{rs.ModelName(), args.Options.ActionID}).([]models.FieldMap)

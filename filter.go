@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/hexya-addons/web/odooproxy"
 	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/hexya/src/models/fields"
 	"github.com/hexya-erp/hexya/src/tools/strutils"
@@ -34,6 +35,7 @@ var fields_Filter = map[string]models.FieldDefinition{
 
 // GetFilters returns the filters for the given model and actionID for the current user
 func filter_GetFilters(rs m.FilterSet, modelName string, actionID int64) []m.FilterData {
+	modelName = odooproxy.ConvertModelName(modelName)
 	actionCondition := rs.GetActionCondition(actionID)
 	filters := h.Filter().Search(rs.Env(), q.Filter().ResModel().Equals(modelName).
 		AndCond(actionCondition).
@@ -59,6 +61,8 @@ func filter_CreateOrReplace(rs m.FilterSet, vals m.FilterData) m.FilterSet {
 		dom = strings.Replace(dom, "true", "True", -1)
 		vals.SetDomain(dom)
 	}
+	vals.SetResModel(odooproxy.ConvertModelName(vals.ResModel()))
+
 	values := vals
 	currentFilters := rs.GetFilters(values.ResModel(), values.Action())
 	var matchingFilters []m.FilterData
