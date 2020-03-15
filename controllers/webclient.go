@@ -159,7 +159,11 @@ func getMenuTree(menus []*menus.Menu, lang string) []Menu {
 		}
 		parent := parentTuple{}
 		if m.Parent != nil {
-			parent = parentTuple{m.ParentID, m.Parent.Name}
+			var parentName string
+			for cur := m.Parent; cur.Parent != nil; cur = cur.Parent {
+				parentName = fmt.Sprintf("%s/%s", cur.Parent.Name, parentName)
+			}
+			parent = parentTuple{m.ParentID, strings.TrimSuffix(parentName, "/")}
 		}
 		var aString actions.ActionString
 		if m.Action != nil {

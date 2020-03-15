@@ -103,7 +103,7 @@ func Dashboard(c *server.Context) {
 		image, _ = base64.StdEncoding.DecodeString(user.Company().DashboardBackground())
 	})
 	if len(image) == 0 {
-		c.Redirect(http.StatusFound, "/static/web/src/img/material-background.jpg")
+		c.Redirect(http.StatusFound, "/static/web/src/img/material-background.png")
 		return
 	}
 	c.Data(http.StatusOK, "image", image)

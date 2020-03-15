@@ -520,7 +520,7 @@ html .o_web_client .o_action_manager .o_action {
                         // Scrollable input text to avoid hide conversation & buttons
                         .o_composer_text_field {
                             max-height: 120px;
-                            overflow-y: auto !important; /* Forced because Odoo uses inline style */
+                            overflow-y: auto !important; /* Forced because Hexya uses inline style */
                         }
                         .o_attachments_list {
                             overflow: auto;

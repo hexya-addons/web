@@ -16,17 +16,20 @@ var fields_User = map[string]models.FieldDefinition{
 		Selection: types.Selection{"normal": "Normal", "sided": "Sided"},
 		String:    "Chatter Position", Default: models.DefaultValue("sided"),
 	},
+	"SidebarVisible": fields.Boolean{String: "Show App Sidebar", Default: models.DefaultValue(true)},
 }
 
 func user_SelfWritableFields(rs m.UserSet) map[string]bool {
 	res := rs.Super().SelfWritableFields()
 	res["ChatterPosition"] = true
+	res["SidebarVisible"] = true
 	return res
 }
 
 func user_SelfReadableFields(rs m.UserSet) map[string]bool {
 	res := rs.Super().SelfReadableFields()
 	res["ChatterPosition"] = true
+	res["SidebarVisible"] = true
 	return res
 }
 

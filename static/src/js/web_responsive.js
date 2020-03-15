@@ -499,7 +499,7 @@ hexya.define("web.responsive", function(require) {
     /**
      * Use ALT+SHIFT instead of ALT as hotkey triggerer.
      *
-     * HACK https://github.com/odoo/odoo/issues/30068 - See it to know why.
+     * HACK https://github.com/hexya/hexya/issues/30068 - See it to know why.
      *
      * Cannot patch in `KeyboardNavigationMixin` directly because it's a mixin,
      * not a `Class`, and altering a mixin's `prototype` doesn't alter it where

@@ -125,6 +125,8 @@ var (
 		"/static/web/src/scss/base_settings.scss",
 		"/static/web/src/scss/report_backend.scss",
 		"/static/web/src/scss/web_responsive.scss",
+		"/static/web/src/scss/style.scss",
+		"/static/web/src/scss/sidebar.scss",
 	}
 	// FrontendScss is the list of Less assets to import by the web client
 	// that are specific to the frontend. All scss assets are
