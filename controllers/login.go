@@ -4,6 +4,7 @@
 package controllers
 
 import (
+	"encoding/json"
 	"net/http"
 
 	"github.com/hexya-erp/hexya/src/models/security"
@@ -19,7 +20,14 @@ func LoginGet(c *server.Context) {
 		c.Redirect(http.StatusSeeOther, redirect)
 		return
 	}
-	c.HTML(http.StatusOK, "web.login", FrontendContext)
+	data := FrontendContext
+	siBytes, err := json.Marshal(GetSessionInfoStruct(c.Session()))
+	if err != nil {
+		c.Error(err)
+		return
+	}
+	data["session_info"] = string(siBytes)
+	c.HTML(http.StatusOK, "web.login", data)
 }
 
 // LoginPost is called when the client sends credentials

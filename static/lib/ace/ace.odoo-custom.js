@@ -6,10 +6,8 @@
         if (!i.require || !i.require.packaged) r.original = i.require, i.require = r, i.require.packaged = !0
     }
     var ACE_NAMESPACE = "",
-        e = function() {
-            return this
-        }();
-    !e && typeof window != "undefined" && (e = window);
+        e = {};
+    window.ace = e;
     if (!ACE_NAMESPACE && typeof requirejs != "undefined") return;
     var t = function(e, n, r) {
         if (typeof e != "string") {
@@ -76,7 +74,9 @@
             return s
         };
     o(ACE_NAMESPACE)
-})(), define("ace/lib/regexp", ["require", "exports", "module"], function(e, t, n) {
+})();
+(function() {var define = ace.define, require = ace.require;
+define("ace/lib/regexp", ["require", "exports", "module"], function(e, t, n) {
     "use strict";
 
     function o(e) {
@@ -1173,15 +1173,16 @@
                     if (!t.onCompositionEnd || t.$readOnly) return;
                     var r = h;
                     h = !1;
-                    var i = setTimeout(function() {
-                        i = null;
+                    var i2 = setTimeout(function() {
+                        i2 = null;
                         var e = n.value.replace(/\x01/g, "");
                         if (h) return;
                         e == r.lastValue ? w() : !r.lastValue && e && (w(), A(e))
                     });
                     k = function(n) {
-                        return i && clearTimeout(i), n = n.replace(/\x01/g, ""), n == r.lastValue ? "" : (r.lastValue && i && t.undo(), n)
-                    }, t.onCompositionEnd(), t.removeListener("mousedown", F), e.type == "compositionend" && r.range && t.selection.setRange(r.range)
+                        return i2 && clearTimeout(i2), n = n.replace(/\x01/g, ""), n == r.lastValue ? "" : (r.lastValue && i2 && t.undo(), n)
+                    }, t.onCompositionEnd(), t.removeListener("mousedown", F), e.type == "compositionend" && r.range && t.selection.setRange(r.range),
+                    i.isChrome && i.isChrome >= 53 && O()
                 },
                 I = o.delayedCall(j, 50);
             r.addListener(n, "compositionstart", B), i.isGecko ? r.addListener(n, "text", function() {
@@ -8204,7 +8205,7 @@
                 s *= this.session.$getStringScreenWidth(o)[0] + 2, i += 2
             }
             n -= this.scrollLeft, n > this.$size.scrollerWidth - s && (n = this.$size.scrollerWidth - s), n += this.gutterWidth, r.height = i + "px", r.width = s + "px", r.left = Math.min(n, this.$size.scrollerWidth - s) + "px", r.top = Math.min(t, this.$size.height - i) + "px"
-        // hexya monkeypatch: When we use firefox top or bottom arrow the ace container does not scroll automatically if the cursor is not visible.
+        // ODOO monkeypatch: When we use firefox top or bottom arrow the ace container does not scroll automatically if the cursor is not visible.
             this.$scrollViewToTextArea();
         }, this.$scrollViewToTextArea = function() {
             // scroll the page/container to the cursor
@@ -8238,7 +8239,7 @@
                     }
                 }
             });
-        // hexya end monkeypatch
+        // ODOO end monkeypatch
         }, this.getFirstVisibleRow = function() {
             return this.layerConfig.firstRow
         }, this.getFirstFullyVisibleRow = function() {
@@ -9826,7 +9827,7 @@
     }, t.EditSession = o, t.UndoManager = u
 });
 (function() {
-    window.require(["ace/ace"], function(a) {
+    require(["ace/ace"], function(a) {
         a && a.config.init(true);
         if (!window.ace)
             window.ace = a;
@@ -9834,4 +9835,5 @@
             if (a.hasOwnProperty(key))
                 window.ace[key] = a[key];
     });
+})();
 })();

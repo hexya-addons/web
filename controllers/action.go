@@ -27,11 +27,17 @@ func ActionLoad(c *server.Context) {
 	}
 
 	params := struct {
-		ActionID          string         `json:"action_id"`
+		ActionID          interface{}    `json:"action_id"`
 		AdditionalContext *types.Context `json:"additional_context"`
 	}{}
 	c.BindRPCParams(&params)
-	action := *actions.Registry.MustGetById(params.ActionID)
+	var action actions.Action
+	switch actionID := params.ActionID.(type) {
+	case string:
+		action = *actions.Registry.MustGetByXMLID(actionID)
+	case float64:
+		action = *actions.Registry.MustGetById(int64(actionID))
+	}
 	action.Name = action.TranslatedName(lang)
 	c.RPC(http.StatusOK, action)
 }
@@ -39,17 +45,24 @@ func ActionLoad(c *server.Context) {
 // ActionRun runs the given server action
 func ActionRun(c *server.Context) {
 	params := struct {
-		ActionID string         `json:"action_id"`
+		ActionID interface{}    `json:"action_id"`
 		Context  *types.Context `json:"context"`
 	}{}
 	c.BindRPCParams(&params)
-	action := actions.Registry.MustGetById(params.ActionID)
+	var action actions.Action
+	switch actionID := params.ActionID.(type) {
+	case string:
+		action = *actions.Registry.MustGetByXMLID(actionID)
+	case float64:
+		action = *actions.Registry.MustGetById(int64(actionID))
+	}
 
 	// Process context ids into args
 	var ids []int64
-	if params.Context.Get("active_ids") != nil {
+	switch {
+	case params.Context.Get("active_ids") != nil:
 		ids = params.Context.Get("active_ids").([]int64)
-	} else if params.Context.Get("active_id") != nil {
+	case params.Context.Get("active_id") != nil:
 		ids = []int64{params.Context.Get("active_id").(int64)}
 	}
 	idsJSON, err := json.Marshal(ids)
@@ -72,7 +85,7 @@ func ActionRun(c *server.Context) {
 
 	if _, ok := resAction.(*actions.Action); ok {
 		c.RPC(http.StatusOK, resAction)
-	} else {
-		c.RPC(http.StatusOK, false)
+		return
 	}
+	c.RPC(http.StatusOK, false)
 }

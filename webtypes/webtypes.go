@@ -5,11 +5,13 @@ package webtypes
 
 import (
 	"encoding/json"
+	"fmt"
 
 	"github.com/hexya-addons/web/domains"
 	"github.com/hexya-erp/hexya/src/actions"
 	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/hexya/src/models/operator"
+	"github.com/hexya-erp/hexya/src/tools/nbutils"
 	"github.com/hexya-erp/hexya/src/views"
 )
 
@@ -56,7 +58,6 @@ type Toolbar struct {
 
 // ReadGroupParams is the args struct for the ReadGroup method
 type ReadGroupParams struct {
-	//domain, fields, groupby, offset=0, limit=None, context=None, orderby=False, lazy=True
 	Domain  domains.Domain `json:"domain"`
 	Fields  []string       `json:"fields"`
 	GroupBy []string       `json:"groupby"`
@@ -64,6 +65,26 @@ type ReadGroupParams struct {
 	Limit   interface{}    `json:"limit"`
 	Order   string         `json:"orderby"`
 	Lazy    bool           `json:"lazy"`
+}
+
+// WebReadGroupParams is the args struct for the WebReadGroup method
+type WebReadGroupParams struct {
+	Domain      domains.Domain `json:"domain"`
+	Fields      []string       `json:"fields"`
+	GroupBy     []string       `json:"groupby"`
+	Limit       interface{}    `json:"limit"`
+	Offset      int            `json:"offset"`
+	Order       string         `json:"orderby"`
+	Lazy        bool           `json:"lazy"`
+	Expand      bool           `json:"expand"`
+	ExpandLimit interface{}    `json:"expand_limit"`
+	ExpandOrder string         `json:"expand_orderby"`
+}
+
+// WebReadGroupResult is the result type of the WebReadGroup method
+type WebReadGroupResult struct {
+	Groups []models.FieldMap `json:"groups"`
+	Length int               `json:"length"`
 }
 
 // NameSearchParams is the args struct for the NameSearch function
@@ -90,18 +111,25 @@ func (rf RecordIDWithName) MarshalJSON() ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	return []byte(res), nil
+	return res, nil
 }
 
 // UnmarshalJSON for RecordIDWithName type
 func (rf *RecordIDWithName) UnmarshalJSON(data []byte) error {
-	var arr [2]interface{}
+	var (
+		arr [2]interface{}
+		ok  bool
+	)
 	err := json.Unmarshal(data, &arr)
 	if err != nil {
 		return err
 	}
-	rf.ID = arr[0].(int64)
-	rf.Name = arr[1].(string)
+	if rf.ID, err = nbutils.CastToInteger(arr[0]); err != nil {
+		return fmt.Errorf("unable to unmarshal RecordIDWithName: %s", string(data))
+	}
+	if rf.Name, ok = arr[1].(string); !ok {
+		return fmt.Errorf("unable to unmarshal RecordIDWithName: %s", string(data))
+	}
 	return nil
 }
 
@@ -122,7 +150,6 @@ type LoadViewsOptions struct {
 	Toolbar     bool   `json:"toolbar"`
 	LoadFilters bool   `json:"load_filters"`
 	ActionID    string `json:"action_id"`
-	LoadFields  bool   `json:"load_fields"`
 }
 
 // LoadViewsData is the result struct of the LoadViews method

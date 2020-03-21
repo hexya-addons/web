@@ -35,7 +35,7 @@ func TestGetFilters(t *testing.T) {
 					SetName("d").
 					SetUser(demoUser).
 					SetResModel("Filter"))
-				filters := h.Filter().NewSet(env).Sudo(demoUser.ID()).GetFilters("Filter", "")
+				filters := h.Filter().NewSet(env).Sudo(demoUser.ID()).GetFilters("Filter", 0)
 				So(filters, ShouldHaveLength, 4)
 				So(filters[0].Name(), ShouldEqual, "a")
 				So(filters[1].Name(), ShouldEqual, "b")
@@ -64,7 +64,7 @@ func TestGetFilters(t *testing.T) {
 					SetName("d").
 					SetUser(nil).
 					SetResModel("Filter"))
-				filters := h.Filter().NewSet(env).Sudo(demoUser.ID()).GetFilters("Filter", "")
+				filters := h.Filter().NewSet(env).Sudo(demoUser.ID()).GetFilters("Filter", 0)
 				So(filters, ShouldHaveLength, 4)
 				So(filters[0].Name(), ShouldEqual, "a")
 				So(filters[1].Name(), ShouldEqual, "b")
@@ -93,7 +93,7 @@ func TestGetFilters(t *testing.T) {
 					SetName("d").
 					SetUser(adminUser).
 					SetResModel("Filter"))
-				filters := h.Filter().NewSet(env).Sudo(demoUser.ID()).GetFilters("Filter", "")
+				filters := h.Filter().NewSet(env).Sudo(demoUser.ID()).GetFilters("Filter", 0)
 				So(filters, ShouldHaveLength, 2)
 				So(filters[0].Name(), ShouldEqual, "a")
 				So(filters[1].Name(), ShouldEqual, "c")
@@ -122,7 +122,7 @@ func TestOwnDefaults(t *testing.T) {
 					SetResModel("Filter").
 					SetUser(demoUser).
 					SetIsDefault(true))
-				filters := h.Filter().NewSet(env).Sudo(demoUser.ID()).GetFilters("Filter", "")
+				filters := h.Filter().NewSet(env).Sudo(demoUser.ID()).GetFilters("Filter", 0)
 				So(filters, ShouldHaveLength, 1)
 				So(filters[0].Name(), ShouldEqual, "a")
 				So(filters[0].User().Equals(demoUser), ShouldBeTrue)
@@ -145,7 +145,7 @@ func TestOwnDefaults(t *testing.T) {
 					SetResModel("Filter").
 					SetUser(demoUser).
 					SetIsDefault(true))
-				filters := h.Filter().NewSet(env).Sudo(demoUser.ID()).GetFilters("Filter", "")
+				filters := h.Filter().NewSet(env).Sudo(demoUser.ID()).GetFilters("Filter", 0)
 				So(filters, ShouldHaveLength, 3)
 				So(filters[0].Name(), ShouldEqual, "a")
 				So(filters[0].User().Equals(demoUser), ShouldBeTrue)
@@ -175,7 +175,7 @@ func TestOwnDefaults(t *testing.T) {
 					SetResModel("Filter").
 					SetUser(demoUser).
 					SetIsDefault(true))
-				filters := h.Filter().NewSet(env).Sudo(demoUser.ID()).GetFilters("Filter", "")
+				filters := h.Filter().NewSet(env).Sudo(demoUser.ID()).GetFilters("Filter", 0)
 				So(filters, ShouldHaveLength, 3)
 				So(filters[0].Name(), ShouldEqual, "a")
 				So(filters[0].User().Equals(demoUser), ShouldBeTrue)
@@ -205,7 +205,7 @@ func TestOwnDefaults(t *testing.T) {
 					SetResModel("Filter").
 					SetUser(demoUser).
 					SetIsDefault(true))
-				filters := h.Filter().NewSet(env).Sudo(demoUser.ID()).GetFilters("Filter", "")
+				filters := h.Filter().NewSet(env).Sudo(demoUser.ID()).GetFilters("Filter", 0)
 				So(filters, ShouldHaveLength, 2)
 				So(filters[0].Name(), ShouldEqual, "a")
 				So(filters[0].User().Equals(demoUser), ShouldBeTrue)
@@ -239,7 +239,7 @@ func TestGlobalDefaults(t *testing.T) {
 					SetUser(h.User().NewSet(env)).
 					SetResModel("Filter").
 					SetIsDefault(true))
-				filters := h.Filter().NewSet(env).Sudo(demoUser.ID()).GetFilters("Filter", "")
+				filters := h.Filter().NewSet(env).Sudo(demoUser.ID()).GetFilters("Filter", 0)
 				So(filters, ShouldHaveLength, 3)
 				So(filters[0].Name(), ShouldEqual, "a")
 				So(filters[0].User().IsEmpty(), ShouldBeTrue)
@@ -287,7 +287,7 @@ func TestGlobalDefaults(t *testing.T) {
 					SetUser(h.User().NewSet(env)).
 					SetContext("{'some_key': True}").
 					SetIsDefault(true))
-				filters := h.Filter().NewSet(env).Sudo(demoUser.ID()).GetFilters("Filter", "")
+				filters := h.Filter().NewSet(env).Sudo(demoUser.ID()).GetFilters("Filter", 0)
 				So(filters, ShouldHaveLength, 2)
 				So(filters[0].Name(), ShouldEqual, "a")
 				So(filters[0].User().IsEmpty(), ShouldBeTrue)
