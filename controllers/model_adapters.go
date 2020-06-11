@@ -50,7 +50,7 @@ func createAdapter(rc *models.RecordCollection, method string, args []interface{
 	dMap := pcv[1].(models.RecordData)
 	res := rc.WithContext("hexya_skip_check_constraints", true).Call("Create", cMap).(models.RecordSet).Collection()
 	res.Call("PostProcessCreateValues", dMap)
-	res.WithContext("hexya_skip_check_constraints", false).CheckConstraints()
+	res.WithContext("hexya_skip_check_constraints", false).CheckConstraints(rc.Model().FieldNames())
 	return res
 }
 
