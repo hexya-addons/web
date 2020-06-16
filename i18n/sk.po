@@ -14,56 +14,163 @@ msgstr ""
 
 #. custom: web
 #: base.xml:0
-msgid "$(this).addClass('o_error');"
+msgid "\"<t t-esc=\"v\"/>\""
 msgstr ""
 
 #. custom: web
-#: debug_manager.js:134
-msgid "%d requests (%d ms) %d queries (%d ms)"
-msgstr "%d žiadosti (%d ms) %d otázky (%d ms)"
+#: add_new_favorite_menu.js:81
+msgid "A name for your favorite is required."
+msgstr ""
 
 #. custom: web
-#: form_common.js:874
-msgid " & Close"
-msgstr " & Zatvoriť"
+#: base.xml:0
+msgid "\"<t t-esc=\"widget.value\"/>\""
+msgstr ""
 
 #. custom: web
-#: formats.js:187
-msgid "'%s' is not a correct date"
-msgstr "'%s' nie je správny dátum"
+#: base.xml:0
+msgid "# Code editor"
+msgstr "# editor kódu"
+
+#. custom: web
+#: debug.xml:0
+msgid "(change)"
+msgstr "(zmena)"
+
+#. custom: web
+#: time.js:204
+msgid "'%s' is not convertible to date, datetime nor time"
+msgstr "'%s' nie je konvertovateľné na dátum, dátum/čas ani čas"
+
+#. custom: web
+#: menu.xml:0
+msgid "$(this).addClass(\"dropdown-menu-right\");"
+msgstr ""
+
+#. custom: web
+#: notification.xml:0
+msgid "&amp;times;"
+msgstr ""
+
+#. custom: web
+#: time.js:192
+msgid "'%s' is not a correct date, datetime nor time"
+msgstr "'%s' nie je správny dátum, dátum/čas ani čas"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "(count)"
+msgstr "(počet)"
+
+#. custom: web
+#: base.xml:0
+msgid "(no string)"
+msgstr "(žiadny reťazec)"
+
+#. custom: web
+#: base.xml:0
+msgid "(nolabel)"
+msgstr "(žiadnyštítok)"
+
+#. custom: web
+#: base.xml:0
+msgid ","
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "-"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ":"
+msgstr ""
+
+#. custom: web
+#: calendar_model.js:548
+msgid " [Me]"
+msgstr " [Me]"
+
+#. custom: web
+#: graph_renderer.js:124
+msgid "..."
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0 base.xml:0 kanban.xml:0
+msgid "/web/binary/upload_attachment"
+msgstr ""
+
+#. custom: web
+#: kanban.xml:0
+msgid "?"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"@font-face {\n"
+"                    font-family: \"font_sign\";\n"
+"                    src: url(data:font/ttf;base64,<t t-esc=\"font\"/>) format(\"woff\");\n"
+"                    font-weight: normal;\n"
+"                    font-style: normal;\n"
+"                }"
+msgstr ""
+
+#. custom: web
+#: name_and_signature.xml:0
+msgid ""
+"@font-face {\n"
+"                        font-family: \"font\";\n"
+"                        src: url(data:font/ttf;base64,<t t-esc=\"font\"/>) format(\"woff\");\n"
+"                        font-weight: normal;\n"
+"                        font-style: normal;\n"
+"                    }"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "ALL"
+msgstr "Všetky"
+
+#. custom: web
+#: base.xml:0
+msgid "ANY"
+msgstr "Akýkoľvek"
 
 #. field:Filter.Action
 msgid "Action"
 msgstr "Akcia"
 
-#. field:Filter.Context
-msgid "Context"
-msgstr ""
-
 #. custom: web
 #: base.xml:0
-msgid "...Upload in progress..."
-msgstr "...Prebieha nahrávanie..."
+msgid "Action ID:"
+msgstr "ID akcie:"
 
 #. custom: web
-#: base.xml:0
-msgid "99+"
-msgstr ""
-
-#. custom: web
-#: base.xml:0
+#: debug.xml:0
 msgid "Activate Assets Debugging"
+msgstr "Aktivovať odstránenia chýb kódu"
+
+#. custom: web
+#: debug.xml:0
+msgid "Activate Tests Assets Debugging"
 msgstr ""
 
-#. custom: web
-#: base_common.xml:0
-msgid "(no string)"
-msgstr "(žiadny reťazec)"
+#. field:Filter.Active
+msgid "Active"
+msgstr "Aktívne"
 
 #. custom: web
-#: base_common.xml:0
-msgid "(nolabel)"
-msgstr "(žiadnyštítok)"
+#: kanban.xml:0 kanban.xml:0
+msgid "Add"
+msgstr "Pridať"
+
+#. custom: web
+#: calendar_renderer.js:80
+msgid "Add %s"
+msgstr "Pridať %s"
 
 #. custom: web
 #: base.xml:0
@@ -72,13 +179,48 @@ msgstr "Pridať vlastný filter"
 
 #. custom: web
 #: base.xml:0
-msgid "Add custom group"
-msgstr "Pridať upravenú skupinu"
+msgid "Add Custom Group"
+msgstr "Pridať vlastnú skupinu"
+
+#. custom: web
+#: form_controller.js:193
+msgid "Are you sure that you want to archive this record?"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Available fields"
+msgstr "Dostupné polia"
+
+#. custom: web
+#: ajax.js:311
+msgid "Could not connect to the server"
+msgstr "Nemožno sa pripojiť na server"
+
+#. custom: web
+#: kanban.xml:0
+msgid "Add a Column"
+msgstr "Pridať stĺpec"
 
 #. custom: web
 #: base.xml:0
 msgid "Add..."
 msgstr "Pridať..."
+
+#. custom: web
+#: list_editable_renderer.js:88 list_editable_renderer.js:1068
+msgid "Add a line"
+msgstr "Pridaj položku"
+
+#. custom: web
+#: relational_fields.js:1912
+msgid "Add: "
+msgstr "Pridať:"
+
+#. custom: web
+#: signature.js:41
+msgid "Adopt Your Signature"
+msgstr ""
 
 #. custom: web
 #: base.xml:0
@@ -87,40 +229,426 @@ msgstr "Všetci používatelia"
 
 #. custom: web
 #: base.xml:0
+msgid ""
+"Among the <t t-raw=\"changes.nbRecords\"/> selected records,\n"
+"                <t t-raw=\"changes.nbValidRecords\"/> are valid for this update.<br/>"
+msgstr ""
+
+#. custom: web
+#: crash_manager.xml:0
+msgid "An error occurred"
+msgstr "Vyskytla sa chyba"
+
+#. custom: web
+#: dialog.js:382
+msgid "Alert"
+msgstr "Výstraha"
+
+#. custom: web
+#: calendar_model.js:430 calendar_renderer.js:714
+msgid "All day"
+msgstr "Celý deň"
+
+#. custom: web
+#: base.xml:0 base.xml:0 kanban.xml:0
+msgid "All"
+msgstr "Všetko"
+
+#. custom: web
+#: crash_manager.js:106
+msgid "An unknown CORS error occured. The error probably originates from a JavaScript file served from a different origin. (Opening your browser console might give you a hint on the error.)"
+msgstr "Vyskytla sa neznáma chyba CORS. Je pravdepodobne spôsobená súborom Javascript z iného zdroja. (Nápovedu k chybe vám môže poskytnúť konzola prehliadača.)"
+
+#. custom: web
+#: base.xml:0
+msgid "CLEAR"
+msgstr "ČISTÝ"
+
+#. custom: web
+#: menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0
+msgid "Alt"
+msgstr "Alt"
+
+#. custom: web
+#: kanban.xml:0
+msgid "Archive All"
+msgstr "Archivovať všetko"
+
+#. custom: web
+#: kanban_column.js:378
+msgid "Are you sure that you want to archive all the records from this column?"
+msgstr "Ste si istý že chcete archivovať všetky záznamy pre tento stĺpec?"
+
+#. custom: web
+#: list_controller.js:165
+msgid "Are you sure that you want to archive all the selected records?"
+msgstr "Ste si istý že chcete archivovať všetky vybrané záznamy?"
+
+#. custom: web
+#: form_controller.js:191 list_controller.js:163
+msgid "Archive"
+msgstr "Archív"
+
+#. custom: web
+#: kanban_column.js:316
+msgid "Are you sure that you want to remove this column ?"
+msgstr "Ste si istý že chcete odstrániť tento stĺpec?"
+
+#. custom: web
+#: favorite_menu.js:118
+msgid "Are you sure that you want to remove this filter?"
+msgstr "Ste si istý že chcete odstrániť tento filter?"
+
+#. custom: web
+#: base.xml:0
 msgid "Attachment :"
 msgstr "Príloha :"
 
 #. custom: web
 #: base.xml:0
-msgid "Available fields"
-msgstr "Dostupné polia"
+msgid "Based On"
+msgstr "Na základe"
 
 #. custom: web
 #: base.xml:0
-msgid "Clear Events"
-msgstr "Vyčistiť udalosti"
+msgid ""
+"Button\n"
+"            <t t-if=\"node.attrs.string\">: </t>\n"
+"            <t t-if=\"!node.attrs.string\"> (no string)</t>"
+msgstr ""
 
 #. custom: web
 #: base.xml:0
-msgid "Condition:"
-msgstr "Podmienka:"
+msgid "Button Type:"
+msgstr "Typ tlačidla:"
 
 #. custom: web
 #: base.xml:0
 msgid "Confirm New Password"
 msgstr "Potvrdiť nové heslo"
 
-#. field:Company.DashboardBackground
-msgid "Dashboard Background"
+#. custom: web
+#: signature.js:47
+msgid "Adopt and Sign"
 msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Any"
+msgstr "Ktorýkoľvek"
+
+#. custom: web
+#: base.xml:0 base.xml:0 base.xml:0
+msgid "Apply"
+msgstr "Mám záujem"
+
+#. custom: web
+#: colorpicker_dialog.xml:0
+msgid "Blue"
+msgstr "Modrá"
+
+#. custom: web
+#: basic_controller.js:364 calendar_controller.js:209
+msgid "Are you sure you want to delete this record ?"
+msgstr "Ste si istý že chcete zmazať tento záznam ?"
+
+#. custom: web
+#: debug.xml:0
+msgid "Become Superuser"
+msgstr "Zmena na superuser"
+
+#. custom: web
+#: base.xml:0 name_and_signature.xml:0
+msgid "Auto"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 name_and_signature.xml:0
+msgid "By clicking Adopt and Sign, I agree that the chosen signature/initials will be a valid electronic representation of my hand-written signature/initials for all purposes when it is used on documents, including legally binding contracts."
+msgstr ""
+
+#. custom: web
+#: utils.js:353
+msgid "Bytes|Kb|Mb|Gb|Tb|Pb|Eb|Zb|Yb"
+msgstr ""
+
+#. custom: web
+#: kanban_record.js:533
+msgid "Card color: %s"
+msgstr "Farby karty: %s"
+
+#. custom: web
+#: dialog.js:397 dialog.js:451 signature.js:50 upgrade_fields.js:74 crash_manager.js:363 calendar_quick_create.js:55 kanban_column.js:310 list_confirm_dialog.js:39 view_dialogs.js:435 base.xml:0
+msgid "Cancel"
+msgstr "Zrušiť"
+
+#. custom: web
+#: base.xml:0
+msgid "Change default:"
+msgstr "Zmeniť predvolené:"
+
+#. custom: web
+#: debug.xml:0
+msgid "Clear Events"
+msgstr "Vyčistiť udalosti"
+
+#. custom: web
+#: base.xml:0
+msgid "Clear Signature"
+msgstr ""
+
+#. custom: web
+#: name_and_signature.xml:0
+msgid "Clear"
+msgstr "Jasné"
+
+#. custom: web
+#: kanban_renderer.js:288
+msgid "Column %s"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Compare To"
+msgstr "Porovnanie s"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Copy Text"
+msgstr "Kópia textu"
+
+#. custom: web
+#: change_password.js:26 base.xml:0
+msgid "Change Password"
+msgstr "Zmeniť heslo"
+
+#. custom: web
+#: base.xml:0
+msgid "Condition:"
+msgstr "Podmienka:"
+
+#. field:Filter.Context
+msgid "Context"
+msgstr ""
+
+#. custom: web
+#: crash_manager.js:268
+msgid "Copied !"
+msgstr "Skopírované!"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Context:"
+msgstr "Kontext:"
+
+#. custom: web
+#: debug_manager_backend.js:358 view_dialogs.js:112 data_export.js:41 domain_selector_dialog.js:23
+msgid "Close"
+msgstr "Zatvoriť"
+
+#. custom: web
+#: basic_fields.js:1822 signature.js:222
+msgid "Could not display the selected image."
+msgstr "Nebolo možné zobraziť zvolený obrázok."
+
+#. custom: web
+#: utils.js:697
+msgid "Could not serialize XML"
+msgstr "Nebolo možné serializovať XML"
 
 #. field:Filter.IsDefault
 msgid "Default filter"
 msgstr ""
 
-#. field:Filter.Domain
+#. custom: web
+#: base.xml:0
+msgid "Created by :"
+msgstr "Vytvoril :"
+
+#. custom: web
+#: base.xml:0
+msgid "Default:"
+msgstr "Predvolené:"
+
+#. custom: web
+#: base.xml:0
+msgid "Documentation"
+msgstr "Dokumentácia"
+
+#. custom: web
+#: base.xml:0
+msgid "Domain:"
+msgstr "Doména:"
+
+#. custom: web
+#: relational_fields.js:43
+msgid "Create a %s"
+msgstr "Vytvoriť %s"
+
+#. custom: web
+#: menu.xml:0
+msgid "Create a new record"
+msgstr "Vytvoriť nový záznam"
+
+#. custom: web
+#: debug.xml:0
+msgid "Creation Date:"
+msgstr "Dátum vytvorenia:"
+
+#. custom: web
+#: form_controller.js:722 view_dialogs.js:149
+msgid "Create "
+msgstr "Vytvoriť"
+
+#. custom: web
+#: relational_fields.js:624
+msgid "Create and Edit..."
+msgstr "Vytvoriť a upraviť..."
+
+#. custom: web
+#: relational_fields.js:391
+msgid "Create: "
+msgstr "Vytvoriť:"
+
+#. custom: web
+#: calendar_controller.js:283 calendar_quick_create.js:44 kanban_controller.js:458 view_dialogs.js:441 base.xml:0 base.xml:0 form_view.xml:0 form_view.xml:0
+msgid "Create"
+msgstr "Vytvoriť"
+
+#. custom: web
+#: debug.xml:0
+msgid "Creation User:"
+msgstr "Používateľ vytvorenia:"
+
+#. custom: web
+#: domain_selector.js:538
+msgid "Domain error"
+msgstr "Chyba domény"
+
+#. custom: web
+#: base.xml:0 web_calendar.xml:0
+msgid "Day"
+msgstr "Deň"
+
+#. custom: web
+#: menu.xml:0
+msgid "Description"
+msgstr "Popis"
+
+#. custom: web
+#: kanban.xml:0 web_calendar.xml:0
+msgid "Delete"
+msgstr "Zmazať"
+
+#. custom: web
+#: data_export.js:441
+msgid "Do you really want to delete this export template?"
+msgstr "Naozaj chcete zmazať túto exportnú šablónu?"
+
+#. custom: web
+#: calendar_renderer.js:149
+msgid "Do you really want to delete this filter from favorites ?"
+msgstr "Naozaj chcete odstrániť tento filter z obľúbených?"
+
+#. custom: web
+#: menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0
+msgid "Control"
+msgstr "Kontrola"
+
+#. custom: web
+#: graph_view.js:44 graph_view.js:46 pivot_view.js:49 pivot_view.js:61 base.xml:0 base.xml:0
+msgid "Count"
+msgstr "Počet"
+
+#. custom: web
+#: kanban_record.js:439 view_dialogs.js:112 domain_selector_dialog.js:30 base.xml:0 base.xml:0 form_view.xml:0 form_view.xml:0 kanban.xml:0
+msgid "Discard"
+msgstr "Vyradiť"
+
+#. custom: web
+#: domain_selector_dialog.js:35
 msgid "Domain"
+msgstr "Doména"
+
+#. custom: web
+#: debug.xml:0
+msgid "Edit ControlPanelView"
 msgstr ""
+
+#. custom: web
+#: menu.xml:0
+msgid "Discard a record modification"
+msgstr "Zrušiť zmenu záznamu"
+
+#. custom: web
+#: dialog.js:409 dialog.js:460 list_confirm_dialog.js:45
+msgid "Confirmation"
+msgstr "Potvrdenie"
+
+#. custom: web
+#: base.xml:0 name_and_signature.xml:0
+msgid "Draw"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Edit Action"
+msgstr "Upraviť akciu"
+
+#. custom: web
+#: kanban_column.js:329
+msgid "Edit Column"
+msgstr "Upraviť stĺpec"
+
+#. custom: web
+#: kanban.xml:0
+msgid "Edit Stage"
+msgstr "Úprava etapy"
+
+#. custom: web
+#: debug.xml:0
+msgid "Edit View: <t t-esc=\"view.displayName\"/>"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0
+msgid "Edit a record"
+msgstr "Úprava záznamu"
+
+#. custom: web
+#: misc.js:15
+msgid "Don't leave yet,<br />it's still loading..."
+msgstr "Neodchádzajte,<br />stále nahrávam..."
+
+#. custom: web
+#: crash_manager.js:271 add_new_favorite_menu.js:81 add_new_favorite_menu.js:89
+msgid "Error"
+msgstr "Chyba"
+
+#. custom: web
+#: calendar_quick_create.js:49 base.xml:0 form_view.xml:0 kanban.xml:0 web_calendar.xml:0
+msgid "Edit"
+msgstr "Upraviť"
+
+#. custom: web
+#: calendar_model.js:557
+msgid "Everybody's calendars"
+msgstr "Každého kalendár"
+
+#. custom: web
+#: kanban.xml:0
+msgid "Esc to discard"
+msgstr "ESC pre zrušenie"
+
+#. custom: web
+#: calendar_model.js:557
+msgid "Everything"
+msgstr "Všetko"
+
+#. custom: web
+#: list_controller.js:158 data_export.js:40
+msgid "Export"
+msgstr "Export"
 
 #. field:Filter.Name
 #. resource:base_ir_filters_view_search
@@ -135,6 +663,51 @@ msgstr "Filtre"
 msgid "Filters created by myself"
 msgstr ""
 
+#. custom: web
+#: base.xml:0
+msgid "Edit Domain"
+msgstr "Úprava domény"
+
+#. custom: web
+#: data_export.js:38
+msgid "Export Data"
+msgstr "Exportovať dáta"
+
+#. custom: web
+#: base.xml:0
+msgid "Export Format:"
+msgstr "Formát exportu :"
+
+#. custom: web
+#: base.xml:0
+msgid "FILTER"
+msgstr "FILTER"
+
+#. custom: web
+#: control_panel_model.js:290
+msgid "Failed to evaluate search criterions"
+msgstr "Nepodarilo sa vyhodnotiť kritériá vyhľadávania"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Field:"
+msgstr "Pole:"
+
+#. custom: web
+#: debug_manager_backend.js:395 debug.xml:0
+msgid "Fields View Get"
+msgstr "Zobrazenie polí dostane"
+
+#. custom: web
+#: base.xml:0
+msgid "Fields to export"
+msgstr "Polia na export"
+
+#. custom: web
+#: add_new_favorite_menu.js:89
+msgid "Filter with same name already exists."
+msgstr "Filter s rovnakým názvom už existuje."
+
 #. resource:base_ir_filters_view_search
 msgid "Filters shared with all users"
 msgstr ""
@@ -144,114 +717,107 @@ msgid "Filters visible only for one user"
 msgstr ""
 
 #. custom: web
-#: base_common.xml:0
-msgid ""
-"Button\n"
-"                <t t-if=\"widget.string\">: </t>\n"
-"                <t t-if=\"!widget.string\"> (no string)</t>"
+#: basic_fields.js:1680
+msgid "File Upload"
+msgstr "Nahratie súboru"
+
+#. custom: web
+#: basic_fields.js:1664
+msgid "File upload"
+msgstr "Nahratie súboru"
+
+#. custom: web
+#: pivot_controller.js:131
+msgid "For Excel compatibility, data cannot be exported if there are more than 256 columns.\\n\\nTip: try to flip axis, filter further or reduce the number of measures."
 msgstr ""
 
 #. custom: web
 #: base.xml:0
-msgid "Created by :"
-msgstr "Vytvoril :"
+msgid ""
+"Get this feature and much more with Hexya Enterprise!\n"
+"            <ul class=\"list-unstyled\">\n"
+"                <li><i class=\"fa fa-check\"></i> Access to all Enterprise Apps</li>\n"
+"                <li><i class=\"fa fa-check\"></i> New design</li>\n"
+"                <li><i class=\"fa fa-check\"></i> Mobile support</li>\n"
+"                <li><i class=\"fa fa-check\"></i> Upgrade to future versions</li>\n"
+"                <li><i class=\"fa fa-check\"></i> Bugfixes guarantee</li>\n"
+"                <li><a href=\"http://www.hexya.io/editions?utm_source=db&amp;utm_medium=enterprise\" target=\"_blank\"><i class=\"fa fa-plus\"></i> And more</a></li>\n"
+"            </ul>"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "Group By"
+msgstr "Zoskupiť podľa"
 
 #. custom: web
 #: base.xml:0
-msgid "Creation Date:"
-msgstr "Dátum vytvorenia:"
+msgid "Hide in Kanban"
+msgstr "Skryť v kanban zobrazení"
 
 #. custom: web
 #: base.xml:0
-msgid "Creation User:"
-msgstr "Používateľ vytvorenia:"
+msgid ""
+"Hit ENTER to\n"
+"            <t t-esc=\"title\"></t>"
+msgstr ""
 
-#. field:CommonMixin.ID
-#. field:Company.ID
+#. custom: web
+#: base.xml:0
+msgid ""
+"Hit ENTER to CREATE<br/>\n"
+"            Hit DOWN to navigate to the list below"
+msgstr ""
+
+#. custom: web
+#: colorpicker_dialog.xml:0
+msgid "Green"
+msgstr "Zelená"
+
 #. field:Filter.ID
-#. field:User.ID
 msgid "ID"
 msgstr "ID"
 
 #. custom: web
-#: base.xml:0
-msgid "Day"
-msgstr "Deň"
-
-#. custom: web
-#: base.xml:0
-msgid "Default:"
-msgstr "Predvolené:"
-
-#. custom: web
-#: base.xml:0
-msgid "Delete"
-msgstr "Zmazať"
-
-#. custom: web
-#: base.xml:0
-msgid "Disable Technical Features"
-msgstr "Vypnúť technické funkcie"
-
-#. custom: web
-#: base.xml:0
-msgid "Edit"
-msgstr "Upraviť"
-
-#. custom: web
-#: base.xml:0
-msgid "Enable Technical Features"
-msgstr "Zapnúť technické funkcie"
-
-#. custom: web
-#: base.xml:0
-msgid "Export Formats :"
-msgstr "Formáty exportu :"
-
-#. custom: web
-#: base.xml:0
-msgid "Export Type :"
-msgstr "Typ exportu :"
-
-#. custom: web
-#: base.xml:0
-msgid "Export all Data"
-msgstr "Exportovať všetky dáta"
-
-#. custom: web
-#: base.xml:0
-msgid "ID:"
+#: crash_manager.js:251
+msgid "Hexya Error"
 msgstr ""
 
 #. custom: web
-#: base_common.xml:0
-msgid "-"
+#: crash_manager.js:376
+msgid "Hexya Session Expired"
 msgstr ""
 
 #. custom: web
-#: base_common.xml:0
-msgid ":"
+#: crash_manager.js:353
+msgid "Hexya Warning"
 msgstr ""
 
 #. custom: web
-#: base_common.xml:0
-msgid "Action ID:"
-msgstr "ID akcie:"
+#: name_and_signature.xml:0
+msgid "Full Name"
+msgstr ""
 
 #. custom: web
-#: base_common.xml:0
-msgid "Button Type:"
-msgstr "Typ tlačidla:"
+#: crash_manager.js:104 crash_manager.js:116 crash_manager.js:129 crash_manager.js:296
+msgid "Hexya Client Error"
+msgstr ""
 
 #. custom: web
-#: base_common.xml:0
-msgid "Change default:"
-msgstr "Zmeniť predvolené:"
+#: upgrade_fields.js:85
+msgid "Hexya Enterprise"
+msgstr ""
 
 #. custom: web
-#: base_common.xml:0
-msgid "Field:"
-msgstr "Pole:"
+#: base.xml:0
+msgid ""
+"Hit ENTER to SAVE<br/>\n"
+"            Hit ESCAPE to DISCARD"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "I want to update data (import-compatible export)"
+msgstr ""
 
 #. field:Filter.ResModel
 #. resource:base_ir_filters_view_search
@@ -260,23 +826,53 @@ msgstr ""
 
 #. custom: web
 #: base.xml:0
-msgid "Import-Compatible Export"
-msgstr "Import-kompatibilný export"
+msgid "Only you"
+msgstr "Iba vy"
 
 #. custom: web
-#: base.xml:0
-msgid "Latest Modification Date:"
-msgstr "Posledný dátum úpravy:"
+#: colorpicker_dialog.xml:0
+msgid "Hue"
+msgstr "Hue"
 
 #. custom: web
-#: base.xml:0
-msgid "Latest Modification by:"
-msgstr "Poslednú úpravu robil:"
+#: dialog.js:426
+msgid "I am sure about this."
+msgstr "Som si istý."
 
 #. custom: web
-#: base.xml:0
-msgid "Leave the Developer Tools"
-msgstr "Opustiť vývojárske nástroje"
+#: debug_manager_backend.js:94
+msgid "JS Mobile Tests"
+msgstr "JS Mobile Tests"
+
+#. custom: web
+#: model_field_selector.js:431
+msgid "Invalid field chain"
+msgstr "Neplatná reťaz polí"
+
+#. custom: web
+#: graph_renderer.js:877 graph_renderer.js:886
+msgid "Invalid data"
+msgstr "Neplatné dáta"
+
+#. custom: web
+#: user_menu.js:123
+msgid "Keyboard Shortcuts"
+msgstr "Klávesové skratky"
+
+#. custom: web
+#: base.xml:0 name_and_signature.xml:0
+msgid "Load"
+msgstr ""
+
+#. custom: web
+#: debug_manager_backend.js:83
+msgid "JS Tests"
+msgstr "JS testy"
+
+#. custom: web
+#: basic_fields.js:1822 basic_fields.js:2220 signature.js:222
+msgid "Image"
+msgstr "Obrázok"
 
 #. custom: web
 #: base.xml:0
@@ -284,44 +880,54 @@ msgid "Log out"
 msgstr "Odhlásenie"
 
 #. custom: web
+#: debug.xml:0
+msgid "Latest Modification Date:"
+msgstr "Posledný dátum úpravy:"
+
+#. custom: web
+#: debug.xml:0
+msgid "Leave the Developer Tools"
+msgstr "Opustiť vývojárske nástroje"
+
+#. custom: web
 #: base.xml:0
-msgid "Manage Filters"
-msgstr "Spravovať filtre"
+msgid "Match <strong>all records</strong>"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Latest Modification by:"
+msgstr "Poslednú úpravu robil:"
+
+#. custom: web
+#: base.xml:0
+msgid "Match records with"
+msgstr "Porovnať záznam s"
+
+#. custom: web
+#: loading.js:59
+msgid "Loading"
+msgstr "Nahrávanie"
+
+#. custom: web
+#: base.xml:0
+msgid "Match records with the following rule:"
+msgstr "Porovnať záznam s nasledovným pravidlom:"
+
+#. custom: web
+#: base.xml:0
+msgid "Method:"
+msgstr "Metóda:"
+
+#. custom: web
+#: debug.xml:0
+msgid "ID:"
+msgstr "ID:"
 
 #. custom: web
 #: base.xml:0
 msgid "Modified by :"
 msgstr "Upravoval :"
-
-#. custom: web
-#: base_common.xml:0
-msgid "Context:"
-msgstr "Kontext:"
-
-#. custom: web
-#: base_common.xml:0
-msgid "Domain:"
-msgstr "Doména:"
-
-#. custom: web
-#: base_common.xml:0
-msgid "Method:"
-msgstr "Metóda:"
-
-#. custom: web
-#: base_common.xml:0
-msgid "Modifiers:"
-msgstr "Upravovatelia:"
-
-#. custom: web
-#: debug_manager.js:241
-msgid "Fields of %s"
-msgstr "Polia %s"
-
-#. custom: web
-#: debug_manager.js:183
-msgid "JS Tests"
-msgstr "JS testy"
 
 #. resource:base_ir_filters_view_search
 msgid "My filters"
@@ -329,23 +935,13 @@ msgstr ""
 
 #. custom: web
 #: base.xml:0
-msgid "Month"
-msgstr "Mesiac"
+msgid "My hexya.io account"
+msgstr ""
 
 #. custom: web
 #: base.xml:0
-msgid "More"
-msgstr "Viac"
-
-#. custom: web
-#: base.xml:0
-msgid "Move Down"
-msgstr "Posunúť dole"
-
-#. custom: web
-#: base.xml:0
-msgid "Move Up"
-msgstr "Posunúť hore"
+msgid "NONE"
+msgstr "ŽIADNE"
 
 #. custom: web
 #: base.xml:0
@@ -354,27 +950,58 @@ msgstr "Nové Heslo"
 
 #. custom: web
 #: base.xml:0
-msgid "No Update:"
-msgstr "Žiadna aktualizácia:"
-
-#. custom: web
-#: base.xml:0
-msgid ""
-"No data available for this pivot table.  Try to add some records, or make sure\n"
-"        that there is at least one measure and no active filter in the search bar."
+msgid "New template"
 msgstr ""
-"Pre túto kontingenčnú tabuľku nie sú žiadne údaje. Skúste pridať nejaké záznamy, alebo sa uistiť,\n"
-"že existuje aspoň jedno meranie a že nie je aktívny filter v riadku vyhľadávania."
+
+#. custom: web
+#: colorpicker_dialog.xml:0
+msgid "Lightness %"
+msgstr "Svetelnosť %"
+
+#. custom: web
+#: misc.js:18
+msgid "Maybe you should consider reloading the application by pressing F5..."
+msgstr "Možno by ste mali zvážiť znovunačítanie aplikácie stlačením klávesu F5 ..."
+
+#. custom: web
+#: kanban.xml:0
+msgid "Fold"
+msgstr "Zložiť"
+
+#. custom: web
+#: kanban.xml:0
+msgid "Load more... (<t t-esc=\"widget.remaining\"/> remaining)"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Manage Filters"
+msgstr "Spravovať filtre"
+
+#. custom: web
+#: debug_manager_backend.js:256
+msgid "Metadata (%s)"
+msgstr "Metadáta (%s)"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Modifiers:"
+msgstr "Upravovatelia:"
 
 #. custom: web
 #: base.xml:0
-msgid "No data to display."
-msgstr "Žiadne dáta na zobrazenie."
+msgid "No data to display"
+msgstr "Žiadne dáta na zobrazenie"
 
 #. custom: web
 #: base.xml:0
-msgid "Not shown in kanban"
-msgstr "Nezobrazené v kanban"
+msgid "None"
+msgstr "Žiadne"
+
+#. custom: web
+#: basic_model.js:690
+msgid "New"
+msgstr "Nové"
 
 #. custom: web
 #: base.xml:0
@@ -383,18 +1010,137 @@ msgstr "Staré heslo"
 
 #. custom: web
 #: base.xml:0
-msgid "Only you"
-msgstr "Iba vy"
+msgid "On change:"
+msgstr "Na zmenu:"
+
+#. custom: web
+#: basic_fields.js:2635
+msgid "Only Integer or Float Value should be valid."
+msgstr "Platná by mala byť iba celočíselná alebo plávajúca hodnota."
+
+#. custom: web
+#: colorpicker_dialog.xml:0
+msgid "Opacity %"
+msgstr "Neprehľadnosť %"
+
+#. custom: web
+#: data_export.js:156
+msgid "Please select fields to export..."
+msgstr "Prosím zvoľte polia na exportovanie..."
+
+#. custom: web
+#: loading.js:57
+msgid "Loading (%d)"
+msgstr "Nahrávanie (%d)"
+
+#. custom: web
+#: data_export.js:679
+msgid "No match found."
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Manage Attachments"
+msgstr "Spravovať prílohy"
+
+#. custom: web
+#: base.xml:0 web_calendar.xml:0
+msgid "Month"
+msgstr "Mesiac"
+
+#. custom: web
+#: debug.xml:0
+msgid "No Update:"
+msgstr "Žiadna aktualizácia:"
+
+#. custom: web
+#: search_bar_autocomplete_sources.js:295
+msgid "No"
+msgstr "Nie"
+
+#. custom: web
+#: debug_manager_backend.js:221
+msgid "No attachment available"
+msgstr "Žiadna príloha k dispozícii"
+
+#. custom: web
+#: list_controller.js:434 list_controller.js:745
+msgid "No valid record to save"
+msgstr ""
+
+#. custom: web
+#: relational_fields.js:630
+msgid "No results to show..."
+msgstr "Žiadne výsledky na zobrazenie"
+
+#. custom: web
+#: view_dialogs.js:378
+msgid "No records found!"
+msgstr ""
+
+#. custom: web
+#: utils.js:470
+msgid "Node [%s] is not a JSONified XML node"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Open View"
+msgstr "Otvoriť zobrazenie"
+
+#. custom: web
+#: menu.xml:0
+msgid "Mac"
+msgstr "Mac"
+
+#. custom: web
+#: form_renderer.js:439 base.xml:0
+msgid "More"
+msgstr "Viac"
+
+#. custom: web
+#: menu.xml:0
+msgid "Open the next record"
+msgstr "Otvoriť nasledujúci záznam"
+
+#. custom: web
+#: dialog.js:79 dialog.js:371 dialog.js:391 dialog.js:444 kanban_column.js:305 list_confirm_dialog.js:34
+msgid "Ok"
+msgstr "Ok"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Object:"
+msgstr "Objekt:"
+
+#. custom: web
+#: data_export.js:472
+msgid "Please enter save field list name"
+msgstr "Prosím zadajte názov zoznamu poľa uložiť"
+
+#. custom: web
+#: misc.js:12
+msgid "Loading..."
+msgstr "Nahrávanie..."
+
+#. custom: web
+#: menu.xml:0
+msgid "Open to list view"
+msgstr "Otvoriť v zobrazení zoznamu"
 
 #. custom: web
 #: base.xml:0
-msgid "Please note that only the selected ids will be exported."
-msgstr "Upozorňujeme, že iba vybrané ID budú exportované."
+msgid ""
+"Please update translations of :\n"
+"        <t t-foreach=\"fields\" t-as=\"field\">\n"
+"            <strong><a class=\"oe_field_translate\" t-att-name=\"field\" href=\"#\"><t t-esc=\"field_value.string\"/><t t-if=\"field_index &lt; _.size(fields)-1\">, </t></a></strong>\n"
+"        </t>"
+msgstr ""
 
 #. custom: web
-#: base.xml:0
-msgid "Please pay attention that all records matching your search filter will be exported. Not only the selected ids."
-msgstr "Prosím dávajte pozor, aby všetky záznamy vyhovujúce vášmu vyhľadávaciemu filtru budú exportované. Nielen vybrané ID."
+#: crash_manager.xml:0
+msgid "Please use the copy button to report the error to your support service."
+msgstr "Prosím použite tlačítko kopírovania pre nahlásenie chyby na support."
 
 #. custom: web
 #: base.xml:0
@@ -407,112 +1153,213 @@ msgid "Quarter"
 msgstr "Kvartál"
 
 #. custom: web
-#: data_export.js:199
-msgid "Export Data"
-msgstr "Exportovať dáta"
+#: base.xml:0 base.xml:0
+msgid "Measures"
+msgstr "Metriky"
 
 #. custom: web
-#: base.xml:0
-msgid "Run JS Tests"
-msgstr ""
-
-#. custom: web
-#: dialog.js:168
-msgid "Alert"
-msgstr "Výstraha"
-
-#. custom: web
-#: dialog.js:193
-msgid "Confirmation"
-msgstr "Potvrdenie"
-
-#. custom: web
-#: form_common.js:236
-msgid "Create and Edit..."
-msgstr "Vytvoriť a upraviť..."
-
-#. custom: web
-#: base_common.xml:0
-msgid "Object:"
-msgstr "Objekt:"
-
-#. custom: web
-#: base_common.xml:0
-msgid "On change:"
-msgstr "Na zmenu:"
-
-#. custom: web
-#: data_export.js:167
-msgid "Please enter save field list name"
-msgstr "Prosím zadajte názov zoznamu poľa uložiť"
-
-#. custom: web
-#: base_common.xml:0
-msgid "Relation:"
-msgstr "Vzťah:"
-
-#. custom: web
-#: base.xml:0
-msgid "Remove"
-msgstr "Odstrániť"
-
-#. custom: web
-#: base.xml:0
-msgid "Remove All"
-msgstr "Odstrániť všetko"
-
-#. custom: web
-#: data_export.js:201
-msgid "Export To File"
-msgstr "Exportovať do súboru"
-
-#. custom: web
-#: debug_manager.js:326
-msgid "Metadata (%s)"
-msgstr "Metadáta (%s)"
-
-#. custom: web
-#: debug_manager.js:321
+#: debug_manager_backend.js:240
 msgid "No metadata available"
-msgstr ""
+msgstr "Žiadne metadata k dispozícii"
 
 #. custom: web
-#: form_common.js:245
-msgid "No results to show..."
-msgstr "Žiadne výsledky na zobrazenie"
+#: menu.xml:0
+msgid "Open to kanban view"
+msgstr "Otvoriť v kanban zobrazení"
 
 #. custom: web
-#: graph_widget.js:252
-msgid "Not enough data points"
-msgstr "Nedostatok dátových bodov"
+#: menu.xml:0
+msgid "Open the previous record"
+msgstr "Otvoriť predchádzajúci záznam"
 
 #. custom: web
-#: data_export.js:435
-msgid "Please select fields to export..."
-msgstr "Prosím zvoľte polia na exportovanie..."
+#: report.xml:0
+msgid "Print"
+msgstr "Tlač"
 
 #. custom: web
-#: data_export.js:421
+#: relational_fields.js:723 calendar_controller.js:346 form_controller.js:722 form_controller.js:744 view_dialogs.js:149
+msgid "Open: "
+msgstr "Otvoriť:"
+
+#. custom: web
+#: base.xml:0
+msgid "Range"
+msgstr "Rozsah"
+
+#. custom: web
+#: data_export.js:190
 msgid "Please select fields to save export list..."
 msgstr "Prosím zvoľte polia na uloženie zoznamu exportu..."
 
 #. custom: web
-#: form_common.js:889
+#: colorpicker_dialog.xml:0
+msgid "Red"
+msgstr "Červená"
+
+#. custom: web
+#: debug.xml:0
+msgid "Regenerate Assets Bundles"
+msgstr "Obnoviť zväzky aktív"
+
+#. custom: web
+#: form_view.xml:0
+msgid "Quick actions"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Relation:"
+msgstr "Vzťah:"
+
+#. custom: web
+#: kanban_record.js:430
+msgid "Remove Cover Image"
+msgstr ""
+
+#. custom: web
+#: view_dialogs.js:283
+msgid "Remove"
+msgstr "Odstrániť"
+
+#. custom: web
+#: crash_manager.js:387
+msgid "Request timeout"
+msgstr "Vypršanie času požiadavky"
+
+#. custom: web
+#: data_export.js:142
+msgid "Remove field"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "SEE RESULT"
+msgstr "ZOBRAZIŤ VÝSLEDOK"
+
+#. custom: web
+#: basic_fields.js:1955
+msgid "Save As..."
+msgstr "Uložiť ako..."
+
+#. custom: web
+#: search_bar_autocomplete_sources.js:335
+msgid "Search %(field)s at: %(value)s"
+msgstr "Vyhľadať %(field)s v: %(value)s"
+
+#. custom: web
+#: debug.xml:0
+msgid "Run Click Everywhere Test"
+msgstr "Spustiť test kliknutím hocikde"
+
+#. custom: web
+#: colorpicker_dialog.xml:0
+msgid "Saturation %"
+msgstr "Saturácia %"
+
+#. custom: web
+#: base.xml:0
+msgid "Save Current Search"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Save as :"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Select Signature Style"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Run JS Mobile Tests"
+msgstr "Spustite mobilné testy JS"
+
+#. custom: web
+#: debug.xml:0
+msgid "Run JS Tests"
+msgstr "Spustite JS testy"
+
+#. custom: web
+#: view_dialogs.js:135
 msgid "Save & New"
 msgstr "Uložiť & Nové"
 
 #. custom: web
-#: form_relational_widgets.js:1018
-msgid "Add an item"
-msgstr "Pridať položku"
+#: view_dialogs.js:126
+msgid "Save & Close"
+msgstr " Uložiť & Zatvoriť"
 
 #. custom: web
-#: time.js:192
-msgid "'%s' is not a correct date, datetime nor time"
-msgstr "'%s' nie je správny dátum, dátum/čas ani čas"
+#: crash_manager.xml:0
+msgid "See details"
+msgstr "Viď detaily"
 
-#. resource:base_ir_filters_view_search
-msgid "Shared"
+#. custom: web
+#: view_dialogs.js:126 domain_selector_dialog.js:27 base.xml:0 base.xml:0 base.xml:0 form_view.xml:0 form_view.xml:0
+msgid "Save"
+msgstr "Uložiť"
+
+#. custom: web
+#: base.xml:0
+msgid "Select a model to add a filter."
+msgstr "Vyberte model na pridanie do filtra."
+
+#. custom: web
+#: base.xml:0
+msgid "Selection:"
+msgstr "Výber:"
+
+#. custom: web
+#: basic_fields.js:3096
+msgid "Selected records"
+msgstr "Zvolené záznamy"
+
+#. custom: web
+#: debug.xml:0
+msgid "Set Defaults"
+msgstr "Nastaviť predvoľby"
+
+#. custom: web
+#: model_field_selector.js:493
+msgid "Relation not allowed"
+msgstr "Závislosť nepovolená"
+
+#. custom: web
+#: menu.xml:0
+msgid "Save a record"
+msgstr "Uložiť záznam"
+
+#. custom: web
+#: crash_manager.js:243
+msgid "Something went wrong !"
+msgstr ""
+
+#. custom: web
+#: debug_manager_backend.js:359
+msgid "Save default"
+msgstr "Uložiť predvoľbu"
+
+#. custom: web
+#: relational_fields.js:391
+msgid "Search: "
+msgstr "Vyhľadať:"
+
+#. custom: web
+#: debug_manager_backend.js:356
+msgid "Set Default"
+msgstr "Nastaviť predvoľbu"
+
+#. custom: web
+#: relational_fields.js:417
+msgid "Search More..."
+msgstr "Vyhľadať viac..."
+
+#. custom: web
+#: kanban_record.js:406
+msgid "Set a Cover Image"
 msgstr ""
 
 #. help:Filter.User
@@ -520,356 +1367,96 @@ msgid "The user this filter is private to. When left empty the filter is public 
 msgstr ""
 
 #. custom: web
-#: form_relational_widgets.js:1122
-msgid "Action Button"
-msgstr "Akčné tlačidlo"
+#: search_bar_autocomplete_sources.js:144
+msgid "Search %(field)s for: %(value)s"
+msgstr "Vyhľadať %(field)s pre: %(value)s"
 
 #. custom: web
-#: form_relational_widgets.js:1305
-msgid "Add: "
-msgstr "Pridať:"
+#: kanban.xml:0
+msgid "See examples"
+msgstr ""
 
-#. custom: web
-#: formats.js:173
-msgid "'%s' is not a correct datetime"
-msgstr "'%s' nie je správny dátum/čas"
-
-#. custom: web
-#: formats.js:144
-msgid "'%s' is not a correct float"
-msgstr "'%s' nie je správny float"
-
-#. custom: web
-#: form_widgets.js:637
-msgid "Activate"
-msgstr "Aktivovať"
-
-#. custom: web
-#: form_widgets.js:642
-msgid "Archived"
-msgstr "Archivovaný"
-
-#. custom: web
-#: formats.js:75
-msgid "(%d records)"
-msgstr "(%d záznamy)"
-
-#. custom: web
-#: form_view.js:733
-msgid "Do you really want to delete this record?"
-msgstr "Naozaj chcete zmazať tento záznam?"
-
-#. custom: web
-#: form_widgets.js:1131
-msgid "Save As..."
-msgstr "Uložiť ako..."
-
-#. custom: web
-#: formats.js:132
-msgid "'%s' is not a correct integer"
-msgstr "'%s' nie je správne celočíslo"
-
-#. custom: web
-#: formats.js:192
-msgid "'%s' is not a correct time"
-msgstr "'%s' nie je správny čas"
-
-#. custom: web
-#: list_common.js:133
-msgid "Can't convert value %s to context"
-msgstr "Nemožno prekonvertovať hodnotu %s na kontext"
-
-#. custom: web
-#: form_relational_widgets.js:25
-msgid "Create a %s"
-msgstr "Vytvoriť %s"
-
-#. custom: web
-#: form_widgets.js:635
-msgid "Deactivate"
-msgstr "Deaktivovať"
-
-#. custom: web
-#: form_widgets.js:1251
-msgid "Could not display the selected image."
-msgstr "Nebolo možné zobraziť zvolený obrázok."
-
-#. custom: web
-#: list_view.js:543
-msgid "Do you really want to remove these records?"
-msgstr "Naozaj chcete odstrániť tieto záznamy?"
-
-#. custom: web
-#: list_view.js:1024
-msgid "Could not find id in dataset"
-msgstr "Nebolo možné nájsť id v datasete"
-
-#. custom: web
-#: list_view.js:1847
-msgid "Download"
-msgstr "Stiahnuť"
-
-#. custom: web
-#: list_view.js:1863
-msgid "Download \\\"%s\\\""
+#. resource:base_ir_filters_view_search
+msgid "Shared"
 msgstr ""
 
 #. custom: web
 #: base.xml:0
-msgid "View Metadata"
-msgstr "Zobraziť metadáta"
+msgid "Support"
+msgstr "Podpora"
 
 #. custom: web
-#: misc.js:15
-msgid "Don't leave yet,<br />it's still loading..."
-msgstr "Neodchádzajte,<br />stále nahrávam..."
-
-#. custom: web
-#: list_view.js:287
-msgid "Export"
+#: base.xml:0
+msgid "Share with all users <span class=\"fa fa-users\" role=\"img\" aria-label=\"Users\" title=\"Users\"/>"
 msgstr ""
 
 #. custom: web
-#: pyeval.js:1023
-msgid "Evaluation Error"
-msgstr "Chyba vyhodnocovania"
+#: menu.xml:0
+msgid "Shortcuts"
+msgstr "Skratky"
 
 #. custom: web
-#: form_view.js:1300
-msgid "Field '%s' specified in view could not be found."
-msgstr "Pole '%s' špecifikované v zobrazení nebolo nájdené."
-
-#. custom: web
-#: form_widgets.js:1114
-msgid "File Upload"
-msgstr "Nahratie súboru"
-
-#. custom: web
-#: form_common.js:211
-msgid "Search More..."
-msgstr "Vyhľadať viac..."
-
-#. custom: web
-#: form_relational_widgets.js:47
-msgid "You are creating a new %s, are you sure it does not exist yet?"
-msgstr "Vytvárate nové %s, ste si istý že ešte neexestuje?"
-
-#. custom: web
-#: form_common.js:281 form_relational_widgets.js:1080
-msgid "Create: "
-msgstr "Vytvoriť:"
-
-#. custom: web
-#: form_widgets.js:1094
-msgid "File upload"
-msgstr "Nahratie súboru"
-
-#. custom: web
-#: priority.js:47
-msgid "Normal"
-msgstr "Normálna"
-
-#. custom: web
-#: priority.js:49
-msgid "High"
-msgstr "Vysoká"
-
-#. custom: web
-#: search_inputs.js:330
-msgid "Yes"
-msgstr "Áno"
-
-#. custom: web
-#: search_inputs.js:551
-msgid "Filter"
-msgstr ""
+#: base.xml:0
+msgid "Size:"
+msgstr "Veľkosť:"
 
 #. field:Filter.Sort
 msgid "Sort"
 msgstr ""
 
 #. custom: web
-#: search_menus.js:84
-msgid "Filter name is required."
-msgstr "Názov filtra je vyžadovaný."
-
-#. custom: web
 #: base.xml:0
-msgid "Save as:"
-msgstr "Uložiť ako:"
-
-#. custom: web
-#: base.xml:0
-msgid "Save current search"
-msgstr "Uložiť aktuálne vyhľadávanie"
-
-#. custom: web
-#: base.xml:0
-msgid "Save fields list"
-msgstr "Uložiť zoznam polí"
-
-#. custom: web
-#: form_relational_widgets.js:327
-msgid "No value found for the field %s for value %s"
-msgstr ""
-
-#. custom: web
-#: form_view.js:301
-msgid "Form"
-msgstr "Formulár"
-
-#. custom: web
-#: base.xml:0
-msgid "Saved exports:"
-msgstr "Uložené exporty:"
-
-#. custom: web
-#: base_common.xml:0
-msgid "Selection:"
-msgstr "Výber:"
-
-#. custom: web
-#: form_common.js:281
-msgid "Search: "
-msgstr "Vyhľadať:"
-
-#. custom: web
-#: form_common.js:1054
-msgid "Select"
-msgstr "Vybrať"
-
-#. custom: web
-#: form_common.js:1103
-msgid "Selected domain"
-msgstr "Zvolená doména"
-
-#. custom: web
-#: form_upgrade_widgets.js:51
-msgid "Hexya Enterprise"
-msgstr ""
-
-#. custom: web
-#: form_view.js:315
-msgid "New"
-msgstr "Nové"
-
-#. custom: web
-#: form_relational_widgets.js:326
-msgid "Render"
-msgstr "Vykresliť"
-
-#. custom: web
-#: form_view.js:1125
-msgid "Set Default"
-msgstr "Nastaviť predvoľbu"
-
-#. custom: web
-#: form_widgets.js:1251
-msgid "Image"
-msgstr "Obrázok"
-
-#. custom: web
-#: base.xml:0
-msgid "Week"
-msgstr "Týždeň"
-
-#. custom: web
-#: form_widgets.js:636
-msgid "Inactive"
-msgstr "Neaktívne"
-
-#. custom: web
-#: graph_widget.js:94
-msgid "No data to display"
-msgstr "Žiadne dáta na zobrazenie"
-
-#. custom: web
-#: form_view.js:1128
-msgid "Save default"
-msgstr "Uložiť predvoľbu"
-
-#. custom: web
-#: dialog.js:40 dialog.js:158 dialog.js:176 base.xml:0
-msgid "Ok"
-msgstr ""
-
-#. custom: web
-#: base.xml:0
-msgid "Set Defaults"
-msgstr "Nastaviť predvoľby"
-
-#. custom: web
-#: list_view.js:931
-msgid "Setting 'id' attribute on existing record %s"
-msgstr "Nastavenie 'ID' atribútu na existujúcom zázname %s"
-
-#. field:User.SidebarVisible
-msgid "Show App Sidebar"
-msgstr ""
-
-#. custom: web
-#: base.xml:0
-msgid "Technical Translation"
-msgstr "Technický Preklad"
-
-#. custom: web
-#: base_common.xml:0
-msgid "Size:"
-msgstr "Veľkosť:"
-
-#. custom: web
-#: base_common.xml:0
 msgid "Special:"
 msgstr "Špeciálne:"
 
 #. custom: web
-#: form_view.js:887
-msgid "The following fields are invalid:"
-msgstr "Následujúce polia sú nesprávne:"
+#: misc.js:13
+msgid "Still loading..."
+msgstr "Stále nahrávam..."
 
 #. custom: web
-#: form_widgets.js:1131
-msgid "The field is empty, there's nothing to save !"
-msgstr "Pole je prázdne, nie je v ňom nič na uloženie !"
+#: debug.xml:0
+msgid "Technical Translation"
+msgstr "Technický Preklad"
 
 #. custom: web
-#: list_view_editable.js:122
-msgid "The line has been modified, your changes will be discarded. Are you sure you want to discard the changes ?"
-msgstr "Riadok bol upravený, vaše zmeny budú zahodené. Ste si istý že chcete zahodiť zmeny?"
-
-#. custom: web
-#: time.js:204
-msgid "'%s' is not convertible to date, datetime nor time"
-msgstr "'%s' nie je konvertovateľné na dátum, dátum/čas ani čas"
-
-#. custom: web
-#: priority.js:48
-msgid "Low"
-msgstr "Nízka"
-
-#. custom: web
-#: form_view.xml:0
-msgid "e"
+#: base.xml:0
+msgid "Template:"
 msgstr ""
 
 #. custom: web
-#: progress_bar.js:78
-msgid "Wrong value entered!"
-msgstr "Zadaná zlá hodnota!"
+#: domain_selector.js:539 domain_selector.js:585
+msgid "The domain you entered is not properly formed"
+msgstr "Nesprávne zadaná doména "
 
 #. custom: web
-#: misc.js:16
-msgid "You may not believe it,<br />but the application is actually loading..."
-msgstr "Možno tomu neuveríte,<br />ale aplikácia sa v skutočnosti načítava..."
+#: misc.js:14
+msgid "Still loading...<br />Please be patient."
+msgstr "Stále nahrávam...<br />Prosím, buďte trpezliví."
 
 #. custom: web
-#: view_manager.js:223
-msgid " view couldn't be loaded"
-msgstr "zobrazenie nemohlo byť načítané"
+#: calendar_quick_create.js:81
+msgid "Summary"
+msgstr ""
 
 #. custom: web
-#: base.xml:0 base.xml:0
-msgid "/web/binary/upload_attachment"
+#: domain_selector.js:585
+msgid "Syntax error"
+msgstr "Syntaktická chyba"
+
+#. custom: web
+#: basic_controller.js:84
+msgid "The record has been modified, your changes will be discarded. Do you want to proceed?"
+msgstr "Práve bol upravovaný záznam, úpravy nebudú uložené. Ste si istí, že chcete pokračovať?"
+
+#. custom: web
+#: kanban_record.js:409 view_dialogs.js:448
+msgid "Select"
+msgstr "Vybrať"
+
+#. custom: web
+#: name_and_signature.xml:0
+msgid "Style"
 msgstr ""
 
 #. custom: web
@@ -878,352 +1465,190 @@ msgid "Take a minute to get a coffee,<br />because it's loading..."
 msgstr "Dajte si pauzu na kávu,<br />pretože sa načítáva..."
 
 #. custom: web
-#: misc.js:18
-msgid "Maybe you should consider reloading the application by pressing F5..."
-msgstr "Možno by ste mali zvážiť znovunačítanie aplikácie stlačením klávesu F5 ..."
+#: base.xml:0
+msgid "Tap on the list to change company"
+msgstr "Kliknite na zoznam pre zmenu spoločnosti"
+
+#. custom: web
+#: model_field_selector.js:432
+msgid "The field chain is not valid. Did you maybe use a non-existing field name or followed a non-relational field?"
+msgstr "Reťazec poľa nie je platný. Použili ste možno neexistujúci názov poľa alebo ste sledovali nesúvisiace pole?"
+
+#. custom: web
+#: calendar_quick_create.js:82
+msgid "The following field is invalid:"
+msgstr ""
+
+#. custom: web
+#: basic_fields.js:1663
+msgid "The selected file exceed the maximum file size of %s."
+msgstr "Zvolený súbor presahuje maximálnu veľkosť súboru %s."
 
 #. help:Filter.Action
 msgid "The menu action this filter applies to. When left empty the filter applies to all menus for this model."
 msgstr ""
 
 #. custom: web
-#: base.xml:0
-msgid ""
-"This wizard will export all data that matches the current search criteria to a CSV file.\n"
-"        You can export all data or only the fields that can be reimported after modification."
-msgstr ""
-"Tento sprievodca vyexportuje všetky dáta, ktoré zodpovedajú súčasnému kritériu vyhľadávania, do CSV súboru.\n"
-"Môžete exportovať všetky dáta, alebo iba polia koré môžu byť opäť importované po úprave."
+#: crash_manager.js:388
+msgid "The operation was interrupted. This usually means that the current operation is taking too much time."
+msgstr "Operácia bola prerušená. Obvykle to znamená, že operácia trvala pridlho."
 
 #. custom: web
-#: base.xml:0
-msgid "Toggle Timelines"
-msgstr "Prepnúť çasové osi"
-
-#. custom: web
-#: base_common.xml:0
-msgid "Type:"
-msgstr "Typ:"
-
-#. custom: web
-#: base.xml:0
-msgid "console.warn('Unhandled widget', dict.widget);"
+#: kanban.xml:0
+msgid "There is no available image to be set as cover."
 msgstr ""
 
 #. custom: web
-#: data.js:1083
-msgid "Unknown field %s in domain %s"
-msgstr "Neznáme pole %s v doméne %s"
+#: date_picker.js:205
+msgid "This date is on the future. Make sure it is what you expected."
+msgstr "Dátum je v budúcnosti. Overte si či je to želané."
 
 #. custom: web
-#: search_inputs.js:553 search_view.js:205
-msgid " or "
-msgstr "alebo"
-
-#. custom: web
-#: crash_manager.js:170 dialog.js:182 form_common.js:1046 form_upgrade_widgets.js:40 base.xml:0
-msgid "Cancel"
-msgstr "Zrušiť"
-
-#. custom: web
-#: abstract_web_client.js:124 crash_manager.js:123
-msgid "Client Error"
-msgstr "Chyba klienta"
-
-#. custom: web
-#: graph_widget.js:208 graph_widget.js:216
-msgid "Invalid data"
-msgstr "Neplatné dáta"
-
-#. custom: web
-#: data.js:1075
-msgid "Unknown operator %s in domain %s"
-msgstr "Neznámy operátor %s v doméne %s"
-
-#. resource:base_menu_ir_filters
-msgid "User-defined Filters"
-msgstr ""
-
-#. custom: web
-#: form_relational_widgets.js:740
-msgid "View type '%s' is not supported in X2Many."
-msgstr "Typ zobrazenia '%s' nie je podporovaný v X2Many."
-
-#. custom: web
-#: form_relational_widgets.js:1123
-msgid "The o2m record must be saved before an action can be used"
-msgstr "Záznam o2m musí byť uložený než môže byť použitá akcia"
-
-#. custom: web
-#: form_relational_widgets.js:1595
-msgid "The type of the field '%s' must be a many2many field with a relation to 'ir.attachment' model."
-msgstr "Typ poľa '%s' musí byť many2many pole so vzťahom k modelu 'ir.attachment'."
-
-#. custom: web
-#: form_view.js:301
-msgid "The record could not be found in the database."
-msgstr "Záznam nebol nájdený v databáze."
-
-#. custom: web
-#: form_view.js:756
-msgid "The record has been modified, your changes will be discarded. Are you sure you want to leave this page ?"
-msgstr "Práve bol upravovaný záznam, úpravy nebudú uložené. Ste si istí, že chcete opustiť túto stránku?"
-
-#. custom: web
-#: base.xml:0 base.xml:0
-msgid "Uploading..."
-msgstr "Nahrávanie..."
-
-#. custom: web
-#: base_common.xml:0
-msgid "×"
-msgstr ""
-
-#. custom: web
-#: form_widgets.js:862
-msgid "Timezone Mismatch : The timezone of your browser doesn't match the selected one. The time in Hexya is displayed according to your field timezone."
-msgstr ""
-
-#. custom: web
-#: form_view.js:1304
-msgid "Widget type '%s' is not implemented"
-msgstr "Typ miniaplikácie '%s' nie je implementovaný"
-
-#. custom: web
-#: base.xml:0
-msgid "Year"
-msgstr "Rok"
-
-#. custom: web
-#: base.xml:0 base.xml:0
-msgid "Apply"
-msgstr "Mám záujem"
-
-#. custom: web
-#: loading.js:44
-msgid "Loading (%d)"
-msgstr "Nahrávanie (%d)"
-
-#. custom: web
-#: misc.js:13
-msgid "Still loading..."
-msgstr "Stále nahrávam..."
-
-#. custom: web
-#: pivot_view.js:831
-msgid "For Excel compatibility, data cannot be exported if there are more than 256 columns.\\n\\nTip: try to flip axis, filter further or reduce the number of measures."
-msgstr ""
-
-#. custom: web
-#: form_relational_widgets.js:1378 base.xml:0
-msgid "Add"
-msgstr "Pridať"
-
-#. custom: web
-#: form_widgets.js:634 form_widgets.js:640
-msgid "Active"
-msgstr "Aktívny"
-
-#. custom: web
-#: misc.js:14
-msgid "Still loading...<br />Please be patient."
-msgstr "Stále nahrávam...<br />Prosím, buďte trpezliví."
-
-#. custom: web
-#: pyeval.js:991
-msgid "Unknown nonliteral type "
-msgstr "Neznámy nespisovný typ"
-
-#. custom: web
-#: form_widgets.js:641 list_view.js:288
-msgid "Archive"
-msgstr "Archív"
-
-#. custom: web
-#: loading.js:46
-msgid "Loading"
-msgstr "Nahrávanie"
-
-#. custom: web
-#: misc.js:12
-msgid "Loading..."
-msgstr "Nahrávanie..."
-
-#. custom: web
-#: pyeval.js:1027
-msgid "Local evaluation failure\\n%s\\n\\n%s"
-msgstr ""
-
-#. custom: web
-#: search_inputs.js:331
-msgid "No"
-msgstr "Nie"
-
-#. custom: web
-#: base.xml:0
-msgid ""
-"You have updated <strong><t t-esc=\"field.string\"/></strong> (<t t-esc=\"lang\"/>).\n"
-"            <a class=\"oe_field_translate\" t-att-name=\"field.name\" href=\"#\">Update translations</a>"
-msgstr ""
-
-#. custom: web
-#: base.xml:0
-msgid "or"
-msgstr "alebo"
-
-#. custom: web
-#: search_inputs.js:360
-msgid "Search %(field)s at: %(value)s"
-msgstr "Vyhľadať %(field)s v: %(value)s"
-
-#. custom: web
-#: search_inputs.js:451
-msgid "M2O search fields do not currently handle multiple default values"
-msgstr "M2O polia vyhľadávania momentálne nezvládajú viaceré predvolené hodnoty"
-
-#. custom: web
-#: search_menus.js:252
-msgid "Are you sure that you want to remove this filter?"
-msgstr "Ste si istý že chcete odstrániť tento filter?"
-
-#. custom: web
-#: sidebar.js:217
-msgid "Do you really want to delete this attachment ?"
-msgstr "Naozaj chcete zmazať túto prílohu ?"
-
-#. custom: web
-#: utils.js:284
-msgid "Bytes,Kb,Mb,Gb,Tb,Pb,Eb,Zb,Yb"
-msgstr "Bity, Kb,Mb,Gb,Tb,Pb,Eb,Zb,Yb"
-
-#. custom: web
-#: form_common.js:1096 search_menus.js:177
-msgid "Custom Filter"
-msgstr "Upravený filter"
-
-#. custom: web
-#: debug_manager.js:339 base.xml:0
-msgid "Fields View Get"
-msgstr "Zobrazenie polí dostane"
-
-#. custom: web
-#: form_widgets.js:1093
-msgid "The selected file exceed the maximum file size of %s."
-msgstr "Zvolený súbor presahuje maximálnu veľkosť súboru %s."
-
-#. custom: web
-#: form_widgets.js:1114
+#: basic_fields.js:1680
 msgid "There was a problem while uploading your file"
 msgstr "Vyskytol sa problém pri nahrávani vášho súboru"
 
 #. custom: web
-#: priority.js:50
-msgid "Very High"
-msgstr "Veľmi vysoké"
-
-#. custom: web
-#: list_view.js:676
-msgid "You must select at least one record."
-msgstr "Musíte vybrať aspoň jeden záznam."
-
-#. custom: web
-#: crash_manager.js:57
-msgid "Your Hexya session expired. Please refresh the current web page."
+#: special_fields.js:102
+msgid "Set a timezone on your user"
 msgstr ""
 
 #. custom: web
-#: base.xml:0
-msgid ""
-"var message = (d.message !== undefined) ? d.message : d.error.data.message;\n"
-"            d.html_error = context.engine.tools.html_escape(message).replace(/\\n/g, '<br/>');"
+#: basic_fields.js:1955
+msgid "The field is empty, there's nothing to save !"
+msgstr "Pole je prázdne, nie je v ňom nič na uloženie !"
+
+#. custom: web
+#: domain_selector.js:474
+msgid "This domain is not supported."
+msgstr "Nepodporovaná doména."
+
+#. custom: web
+#: base.xml:0 name_and_signature.xml:0
+msgid "Styles"
 msgstr ""
 
 #. custom: web
-#: search_menus.js:91
-msgid "Filter with same name already exists."
-msgstr "Filter s rovnakým názvom už existuje."
+#: web_calendar.xml:0
+msgid "Summary:"
+msgstr "Zhrnutie:"
 
 #. custom: web
-#: search_inputs.js:698
-msgid "Group By"
-msgstr "Zoskupiť podľa..."
+#: basic_controller.js:552 attach_document.js:64
+msgid "The following fields are invalid:"
+msgstr "Následujúce polia sú nesprávne:"
 
 #. custom: web
-#: utils.js:143
-msgid "Node [%s] is not a JSONified XML node"
-msgstr ""
-
-#. custom: web
-#: change_password.js:14 base.xml:0
-msgid "Change Password"
-msgstr "Zmeniť heslo"
-
-#. custom: web
-#: progress_bar.js:78
-msgid "Only Integer Value should be valid."
-msgstr "Iba celočíselná hodnota by mala byť platná."
-
-#. custom: web
-#: search_menus.js:251
+#: favorite_menu.js:117
 msgid "This filter is global and will be removed for everybody if you continue."
 msgstr "Tento filter je globálny, a bude odstránený pre všetkých, ak budete pokračovať."
 
 #. custom: web
-#: utils.js:179
-msgid "Could not serialize XML"
-msgstr "Nebolo možné serializovať XML"
-
-#. custom: web
-#: utils.js:302
-msgid "kMGTPE"
+#: name_and_signature.xml:0
+msgid "This file is invalid. Please select an image."
 msgstr ""
-
-#. custom: web
-#: form_common.js:1049 base.xml:0
-msgid "Create"
-msgstr "Vytvoriť"
-
-#. custom: web
-#: base.xml:0 base.xml:0 base.xml:0
-msgid "?"
-msgstr ""
-
-#. custom: web
-#: form_common.js:868 base.xml:0 base.xml:0
-msgid "Discard"
-msgstr "Vyradiť"
-
-#. custom: web
-#: view_manager.js:437
-msgid "Failed to evaluate search criterions"
-msgstr "Nepodarilo sa vyhodnotiť kritériá vyhľadávania"
-
-#. custom: web
-#: base.xml:0 base.xml:0
-msgid "Measures <span class=\"caret\"/>"
-msgstr ""
-
-#. custom: web
-#: form_relational_widgets.js:153 form_relational_widgets.js:921 form_relational_widgets.js:1104 form_relational_widgets.js:1321
-msgid "Open: "
-msgstr "Otvoriť:"
-
-#. custom: web
-#: pivot_view.js:526 pivot_view.js:555
-msgid "Total"
-msgstr "Celkom"
-
-#. custom: web
-#: graph_widget.js:79 list_view.js:1379 list_view.js:1385 pivot_view.js:508
-msgid "Undefined"
-msgstr "Nedefinované"
 
 #. custom: web
 #: base.xml:0
 msgid ""
-"Unhandled widget\n"
-"    <t t-js=\"dict\">console.warn('Unhandled widget', dict.widget);</t>"
+"Try to add some records, or make sure that there is no\n"
+"                active filter in the search bar."
 msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Type:"
+msgstr "Typ:"
+
+#. custom: web
+#: relational_fields.js:2002
+msgid "The type of the field '%s' must be a many2many field with a relation to 'ir.attachment' model."
+msgstr "Typ poľa '%s' musí byť many2many pole so vzťahom k modelu 'ir.attachment'."
+
+#. custom: web
+#: debug.xml:0
+msgid "View Metadata"
+msgstr "Zobraziť metadáta"
+
+#. custom: web
+#: special_fields.js:93
+msgid "Timezone Mismatch : This timezone is different from that of your browser.\\nPlease, set the same timezone as your browser's to avoid time discrepancies in your system."
+msgstr ""
+
+#. custom: web
+#: web_calendar.xml:0
+msgid "Today"
+msgstr "Dnes"
+
+#. custom: web
+#: kanban.xml:0
+msgid "Unarchive All"
+msgstr "Odarchivovať všetko"
+
+#. custom: web
+#: form_controller.js:201 list_controller.js:171
+msgid "Unarchive"
+msgstr "Odarchivovať"
+
+#. custom: web
+#: calendar_model.js:606 graph_model.js:274 graph_renderer.js:217 pivot_model.js:1443
+msgid "Undefined"
+msgstr "Nedefinované"
+
+#. custom: web
+#: crash_manager.js:105
+msgid "Unknown CORS error"
+msgstr "Neznáma chyba CORS"
+
+#. custom: web
+#: debug.xml:0
+msgid "Toggle Timelines"
+msgstr "Prepnúť çasové osi"
+
+#. custom: web
+#: py_utils.js:302
+msgid "Unknown nonliteral type "
+msgstr "Neznámy nespisovný typ"
+
+#. custom: web
+#: data.js:751
+msgid "Unnamed"
+msgstr "Nepomenovaný"
+
+#. custom: web
+#: base.xml:0
+msgid "Update to:"
+msgstr ""
+
+#. custom: web
+#: config_settings.js:45
+msgid "Unsaved changes"
+msgstr ""
+
+#. custom: web
+#: pivot_view.js:116
+msgid "Untitled"
+msgstr "Nenazvaný"
+
+#. custom: web
+#: upgrade_fields.js:68
+msgid "Upgrade now"
+msgstr "Aktualizovať teraz"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Upload your file"
+msgstr "Nahrajte váš súbor"
+
+#. custom: web
+#: base.xml:0
+msgid "Uploading"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0 base.xml:0
+msgid "Uploading..."
+msgstr "Nahrávanie..."
 
 #. field:Filter.User
 #. resource:base_ir_filters_view_search
@@ -1231,66 +1656,27 @@ msgstr ""
 msgid "User"
 msgstr ""
 
-#. custom: web
-#: base.xml:0
-msgid "Update translations"
+#. resource:base_menu_ir_filters
+msgid "User-defined Filters"
 msgstr ""
 
 #. custom: web
 #: base.xml:0
-msgid "Upload your file"
-msgstr "Nahrajte váš súbor"
+msgid "Use by default"
+msgstr "Používať ako predvolené"
 
 #. custom: web
 #: base.xml:0
-msgid "View Fields"
-msgstr "Zobraziť polia"
+msgid "Widget:"
+msgstr "Miniaplikácia:"
 
 #. custom: web
 #: base.xml:0
-msgid "Whoops, you shouldn't have come up to here..."
-msgstr ""
+msgid "Year"
+msgstr "Rok"
 
 #. custom: web
 #: base.xml:0
-msgid "XML ID:"
-msgstr ""
-
-#. custom: web
-#: base.xml:0
-msgid "overflow-x: hidden"
-msgstr ""
-
-#. custom: web
-#: data.js:1121
-msgid "Unsupported operator %s in domain %s"
-msgstr "Nepodporovaný operátor %s v doméne %s"
-
-#. custom: web
-#: view_manager.js:223 search_menus.js:84 search_menus.js:91
-msgid "Error"
-msgstr "Chyba"
-
-#. custom: web
-#: data.js:1138
-msgid "Unnamed"
-msgstr ""
-
-#. custom: web
-#: form_upgrade_widgets.js:34
-msgid "Upgrade now"
-msgstr "Aktualizovať teraz"
-
-#. custom: web
-#: base.xml:0
-msgid ""
-"var $div = $(document.createElement('div')).attr('t-if', this.attr('t-if')).addClass('o_form_field_monetary');\n"
-"        this.clone(true).appendTo($div);\n"
-"        this.replaceWith($div);"
-msgstr ""
-
-#. custom: web
-#: base_common.xml:0
 msgid ""
 "[<t t-esc=\"option[0]\"/>]\n"
 "                    <t t-if=\"option[1]\"> - </t>\n"
@@ -1298,57 +1684,205 @@ msgid ""
 msgstr ""
 
 #. custom: web
-#: form_common.js:868 form_view.js:1127 data_export.js:202
-msgid "Close"
-msgstr "Zatvoriť"
+#: basic_fields.js:2635
+msgid "Wrong value entered!"
+msgstr "Zadaná zlá hodnota!"
 
 #. custom: web
-#: search_inputs.js:192 search_inputs.js:211 search_inputs.js:402
-msgid "Search %(field)s for: %(value)s"
-msgstr "Vyhľadať %(field)s pre: %(value)s"
+#: debug.xml:0
+msgid "View Fields"
+msgstr "Zobraziť polia"
 
 #. custom: web
-#: graph_view.js:86 graph_widget.js:21 pivot_view.js:182 base.xml:0 base.xml:0
-msgid "Count"
-msgstr ""
+#: debug.xml:0
+msgid "XML ID:"
+msgstr "XML ID:"
 
 #. custom: web
-#: list_view.js:1086
-msgid "Unknown m2m command %s"
-msgstr "Neznámy m2m príkaz %s"
-
-#. custom: web
-#: search_inputs.js:230
-msgid "not a valid integer"
-msgstr "nie je platné celočíslo"
-
-#. custom: web
-#: sidebar.js:131
-msgid "You must choose at least one record."
-msgstr "Musíte zvoliť aspoň jeden záznam."
-
-#. custom: web
-#: search_inputs.js:245
-msgid "not a valid number"
-msgstr "nie je platné číslo"
-
-#. custom: web
-#: form_widgets.js:643 list_view.js:289
-msgid "Unarchive"
-msgstr "Odarchivovať"
-
-#. custom: web
-#: crash_manager.js:107 form_view.js:761 list_view.js:676 sidebar.js:131
+#: basic_controller.js:88 basic_controller.js:343 favorite_menu.js:122 list_renderer.js:481
 msgid "Warning"
 msgstr "Varovanie"
 
 #. custom: web
-#: form_common.js:874 base.xml:0 base.xml:0 base.xml:0
-msgid "Save"
-msgstr "Uložiť"
+#: menu.xml:0
+msgid "Windows/Linux"
+msgstr "Windows/Linux"
 
 #. custom: web
-#: base_common.xml:0
-msgid "Widget:"
-msgstr "Miniaplikácia:"
+#: model_field_selector.js:493
+msgid "You cannot follow relations for this field chain construction"
+msgstr "Nemôžete sledovať vzťahy pre túto konštrukciu reťazí poľa"
+
+#. custom: web
+#: crash_manager.js:376
+msgid "Your Hexya session expired. Please refresh the current web page."
+msgstr ""
+
+#. custom: web
+#: basic_controller.js:341
+msgid "You need to save this new record before editing the translation. Do you want to proceed?"
+msgstr ""
+
+#. custom: web
+#: relational_fields.js:73
+msgid "You are creating a new %s, are you sure it does not exist yet?"
+msgstr "Vytvárate nové %s, ste si istý že ešte neexestuje?"
+
+#. custom: web
+#: misc.js:16
+msgid "You may not believe it,<br />but the application is actually loading..."
+msgstr "Možno tomu neuveríte,<br />ale aplikácia sa v skutočnosti načítava..."
+
+#. custom: web
+#: name_and_signature.js:446
+msgid "Your name"
+msgstr ""
+
+#. custom: web
+#: search_bar_autocomplete_sources.js:294
+msgid "Yes"
+msgstr "Áno"
+
+#. custom: web
+#: base.xml:0
+msgid "all records"
+msgstr "všetky záznamy"
+
+#. custom: web
+#: form_view.xml:0
+msgid "e"
+msgstr ""
+
+#. custom: web
+#: document_viewer.xml:0
+msgid "false"
+msgstr ""
+
+#. custom: web
+#: domain_selector.js:865
+msgid "is"
+msgstr "je"
+
+#. custom: web
+#: menu.xml:0 menu.xml:0
+msgid "c"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"is\n"
+"            <t t-if=\"widget.operator === '=' &amp;&amp; widget.value === false || widget.operator === '!=' &amp;&amp; widget.value === true\">not</t>\n"
+"            set"
+msgstr ""
+
+#. custom: web
+#: document_viewer.xml:0
+msgid "modal o_modal_fullscreen o_document_viewer o_responsive_document_viewer"
+msgstr ""
+
+#. custom: web
+#: domain_selector.js:866
+msgid "is not"
+msgstr "nie je"
+
+#. custom: web
+#: calendar_model.js:429 base.xml:0 web_calendar.xml:0
+msgid "Week"
+msgstr "Týždeň"
+
+#. custom: web
+#: menu.xml:0 menu.xml:0
+msgid "a"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "not"
+msgstr "nie"
+
+#. custom: web
+#: form_view.xml:0 form_view.xml:0
+msgid "d"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0 menu.xml:0
+msgid "j"
+msgstr ""
+
+#. custom: web
+#: search_bar_autocomplete_sources.js:218
+msgid "not a valid integer"
+msgstr "nie je platné celočíslo"
+
+#. custom: web
+#: menu.xml:0 menu.xml:0
+msgid "k"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0 menu.xml:0
+msgid "l"
+msgstr ""
+
+#. custom: web
+#: search_bar_autocomplete_sources.js:229
+msgid "not a valid number"
+msgstr "nie je platné číslo"
+
+#. custom: web
+#: base.xml:0
+msgid "of:"
+msgstr "z:"
+
+#. custom: web
+#: domain_selector.js:676
+msgid "not set (false)"
+msgstr "nenastavené"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "overflow-x: hidden"
+msgstr ""
+
+#. custom: web
+#: kanban.xml:0
+msgid "●"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "of the following rules:"
+msgstr "z nasledovných pravidiel:"
+
+#. custom: web
+#: menu.xml:0 menu.xml:0
+msgid "n"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "or"
+msgstr "alebo"
+
+#. custom: web
+#: domain_selector.js:676
+msgid "set (true)"
+msgstr "nastaviť (true)"
+
+#. custom: web
+#: base.xml:0 dialog.xml:0
+msgid "×"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0 menu.xml:0
+msgid "p"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0 menu.xml:0
+msgid "s"
+msgstr ""
 

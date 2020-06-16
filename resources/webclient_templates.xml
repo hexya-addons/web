@@ -282,6 +282,7 @@
 
             <script type="text/javascript" src="/static/web/src/js/report/utils.js"> </script>
             <script type="text/javascript" src="/static/web/src/js/report/client_action.js"> </script>
+            <script type="text/javascript" src="/static/web/src/js/config_settings.js"> </script>
         </template>
 
         <template id="web._assets_frontend_minimal_js">
