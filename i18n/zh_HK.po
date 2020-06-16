@@ -1,0 +1,1888 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_HK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. custom: web
+#: base.xml:0
+msgid "\"<t t-esc=\"v\"/>\""
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "\"<t t-esc=\"widget.value\"/>\""
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "# Code editor"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "(no string)"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ","
+msgstr ""
+
+#. field:Filter.Action
+msgid "Action"
+msgstr ""
+
+#. custom: web
+#: add_new_favorite_menu.js:81
+msgid "A name for your favorite is required."
+msgstr ""
+
+#. field:Filter.Active
+msgid "Active"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "(nolabel)"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "-"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ":"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"@font-face {\n"
+"                    font-family: \"font_sign\";\n"
+"                    src: url(data:font/ttf;base64,<t t-esc=\"font\"/>) format(\"woff\");\n"
+"                    font-weight: normal;\n"
+"                    font-style: normal;\n"
+"                }"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "ALL"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "ANY"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Action ID:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Add Custom Filter"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Add Custom Group"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Add..."
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "All users"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"Among the <t t-raw=\"changes.nbRecords\"/> selected records,\n"
+"                <t t-raw=\"changes.nbValidRecords\"/> are valid for this update.<br/>"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Attachment :"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Available fields"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Based On"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"Button\n"
+"            <t t-if=\"node.attrs.string\">: </t>\n"
+"            <t t-if=\"!node.attrs.string\"> (no string)</t>"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Button Type:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "CLEAR"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Change default:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Clear Signature"
+msgstr ""
+
+#. custom: web
+#: calendar_model.js:548
+msgid " [Me]"
+msgstr ""
+
+#. custom: web
+#: calendar_renderer.js:80
+msgid "Add %s"
+msgstr ""
+
+#. custom: web
+#: crash_manager.js:106
+msgid "An unknown CORS error occured. The error probably originates from a JavaScript file served from a different origin. (Opening your browser console might give you a hint on the error.)"
+msgstr ""
+
+#. custom: web
+#: colorpicker_dialog.xml:0
+msgid "Blue"
+msgstr ""
+
+#. field:Filter.Context
+msgid "Context"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Compare To"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Condition:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Confirm New Password"
+msgstr ""
+
+#. custom: web
+#: crash_manager.js:268
+msgid "Copied !"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "(change)"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Activate Assets Debugging"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0
+msgid "$(this).addClass(\"dropdown-menu-right\");"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Activate Tests Assets Debugging"
+msgstr ""
+
+#. custom: web
+#: dialog.js:382
+msgid "Alert"
+msgstr ""
+
+#. custom: web
+#: crash_manager.xml:0
+msgid "An error occurred"
+msgstr ""
+
+#. custom: web
+#: kanban_column.js:378
+msgid "Are you sure that you want to archive all the records from this column?"
+msgstr ""
+
+#. custom: web
+#: favorite_menu.js:118
+msgid "Are you sure that you want to remove this filter?"
+msgstr ""
+
+#. custom: web
+#: notification.xml:0
+msgid "&amp;times;"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "(count)"
+msgstr ""
+
+#. custom: web
+#: graph_renderer.js:124
+msgid "..."
+msgstr ""
+
+#. custom: web
+#: kanban.xml:0
+msgid "?"
+msgstr ""
+
+#. custom: web
+#: kanban.xml:0
+msgid "Archive All"
+msgstr ""
+
+#. custom: web
+#: signature.js:47
+msgid "Adopt and Sign"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Any"
+msgstr ""
+
+#. custom: web
+#: form_controller.js:193
+msgid "Are you sure that you want to archive this record?"
+msgstr ""
+
+#. custom: web
+#: kanban_column.js:316
+msgid "Are you sure that you want to remove this column ?"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Become Superuser"
+msgstr ""
+
+#. custom: web
+#: name_and_signature.xml:0
+msgid "Clear"
+msgstr ""
+
+#. custom: web
+#: utils.js:353
+msgid "Bytes|Kb|Mb|Gb|Tb|Pb|Eb|Zb|Yb"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Clear Events"
+msgstr ""
+
+#. custom: web
+#: time.js:204
+msgid "'%s' is not convertible to date, datetime nor time"
+msgstr ""
+
+#. custom: web
+#: kanban.xml:0
+msgid "Add a Column"
+msgstr ""
+
+#. custom: web
+#: kanban_renderer.js:288
+msgid "Column %s"
+msgstr ""
+
+#. custom: web
+#: list_controller.js:165
+msgid "Are you sure that you want to archive all the selected records?"
+msgstr ""
+
+#. custom: web
+#: name_and_signature.xml:0
+msgid ""
+"@font-face {\n"
+"                        font-family: \"font\";\n"
+"                        src: url(data:font/ttf;base64,<t t-esc=\"font\"/>) format(\"woff\");\n"
+"                        font-weight: normal;\n"
+"                        font-style: normal;\n"
+"                    }"
+msgstr ""
+
+#. custom: web
+#: relational_fields.js:1912
+msgid "Add: "
+msgstr ""
+
+#. custom: web
+#: signature.js:41
+msgid "Adopt Your Signature"
+msgstr ""
+
+#. custom: web
+#: basic_fields.js:1664
+msgid "File upload"
+msgstr ""
+
+#. custom: web
+#: time.js:192
+msgid "'%s' is not a correct date, datetime nor time"
+msgstr ""
+
+#. custom: web
+#: kanban_record.js:533
+msgid "Card color: %s"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Context:"
+msgstr ""
+
+#. custom: web
+#: model_field_selector.js:432
+msgid "The field chain is not valid. Did you maybe use a non-existing field name or followed a non-relational field?"
+msgstr ""
+
+#. custom: web
+#: search_bar_autocomplete_sources.js:229
+msgid "not a valid number"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Copy Text"
+msgstr ""
+
+#. field:Filter.IsDefault
+msgid "Default filter"
+msgstr ""
+
+#. custom: web
+#: ajax.js:311
+msgid "Could not connect to the server"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Created by :"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Default:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Documentation"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Domain:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Edit Domain"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Export Format:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "FILTER"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Fields to export"
+msgstr ""
+
+#. field:Filter.Name
+#. resource:base_ir_filters_view_search
+msgid "Filter Name"
+msgstr ""
+
+#. custom: web
+#: add_new_favorite_menu.js:89
+msgid "Filter with same name already exists."
+msgstr ""
+
+#. resource:base_actions_ir_filters_view
+msgid "Filters"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "Filters created by myself"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "Filters shared with all users"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "Filters visible only for one user"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "Group By"
+msgstr ""
+
+#. field:Filter.ID
+msgid "ID"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"Get this feature and much more with Hexya Enterprise!\n"
+"            <ul class=\"list-unstyled\">\n"
+"                <li><i class=\"fa fa-check\"></i> Access to all Enterprise Apps</li>\n"
+"                <li><i class=\"fa fa-check\"></i> New design</li>\n"
+"                <li><i class=\"fa fa-check\"></i> Mobile support</li>\n"
+"                <li><i class=\"fa fa-check\"></i> Upgrade to future versions</li>\n"
+"                <li><i class=\"fa fa-check\"></i> Bugfixes guarantee</li>\n"
+"                <li><a href=\"http://www.hexya.io/editions?utm_source=db&amp;utm_medium=enterprise\" target=\"_blank\"><i class=\"fa fa-plus\"></i> And more</a></li>\n"
+"            </ul>"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Hide in Kanban"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"Hit ENTER to\n"
+"            <t t-esc=\"title\"></t>"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"Hit ENTER to CREATE<br/>\n"
+"            Hit DOWN to navigate to the list below"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"Hit ENTER to SAVE<br/>\n"
+"            Hit ESCAPE to DISCARD"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "I want to update data (import-compatible export)"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Log out"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Match <strong>all records</strong>"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Match records with"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Match records with the following rule:"
+msgstr ""
+
+#. field:Filter.ResModel
+#. resource:base_ir_filters_view_search
+msgid "Model"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Method:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Modified by :"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "My filters"
+msgstr ""
+
+#. help:Filter.Action
+msgid "The menu action this filter applies to. When left empty the filter applies to all menus for this model."
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "My hexya.io account"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "NONE"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "New Password"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "New template"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "No data to display"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "None"
+msgstr ""
+
+#. custom: web
+#: crash_manager.js:353
+msgid "Hexya Warning"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Old Password"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "On change:"
+msgstr ""
+
+#. custom: web
+#: basic_fields.js:2635
+msgid "Only Integer or Float Value should be valid."
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Only you"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"Please update translations of :\n"
+"        <t t-foreach=\"fields\" t-as=\"field\">\n"
+"            <strong><a class=\"oe_field_translate\" t-att-name=\"field\" href=\"#\"><t t-esc=\"field_value.string\"/><t t-if=\"field_index &lt; _.size(fields)-1\">, </t></a></strong>\n"
+"        </t>"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Preferences"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Quarter"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Range"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Relation:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "SEE RESULT"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Save Current Search"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Save as :"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Select Signature Style"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Select a model to add a filter."
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "Shared"
+msgstr ""
+
+#. custom: web
+#: colorpicker_dialog.xml:0
+msgid "Saturation %"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Selection:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Share with all users <span class=\"fa fa-users\" role=\"img\" aria-label=\"Users\" title=\"Users\"/>"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Size:"
+msgstr ""
+
+#. custom: web
+#: basic_model.js:690
+msgid "New"
+msgstr ""
+
+#. custom: web
+#: calendar_renderer.js:149
+msgid "Do you really want to delete this filter from favorites ?"
+msgstr ""
+
+#. custom: web
+#: basic_fields.js:1680
+msgid "File Upload"
+msgstr ""
+
+#. custom: web
+#: calendar_model.js:557
+msgid "Everybody's calendars"
+msgstr ""
+
+#. custom: web
+#: calendar_model.js:557
+msgid "Everything"
+msgstr ""
+
+#. custom: web
+#: colorpicker_dialog.xml:0
+msgid "Green"
+msgstr ""
+
+#. custom: web
+#: control_panel_model.js:290
+msgid "Failed to evaluate search criterions"
+msgstr ""
+
+#. custom: web
+#: crash_manager.js:251
+msgid "Hexya Error"
+msgstr ""
+
+#. custom: web
+#: crash_manager.js:376
+msgid "Hexya Session Expired"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Tap on the list to change company"
+msgstr ""
+
+#. custom: web
+#: basic_fields.js:1955
+msgid "The field is empty, there's nothing to save !"
+msgstr ""
+
+#. custom: web
+#: colorpicker_dialog.xml:0
+msgid "Hue"
+msgstr ""
+
+#. custom: web
+#: data_export.js:472
+msgid "Please enter save field list name"
+msgstr ""
+
+#. custom: web
+#: basic_fields.js:1955
+msgid "Save As..."
+msgstr ""
+
+#. custom: web
+#: crash_manager.js:243
+msgid "Something went wrong !"
+msgstr ""
+
+#. custom: web
+#: data_export.js:441
+msgid "Do you really want to delete this export template?"
+msgstr ""
+
+#. field:Filter.Sort
+msgid "Sort"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Special:"
+msgstr ""
+
+#. custom: web
+#: calendar_quick_create.js:81
+msgid "Summary"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Support"
+msgstr ""
+
+#. help:Filter.User
+msgid "The user this filter is private to. When left empty the filter is public and available to all users."
+msgstr ""
+
+#. custom: web
+#: colorpicker_dialog.xml:0
+msgid "Lightness %"
+msgstr ""
+
+#. custom: web
+#: basic_fields.js:3096
+msgid "Selected records"
+msgstr ""
+
+#. custom: web
+#: basic_controller.js:84
+msgid "The record has been modified, your changes will be discarded. Do you want to proceed?"
+msgstr ""
+
+#. custom: web
+#: basic_fields.js:1663
+msgid "The selected file exceed the maximum file size of %s."
+msgstr ""
+
+#. custom: web
+#: data_export.js:679
+msgid "No match found."
+msgstr ""
+
+#. custom: web
+#: colorpicker_dialog.xml:0
+msgid "Opacity %"
+msgstr ""
+
+#. custom: web
+#: data_export.js:156
+msgid "Please select fields to export..."
+msgstr ""
+
+#. custom: web
+#: data_export.js:190
+msgid "Please select fields to save export list..."
+msgstr ""
+
+#. custom: web
+#: basic_fields.js:1680
+msgid "There was a problem while uploading your file"
+msgstr ""
+
+#. custom: web
+#: calendar_quick_create.js:82
+msgid "The following field is invalid:"
+msgstr ""
+
+#. custom: web
+#: colorpicker_dialog.xml:0
+msgid "Red"
+msgstr ""
+
+#. custom: web
+#: crash_manager.js:387
+msgid "Request timeout"
+msgstr ""
+
+#. custom: web
+#: data_export.js:38
+msgid "Export Data"
+msgstr ""
+
+#. custom: web
+#: crash_manager.js:388
+msgid "The operation was interrupted. This usually means that the current operation is taking too much time."
+msgstr ""
+
+#. custom: web
+#: crash_manager.xml:0
+msgid "Please use the copy button to report the error to your support service."
+msgstr ""
+
+#. custom: web
+#: crash_manager.xml:0
+msgid "See details"
+msgstr ""
+
+#. custom: web
+#: data_export.js:142
+msgid "Remove field"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Template:"
+msgstr ""
+
+#. custom: web
+#: date_picker.js:205
+msgid "This date is on the future. Make sure it is what you expected."
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Creation Date:"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Creation User:"
+msgstr ""
+
+#. custom: web
+#: domain_selector_dialog.js:35
+msgid "Domain"
+msgstr ""
+
+#. custom: web
+#: domain_selector.js:538
+msgid "Domain error"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Edit Action"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Toggle Timelines"
+msgstr ""
+
+#. custom: web
+#: kanban_column.js:329
+msgid "Edit Column"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Edit ControlPanelView"
+msgstr ""
+
+#. custom: web
+#: kanban.xml:0
+msgid "Edit Stage"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Edit View: <t t-esc=\"view.displayName\"/>"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0
+msgid "Create a new record"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0
+msgid "Description"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0
+msgid "Discard a record modification"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0
+msgid "Edit a record"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"Try to add some records, or make sure that there is no\n"
+"                active filter in the search bar."
+msgstr ""
+
+#. custom: web
+#: debug_manager_backend.js:358 view_dialogs.js:112 data_export.js:41 domain_selector_dialog.js:23
+msgid "Close"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Modifiers:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Type:"
+msgstr ""
+
+#. custom: web
+#: crash_manager.js:105
+msgid "Unknown CORS error"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Update to:"
+msgstr ""
+
+#. custom: web
+#: data.js:751
+msgid "Unnamed"
+msgstr ""
+
+#. custom: web
+#: kanban.xml:0
+msgid "Esc to discard"
+msgstr ""
+
+#. custom: web
+#: dialog.js:426
+msgid "I am sure about this."
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "ID:"
+msgstr ""
+
+#. custom: web
+#: debug_manager_backend.js:94
+msgid "JS Mobile Tests"
+msgstr ""
+
+#. custom: web
+#: debug_manager_backend.js:83
+msgid "JS Tests"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Latest Modification Date:"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Latest Modification by:"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Leave the Developer Tools"
+msgstr ""
+
+#. custom: web
+#: kanban.xml:0
+msgid "Fold"
+msgstr ""
+
+#. custom: web
+#: kanban.xml:0
+msgid "Load more... (<t t-esc=\"widget.remaining\"/> remaining)"
+msgstr ""
+
+#. custom: web
+#: loading.js:59
+msgid "Loading"
+msgstr ""
+
+#. custom: web
+#: loading.js:57
+msgid "Loading (%d)"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0
+msgid "Mac"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Manage Attachments"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Manage Filters"
+msgstr ""
+
+#. custom: web
+#: debug_manager_backend.js:256
+msgid "Metadata (%s)"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "No Update:"
+msgstr ""
+
+#. custom: web
+#: debug_manager_backend.js:221
+msgid "No attachment available"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Open View"
+msgstr ""
+
+#. custom: web
+#: debug_manager_backend.js:240
+msgid "No metadata available"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0
+msgid "Open the next record"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0
+msgid "Open the previous record"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Regenerate Assets Bundles"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Run Click Everywhere Test"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0
+msgid "Open to list view"
+msgstr ""
+
+#. custom: web
+#: form_view.xml:0
+msgid "Quick actions"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Run JS Mobile Tests"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Run JS Tests"
+msgstr ""
+
+#. custom: web
+#: debug_manager_backend.js:356
+msgid "Set Default"
+msgstr ""
+
+#. custom: web
+#: kanban.xml:0 kanban.xml:0
+msgid "Add"
+msgstr ""
+
+#. custom: web
+#: misc.js:12
+msgid "Loading..."
+msgstr ""
+
+#. custom: web
+#: kanban_record.js:430
+msgid "Remove Cover Image"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0
+msgid "Open to kanban view"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Set Defaults"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0
+msgid "Save a record"
+msgstr ""
+
+#. custom: web
+#: relational_fields.js:630
+msgid "No results to show..."
+msgstr ""
+
+#. custom: web
+#: debug_manager_backend.js:359
+msgid "Save default"
+msgstr ""
+
+#. custom: web
+#: kanban.xml:0
+msgid "See examples"
+msgstr ""
+
+#. custom: web
+#: kanban_record.js:406
+msgid "Set a Cover Image"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0
+msgid "Shortcuts"
+msgstr ""
+
+#. custom: web
+#: domain_selector.js:676
+msgid "not set (false)"
+msgstr ""
+
+#. custom: web
+#: misc.js:13
+msgid "Still loading..."
+msgstr ""
+
+#. custom: web
+#: crash_manager.js:376
+msgid "Your Hexya session expired. Please refresh the current web page."
+msgstr ""
+
+#. custom: web
+#: special_fields.js:102
+msgid "Set a timezone on your user"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 name_and_signature.xml:0
+msgid "Auto"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 name_and_signature.xml:0
+msgid "By clicking Adopt and Sign, I agree that the chosen signature/initials will be a valid electronic representation of my hand-written signature/initials for all purposes when it is used on documents, including legally binding contracts."
+msgstr ""
+
+#. custom: web
+#: utils.js:697
+msgid "Could not serialize XML"
+msgstr ""
+
+#. custom: web
+#: config_settings.js:45
+msgid "Unsaved changes"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "View Fields"
+msgstr ""
+
+#. custom: web
+#: misc.js:18
+msgid "Maybe you should consider reloading the application by pressing F5..."
+msgstr ""
+
+#. custom: web
+#: relational_fields.js:43
+msgid "Create a %s"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "all records"
+msgstr ""
+
+#. custom: web
+#: graph_view.js:44 graph_view.js:46 pivot_view.js:49 pivot_view.js:61 base.xml:0 base.xml:0
+msgid "Count"
+msgstr ""
+
+#. custom: web
+#: relational_fields.js:624
+msgid "Create and Edit..."
+msgstr ""
+
+#. custom: web
+#: relational_fields.js:391
+msgid "Create: "
+msgstr ""
+
+#. custom: web
+#: view_dialogs.js:126
+msgid "Save & Close"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 web_calendar.xml:0
+msgid "Day"
+msgstr ""
+
+#. custom: web
+#: misc.js:15
+msgid "Don't leave yet,<br />it's still loading..."
+msgstr ""
+
+#. custom: web
+#: calendar_quick_create.js:49 base.xml:0 form_view.xml:0 kanban.xml:0 web_calendar.xml:0
+msgid "Edit"
+msgstr ""
+
+#. custom: web
+#: model_field_selector.js:431
+msgid "Invalid field chain"
+msgstr ""
+
+#. custom: web
+#: model_field_selector.js:493
+msgid "Relation not allowed"
+msgstr ""
+
+#. custom: web
+#: dialog.js:397 dialog.js:451 signature.js:50 upgrade_fields.js:74 crash_manager.js:363 calendar_quick_create.js:55 kanban_column.js:310 list_confirm_dialog.js:39 view_dialogs.js:435 base.xml:0
+msgid "Cancel"
+msgstr ""
+
+#. custom: web
+#: form_view.xml:0
+msgid "e"
+msgstr ""
+
+#. custom: web
+#: change_password.js:26 base.xml:0
+msgid "Change Password"
+msgstr ""
+
+#. custom: web
+#: pivot_controller.js:131
+msgid "For Excel compatibility, data cannot be exported if there are more than 256 columns.\\n\\nTip: try to flip axis, filter further or reduce the number of measures."
+msgstr ""
+
+#. custom: web
+#: crash_manager.js:271 add_new_favorite_menu.js:81 add_new_favorite_menu.js:89
+msgid "Error"
+msgstr ""
+
+#. custom: web
+#: name_and_signature.xml:0
+msgid "Full Name"
+msgstr ""
+
+#. custom: web
+#: crash_manager.js:104 crash_manager.js:116 crash_manager.js:129 crash_manager.js:296
+msgid "Hexya Client Error"
+msgstr ""
+
+#. custom: web
+#: relational_fields.js:723 calendar_controller.js:346 form_controller.js:722 form_controller.js:744 view_dialogs.js:149
+msgid "Open: "
+msgstr ""
+
+#. custom: web
+#: model_field_selector.js:493
+msgid "You cannot follow relations for this field chain construction"
+msgstr ""
+
+#. custom: web
+#: report.xml:0
+msgid "Print"
+msgstr ""
+
+#. custom: web
+#: search_bar_autocomplete_sources.js:144
+msgid "Search %(field)s for: %(value)s"
+msgstr ""
+
+#. custom: web
+#: special_fields.js:93
+msgid "Timezone Mismatch : This timezone is different from that of your browser.\\nPlease, set the same timezone as your browser's to avoid time discrepancies in your system."
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Field:"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0
+msgid "Alt"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Uploading"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Use by default"
+msgstr ""
+
+#. custom: web
+#: misc.js:14
+msgid "Still loading...<br />Please be patient."
+msgstr ""
+
+#. custom: web
+#: domain_selector.js:585
+msgid "Syntax error"
+msgstr ""
+
+#. custom: web
+#: misc.js:17
+msgid "Take a minute to get a coffee,<br />because it's loading..."
+msgstr ""
+
+#. custom: web
+#: upgrade_fields.js:85
+msgid "Hexya Enterprise"
+msgstr ""
+
+#. custom: web
+#: user_menu.js:123
+msgid "Keyboard Shortcuts"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"[<t t-esc=\"option[0]\"/>]\n"
+"                    <t t-if=\"option[1]\"> - </t>\n"
+"                    <t t-esc=\"option[1]\"/>"
+msgstr ""
+
+#. custom: web
+#: domain_selector.js:474
+msgid "This domain is not supported."
+msgstr ""
+
+#. custom: web
+#: search_bar_autocomplete_sources.js:295
+msgid "No"
+msgstr ""
+
+#. custom: web
+#: utils.js:470
+msgid "Node [%s] is not a JSONified XML node"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0
+msgid "Control"
+msgstr ""
+
+#. resource:base_menu_ir_filters
+msgid "User-defined Filters"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 name_and_signature.xml:0
+msgid "Draw"
+msgstr ""
+
+#. custom: web
+#: debug_manager_backend.js:395 debug.xml:0
+msgid "Fields View Get"
+msgstr ""
+
+#. custom: web
+#: basic_fields.js:1822 basic_fields.js:2220 signature.js:222
+msgid "Image"
+msgstr ""
+
+#. custom: web
+#: domain_selector.js:865
+msgid "is"
+msgstr ""
+
+#. custom: web
+#: favorite_menu.js:117
+msgid "This filter is global and will be removed for everybody if you continue."
+msgstr ""
+
+#. custom: web
+#: relational_fields.js:73
+msgid "You are creating a new %s, are you sure it does not exist yet?"
+msgstr ""
+
+#. custom: web
+#: name_and_signature.js:446
+msgid "Your name"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 name_and_signature.xml:0
+msgid "Load"
+msgstr ""
+
+#. custom: web
+#: search_bar_autocomplete_sources.js:335
+msgid "Search %(field)s at: %(value)s"
+msgstr ""
+
+#. custom: web
+#: web_calendar.xml:0
+msgid "Today"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Measures"
+msgstr ""
+
+#. custom: web
+#: name_and_signature.xml:0
+msgid "This file is invalid. Please select an image."
+msgstr ""
+
+#. custom: web
+#: base.xml:0 web_calendar.xml:0
+msgid "Month"
+msgstr ""
+
+#. custom: web
+#: view_dialogs.js:283
+msgid "Remove"
+msgstr ""
+
+#. custom: web
+#: view_dialogs.js:135
+msgid "Save & New"
+msgstr ""
+
+#. custom: web
+#: relational_fields.js:391
+msgid "Search: "
+msgstr ""
+
+#. custom: web
+#: calendar_model.js:430 calendar_renderer.js:714
+msgid "All day"
+msgstr ""
+
+#. custom: web
+#: form_controller.js:191 list_controller.js:163
+msgid "Archive"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 name_and_signature.xml:0
+msgid "Styles"
+msgstr ""
+
+#. custom: web
+#: basic_controller.js:364 calendar_controller.js:209
+msgid "Are you sure you want to delete this record ?"
+msgstr ""
+
+#. custom: web
+#: relational_fields.js:417
+msgid "Search More..."
+msgstr ""
+
+#. custom: web
+#: name_and_signature.xml:0
+msgid "Style"
+msgstr ""
+
+#. custom: web
+#: web_calendar.xml:0
+msgid "Summary:"
+msgstr ""
+
+#. custom: web
+#: relational_fields.js:2002
+msgid "The type of the field '%s' must be a many2many field with a relation to 'ir.attachment' model."
+msgstr ""
+
+#. custom: web
+#: view_dialogs.js:378
+msgid "No records found!"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Object:"
+msgstr ""
+
+#. custom: web
+#: basic_fields.js:1822 signature.js:222
+msgid "Could not display the selected image."
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Technical Translation"
+msgstr ""
+
+#. custom: web
+#: basic_controller.js:552 attach_document.js:64
+msgid "The following fields are invalid:"
+msgstr ""
+
+#. custom: web
+#: kanban_record.js:409 view_dialogs.js:448
+msgid "Select"
+msgstr ""
+
+#. custom: web
+#: domain_selector.js:539 domain_selector.js:585
+msgid "The domain you entered is not properly formed"
+msgstr ""
+
+#. custom: web
+#: kanban.xml:0
+msgid "There is no available image to be set as cover."
+msgstr ""
+
+#. custom: web
+#: form_controller.js:201 list_controller.js:171
+msgid "Unarchive"
+msgstr ""
+
+#. custom: web
+#: form_controller.js:722 view_dialogs.js:149
+msgid "Create "
+msgstr ""
+
+#. custom: web
+#: graph_renderer.js:877 graph_renderer.js:886
+msgid "Invalid data"
+msgstr ""
+
+#. field:Filter.User
+#. resource:base_ir_filters_view_search
+#. resource:base_ir_filters_view_search
+msgid "User"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Widget:"
+msgstr ""
+
+#. custom: web
+#: py_utils.js:302
+msgid "Unknown nonliteral type "
+msgstr ""
+
+#. custom: web
+#: menu.xml:0
+msgid "Windows/Linux"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Year"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"is\n"
+"            <t t-if=\"widget.operator === '=' &amp;&amp; widget.value === false || widget.operator === '!=' &amp;&amp; widget.value === true\">not</t>\n"
+"            set"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "not"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "of the following rules:"
+msgstr ""
+
+#. custom: web
+#: kanban.xml:0
+msgid "Unarchive All"
+msgstr ""
+
+#. custom: web
+#: pivot_view.js:116
+msgid "Untitled"
+msgstr ""
+
+#. custom: web
+#: upgrade_fields.js:68
+msgid "Upgrade now"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Upload your file"
+msgstr ""
+
+#. custom: web
+#: list_controller.js:158 data_export.js:40
+msgid "Export"
+msgstr ""
+
+#. custom: web
+#: basic_controller.js:341
+msgid "You need to save this new record before editing the translation. Do you want to proceed?"
+msgstr ""
+
+#. custom: web
+#: basic_controller.js:88 basic_controller.js:343 favorite_menu.js:122 list_renderer.js:481
+msgid "Warning"
+msgstr ""
+
+#. custom: web
+#: calendar_model.js:606 graph_model.js:274 graph_renderer.js:217 pivot_model.js:1443
+msgid "Undefined"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0 menu.xml:0
+msgid "a"
+msgstr ""
+
+#. custom: web
+#: calendar_model.js:429 base.xml:0 web_calendar.xml:0
+msgid "Week"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0 menu.xml:0
+msgid "c"
+msgstr ""
+
+#. custom: web
+#: dialog.js:79 dialog.js:371 dialog.js:391 dialog.js:444 kanban_column.js:305 list_confirm_dialog.js:34
+msgid "Ok"
+msgstr ""
+
+#. custom: web
+#: search_bar_autocomplete_sources.js:218
+msgid "not a valid integer"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "overflow-x: hidden"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0 base.xml:0 kanban.xml:0
+msgid "/web/binary/upload_attachment"
+msgstr ""
+
+#. custom: web
+#: calendar_controller.js:283 calendar_quick_create.js:44 kanban_controller.js:458 view_dialogs.js:441 base.xml:0 base.xml:0 form_view.xml:0 form_view.xml:0
+msgid "Create"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "of:"
+msgstr ""
+
+#. custom: web
+#: domain_selector.js:676
+msgid "set (true)"
+msgstr ""
+
+#. custom: web
+#: list_editable_renderer.js:88 list_editable_renderer.js:1068
+msgid "Add a line"
+msgstr ""
+
+#. custom: web
+#: kanban.xml:0 web_calendar.xml:0
+msgid "Delete"
+msgstr ""
+
+#. custom: web
+#: domain_selector.js:866
+msgid "is not"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0 kanban.xml:0
+msgid "All"
+msgstr ""
+
+#. custom: web
+#: form_renderer.js:439 base.xml:0
+msgid "More"
+msgstr ""
+
+#. custom: web
+#: search_bar_autocomplete_sources.js:294
+msgid "Yes"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0 base.xml:0
+msgid "Apply"
+msgstr ""
+
+#. custom: web
+#: kanban_record.js:439 view_dialogs.js:112 domain_selector_dialog.js:30 base.xml:0 base.xml:0 form_view.xml:0 form_view.xml:0 kanban.xml:0
+msgid "Discard"
+msgstr ""
+
+#. custom: web
+#: list_controller.js:434 list_controller.js:745
+msgid "No valid record to save"
+msgstr ""
+
+#. custom: web
+#: view_dialogs.js:126 domain_selector_dialog.js:27 base.xml:0 base.xml:0 base.xml:0 form_view.xml:0 form_view.xml:0
+msgid "Save"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0 base.xml:0
+msgid "Uploading..."
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "View Metadata"
+msgstr ""
+
+#. custom: web
+#: basic_fields.js:2635
+msgid "Wrong value entered!"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "XML ID:"
+msgstr ""
+
+#. custom: web
+#: misc.js:16
+msgid "You may not believe it,<br />but the application is actually loading..."
+msgstr ""
+
+#. custom: web
+#: form_view.xml:0 form_view.xml:0
+msgid "d"
+msgstr ""
+
+#. custom: web
+#: document_viewer.xml:0
+msgid "false"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0 menu.xml:0
+msgid "j"
+msgstr ""
+
+#. custom: web
+#: document_viewer.xml:0
+msgid "modal o_modal_fullscreen o_document_viewer o_responsive_document_viewer"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "or"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0 menu.xml:0
+msgid "k"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0 menu.xml:0
+msgid "l"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0 menu.xml:0
+msgid "n"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0 menu.xml:0
+msgid "p"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0 menu.xml:0
+msgid "s"
+msgstr ""
+
+#. custom: web
+#: kanban.xml:0
+msgid "●"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 dialog.xml:0
+msgid "×"
+msgstr ""
+
+#. custom: web
+#: dialog.js:409 dialog.js:460 list_confirm_dialog.js:45
+msgid "Confirmation"
+msgstr ""
+

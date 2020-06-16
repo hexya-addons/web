@@ -12,69 +12,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 
-#. field:Filter.Action
-msgid "Action"
+#. custom: web
+#: view_manager.js:223
+msgid " view couldn't be loaded"
 msgstr ""
 
-#. field:Filter.Context
-msgid "Context"
-msgstr ""
-
-#. field:Company.DashboardBackground
-msgid "Dashboard Background"
-msgstr ""
-
-#. field:Filter.IsDefault
-msgid "Default filter"
-msgstr ""
-
-#. field:Filter.Domain
-msgid "Domain"
-msgstr ""
-
-#. field:Filter.Name
-#. resource:base_ir_filters_view_search
-msgid "Filter Name"
-msgstr ""
-
-#. resource:base_actions_ir_filters_view
-msgid "Filters"
-msgstr ""
-
-#. resource:base_ir_filters_view_search
-msgid "Filters created by myself"
-msgstr ""
-
-#. resource:base_ir_filters_view_search
-msgid "Filters shared with all users"
-msgstr ""
-
-#. resource:base_ir_filters_view_search
-msgid "Filters visible only for one user"
-msgstr ""
-
-#. field:Company.ID
-#. field:Filter.ID
-#. field:User.ID
-#. field:CommonMixin.ID
-msgid "ID"
-msgstr "ID"
-
-#. field:Filter.ResModel
-#. resource:base_ir_filters_view_search
-msgid "Model"
-msgstr ""
-
-#. resource:base_ir_filters_view_search
-msgid "My filters"
-msgstr ""
-
-#. resource:base_ir_filters_view_search
-msgid "Shared"
-msgstr ""
-
-#. field:User.SidebarVisible
-msgid "Show App Sidebar"
+#. custom: web
+#: search_inputs.js:553 search_view.js:205
+msgid " or "
 msgstr ""
 
 #. custom: web
@@ -82,8 +27,14 @@ msgstr ""
 msgid "$(this).addClass('o_error');"
 msgstr ""
 
-#. field:Filter.Sort
-msgid "Sort"
+#. custom: web
+#: debug_manager.js:134
+msgid "%d requests (%d ms) %d queries (%d ms)"
+msgstr ""
+
+#. custom: web
+#: formats.js:187
+msgid "'%s' is not a correct date"
 msgstr ""
 
 #. custom: web
@@ -92,13 +43,28 @@ msgid "...Upload in progress..."
 msgstr ""
 
 #. custom: web
-#: base.xml:0
-msgid "99+"
+#: formats.js:173
+msgid "'%s' is not a correct datetime"
 msgstr ""
 
 #. custom: web
-#: base.xml:0
-msgid "Activate Assets Debugging"
+#: formats.js:132
+msgid "'%s' is not a correct integer"
+msgstr ""
+
+#. custom: web
+#: formats.js:192
+msgid "'%s' is not a correct time"
+msgstr ""
+
+#. custom: web
+#: time.js:204
+msgid "'%s' is not convertible to date, datetime nor time"
+msgstr ""
+
+#. custom: web
+#: formats.js:75
+msgid "(%d records)"
 msgstr ""
 
 #. custom: web
@@ -107,8 +73,57 @@ msgid "Add Custom Filter"
 msgstr ""
 
 #. custom: web
+#: time.js:192
+msgid "'%s' is not a correct date, datetime nor time"
+msgstr ""
+
+#. custom: web
 #: base_common.xml:0
 msgid "(no string)"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "(nolabel)"
+msgstr ""
+
+#. custom: web
+#: form_common.js:874
+msgid " & Close"
+msgstr ""
+
+#. custom: web
+#: formats.js:144
+msgid "'%s' is not a correct float"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "-"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "99+"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid ":"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0 base.xml:0
+msgid "?"
+msgstr ""
+
+#. field:Filter.Action
+msgid "Action"
+msgstr "அதிரடி"
+
+#. custom: web
+#: base.xml:0
+msgid "Activate Assets Debugging"
 msgstr ""
 
 #. custom: web
@@ -122,13 +137,23 @@ msgid "Add..."
 msgstr ""
 
 #. custom: web
+#: base_common.xml:0
+msgid "Action ID:"
+msgstr ""
+
+#. custom: web
+#: form_relational_widgets.js:1122
+msgid "Action Button"
+msgstr ""
+
+#. custom: web
 #: base.xml:0
 msgid "All users"
 msgstr ""
 
 #. custom: web
-#: base.xml:0
-msgid "Attachment :"
+#: base.xml:0 base.xml:0
+msgid "/web/binary/upload_attachment"
 msgstr ""
 
 #. custom: web
@@ -138,22 +163,52 @@ msgstr ""
 
 #. custom: web
 #: base_common.xml:0
-msgid "(nolabel)"
+msgid "Context:"
 msgstr ""
 
 #. custom: web
-#: base_common.xml:0
-msgid "-"
+#: form_widgets.js:634 form_widgets.js:640
+msgid "Active"
+msgstr "செயலில்"
+
+#. custom: web
+#: form_relational_widgets.js:1018
+msgid "Add an item"
 msgstr ""
 
 #. custom: web
-#: base_common.xml:0
-msgid ":"
+#: form_relational_widgets.js:1378 base.xml:0
+msgid "Add"
+msgstr "சேர்"
+
+#. custom: web
+#: form_relational_widgets.js:1305
+msgid "Add: "
 msgstr ""
 
 #. custom: web
-#: base_common.xml:0
-msgid "Action ID:"
+#: form_widgets.js:637
+msgid "Activate"
+msgstr ""
+
+#. custom: web
+#: dialog.js:168
+msgid "Alert"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Apply"
+msgstr "விண்ணப்பி"
+
+#. custom: web
+#: form_widgets.js:641 list_view.js:288
+msgid "Archive"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Attachment :"
 msgstr ""
 
 #. custom: web
@@ -184,44 +239,8 @@ msgstr ""
 msgid "Condition:"
 msgstr ""
 
-#. custom: web
-#: base.xml:0
-msgid "Confirm New Password"
-msgstr ""
-
-#. custom: web
-#: debug_manager.js:134
-msgid "%d requests (%d ms) %d queries (%d ms)"
-msgstr ""
-
-#. custom: web
-#: dialog.js:168
-msgid "Alert"
-msgstr ""
-
-#. custom: web
-#: debug_manager.js:241
-msgid "Fields of %s"
-msgstr ""
-
-#. custom: web
-#: dialog.js:193
-msgid "Confirmation"
-msgstr ""
-
-#. custom: web
-#: form_common.js:874
-msgid " & Close"
-msgstr ""
-
-#. custom: web
-#: base_common.xml:0
-msgid "Context:"
-msgstr ""
-
-#. custom: web
-#: form_common.js:1103
-msgid "Selected domain"
+#. field:Filter.Context
+msgid "Context"
 msgstr ""
 
 #. custom: web
@@ -235,21 +254,6 @@ msgid "Create and Edit..."
 msgstr ""
 
 #. custom: web
-#: form_relational_widgets.js:1018
-msgid "Add an item"
-msgstr ""
-
-#. custom: web
-#: form_relational_widgets.js:1122
-msgid "Action Button"
-msgstr ""
-
-#. custom: web
-#: form_relational_widgets.js:1305
-msgid "Add: "
-msgstr ""
-
-#. custom: web
 #: base.xml:0
 msgid "Created by :"
 msgstr ""
@@ -257,6 +261,24 @@ msgstr ""
 #. custom: web
 #: base.xml:0
 msgid "Creation Date:"
+msgstr ""
+
+#. field:Company.DashboardBackground
+msgid "Dashboard Background"
+msgstr ""
+
+#. field:Filter.IsDefault
+msgid "Default filter"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Confirm New Password"
+msgstr ""
+
+#. custom: web
+#: dialog.js:193
+msgid "Confirmation"
 msgstr ""
 
 #. custom: web
@@ -267,16 +289,6 @@ msgstr ""
 #. custom: web
 #: base.xml:0
 msgid "Day"
-msgstr ""
-
-#. custom: web
-#: base_common.xml:0
-msgid "Domain:"
-msgstr ""
-
-#. custom: web
-#: data.js:1083
-msgid "Unknown field %s in domain %s"
 msgstr ""
 
 #. custom: web
@@ -292,7 +304,7 @@ msgstr ""
 #. custom: web
 #: base.xml:0
 msgid "Delete"
-msgstr ""
+msgstr "அழி"
 
 #. custom: web
 #: base.xml:0
@@ -300,13 +312,57 @@ msgid "Disable Technical Features"
 msgstr ""
 
 #. custom: web
+#: form_widgets.js:642
+msgid "Archived"
+msgstr "காப்பகப்படுத்தியவை"
+
+#. custom: web
+#: list_common.js:133
+msgid "Can't convert value %s to context"
+msgstr ""
+
+#. custom: web
+#: form_widgets.js:1251
+msgid "Could not display the selected image."
+msgstr ""
+
+#. custom: web
+#: form_view.js:733
+msgid "Do you really want to delete this record?"
+msgstr ""
+
+#. custom: web
+#: list_view.js:543
+msgid "Do you really want to remove these records?"
+msgstr ""
+
+#. field:Filter.Domain
+msgid "Domain"
+msgstr "டொமைன்"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Domain:"
+msgstr ""
+
+#. custom: web
 #: base.xml:0
 msgid "Edit"
+msgstr "தொகு"
+
+#. custom: web
+#: debug_manager.js:241
+msgid "Fields of %s"
 msgstr ""
 
 #. custom: web
 #: base.xml:0
 msgid "Enable Technical Features"
+msgstr ""
+
+#. custom: web
+#: list_view.js:1024
+msgid "Could not find id in dataset"
 msgstr ""
 
 #. custom: web
@@ -325,38 +381,8 @@ msgid "Export all Data"
 msgstr ""
 
 #. custom: web
-#: base.xml:0
-msgid "Saved exports:"
-msgstr ""
-
-#. custom: web
 #: data_export.js:199
 msgid "Export Data"
-msgstr ""
-
-#. custom: web
-#: form_widgets.js:1251
-msgid "Could not display the selected image."
-msgstr ""
-
-#. custom: web
-#: formats.js:75
-msgid "(%d records)"
-msgstr ""
-
-#. custom: web
-#: base_common.xml:0
-msgid "Field:"
-msgstr ""
-
-#. custom: web
-#: form_relational_widgets.js:326
-msgid "Render"
-msgstr ""
-
-#. custom: web
-#: base_common.xml:0
-msgid "×"
 msgstr ""
 
 #. custom: web
@@ -365,88 +391,13 @@ msgid "Field '%s' specified in view could not be found."
 msgstr ""
 
 #. custom: web
-#: formats.js:187
-msgid "'%s' is not a correct date"
-msgstr ""
-
-#. custom: web
-#: base.xml:0
-msgid "Run JS Tests"
-msgstr ""
-
-#. custom: web
-#: form_view.js:733
-msgid "Do you really want to delete this record?"
-msgstr ""
-
-#. custom: web
-#: formats.js:173
-msgid "'%s' is not a correct datetime"
-msgstr ""
-
-#. custom: web
-#: formats.js:144
-msgid "'%s' is not a correct float"
-msgstr ""
-
-#. custom: web
-#: formats.js:132
-msgid "'%s' is not a correct integer"
-msgstr ""
-
-#. custom: web
-#: formats.js:192
-msgid "'%s' is not a correct time"
-msgstr ""
-
-#. custom: web
-#: form_widgets.js:637
-msgid "Activate"
-msgstr ""
-
-#. custom: web
-#: form_widgets.js:642
-msgid "Archived"
-msgstr ""
-
-#. custom: web
-#: list_common.js:133
-msgid "Can't convert value %s to context"
-msgstr ""
-
-#. custom: web
-#: list_view.js:543
-msgid "Do you really want to remove these records?"
-msgstr ""
-
-#. custom: web
-#: list_view.js:1024
-msgid "Could not find id in dataset"
-msgstr ""
-
-#. custom: web
 #: list_view.js:1863
 msgid "Download \\\"%s\\\""
 msgstr ""
 
 #. custom: web
-#: form_view.js:301
-msgid "Form"
-msgstr ""
-
-#. custom: web
-#: base.xml:0
-msgid "Month"
-msgstr "மாதம்"
-
-#. custom: web
-#: base.xml:0
-msgid "More"
-msgstr ""
-
-#. custom: web
-#: base_common.xml:0
-msgid "Relation:"
+#: view_manager.js:223 search_menus.js:84 search_menus.js:91
+msgid "Error"
 msgstr ""
 
 #. custom: web
@@ -455,13 +406,8 @@ msgid "Export To File"
 msgstr ""
 
 #. custom: web
-#: debug_manager.js:321
-msgid "No metadata available"
-msgstr ""
-
-#. custom: web
-#: form_widgets.js:1114
-msgid "File Upload"
+#: base_common.xml:0
+msgid "Field:"
 msgstr ""
 
 #. custom: web
@@ -472,27 +418,7 @@ msgstr ""
 #. custom: web
 #: list_view.js:287
 msgid "Export"
-msgstr ""
-
-#. custom: web
-#: pivot_view.js:831
-msgid "For Excel compatibility, data cannot be exported if there are more than 256 columns.\\n\\nTip: try to flip axis, filter further or reduce the number of measures."
-msgstr ""
-
-#. custom: web
-#: form_upgrade_widgets.js:51
-msgid "Hexya Enterprise"
-msgstr ""
-
-#. custom: web
-#: form_view.js:1304
-msgid "Widget type '%s' is not implemented"
-msgstr ""
-
-#. custom: web
-#: list_view.js:931
-msgid "Setting 'id' attribute on existing record %s"
-msgstr ""
+msgstr "ஏற்றுமதி"
 
 #. custom: web
 #: list_view.js:1847
@@ -500,13 +426,61 @@ msgid "Download"
 msgstr ""
 
 #. custom: web
-#: view_manager.js:223 search_menus.js:84 search_menus.js:91
-msgid "Error"
+#: form_widgets.js:1114
+msgid "File Upload"
 msgstr ""
 
 #. custom: web
 #: form_widgets.js:1094
 msgid "File upload"
+msgstr ""
+
+#. custom: web
+#: crash_manager.js:170 dialog.js:182 form_common.js:1046 form_upgrade_widgets.js:40 base.xml:0
+msgid "Cancel"
+msgstr "ரத்து"
+
+#. field:Filter.Name
+#. resource:base_ir_filters_view_search
+msgid "Filter Name"
+msgstr ""
+
+#. resource:base_actions_ir_filters_view
+msgid "Filters"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "Filters created by myself"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "Filters shared with all users"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "Filters visible only for one user"
+msgstr ""
+
+#. field:Company.ID
+#. field:Filter.ID
+#. field:User.ID
+#. field:CommonMixin.ID
+msgid "ID"
+msgstr "ID"
+
+#. custom: web
+#: pivot_view.js:831
+msgid "For Excel compatibility, data cannot be exported if there are more than 256 columns.\\n\\nTip: try to flip axis, filter further or reduce the number of measures."
+msgstr ""
+
+#. custom: web
+#: form_view.js:301
+msgid "Form"
+msgstr ""
+
+#. custom: web
+#: form_upgrade_widgets.js:51
+msgid "Hexya Enterprise"
 msgstr ""
 
 #. custom: web
@@ -527,6 +501,20 @@ msgstr ""
 #. custom: web
 #: base.xml:0
 msgid "Latest Modification Date:"
+msgstr ""
+
+#. field:Filter.Sort
+msgid "Sort"
+msgstr ""
+
+#. custom: web
+#: form_view.js:1304
+msgid "Widget type '%s' is not implemented"
+msgstr ""
+
+#. custom: web
+#: list_view.js:931
+msgid "Setting 'id' attribute on existing record %s"
 msgstr ""
 
 #. custom: web
@@ -550,8 +538,90 @@ msgid "Manage Filters"
 msgstr ""
 
 #. custom: web
+#: base_common.xml:0
+msgid "Method:"
+msgstr ""
+
+#. custom: web
+#: abstract_web_client.js:124 crash_manager.js:123
+msgid "Client Error"
+msgstr ""
+
+#. custom: web
+#: utils.js:179
+msgid "Could not serialize XML"
+msgstr ""
+
+#. custom: web
+#: form_common.js:281 form_relational_widgets.js:1080
+msgid "Create: "
+msgstr ""
+
+#. custom: web
+#: form_common.js:868 form_view.js:1127 data_export.js:202
+msgid "Close"
+msgstr "நெருக்கமான"
+
+#. field:Filter.ResModel
+#. resource:base_ir_filters_view_search
+msgid "Model"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "My filters"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "Shared"
+msgstr ""
+
+#. field:User.SidebarVisible
+msgid "Show App Sidebar"
+msgstr ""
+
+#. custom: web
+#: form_common.js:1103
+msgid "Selected domain"
+msgstr ""
+
+#. custom: web
+#: data.js:1083
+msgid "Unknown field %s in domain %s"
+msgstr ""
+
+#. custom: web
 #: base.xml:0
 msgid "Modified by :"
+msgstr ""
+
+#. custom: web
+#: change_password.js:14 base.xml:0
+msgid "Change Password"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Saved exports:"
+msgstr ""
+
+#. custom: web
+#: graph_view.js:86 graph_widget.js:21 pivot_view.js:182 base.xml:0 base.xml:0
+msgid "Count"
+msgstr ""
+
+#. custom: web
+#: form_common.js:1049 base.xml:0
+msgid "Create"
+msgstr "உருவாக்கு"
+
+#. custom: web
+#: base.xml:0
+msgid "Month"
+msgstr "மாதம்"
+
+#. custom: web
+#: base.xml:0
+msgid "More"
 msgstr ""
 
 #. custom: web
@@ -588,12 +658,17 @@ msgstr ""
 
 #. custom: web
 #: base.xml:0
-msgid "Not shown in kanban"
+msgid "Old Password"
 msgstr ""
 
 #. custom: web
 #: base.xml:0
-msgid "Old Password"
+msgid "Remove All"
+msgstr ""
+
+#. custom: web
+#: form_relational_widgets.js:326
+msgid "Render"
 msgstr ""
 
 #. custom: web
@@ -602,13 +677,38 @@ msgid "Only you"
 msgstr ""
 
 #. custom: web
-#: base.xml:0
-msgid "Please note that only the selected ids will be exported."
+#: base_common.xml:0
+msgid "Object:"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "On change:"
 msgstr ""
 
 #. custom: web
 #: base.xml:0
 msgid "Please pay attention that all records matching your search filter will be exported. Not only the selected ids."
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Run JS Tests"
+msgstr ""
+
+#. custom: web
+#: debug_manager.js:321
+msgid "No metadata available"
+msgstr ""
+
+#. custom: web
+#: base_common.xml:0
+msgid "Modifiers:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Not shown in kanban"
 msgstr ""
 
 #. custom: web
@@ -622,13 +722,13 @@ msgid "Quarter"
 msgstr ""
 
 #. custom: web
-#: base.xml:0
-msgid "Remove"
+#: base_common.xml:0
+msgid "Relation:"
 msgstr ""
 
 #. custom: web
 #: base.xml:0
-msgid "Remove All"
+msgid "Remove"
 msgstr ""
 
 #. custom: web
@@ -642,21 +742,6 @@ msgid "Save current search"
 msgstr ""
 
 #. custom: web
-#: base_common.xml:0
-msgid "Method:"
-msgstr ""
-
-#. custom: web
-#: base_common.xml:0
-msgid "Modifiers:"
-msgstr ""
-
-#. custom: web
-#: base_common.xml:0
-msgid "Object:"
-msgstr ""
-
-#. custom: web
 #: base.xml:0
 msgid "Save fields list"
 msgstr ""
@@ -664,16 +749,6 @@ msgstr ""
 #. custom: web
 #: base.xml:0
 msgid "Set Defaults"
-msgstr ""
-
-#. custom: web
-#: base.xml:0
-msgid "Week"
-msgstr ""
-
-#. custom: web
-#: base_common.xml:0
-msgid "On change:"
 msgstr ""
 
 #. custom: web
@@ -687,8 +762,8 @@ msgid "Size:"
 msgstr ""
 
 #. custom: web
-#: base.xml:0
-msgid "XML ID:"
+#: search_menus.js:252
+msgid "Are you sure that you want to remove this filter?"
 msgstr ""
 
 #. custom: web
@@ -698,7 +773,22 @@ msgstr ""
 
 #. custom: web
 #: base.xml:0
+msgid "Week"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "XML ID:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
 msgid "Whoops, you shouldn't have come up to here..."
+msgstr ""
+
+#. custom: web
+#: utils.js:284
+msgid "Bytes,Kb,Mb,Gb,Tb,Pb,Eb,Zb,Yb"
 msgstr ""
 
 #. custom: web
@@ -730,11 +820,6 @@ msgid "Inactive"
 msgstr ""
 
 #. custom: web
-#: form_widgets.js:1114
-msgid "There was a problem while uploading your file"
-msgstr ""
-
-#. custom: web
 #: loading.js:46
 msgid "Loading"
 msgstr ""
@@ -750,31 +835,13 @@ msgid "Loading..."
 msgstr ""
 
 #. custom: web
+#: sidebar.js:217
+msgid "Do you really want to delete this attachment ?"
+msgstr ""
+
+#. custom: web
 #: pyeval.js:1027
 msgid "Local evaluation failure\\n%s\\n\\n%s"
-msgstr ""
-
-#. custom: web
-#: form_common.js:889
-msgid "Save & New"
-msgstr ""
-
-#. custom: web
-#: form_common.js:211
-msgid "Search More..."
-msgstr ""
-
-#. custom: web
-#: search_menus.js:252
-msgid "Are you sure that you want to remove this filter?"
-msgstr ""
-
-#. help:Filter.Action
-msgid "The menu action this filter applies to. When left empty the filter applies to all menus for this model."
-msgstr ""
-
-#. help:Filter.User
-msgid "The user this filter is private to. When left empty the filter is public and available to all users."
 msgstr ""
 
 #. custom: web
@@ -793,13 +860,246 @@ msgid "No results to show..."
 msgstr ""
 
 #. custom: web
+#: form_relational_widgets.js:327
+msgid "No value found for the field %s for value %s"
+msgstr ""
+
+#. custom: web
+#: data_export.js:421
+msgid "Please select fields to save export list..."
+msgstr ""
+
+#. custom: web
+#: form_common.js:1096 search_menus.js:177
+msgid "Custom Filter"
+msgstr ""
+
+#. custom: web
+#: form_view.js:315
+msgid "New"
+msgstr "புதிய"
+
+#. custom: web
+#: misc.js:18
+msgid "Maybe you should consider reloading the application by pressing F5..."
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Measures <span class=\"caret\"/>"
+msgstr ""
+
+#. custom: web
+#: graph_widget.js:94
+msgid "No data to display"
+msgstr ""
+
+#. custom: web
+#: priority.js:47
+msgid "Normal"
+msgstr ""
+
+#. custom: web
+#: form_common.js:889
+msgid "Save & New"
+msgstr ""
+
+#. custom: web
+#: search_menus.js:91
+msgid "Filter with same name already exists."
+msgstr ""
+
+#. custom: web
+#: data_export.js:167
+msgid "Please enter save field list name"
+msgstr ""
+
+#. custom: web
+#: form_common.js:874 base.xml:0 base.xml:0 base.xml:0
+msgid "Save"
+msgstr "சேமி"
+
+#. custom: web
+#: form_widgets.js:1131
+msgid "Save As..."
+msgstr ""
+
+#. custom: web
+#: search_inputs.js:698
+msgid "Group By"
+msgstr "மூலம் குழு"
+
+#. custom: web
+#: search_menus.js:84
+msgid "Filter name is required."
+msgstr ""
+
+#. custom: web
+#: graph_widget.js:208 graph_widget.js:216
+msgid "Invalid data"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Update translations"
+msgstr ""
+
+#. custom: web
+#: priority.js:48
+msgid "Low"
+msgstr ""
+
+#. custom: web
+#: search_inputs.js:451
+msgid "M2O search fields do not currently handle multiple default values"
+msgstr ""
+
+#. custom: web
+#: search_inputs.js:331
+msgid "No"
+msgstr "இல்லை"
+
+#. custom: web
+#: utils.js:143
+msgid "Node [%s] is not a JSONified XML node"
+msgstr ""
+
+#. custom: web
+#: form_common.js:211
+msgid "Search More..."
+msgstr ""
+
+#. custom: web
 #: form_common.js:281
 msgid "Search: "
 msgstr ""
 
 #. custom: web
+#: form_common.js:1054
+msgid "Select"
+msgstr "தேர்வு"
+
+#. custom: web
+#: graph_widget.js:252
+msgid "Not enough data points"
+msgstr ""
+
+#. custom: web
+#: form_view.js:1128
+msgid "Save default"
+msgstr ""
+
+#. custom: web
+#: form_view.js:1125
+msgid "Set Default"
+msgstr ""
+
+#. custom: web
+#: debug_manager.js:339 base.xml:0
+msgid "Fields View Get"
+msgstr ""
+
+#. custom: web
+#: dialog.js:40 dialog.js:158 dialog.js:176 base.xml:0
+msgid "Ok"
+msgstr ""
+
+#. custom: web
+#: form_relational_widgets.js:153 form_relational_widgets.js:921 form_relational_widgets.js:1104 form_relational_widgets.js:1321
+msgid "Open: "
+msgstr ""
+
+#. custom: web
+#: search_inputs.js:360
+msgid "Search %(field)s at: %(value)s"
+msgstr ""
+
+#. custom: web
+#: misc.js:13
+msgid "Still loading..."
+msgstr ""
+
+#. custom: web
 #: base.xml:0
 msgid "Technical Translation"
+msgstr ""
+
+#. custom: web
+#: form_view.js:887
+msgid "The following fields are invalid:"
+msgstr ""
+
+#. custom: web
+#: misc.js:14
+msgid "Still loading...<br />Please be patient."
+msgstr ""
+
+#. custom: web
+#: form_widgets.js:1114
+msgid "There was a problem while uploading your file"
+msgstr ""
+
+#. help:Filter.Action
+msgid "The menu action this filter applies to. When left empty the filter applies to all menus for this model."
+msgstr ""
+
+#. help:Filter.User
+msgid "The user this filter is private to. When left empty the filter is public and available to all users."
+msgstr ""
+
+#. custom: web
+#: form_relational_widgets.js:1123
+msgid "The o2m record must be saved before an action can be used"
+msgstr ""
+
+#. custom: web
+#: form_relational_widgets.js:1595
+msgid "The type of the field '%s' must be a many2many field with a relation to 'ir.attachment' model."
+msgstr ""
+
+#. custom: web
+#: search_inputs.js:192 search_inputs.js:211 search_inputs.js:402
+msgid "Search %(field)s for: %(value)s"
+msgstr ""
+
+#. custom: web
+#: form_widgets.js:1131
+msgid "The field is empty, there's nothing to save !"
+msgstr ""
+
+#. custom: web
+#: list_view_editable.js:122
+msgid "The line has been modified, your changes will be discarded. Are you sure you want to discard the changes ?"
+msgstr ""
+
+#. custom: web
+#: form_view.js:301
+msgid "The record could not be found in the database."
+msgstr ""
+
+#. custom: web
+#: form_view.js:756
+msgid "The record has been modified, your changes will be discarded. Are you sure you want to leave this page ?"
+msgstr ""
+
+#. custom: web
+#: misc.js:17
+msgid "Take a minute to get a coffee,<br />because it's loading..."
+msgstr ""
+
+#. custom: web
+#: progress_bar.js:78
+msgid "Only Integer Value should be valid."
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Upload your file"
+msgstr ""
+
+#. custom: web
+#: form_widgets.js:1093
+msgid "The selected file exceed the maximum file size of %s."
 msgstr ""
 
 #. custom: web
@@ -815,6 +1115,21 @@ msgid "Type:"
 msgstr ""
 
 #. custom: web
+#: form_widgets.js:862
+msgid "Timezone Mismatch : The timezone of your browser doesn't match the selected one. The time in Hexya is displayed according to your field timezone."
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Toggle Timelines"
+msgstr ""
+
+#. custom: web
+#: view_manager.js:437
+msgid "Failed to evaluate search criterions"
+msgstr ""
+
+#. custom: web
 #: base.xml:0
 msgid ""
 "Unhandled widget\n"
@@ -822,8 +1137,13 @@ msgid ""
 msgstr ""
 
 #. custom: web
-#: base.xml:0
-msgid "Update translations"
+#: list_view.js:1086
+msgid "Unknown m2m command %s"
+msgstr ""
+
+#. custom: web
+#: pyeval.js:991
+msgid "Unknown nonliteral type "
 msgstr ""
 
 #. custom: web
@@ -837,43 +1157,8 @@ msgid "Unsupported operator %s in domain %s"
 msgstr ""
 
 #. custom: web
-#: form_relational_widgets.js:327
-msgid "No value found for the field %s for value %s"
-msgstr ""
-
-#. custom: web
-#: base.xml:0
-msgid "Toggle Timelines"
-msgstr ""
-
-#. custom: web
 #: data.js:1138
 msgid "Unnamed"
-msgstr ""
-
-#. custom: web
-#: data_export.js:167
-msgid "Please enter save field list name"
-msgstr ""
-
-#. custom: web
-#: data_export.js:421
-msgid "Please select fields to save export list..."
-msgstr ""
-
-#. custom: web
-#: form_common.js:1054
-msgid "Select"
-msgstr ""
-
-#. custom: web
-#: form_relational_widgets.js:1123
-msgid "The o2m record must be saved before an action can be used"
-msgstr ""
-
-#. custom: web
-#: form_relational_widgets.js:1595
-msgid "The type of the field '%s' must be a many2many field with a relation to 'ir.attachment' model."
 msgstr ""
 
 #. custom: web
@@ -883,47 +1168,7 @@ msgstr ""
 
 #. custom: web
 #: base.xml:0 base.xml:0
-msgid "Apply"
-msgstr ""
-
-#. custom: web
-#: graph_view.js:86 graph_widget.js:21 pivot_view.js:182 base.xml:0 base.xml:0
-msgid "Count"
-msgstr ""
-
-#. custom: web
-#: sidebar.js:217
-msgid "Do you really want to delete this attachment ?"
-msgstr ""
-
-#. custom: web
-#: form_common.js:1096 search_menus.js:177
-msgid "Custom Filter"
-msgstr ""
-
-#. custom: web
-#: form_view.js:315
-msgid "New"
-msgstr ""
-
-#. custom: web
-#: form_common.js:874 base.xml:0 base.xml:0 base.xml:0
-msgid "Save"
-msgstr ""
-
-#. custom: web
-#: form_widgets.js:1131
-msgid "Save As..."
-msgstr ""
-
-#. custom: web
-#: form_view.js:1128
-msgid "Save default"
-msgstr ""
-
-#. custom: web
-#: form_view.js:1125
-msgid "Set Default"
+msgid "Uploading..."
 msgstr ""
 
 #. field:Filter.User
@@ -937,89 +1182,19 @@ msgid "User-defined Filters"
 msgstr ""
 
 #. custom: web
-#: misc.js:18
-msgid "Maybe you should consider reloading the application by pressing F5..."
+#: form_widgets.js:643 list_view.js:289
+msgid "Unarchive"
 msgstr ""
 
 #. custom: web
-#: graph_widget.js:94
-msgid "No data to display"
-msgstr ""
+#: pivot_view.js:526 pivot_view.js:555
+msgid "Total"
+msgstr "மொத்த"
 
 #. custom: web
-#: priority.js:47
-msgid "Normal"
-msgstr ""
-
-#. custom: web
-#: graph_widget.js:252
-msgid "Not enough data points"
-msgstr ""
-
-#. custom: web
-#: form_view.js:887
-msgid "The following fields are invalid:"
-msgstr ""
-
-#. custom: web
-#: list_view.js:1086
-msgid "Unknown m2m command %s"
-msgstr ""
-
-#. custom: web
-#: misc.js:13
-msgid "Still loading..."
-msgstr ""
-
-#. custom: web
-#: form_widgets.js:1131
-msgid "The field is empty, there's nothing to save !"
-msgstr ""
-
-#. custom: web
-#: priority.js:48
-msgid "Low"
-msgstr ""
-
-#. custom: web
-#: form_view.js:301
-msgid "The record could not be found in the database."
-msgstr ""
-
-#. custom: web
-#: form_view.js:756
-msgid "The record has been modified, your changes will be discarded. Are you sure you want to leave this page ?"
-msgstr ""
-
-#. custom: web
-#: misc.js:14
-msgid "Still loading...<br />Please be patient."
-msgstr ""
-
-#. custom: web
-#: misc.js:17
-msgid "Take a minute to get a coffee,<br />because it's loading..."
-msgstr ""
-
-#. custom: web
-#: list_view_editable.js:122
-msgid "The line has been modified, your changes will be discarded. Are you sure you want to discard the changes ?"
-msgstr ""
-
-#. custom: web
-#: form_widgets.js:862
-msgid "Timezone Mismatch : The timezone of your browser doesn't match the selected one. The time in Hexya is displayed according to your field timezone."
-msgstr ""
-
-#. custom: web
-#: base.xml:0
-msgid "Upload your file"
-msgstr ""
-
-#. custom: web
-#: form_widgets.js:1093
-msgid "The selected file exceed the maximum file size of %s."
-msgstr ""
+#: graph_widget.js:79 list_view.js:1379 list_view.js:1385 pivot_view.js:508
+msgid "Undefined"
+msgstr "ஆதரிக்காதது"
 
 #. custom: web
 #: priority.js:50
@@ -1027,9 +1202,9 @@ msgid "Very High"
 msgstr ""
 
 #. custom: web
-#: time.js:192
-msgid "'%s' is not a correct date, datetime nor time"
-msgstr ""
+#: form_common.js:868 base.xml:0 base.xml:0
+msgid "Discard"
+msgstr "நிராகரி"
 
 #. custom: web
 #: search_inputs.js:551
@@ -1037,63 +1212,75 @@ msgid "Filter"
 msgstr ""
 
 #. custom: web
-#: search_inputs.js:451
-msgid "M2O search fields do not currently handle multiple default values"
+#: form_relational_widgets.js:47
+msgid "You are creating a new %s, are you sure it does not exist yet?"
 msgstr ""
 
 #. custom: web
-#: view_manager.js:223
-msgid " view couldn't be loaded"
+#: base.xml:0
+msgid "View Metadata"
 msgstr ""
 
 #. custom: web
-#: search_inputs.js:698
-msgid "Group By"
+#: form_relational_widgets.js:740
+msgid "View type '%s' is not supported in X2Many."
 msgstr ""
 
 #. custom: web
-#: search_menus.js:91
-msgid "Filter with same name already exists."
+#: crash_manager.js:107 form_view.js:761 list_view.js:676 sidebar.js:131
+msgid "Warning"
+msgstr "எச்சரிக்கை"
+
+#. custom: web
+#: base_common.xml:0
+msgid "Widget:"
 msgstr ""
 
 #. custom: web
-#: time.js:204
-msgid "'%s' is not convertible to date, datetime nor time"
+#: base.xml:0
+msgid "Year"
+msgstr "ஆண்டு"
+
+#. custom: web
+#: progress_bar.js:78
+msgid "Wrong value entered!"
 msgstr ""
 
 #. custom: web
-#: utils.js:284
-msgid "Bytes,Kb,Mb,Gb,Tb,Pb,Eb,Zb,Yb"
+#: base.xml:0
+msgid ""
+"You have updated <strong><t t-esc=\"field.string\"/></strong> (<t t-esc=\"lang\"/>).\n"
+"            <a class=\"oe_field_translate\" t-att-name=\"field.name\" href=\"#\">Update translations</a>"
 msgstr ""
 
 #. custom: web
-#: abstract_web_client.js:124 crash_manager.js:123
-msgid "Client Error"
+#: misc.js:16
+msgid "You may not believe it,<br />but the application is actually loading..."
 msgstr ""
 
 #. custom: web
-#: base.xml:0 base.xml:0
-msgid "/web/binary/upload_attachment"
+#: search_menus.js:251
+msgid "This filter is global and will be removed for everybody if you continue."
 msgstr ""
 
 #. custom: web
-#: utils.js:179
-msgid "Could not serialize XML"
+#: base.xml:0
+msgid "View Fields"
 msgstr ""
 
 #. custom: web
-#: search_menus.js:84
-msgid "Filter name is required."
+#: search_inputs.js:330
+msgid "Yes"
+msgstr "ஆம்"
+
+#. custom: web
+#: sidebar.js:131
+msgid "You must choose at least one record."
 msgstr ""
 
 #. custom: web
-#: view_manager.js:437
-msgid "Failed to evaluate search criterions"
-msgstr ""
-
-#. custom: web
-#: base.xml:0 base.xml:0
-msgid "Measures <span class=\"caret\"/>"
+#: crash_manager.js:57
+msgid "Your Hexya session expired. Please refresh the current web page."
 msgstr ""
 
 #. custom: web
@@ -1105,88 +1292,8 @@ msgid ""
 msgstr ""
 
 #. custom: web
-#: form_relational_widgets.js:47
-msgid "You are creating a new %s, are you sure it does not exist yet?"
-msgstr ""
-
-#. custom: web
-#: search_inputs.js:360
-msgid "Search %(field)s at: %(value)s"
-msgstr ""
-
-#. custom: web
 #: utils.js:302
 msgid "kMGTPE"
-msgstr ""
-
-#. custom: web
-#: change_password.js:14 base.xml:0
-msgid "Change Password"
-msgstr ""
-
-#. custom: web
-#: form_common.js:281 form_relational_widgets.js:1080
-msgid "Create: "
-msgstr ""
-
-#. custom: web
-#: form_common.js:1049 base.xml:0
-msgid "Create"
-msgstr "உருவாக்கு"
-
-#. custom: web
-#: graph_widget.js:208 graph_widget.js:216
-msgid "Invalid data"
-msgstr ""
-
-#. custom: web
-#: base.xml:0
-msgid "View Metadata"
-msgstr ""
-
-#. custom: web
-#: base_common.xml:0
-msgid "Widget:"
-msgstr ""
-
-#. custom: web
-#: search_inputs.js:331
-msgid "No"
-msgstr ""
-
-#. custom: web
-#: progress_bar.js:78
-msgid "Only Integer Value should be valid."
-msgstr ""
-
-#. custom: web
-#: form_relational_widgets.js:740
-msgid "View type '%s' is not supported in X2Many."
-msgstr ""
-
-#. custom: web
-#: form_common.js:868 form_view.js:1127 data_export.js:202
-msgid "Close"
-msgstr ""
-
-#. custom: web
-#: base.xml:0
-msgid "Year"
-msgstr ""
-
-#. custom: web
-#: base.xml:0
-msgid "or"
-msgstr ""
-
-#. custom: web
-#: misc.js:16
-msgid "You may not believe it,<br />but the application is actually loading..."
-msgstr ""
-
-#. custom: web
-#: pyeval.js:991
-msgid "Unknown nonliteral type "
 msgstr ""
 
 #. custom: web
@@ -1197,103 +1304,8 @@ msgid ""
 msgstr ""
 
 #. custom: web
-#: utils.js:143
-msgid "Node [%s] is not a JSONified XML node"
-msgstr ""
-
-#. custom: web
-#: search_menus.js:251
-msgid "This filter is global and will be removed for everybody if you continue."
-msgstr ""
-
-#. custom: web
-#: form_widgets.js:634 form_widgets.js:640
-msgid "Active"
-msgstr ""
-
-#. custom: web
-#: form_relational_widgets.js:1378 base.xml:0
-msgid "Add"
-msgstr ""
-
-#. custom: web
-#: debug_manager.js:339 base.xml:0
-msgid "Fields View Get"
-msgstr ""
-
-#. custom: web
-#: dialog.js:40 dialog.js:158 dialog.js:176 base.xml:0
-msgid "Ok"
-msgstr ""
-
-#. custom: web
-#: base.xml:0 base.xml:0
-msgid "Uploading..."
-msgstr ""
-
-#. custom: web
-#: progress_bar.js:78
-msgid "Wrong value entered!"
-msgstr ""
-
-#. custom: web
-#: form_widgets.js:641 list_view.js:288
-msgid "Archive"
-msgstr ""
-
-#. custom: web
-#: form_widgets.js:643 list_view.js:289
-msgid "Unarchive"
-msgstr ""
-
-#. custom: web
-#: base.xml:0
-msgid "View Fields"
-msgstr ""
-
-#. custom: web
-#: search_inputs.js:330
-msgid "Yes"
-msgstr ""
-
-#. custom: web
-#: sidebar.js:131
-msgid "You must choose at least one record."
-msgstr ""
-
-#. custom: web
-#: pivot_view.js:526 pivot_view.js:555
-msgid "Total"
-msgstr ""
-
-#. custom: web
-#: base.xml:0 base.xml:0 base.xml:0
-msgid "?"
-msgstr ""
-
-#. custom: web
-#: form_common.js:868 base.xml:0 base.xml:0
-msgid "Discard"
-msgstr ""
-
-#. custom: web
-#: form_relational_widgets.js:153 form_relational_widgets.js:921 form_relational_widgets.js:1104 form_relational_widgets.js:1321
-msgid "Open: "
-msgstr ""
-
-#. custom: web
-#: search_inputs.js:192 search_inputs.js:211 search_inputs.js:402
-msgid "Search %(field)s for: %(value)s"
-msgstr ""
-
-#. custom: web
-#: graph_widget.js:79 list_view.js:1379 list_view.js:1385 pivot_view.js:508
-msgid "Undefined"
-msgstr ""
-
-#. custom: web
-#: crash_manager.js:57
-msgid "Your Hexya session expired. Please refresh the current web page."
+#: list_view.js:676
+msgid "You must select at least one record."
 msgstr ""
 
 #. custom: web
@@ -1303,22 +1315,17 @@ msgstr ""
 
 #. custom: web
 #: base.xml:0
-msgid "overflow-x: hidden"
-msgstr ""
+msgid "or"
+msgstr "அல்லது"
 
 #. custom: web
-#: list_view.js:676
-msgid "You must select at least one record."
+#: base.xml:0
+msgid "overflow-x: hidden"
 msgstr ""
 
 #. custom: web
 #: search_inputs.js:230
 msgid "not a valid integer"
-msgstr ""
-
-#. custom: web
-#: crash_manager.js:107 form_view.js:761 list_view.js:676 sidebar.js:131
-msgid "Warning"
 msgstr ""
 
 #. custom: web
@@ -1332,19 +1339,12 @@ msgid "not a valid number"
 msgstr ""
 
 #. custom: web
-#: search_inputs.js:553 search_view.js:205
-msgid " or "
-msgstr ""
-
-#. custom: web
-#: crash_manager.js:170 dialog.js:182 form_common.js:1046 form_upgrade_widgets.js:40 base.xml:0
-msgid "Cancel"
+#: base_common.xml:0
+msgid "×"
 msgstr ""
 
 #. custom: web
 #: base.xml:0
-msgid ""
-"You have updated <strong><t t-esc=\"field.string\"/></strong> (<t t-esc=\"lang\"/>).\n"
-"            <a class=\"oe_field_translate\" t-att-name=\"field.name\" href=\"#\">Update translations</a>"
+msgid "Please note that only the selected ids will be exported."
 msgstr ""
 

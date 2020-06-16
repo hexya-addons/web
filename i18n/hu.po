@@ -12,33 +12,140 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 
+#. custom: web
+#: base.xml:0
+msgid "\"<t t-esc=\"v\"/>\""
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "\"<t t-esc=\"widget.value\"/>\""
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "# Code editor"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "(no string)"
+msgstr "(nincs szöveg)"
+
+#. custom: web
+#: base.xml:0
+msgid "(nolabel)"
+msgstr "(nincs felirat)"
+
+#. custom: web
+#: menu.xml:0
+msgid "$(this).addClass(\"dropdown-menu-right\");"
+msgstr ""
+
+#. custom: web
+#: notification.xml:0
+msgid "&amp;times;"
+msgstr ""
+
+#. custom: web
+#: time.js:192
+msgid "'%s' is not a correct date, datetime nor time"
+msgstr "'%s' nem érvényes dátum, dátum idő és nem idő"
+
+#. custom: web
+#: base.xml:0
+msgid ","
+msgstr ""
+
+#. custom: web
+#: time.js:204
+msgid "'%s' is not convertible to date, datetime nor time"
+msgstr "'%s' nem átalakítható dátummá, dátum idővé vagy idővé"
+
+#. custom: web
+#: base.xml:0
+msgid "-"
+msgstr ""
+
 #. field:Filter.Action
 msgid "Action"
 msgstr "Akció"
 
 #. custom: web
-#: base.xml:0
-msgid "$(this).addClass('o_error');"
+#: debug.xml:0
+msgid "(change)"
 msgstr ""
 
-#. resource:base_ir_filters_view_search
-msgid "My filters"
+#. custom: web
+#: graph_renderer.js:124
+msgid "..."
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "(count)"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0 base.xml:0 kanban.xml:0
+msgid "/web/binary/upload_attachment"
 msgstr ""
 
 #. custom: web
 #: base.xml:0
-msgid "...Upload in progress..."
-msgstr "...Feltöltés folyamatban..."
+msgid ":"
+msgstr ""
 
 #. custom: web
-#: base.xml:0
-msgid "99+"
+#: kanban.xml:0
+msgid "?"
+msgstr ""
+
+#. custom: web
+#: add_new_favorite_menu.js:81
+msgid "A name for your favorite is required."
 msgstr ""
 
 #. custom: web
 #: base.xml:0
-msgid "Activate Assets Debugging"
-msgstr "Eszköz hibakeresés aktiválása"
+msgid ""
+"@font-face {\n"
+"                    font-family: \"font_sign\";\n"
+"                    src: url(data:font/ttf;base64,<t t-esc=\"font\"/>) format(\"woff\");\n"
+"                    font-weight: normal;\n"
+"                    font-style: normal;\n"
+"                }"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "ALL"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "ANY"
+msgstr ""
+
+#. custom: web
+#: name_and_signature.xml:0
+msgid ""
+"@font-face {\n"
+"                        font-family: \"font\";\n"
+"                        src: url(data:font/ttf;base64,<t t-esc=\"font\"/>) format(\"woff\");\n"
+"                        font-weight: normal;\n"
+"                        font-style: normal;\n"
+"                    }"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Action ID:"
+msgstr "Akció azonosító:"
+
+#. field:Filter.Active
+msgid "Active"
+msgstr "Aktív"
 
 #. custom: web
 #: base.xml:0
@@ -47,16 +154,8 @@ msgstr "Egyéni szűrő hozzáadása"
 
 #. custom: web
 #: base.xml:0
-msgid "Add custom group"
-msgstr "Egyéni csoport hozzáadása"
-
-#. field:Filter.Context
-msgid "Context"
-msgstr ""
-
-#. field:Filter.IsDefault
-msgid "Default filter"
-msgstr ""
+msgid "Add Custom Group"
+msgstr "Új egyéni csoport"
 
 #. custom: web
 #: base.xml:0
@@ -70,6 +169,13 @@ msgstr "Minden felhasználó"
 
 #. custom: web
 #: base.xml:0
+msgid ""
+"Among the <t t-raw=\"changes.nbRecords\"/> selected records,\n"
+"                <t t-raw=\"changes.nbValidRecords\"/> are valid for this update.<br/>"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
 msgid "Attachment :"
 msgstr "Melléklet :"
 
@@ -80,22 +186,119 @@ msgstr "Elérhető mezők"
 
 #. custom: web
 #: base.xml:0
+msgid "Based On"
+msgstr ""
+
+#. custom: web
+#: calendar_model.js:548
+msgid " [Me]"
+msgstr " [Én]"
+
+#. custom: web
+#: debug.xml:0
+msgid "Activate Assets Debugging"
+msgstr "Eszköz hibakeresés aktiválása"
+
+#. custom: web
+#: debug.xml:0
+msgid "Activate Tests Assets Debugging"
+msgstr ""
+
+#. custom: web
+#: calendar_renderer.js:80
+msgid "Add %s"
+msgstr "%s hozzáadása"
+
+#. custom: web
+#: crash_manager.xml:0
+msgid "An error occurred"
+msgstr ""
+
+#. custom: web
+#: crash_manager.js:106
+msgid "An unknown CORS error occured. The error probably originates from a JavaScript file served from a different origin. (Opening your browser console might give you a hint on the error.)"
+msgstr ""
+
+#. custom: web
+#: colorpicker_dialog.xml:0
+msgid "Blue"
+msgstr "Kék"
+
+#. custom: web
+#: debug.xml:0
+msgid "Become Superuser"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"Button\n"
+"            <t t-if=\"node.attrs.string\">: </t>\n"
+"            <t t-if=\"!node.attrs.string\"> (no string)</t>"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Button Type:"
+msgstr "Gomb típus:"
+
+#. custom: web
+#: base.xml:0
+msgid "CLEAR"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Change default:"
+msgstr "Alapértelmezés megváltoztatása:"
+
+#. custom: web
+#: debug.xml:0
 msgid "Clear Events"
 msgstr "Események törlése"
+
+#. custom: web
+#: change_password.js:26 base.xml:0
+msgid "Change Password"
+msgstr "Jelszó megváltoztatása"
+
+#. custom: web
+#: base.xml:0
+msgid "Clear Signature"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Compare To"
+msgstr ""
 
 #. custom: web
 #: base.xml:0
 msgid "Condition:"
 msgstr "Feltétel:"
 
+#. field:Filter.Context
+msgid "Context"
+msgstr ""
+
+#. custom: web
+#: ajax.js:311
+msgid "Could not connect to the server"
+msgstr "Nem lehet kapcsolódni a szerverhez"
+
+#. field:Filter.IsDefault
+msgid "Default filter"
+msgstr ""
+
 #. custom: web
 #: base.xml:0
 msgid "Confirm New Password"
 msgstr "Új jelszó megerősítése"
 
-#. field:Company.DashboardBackground
-msgid "Dashboard Background"
-msgstr ""
+#. custom: web
+#: crash_manager.js:268
+msgid "Copied !"
+msgstr "Másolva!"
 
 #. custom: web
 #: base.xml:0
@@ -104,37 +307,117 @@ msgstr "Létrehozta:"
 
 #. custom: web
 #: base.xml:0
+msgid "Default:"
+msgstr "Alapértelmezés:"
+
+#. custom: web
+#: signature.js:41
+msgid "Adopt Your Signature"
+msgstr ""
+
+#. custom: web
+#: dialog.js:382
+msgid "Alert"
+msgstr "Figyelmeztetés"
+
+#. custom: web
+#: kanban.xml:0
+msgid "Add a Column"
+msgstr "Új oszlop"
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"Get this feature and much more with Hexya Enterprise!\n"
+"            <ul class=\"list-unstyled\">\n"
+"                <li><i class=\"fa fa-check\"></i> Access to all Enterprise Apps</li>\n"
+"                <li><i class=\"fa fa-check\"></i> New design</li>\n"
+"                <li><i class=\"fa fa-check\"></i> Mobile support</li>\n"
+"                <li><i class=\"fa fa-check\"></i> Upgrade to future versions</li>\n"
+"                <li><i class=\"fa fa-check\"></i> Bugfixes guarantee</li>\n"
+"                <li><a href=\"http://www.hexya.io/editions?utm_source=db&amp;utm_medium=enterprise\" target=\"_blank\"><i class=\"fa fa-plus\"></i> And more</a></li>\n"
+"            </ul>"
+msgstr ""
+
+#. custom: web
+#: kanban.xml:0
+msgid "Archive All"
+msgstr "Mindent archivál"
+
+#. custom: web
+#: kanban_column.js:378
+msgid "Are you sure that you want to archive all the records from this column?"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
 msgid "Creation Date:"
 msgstr "Létrehozva:"
 
 #. custom: web
 #: base.xml:0
+msgid "Documentation"
+msgstr "Dokumentáció"
+
+#. custom: web
+#: base.xml:0
+msgid "Domain:"
+msgstr "Domain:"
+
+#. custom: web
+#: data_export.js:441
+msgid "Do you really want to delete this export template?"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
 msgid "Creation User:"
 msgstr "Létrehozó felhasználó:"
 
 #. custom: web
-#: base.xml:0
-msgid "Day"
-msgstr "Nap"
+#: calendar_renderer.js:149
+msgid "Do you really want to delete this filter from favorites ?"
+msgstr "Tényleg szeretné ennek a szűrőnek a törlését a kedvencek közül?"
+
+#. custom: web
+#: debug.xml:0
+msgid "Edit Action"
+msgstr "Akció szerkesztése"
+
+#. custom: web
+#: debug.xml:0
+msgid "Edit ControlPanelView"
+msgstr ""
 
 #. custom: web
 #: base.xml:0
-msgid "Default:"
-msgstr "Alapértelmezés:"
+msgid "Edit Domain"
+msgstr "Tartomány szerkesztése"
 
 #. custom: web
 #: base.xml:0
-msgid "Delete"
-msgstr "Törlés"
-
-#. field:Filter.Domain
-msgid "Domain"
+msgid "Export Format:"
 msgstr ""
 
-#. field:Filter.Name
-#. resource:base_ir_filters_view_search
-msgid "Filter Name"
+#. custom: web
+#: form_controller.js:191 list_controller.js:163
+msgid "Archive"
+msgstr "Archiválás"
+
+#. custom: web
+#: base.xml:0
+msgid "FILTER"
 msgstr ""
+
+#. custom: web
+#: add_new_favorite_menu.js:89
+msgid "Filter with same name already exists."
+msgstr "Már létező nevekkel szűr."
+
+#. custom: web
+#: base.xml:0 base.xml:0 base.xml:0
+msgid "Apply"
+msgstr "Alkalmazás"
 
 #. resource:base_actions_ir_filters_view
 msgid "Filters"
@@ -142,6 +425,11 @@ msgstr "Szűrők"
 
 #. resource:base_ir_filters_view_search
 msgid "Filters created by myself"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0
+msgid "Alt"
 msgstr ""
 
 #. resource:base_ir_filters_view_search
@@ -153,71 +441,428 @@ msgid "Filters visible only for one user"
 msgstr ""
 
 #. custom: web
-#: base.xml:0
-msgid "Disable Technical Features"
-msgstr "Technikai funkciók kikapcsolása"
+#: list_controller.js:165
+msgid "Are you sure that you want to archive all the selected records?"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 name_and_signature.xml:0
+msgid "Auto"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Field:"
+msgstr "Mező:"
+
+#. custom: web
+#: calendar_model.js:557
+msgid "Everybody's calendars"
+msgstr "Mindenki naptára"
+
+#. custom: web
+#: favorite_menu.js:118
+msgid "Are you sure that you want to remove this filter?"
+msgstr "Szűrő eltávolítása?"
+
+#. field:Filter.Name
+#. resource:base_ir_filters_view_search
+msgid "Filter Name"
+msgstr ""
+
+#. custom: web
+#: kanban.xml:0 kanban.xml:0
+msgid "Add"
+msgstr "Hozzáadás"
+
+#. custom: web
+#: list_editable_renderer.js:88 list_editable_renderer.js:1068
+msgid "Add a line"
+msgstr "Új sor"
+
+#. custom: web
+#: relational_fields.js:1912
+msgid "Add: "
+msgstr "Hozzáadás: "
+
+#. custom: web
+#: signature.js:47
+msgid "Adopt and Sign"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0 kanban.xml:0
+msgid "All"
+msgstr "Összes"
+
+#. custom: web
+#: form_controller.js:193
+msgid "Are you sure that you want to archive this record?"
+msgstr ""
+
+#. custom: web
+#: kanban_column.js:316
+msgid "Are you sure that you want to remove this column ?"
+msgstr "Biztosan el szeretné távolítani ezt az oszlopot?"
+
+#. custom: web
+#: calendar_model.js:430 calendar_renderer.js:714
+msgid "All day"
+msgstr "Egész nap"
+
+#. custom: web
+#: calendar_model.js:557
+msgid "Everything"
+msgstr ""
+
+#. custom: web
+#: basic_controller.js:364 calendar_controller.js:209
+msgid "Are you sure you want to delete this record ?"
+msgstr "Biztosan törölni szeretné ezt a rekordot?"
 
 #. custom: web
 #: base.xml:0
+msgid "Fields to export"
+msgstr "Exportálandó mezők:"
+
+#. custom: web
+#: basic_fields.js:1680
+msgid "File Upload"
+msgstr "Fájl feltöltése"
+
+#. custom: web
+#: basic_fields.js:1664
+msgid "File upload"
+msgstr "Fájl feltöltése"
+
+#. custom: web
+#: colorpicker_dialog.xml:0
+msgid "Green"
+msgstr "Zöld"
+
+#. custom: web
+#: base.xml:0 name_and_signature.xml:0
+msgid "By clicking Adopt and Sign, I agree that the chosen signature/initials will be a valid electronic representation of my hand-written signature/initials for all purposes when it is used on documents, including legally binding contracts."
+msgstr ""
+
+#. custom: web
+#: kanban_record.js:533
+msgid "Card color: %s"
+msgstr ""
+
+#. custom: web
+#: kanban_renderer.js:288
+msgid "Column %s"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0
+msgid "Create a new record"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0
+msgid "Description"
+msgstr "Leírás"
+
+#. custom: web
+#: domain_selector_dialog.js:35
+msgid "Domain"
+msgstr "Tartomány"
+
+#. custom: web
+#: relational_fields.js:624
+msgid "Create and Edit..."
+msgstr "Létrehozás és szerkesztés..."
+
+#. custom: web
+#: domain_selector.js:538
+msgid "Domain error"
+msgstr "Tartomány hiba"
+
+#. custom: web
+#: misc.js:15
+msgid "Don't leave yet,<br />it's still loading..."
+msgstr "Várjon, <br />még tölt..."
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Any"
+msgstr "Bármely"
+
+#. custom: web
+#: utils.js:353
+msgid "Bytes|Kb|Mb|Gb|Tb|Pb|Eb|Zb|Yb"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Copy Text"
+msgstr "Szöveg másolása"
+
+#. custom: web
+#: form_controller.js:722 view_dialogs.js:149
+msgid "Create "
+msgstr "Létrehozás"
+
+#. custom: web
+#: basic_fields.js:1822 signature.js:222
+msgid "Could not display the selected image."
+msgstr "A kiválasztott kép nem megjeleníthető."
+
+#. custom: web
+#: kanban_column.js:329
+msgid "Edit Column"
+msgstr "Oszlop szerkesztése"
+
+#. custom: web
+#: data_export.js:38
+msgid "Export Data"
+msgstr "Adatok exportálása"
+
+#. custom: web
+#: debug.xml:0
+msgid "Edit View: <t t-esc=\"view.displayName\"/>"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0
+msgid "Edit a record"
+msgstr "Bejegyzés szerkesztése"
+
+#. custom: web
+#: list_controller.js:158 data_export.js:40
+msgid "Export"
+msgstr "Exportálás"
+
+#. custom: web
+#: kanban.xml:0
+msgid "Edit Stage"
+msgstr "Szakasz szerkesztése"
+
+#. custom: web
+#: relational_fields.js:43
+msgid "Create a %s"
+msgstr "%s létrehozása"
+
+#. custom: web
+#: relational_fields.js:391
+msgid "Create: "
+msgstr "Létrehozás: "
+
+#. custom: web
+#: base.xml:0 web_calendar.xml:0
+msgid "Day"
+msgstr "Nap"
+
+#. custom: web
+#: base.xml:0 name_and_signature.xml:0
+msgid "Draw"
+msgstr ""
+
+#. custom: web
+#: crash_manager.js:271 add_new_favorite_menu.js:81 add_new_favorite_menu.js:89
+msgid "Error"
+msgstr "Hiba"
+
+#. custom: web
+#: calendar_quick_create.js:49 base.xml:0 form_view.xml:0 kanban.xml:0 web_calendar.xml:0
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#. custom: web
-#: base.xml:0
-msgid "Enable Technical Features"
-msgstr "Technikai funkciók bekapcsolása"
+#. resource:base_ir_filters_view_search
+msgid "Group By"
+msgstr "Csoportosítás ezzel"
 
 #. custom: web
 #: base.xml:0
-msgid "Export Formats :"
-msgstr "Exportálási formátumok :"
+msgid "Hide in Kanban"
+msgstr ""
+
+#. custom: web
+#: dialog.js:397 dialog.js:451 signature.js:50 upgrade_fields.js:74 crash_manager.js:363 calendar_quick_create.js:55 kanban_column.js:310 list_confirm_dialog.js:39 view_dialogs.js:435 base.xml:0
+msgid "Cancel"
+msgstr "Mégsem"
+
+#. custom: web
+#: kanban.xml:0
+msgid "Esc to discard"
+msgstr ""
+
+#. custom: web
+#: name_and_signature.xml:0
+msgid "Clear"
+msgstr "Törlés"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Context:"
+msgstr "Kontextus:"
+
+#. custom: web
+#: graph_view.js:44 graph_view.js:46 pivot_view.js:49 pivot_view.js:61 base.xml:0 base.xml:0
+msgid "Count"
+msgstr "Darab"
+
+#. custom: web
+#: dialog.js:409 dialog.js:460 list_confirm_dialog.js:45
+msgid "Confirmation"
+msgstr "Megerősítés"
+
+#. custom: web
+#: calendar_controller.js:283 calendar_quick_create.js:44 kanban_controller.js:458 view_dialogs.js:441 base.xml:0 base.xml:0 form_view.xml:0 form_view.xml:0
+msgid "Create"
+msgstr "Létrehozás"
+
+#. custom: web
+#: debug_manager_backend.js:395 debug.xml:0
+msgid "Fields View Get"
+msgstr "Nézet mezői"
+
+#. custom: web
+#: menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0 menu.xml:0
+msgid "Control"
+msgstr "Ellenőrzés"
+
+#. custom: web
+#: debug_manager_backend.js:358 view_dialogs.js:112 data_export.js:41 domain_selector_dialog.js:23
+msgid "Close"
+msgstr "Bezárás"
 
 #. custom: web
 #: base.xml:0
-msgid "Export Type :"
-msgstr "Exportálás típus:"
+msgid ""
+"Hit ENTER to\n"
+"            <t t-esc=\"title\"></t>"
+msgstr ""
 
-#. custom: web
-#: base.xml:0
-msgid "Export all Data"
-msgstr "Összes adat exportálása"
-
-#. field:CommonMixin.ID
-#. field:Company.ID
 #. field:Filter.ID
-#. field:User.ID
 msgid "ID"
 msgstr "Azonosító ID"
 
 #. custom: web
-#: base.xml:0
-msgid "ID:"
+#: menu.xml:0
+msgid "Discard a record modification"
+msgstr ""
+
+#. custom: web
+#: control_panel_model.js:290
+msgid "Failed to evaluate search criterions"
+msgstr "Nem sikerült kiértékelni a keresési kritériumokat"
+
+#. custom: web
+#: kanban.xml:0
+msgid "Fold"
+msgstr "Behajtás"
+
+#. custom: web
+#: name_and_signature.xml:0
+msgid "Full Name"
+msgstr ""
+
+#. custom: web
+#: pivot_controller.js:131
+msgid "For Excel compatibility, data cannot be exported if there are more than 256 columns.\\n\\nTip: try to flip axis, filter further or reduce the number of measures."
 msgstr ""
 
 #. custom: web
 #: base.xml:0
-msgid "Import-Compatible Export"
-msgstr "Import kompatibilis export"
+msgid ""
+"Hit ENTER to CREATE<br/>\n"
+"            Hit DOWN to navigate to the list below"
+msgstr ""
 
 #. custom: web
 #: base.xml:0
-msgid "Latest Modification Date:"
-msgstr "Módosítva:"
+msgid ""
+"Hit ENTER to SAVE<br/>\n"
+"            Hit ESCAPE to DISCARD"
+msgstr ""
 
 #. custom: web
 #: base.xml:0
-msgid "Latest Modification by:"
-msgstr "Módosította:"
+msgid "I want to update data (import-compatible export)"
+msgstr ""
 
 #. custom: web
-#: base.xml:0
-msgid "Leave the Developer Tools"
-msgstr "Fejlesztői eszközök kikapcsolása"
+#: colorpicker_dialog.xml:0
+msgid "Hue"
+msgstr ""
+
+#. custom: web
+#: colorpicker_dialog.xml:0
+msgid "Lightness %"
+msgstr ""
 
 #. custom: web
 #: base.xml:0
 msgid "Log out"
 msgstr "Kijelentkezés"
+
+#. custom: web
+#: upgrade_fields.js:85
+msgid "Hexya Enterprise"
+msgstr ""
+
+#. custom: web
+#: crash_manager.js:251
+msgid "Hexya Error"
+msgstr ""
+
+#. custom: web
+#: crash_manager.js:376
+msgid "Hexya Session Expired"
+msgstr ""
+
+#. custom: web
+#: dialog.js:426
+msgid "I am sure about this."
+msgstr "Biztos vagyok benne."
+
+#. custom: web
+#: base.xml:0
+msgid "Match <strong>all records</strong>"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Match records with"
+msgstr ""
+
+#. custom: web
+#: utils.js:697
+msgid "Could not serialize XML"
+msgstr "Nem lehet szerializálni az XML-t"
+
+#. custom: web
+#: crash_manager.js:104 crash_manager.js:116 crash_manager.js:129 crash_manager.js:296
+msgid "Hexya Client Error"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Match records with the following rule:"
+msgstr ""
+
+#. custom: web
+#: debug_manager_backend.js:83
+msgid "JS Tests"
+msgstr "JS tesztek"
+
+#. custom: web
+#: debug_manager_backend.js:94
+msgid "JS Mobile Tests"
+msgstr ""
+
+#. custom: web
+#: model_field_selector.js:431
+msgid "Invalid field chain"
+msgstr ""
+
+#. custom: web
+#: user_menu.js:123
+msgid "Keyboard Shortcuts"
+msgstr "Gyorsbillentyűk"
 
 #. field:Filter.ResModel
 #. resource:base_ir_filters_view_search
@@ -225,9 +870,38 @@ msgid "Model"
 msgstr ""
 
 #. custom: web
+#: crash_manager.js:353
+msgid "Hexya Warning"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Latest Modification by:"
+msgstr "Módosította:"
+
+#. custom: web
+#: debug.xml:0
+msgid "Leave the Developer Tools"
+msgstr "Fejlesztői eszközök kikapcsolása"
+
+#. custom: web
+#: base.xml:0 name_and_signature.xml:0
+msgid "Load"
+msgstr ""
+
+#. custom: web
+#: graph_renderer.js:877 graph_renderer.js:886
+msgid "Invalid data"
+msgstr "Érvénytelen adat"
+
+#. resource:base_ir_filters_view_search
+msgid "My filters"
+msgstr ""
+
+#. custom: web
 #: base.xml:0
-msgid "Manage Filters"
-msgstr "Szűrők kezelése"
+msgid "Method:"
+msgstr "Módszer:"
 
 #. custom: web
 #: base.xml:0
@@ -236,23 +910,18 @@ msgstr "Módosította:"
 
 #. custom: web
 #: base.xml:0
-msgid "Month"
-msgstr "Hónap"
+msgid "My hexya.io account"
+msgstr ""
 
 #. custom: web
 #: base.xml:0
-msgid "More"
-msgstr "Tovább"
+msgid "NONE"
+msgstr ""
 
 #. custom: web
-#: base.xml:0
-msgid "Move Down"
-msgstr "Mozgatás lefelé"
-
-#. custom: web
-#: base.xml:0
-msgid "Move Up"
-msgstr "Mozgatás felfelé"
+#: loading.js:59
+msgid "Loading"
+msgstr "Betöltés"
 
 #. custom: web
 #: base.xml:0
@@ -260,37 +929,159 @@ msgid "New Password"
 msgstr "Új jelszó"
 
 #. custom: web
+#: debug.xml:0
+msgid "ID:"
+msgstr "ID:"
+
+#. custom: web
 #: base.xml:0
+msgid "New template"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Latest Modification Date:"
+msgstr "Módosítva:"
+
+#. custom: web
+#: debug.xml:0
+msgid "Manage Attachments"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Manage Filters"
+msgstr "Szűrők kezelése"
+
+#. custom: web
+#: basic_model.js:690
+msgid "New"
+msgstr "Új"
+
+#. custom: web
+#: base.xml:0
+msgid "No data to display"
+msgstr "Nincs megjeleníthető adat."
+
+#. custom: web
+#: colorpicker_dialog.xml:0
+msgid "Red"
+msgstr "Piros"
+
+#. custom: web
+#: data_export.js:679
+msgid "No match found."
+msgstr ""
+
+#. custom: web
+#: kanban.xml:0
+msgid "Load more... (<t t-esc=\"widget.remaining\"/> remaining)"
+msgstr ""
+
+#. custom: web
+#: loading.js:57
+msgid "Loading (%d)"
+msgstr "Betöltés (%d)"
+
+#. custom: web
+#: misc.js:12
+msgid "Loading..."
+msgstr "Betöltés…"
+
+#. custom: web
+#: kanban_record.js:439 view_dialogs.js:112 domain_selector_dialog.js:30 base.xml:0 base.xml:0 form_view.xml:0 form_view.xml:0 kanban.xml:0
+msgid "Discard"
+msgstr "Elvetés"
+
+#. custom: web
+#: menu.xml:0
+msgid "Mac"
+msgstr "Mac"
+
+#. custom: web
+#: misc.js:18
+msgid "Maybe you should consider reloading the application by pressing F5..."
+msgstr "Talán töltse újra az alkalmazást az F5 megnyomásával..."
+
+#. custom: web
+#: debug.xml:0
 msgid "No Update:"
 msgstr "Nincs frissítés:"
 
 #. custom: web
-#: base.xml:0
-msgid "Save as:"
-msgstr "Mentés másként:"
+#: kanban.xml:0 web_calendar.xml:0
+msgid "Delete"
+msgstr "Törlés"
 
-#. resource:base_ir_filters_view_search
-msgid "Shared"
+#. custom: web
+#: debug_manager_backend.js:221
+msgid "No attachment available"
 msgstr ""
 
 #. custom: web
-#: base.xml:0
-msgid ""
-"No data available for this pivot table.  Try to add some records, or make sure\n"
-"        that there is at least one measure and no active filter in the search bar."
+#: colorpicker_dialog.xml:0
+msgid "Opacity %"
 msgstr ""
-"Nincs adat ehhez a pivot táblához. Próbáljon hozzáadni rekordokat, vagy győződjön meg arról, \n"
-"hogy van legalább egy mérőszám és nincs aktív szűrő a keresési sávban."
+
+#. custom: web
+#: debug_manager_backend.js:240
+msgid "No metadata available"
+msgstr "Nincs elérhető metaadat"
+
+#. custom: web
+#: basic_fields.js:1822 basic_fields.js:2220 signature.js:222
+msgid "Image"
+msgstr "Kép"
+
+#. custom: web
+#: debug_manager_backend.js:256
+msgid "Metadata (%s)"
+msgstr "Metaadat (%s)"
+
+#. custom: web
+#: base.xml:0 web_calendar.xml:0
+msgid "Month"
+msgstr "Hónap"
+
+#. custom: web
+#: search_bar_autocomplete_sources.js:295
+msgid "No"
+msgstr "Nem"
+
+#. custom: web
+#: view_dialogs.js:378
+msgid "No records found!"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Open View"
+msgstr "Nézet megnyitása: "
+
+#. custom: web
+#: menu.xml:0
+msgid "Open the next record"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Regenerate Assets Bundles"
+msgstr ""
+
+#. custom: web
+#: form_renderer.js:439 base.xml:0
+msgid "More"
+msgstr "Tovább"
+
+#. custom: web
+#: relational_fields.js:630
+msgid "No results to show..."
+msgstr "Nincs megjeleníthető eredmény..."
 
 #. custom: web
 #: base.xml:0
-msgid "No data to display."
-msgstr "Nincs megjeleníthatő adat."
-
-#. custom: web
-#: base.xml:0
-msgid "Not shown in kanban"
-msgstr "Kanbannézetben nem jelenik meg"
+msgid "None"
+msgstr "Egyik sem"
 
 #. custom: web
 #: base.xml:0
@@ -303,19 +1094,93 @@ msgid "Only you"
 msgstr "Csak saját"
 
 #. custom: web
-#: base.xml:0
-msgid "Please note that only the selected ids will be exported."
-msgstr "Kérem vegye figyelembe, csak a kiválasztott azonosítók kerülnek exportálásra."
+#: basic_fields.js:2635
+msgid "Only Integer or Float Value should be valid."
+msgstr ""
+
+#. custom: web
+#: data_export.js:472
+msgid "Please enter save field list name"
+msgstr "Adja meg a mentett mező lista nevét"
+
+#. custom: web
+#: utils.js:470
+msgid "Node [%s] is not a JSONified XML node"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Object:"
+msgstr "Objektum:"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Measures"
+msgstr "Mérőszámok"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Modifiers:"
+msgstr "Módosítók:"
+
+#. custom: web
+#: list_controller.js:434 list_controller.js:745
+msgid "No valid record to save"
+msgstr ""
+
+#. custom: web
+#: dialog.js:79 dialog.js:371 dialog.js:391 dialog.js:444 kanban_column.js:305 list_confirm_dialog.js:34
+msgid "Ok"
+msgstr "Ok"
 
 #. custom: web
 #: base.xml:0
-msgid "Please pay attention that all records matching your search filter will be exported. Not only the selected ids."
-msgstr "Kérem vegye figyelembe, hogy a keresési szűrőnek megfelelő összes rekord exportálásra kerül, nem csak a kiválasztott azonosítók."
+msgid "On change:"
+msgstr "Változtatáskor:"
+
+#. custom: web
+#: data_export.js:156
+msgid "Please select fields to export..."
+msgstr "Válassza ki az exportálandó mezőket..."
+
+#. custom: web
+#: data_export.js:190
+msgid "Please select fields to save export list..."
+msgstr "Válassza ki a mezőket az export lista mentéséhez..."
+
+#. custom: web
+#: menu.xml:0
+msgid "Open the previous record"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0
+msgid "Open to kanban view"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0
+msgid "Open to list view"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"Please update translations of :\n"
+"        <t t-foreach=\"fields\" t-as=\"field\">\n"
+"            <strong><a class=\"oe_field_translate\" t-att-name=\"field\" href=\"#\"><t t-esc=\"field_value.string\"/><t t-if=\"field_index &lt; _.size(fields)-1\">, </t></a></strong>\n"
+"        </t>"
+msgstr ""
 
 #. custom: web
 #: base.xml:0
 msgid "Preferences"
 msgstr "Preferenciák"
+
+#. custom: web
+#: report.xml:0
+msgid "Print"
+msgstr "Nyomtatás"
 
 #. custom: web
 #: base.xml:0
@@ -324,894 +1189,231 @@ msgstr "Negyedév"
 
 #. custom: web
 #: base.xml:0
-msgid "Remove"
-msgstr "Eltávolítás"
+msgid "Range"
+msgstr "Tartomány"
 
 #. custom: web
-#: base.xml:0
-msgid "Remove All"
-msgstr "Összes eltávolítása"
+#: relational_fields.js:723 calendar_controller.js:346 form_controller.js:722 form_controller.js:744 view_dialogs.js:149
+msgid "Open: "
+msgstr "Megnyitás: "
 
 #. custom: web
-#: base.xml:0
-msgid "Run JS Tests"
-msgstr "JS tesztek futtatása"
+#: crash_manager.xml:0
+msgid "Please use the copy button to report the error to your support service."
+msgstr ""
 
 #. custom: web
-#: base.xml:0
-msgid "Save current search"
-msgstr "Aktuális keresés mentése"
-
-#. field:User.SidebarVisible
-msgid "Show App Sidebar"
+#: form_view.xml:0
+msgid "Quick actions"
 msgstr ""
 
 #. custom: web
 #: base.xml:0
-msgid "Save fields list"
-msgstr "Mezőlista mentése"
+msgid "Relation:"
+msgstr "Reláció:"
+
+#. custom: web
+#: data_export.js:142
+msgid "Remove field"
+msgstr ""
+
+#. custom: web
+#: kanban_record.js:430
+msgid "Remove Cover Image"
+msgstr ""
+
+#. custom: web
+#: view_dialogs.js:283
+msgid "Remove"
+msgstr "Eltávolítás"
+
+#. custom: web
+#: crash_manager.js:387
+msgid "Request timeout"
+msgstr ""
 
 #. custom: web
 #: base.xml:0
-msgid "Saved exports:"
-msgstr "Mentett exportálások:"
+msgid "SEE RESULT"
+msgstr ""
+
+#. custom: web
+#: colorpicker_dialog.xml:0
+msgid "Saturation %"
+msgstr ""
 
 #. custom: web
 #: base.xml:0
+msgid "Save Current Search"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Run Click Everywhere Test"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Run JS Mobile Tests"
+msgstr ""
+
+#. custom: web
+#: view_dialogs.js:126 domain_selector_dialog.js:27 base.xml:0 base.xml:0 base.xml:0 form_view.xml:0 form_view.xml:0
+msgid "Save"
+msgstr "Mentés"
+
+#. custom: web
+#: view_dialogs.js:126
+msgid "Save & Close"
+msgstr "Mentés és bezárás"
+
+#. custom: web
+#: view_dialogs.js:135
+msgid "Save & New"
+msgstr "Mentés & Új"
+
+#. custom: web
+#: basic_fields.js:1955
+msgid "Save As..."
+msgstr "Mentés másként..."
+
+#. custom: web
+#: base.xml:0
+msgid "Save as :"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Run JS Tests"
+msgstr "JS tesztek futtatása"
+
+#. custom: web
+#: crash_manager.xml:0
+msgid "See details"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Select a model to add a filter."
+msgstr ""
+
+#. custom: web
+#: debug_manager_backend.js:359
+msgid "Save default"
+msgstr "Alapértelmezés mentése"
+
+#. custom: web
+#: search_bar_autocomplete_sources.js:144
+msgid "Search %(field)s for: %(value)s"
+msgstr "Keresés %(field)s erre: %(value)s"
+
+#. custom: web
+#: relational_fields.js:417
+msgid "Search More..."
+msgstr "Továbbiak keresése..."
+
+#. custom: web
+#: search_bar_autocomplete_sources.js:335
+msgid "Search %(field)s at: %(value)s"
+msgstr "Keresett %(field)s itt: %(value)s"
+
+#. custom: web
+#: base.xml:0
+msgid "Select Signature Style"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Share with all users <span class=\"fa fa-users\" role=\"img\" aria-label=\"Users\" title=\"Users\"/>"
+msgstr ""
+
+#. resource:base_ir_filters_view_search
+msgid "Shared"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Size:"
+msgstr "Méret:"
+
+#. custom: web
+#: kanban.xml:0
+msgid "See examples"
+msgstr ""
+
+#. custom: web
+#: basic_fields.js:3096
+msgid "Selected records"
+msgstr "Kiválasztott rekordok"
+
+#. custom: web
+#: base.xml:0
+msgid "Selection:"
+msgstr "Kiválasztás:"
+
+#. custom: web
+#: relational_fields.js:391
+msgid "Search: "
+msgstr "Keresés: "
+
+#. custom: web
+#: kanban_record.js:409 view_dialogs.js:448
+msgid "Select"
+msgstr "Kiválasztás"
+
+#. custom: web
+#: debug.xml:0
 msgid "Set Defaults"
 msgstr "Alapértelmezések beállítása"
+
+#. custom: web
+#: crash_manager.js:243
+msgid "Something went wrong !"
+msgstr ""
 
 #. field:Filter.Sort
 msgid "Sort"
 msgstr ""
 
 #. custom: web
-#: base.xml:0
-msgid "Technical Translation"
-msgstr "Technikai fordítás"
-
-#. help:Filter.Action
-msgid "The menu action this filter applies to. When left empty the filter applies to all menus for this model."
-msgstr ""
-
-#. help:Filter.User
-msgid "The user this filter is private to. When left empty the filter is public and available to all users."
-msgstr ""
-
-#. custom: web
-#: form_widgets.js:1114
-msgid "There was a problem while uploading your file"
-msgstr "Probléma merült fel a fájl feltöltése közben"
-
-#. custom: web
-#: base.xml:0
-msgid ""
-"This wizard will export all data that matches the current search criteria to a CSV file.\n"
-"        You can export all data or only the fields that can be reimported after modification."
-msgstr ""
-"Ez a varázsló exportálja az aktuális keresési feltételeknek megfelelő összes adatot egy CSV fájlba.\n"
-"            Lehetőség van valamennyi adat exportálására vagy csak azon mezőkére, amelyek a változtatások után visszaimportálásra kerülnek."
-
-#. custom: web
-#: form_widgets.js:1131
-msgid "The field is empty, there's nothing to save !"
-msgstr "A mező üres, nincs mit menteni!"
-
-#. custom: web
-#: base.xml:0
-msgid "Toggle Timelines"
-msgstr "Idővonalak mutatása"
-
-#. custom: web
-#: base.xml:0
-msgid ""
-"Unhandled widget\n"
-"    <t t-js=\"dict\">console.warn('Unhandled widget', dict.widget);</t>"
-msgstr ""
-
-#. custom: web
-#: form_common.js:874
-msgid " & Close"
-msgstr " & Lezárás"
-
-#. custom: web
-#: formats.js:173
-msgid "'%s' is not a correct datetime"
-msgstr "'%s' em érvényes dátum időpont"
-
-#. custom: web
-#: base.xml:0
-msgid "or"
-msgstr "vagy"
-
-#. custom: web
-#: base_common.xml:0
-msgid "(no string)"
-msgstr "(nincs szöveg)"
-
-#. custom: web
-#: base_common.xml:0
-msgid ""
-"Button\n"
-"                <t t-if=\"widget.string\">: </t>\n"
-"                <t t-if=\"!widget.string\"> (no string)</t>"
-msgstr ""
-
-#. custom: web
-#: misc.js:15
-msgid "Don't leave yet,<br />it's still loading..."
-msgstr "Várjon, <br />még tölt..."
-
-#. custom: web
-#: misc.js:18
-msgid "Maybe you should consider reloading the application by pressing F5..."
-msgstr "Talán töltse újra az alkalmazást az F5 megnyomásával..."
-
-#. custom: web
-#: base_common.xml:0
-msgid "Object:"
-msgstr "Objektum:"
-
-#. custom: web
-#: base.xml:0
-msgid "Upload your file"
-msgstr "Fáljok feltöltése"
-
-#. custom: web
-#: base_common.xml:0
-msgid "×"
-msgstr ""
-
-#. custom: web
-#: form_common.js:1103
-msgid "Selected domain"
-msgstr "Kiválasztott domain"
-
-#. custom: web
-#: form_relational_widgets.js:1123
-msgid "The o2m record must be saved before an action can be used"
-msgstr "Az o2m rekordot menteni kell, utána lesz csak használható akcióhoz"
-
-#. custom: web
-#: form_widgets.js:637
-msgid "Activate"
-msgstr "Aktiválás"
-
-#. custom: web
-#: formats.js:192
-msgid "'%s' is not a correct time"
-msgstr "'%s' nem megfelelő idő"
-
-#. custom: web
-#: form_widgets.js:642
-msgid "Archived"
-msgstr "Archivált"
-
-#. custom: web
-#: list_view.js:931
-msgid "Setting 'id' attribute on existing record %s"
-msgstr "'id' tulajdonság beállítása a meglévő %s rekordon"
-
-#. custom: web
-#: list_view_editable.js:122
-msgid "The line has been modified, your changes will be discarded. Are you sure you want to discard the changes ?"
-msgstr "A sor megváltozott, a változtatásai figyelmen kívűl lesznek hagyva. Biztosan figyelmen kívűl szeretné hagyni a változtatásokat?"
-
-#. custom: web
-#: list_view.js:1086
-msgid "Unknown m2m command %s"
-msgstr "Ismeretlen m2m parancs %s"
-
-#. custom: web
-#: time.js:204
-msgid "'%s' is not convertible to date, datetime nor time"
-msgstr "'%s' nem átalakítható dátummá, dátum idővé vagy idővé"
-
-#. custom: web
-#: utils.js:179
-msgid "Could not serialize XML"
-msgstr "Nem lehet szerializálni az XML-t"
-
-#. custom: web
-#: view_manager.js:223
-msgid " view couldn't be loaded"
-msgstr "nézetet nem lehetett betölteni"
-
-#. custom: web
-#: debug_manager.js:134
-msgid "%d requests (%d ms) %d queries (%d ms)"
-msgstr "%d kérelem (%d ms) %d lekérdezés (%d ms)"
-
-#. custom: web
-#: base_common.xml:0
-msgid "-"
-msgstr ""
-
-#. custom: web
-#: base_common.xml:0
-msgid "Action ID:"
-msgstr "Akció azonosító:"
-
-#. custom: web
-#: base_common.xml:0
-msgid "Context:"
-msgstr "Kontextus:"
-
-#. custom: web
-#: dialog.js:193
-msgid "Confirmation"
-msgstr "Megerősítés"
-
-#. custom: web
-#: form_relational_widgets.js:1018
-msgid "Add an item"
-msgstr "Tétel hozzáadása"
-
-#. custom: web
-#: form_relational_widgets.js:1305
-msgid "Add: "
-msgstr "Hozzáadás: "
-
-#. custom: web
-#: formats.js:187
-msgid "'%s' is not a correct date"
-msgstr "'%s' nem érvényes dátum"
-
-#. custom: web
-#: formats.js:132
-msgid "'%s' is not a correct integer"
-msgstr "'%s' nem megfelelő egész szám"
-
-#. custom: web
-#: formats.js:75
-msgid "(%d records)"
-msgstr "(%d rekord)"
-
-#. custom: web
-#: formats.js:144
-msgid "'%s' is not a correct float"
-msgstr "'%s' nem megfelelő decimális szám"
-
-#. custom: web
-#: time.js:192
-msgid "'%s' is not a correct date, datetime nor time"
-msgstr "'%s' nem érvényes dátum, dátum idő és nem idő"
-
-#. custom: web
-#: base_common.xml:0
-msgid "(nolabel)"
-msgstr "(nincs felirat)"
-
-#. custom: web
-#: base_common.xml:0
-msgid ":"
-msgstr ""
-
-#. custom: web
-#: dialog.js:168
-msgid "Alert"
-msgstr "Figyelmeztetés"
-
-#. custom: web
-#: base_common.xml:0
-msgid "Button Type:"
-msgstr "Gomb típus:"
-
-#. custom: web
-#: list_common.js:133
-msgid "Can't convert value %s to context"
-msgstr "Nem lehet a(z) %s értéket konvertálni"
-
-#. custom: web
-#: form_widgets.js:1251
-msgid "Could not display the selected image."
-msgstr "A kiválasztott kép nem megjeleníthető."
-
-#. custom: web
-#: list_view.js:1024
-msgid "Could not find id in dataset"
-msgstr "Nem található azonosító az adatszettben"
-
-#. custom: web
-#: base.xml:0 base.xml:0
-msgid "/web/binary/upload_attachment"
-msgstr ""
-
-#. custom: web
-#: base_common.xml:0
-msgid "Change default:"
-msgstr "Alapértelmezés megváltoztatása:"
-
-#. custom: web
-#: form_relational_widgets.js:1122
-msgid "Action Button"
-msgstr "Akció gomb"
-
-#. custom: web
-#: base.xml:0 base.xml:0
-msgid "Apply"
-msgstr "Alkalmazás"
-
-#. custom: web
-#: search_menus.js:252
-msgid "Are you sure that you want to remove this filter?"
-msgstr "Szűrő eltávolítása?"
-
-#. custom: web
-#: utils.js:284
-msgid "Bytes,Kb,Mb,Gb,Tb,Pb,Eb,Zb,Yb"
-msgstr "Byte-ok,Kb,Mb,Gb,Tb,Pb,Eb,Zb,Yb"
-
-#. custom: web
-#: abstract_web_client.js:124 crash_manager.js:123
-msgid "Client Error"
-msgstr "Kliens hiba"
-
-#. custom: web
-#: change_password.js:14 base.xml:0
-msgid "Change Password"
-msgstr "Jelszó megváltoztatása"
-
-#. custom: web
-#: form_common.js:1049 base.xml:0
-msgid "Create"
-msgstr "Létrehozás"
-
-#. custom: web
-#: base_common.xml:0
-msgid "Domain:"
-msgstr ""
-
-#. custom: web
-#: form_relational_widgets.js:25
-msgid "Create a %s"
-msgstr "%s létrehozása"
-
-#. custom: web
-#: form_common.js:236
-msgid "Create and Edit..."
-msgstr "Létrehozás és szerkesztés..."
-
-#. custom: web
-#: form_widgets.js:635
-msgid "Deactivate"
-msgstr "Deaktiválás"
-
-#. custom: web
-#: form_view.js:733
-msgid "Do you really want to delete this record?"
-msgstr "Valóban törölni akarja ezt a rekordot?"
-
-#. custom: web
-#: form_view.js:1300
-msgid "Field '%s' specified in view could not be found."
-msgstr "'%s' a nézetben előírt mező nem található."
-
-#. custom: web
-#: form_view.js:1304
-msgid "Widget type '%s' is not implemented"
-msgstr "'%s' widget típus nincs implementálva"
-
-#. custom: web
-#: list_view.js:543
-msgid "Do you really want to remove these records?"
-msgstr "Valóban törölni akarja ezeket a rekordokat?"
-
-#. custom: web
-#: list_view.js:1847
-msgid "Download"
-msgstr "Letöltés"
-
-#. custom: web
-#: list_view.js:1863
-msgid "Download \\\"%s\\\""
-msgstr ""
-
-#. custom: web
-#: base_common.xml:0
-msgid "Field:"
-msgstr "Mező:"
-
-#. custom: web
-#: base_common.xml:0
-msgid "Method:"
-msgstr "Módszer:"
-
-#. custom: web
-#: data_export.js:199
-msgid "Export Data"
-msgstr "Adatok exportálása"
-
-#. custom: web
-#: base_common.xml:0
-msgid "Modifiers:"
-msgstr "Módosítók:"
-
-#. custom: web
-#: base_common.xml:0
-msgid "On change:"
-msgstr "Változtatáskor:"
-
-#. custom: web
-#: data_export.js:167
-msgid "Please enter save field list name"
-msgstr "Adja meg a mentett mező lista nevét"
-
-#. custom: web
-#: data_export.js:201
-msgid "Export To File"
-msgstr "Exportálás fájlba"
-
-#. custom: web
-#: data_export.js:421
-msgid "Please select fields to save export list..."
-msgstr "Válassza ki a mezőket az export lista mentéséhez..."
-
-#. custom: web
-#: data_export.js:435
-msgid "Please select fields to export..."
-msgstr "Válassza ki az exportálandó mezőket..."
-
-#. custom: web
-#: base_common.xml:0
-msgid "Widget:"
-msgstr ""
-
-#. custom: web
-#: form_widgets.js:1114
-msgid "File Upload"
-msgstr "Fájl feltöltése"
-
-#. custom: web
-#: search_menus.js:91
-msgid "Filter with same name already exists."
-msgstr "Már létező nevekkel szűr."
-
-#. custom: web
-#: search_inputs.js:698
-msgid "Group By"
-msgstr "Csoportosítás"
-
-#. custom: web
-#: search_inputs.js:331
-msgid "No"
-msgstr "Nem"
-
-#. custom: web
-#: form_common.js:281 form_relational_widgets.js:1080
-msgid "Create: "
-msgstr "Létrehozás: "
-
-#. custom: web
-#: pyeval.js:1023
-msgid "Evaluation Error"
-msgstr "Értékelési hiba"
-
-#. custom: web
-#: debug_manager.js:241
-msgid "Fields of %s"
-msgstr "Ezek mezői %s"
-
-#. custom: web
-#: form_widgets.js:1094
-msgid "File upload"
-msgstr "Fájl feltöltése"
-
-#. custom: web
-#: list_view.js:287
-msgid "Export"
-msgstr "Exportálás"
-
-#. custom: web
-#: search_inputs.js:551
-msgid "Filter"
-msgstr "Szűrő"
-
-#. custom: web
-#: debug_manager.js:321
-msgid "No metadata available"
-msgstr "Nincs elérhető metaadat"
-
-#. custom: web
-#: form_common.js:1096 search_menus.js:177
-msgid "Custom Filter"
-msgstr "Egyéni szűrő"
-
-#. custom: web
-#: pivot_view.js:831
-msgid "For Excel compatibility, data cannot be exported if there are more than 256 columns.\\n\\nTip: try to flip axis, filter further or reduce the number of measures."
-msgstr ""
-
-#. custom: web
-#: form_relational_widgets.js:1378 base.xml:0
-msgid "Add"
-msgstr "Hozzáadás"
-
-#. custom: web
-#: sidebar.js:217
-msgid "Do you really want to delete this attachment ?"
-msgstr "Valóban törölni szeretné ezt a mellékletet?"
-
-#. custom: web
-#: debug_manager.js:339 base.xml:0
-msgid "Fields View Get"
-msgstr "Nézet mezői"
-
-#. custom: web
-#: form_upgrade_widgets.js:51
-msgid "Hexya Enterprise"
-msgstr ""
-
-#. custom: web
-#: form_view.js:301
-msgid "Form"
-msgstr "Űrlap"
-
-#. custom: web
-#: form_widgets.js:634 form_widgets.js:640
-msgid "Active"
-msgstr "Aktív"
-
-#. custom: web
-#: form_widgets.js:641 list_view.js:288
-msgid "Archive"
-msgstr "Archiválás"
-
-#. custom: web
-#: search_menus.js:84
-msgid "Filter name is required."
-msgstr "Szűrő név szükséges."
-
-#. custom: web
-#: form_widgets.js:636
-msgid "Inactive"
-msgstr "Inaktív"
-
-#. custom: web
-#: view_manager.js:437
-msgid "Failed to evaluate search criterions"
-msgstr "Nem sikerült kiértékelni a keresési kritériumokat"
-
-#. custom: web
-#: form_widgets.js:1251
-msgid "Image"
-msgstr "Kép"
-
-#. custom: web
-#: graph_widget.js:252
-msgid "Not enough data points"
-msgstr "Nincs elég adat pont."
-
-#. custom: web
-#: priority.js:49
-msgid "High"
-msgstr "Magas"
-
-#. custom: web
-#: base.xml:0 base.xml:0
-msgid "Measures <span class=\"caret\"/>"
-msgstr ""
-
-#. custom: web
-#: graph_widget.js:208 graph_widget.js:216
-msgid "Invalid data"
-msgstr "Érvénytelen adat"
-
-#. custom: web
-#: base_common.xml:0
-msgid "Relation:"
-msgstr "Reláció:"
-
-#. custom: web
-#: base.xml:0 base.xml:0 base.xml:0
-msgid "?"
-msgstr ""
-
-#. custom: web
-#: base.xml:0
-msgid "View Fields"
-msgstr "Mezők megtekintése"
-
-#. custom: web
-#: debug_manager.js:183
-msgid "JS Tests"
-msgstr "JS tesztek"
-
-#. custom: web
-#: search_inputs.js:451
-msgid "M2O search fields do not currently handle multiple default values"
-msgstr "M2O kereső mező nem támogatja jelenleg a többszörös alapértelmezett értékeket"
-
-#. custom: web
-#: base_common.xml:0
-msgid "Selection:"
-msgstr "Kiválasztás:"
-
-#. custom: web
-#: base_common.xml:0
-msgid "Type:"
-msgstr "Típus:"
-
-#. custom: web
-#: form_relational_widgets.js:327
-msgid "No value found for the field %s for value %s"
-msgstr "Nem található érték a(z) %s mezőnél a(z) %s értékhez"
-
-#. custom: web
-#: form_view.js:887
-msgid "The following fields are invalid:"
-msgstr "A következő mezők érvénytelenek:"
-
-#. custom: web
-#: base.xml:0
-msgid "View Metadata"
-msgstr "Metadata megtekintése"
-
-#. custom: web
-#: form_relational_widgets.js:740
-msgid "View type '%s' is not supported in X2Many."
-msgstr "'%s' nézet típus nem támogatott a X2Many által."
-
-#. custom: web
-#: base_common.xml:0
-msgid ""
-"[<t t-esc=\"option[0]\"/>]\n"
-"                    <t t-if=\"option[1]\"> - </t>\n"
-"                    <t t-esc=\"option[1]\"/>"
-msgstr ""
-
-#. custom: web
-#: progress_bar.js:78
-msgid "Only Integer Value should be valid."
-msgstr "Kizárólag egész érték lehet érvényes."
-
-#. custom: web
-#: pyeval.js:991
-msgid "Unknown nonliteral type "
-msgstr "Ismeretlen nem szó szerinti típus "
-
-#. custom: web
-#: search_inputs.js:553 search_view.js:205
-msgid " or "
-msgstr "vagy"
-
-#. custom: web
-#: form_common.js:868 base.xml:0 base.xml:0
-msgid "Discard"
-msgstr "Elvetés"
-
-#. custom: web
-#: data.js:1083
-msgid "Unknown field %s in domain %s"
-msgstr "Nem ismert mező %s a domainben %s"
-
-#. custom: web
-#: data.js:1138
-msgid "Unnamed"
-msgstr "Névtelen"
-
-#. custom: web
-#: base.xml:0
-msgid "Update translations"
-msgstr "Fordítások frissítése"
-
-#. custom: web
-#: base.xml:0
-msgid "Whoops, you shouldn't have come up to here..."
-msgstr ""
-
-#. custom: web
-#: debug_manager.js:326
-msgid "Metadata (%s)"
-msgstr "Metaadat (%s)"
-
-#. custom: web
-#: form_common.js:245
-msgid "No results to show..."
-msgstr "Nincs megjeleníthető eredmény..."
-
-#. custom: web
-#: loading.js:46
-msgid "Loading"
-msgstr "Betöltés"
-
-#. custom: web
-#: form_relational_widgets.js:326
-msgid "Render"
-msgstr "Renderelés"
-
-#. custom: web
-#: data.js:1121
-msgid "Unsupported operator %s in domain %s"
-msgstr "Nem támogatott operátor %s ebben a domainban %s"
-
-#. custom: web
-#: form_view.js:315
-msgid "New"
-msgstr "Új"
-
-#. custom: web
-#: graph_widget.js:94
-msgid "No data to display"
-msgstr "Nincs megjeleníthető adat."
-
-#. field:Filter.User
-#. resource:base_ir_filters_view_search
-#. resource:base_ir_filters_view_search
-msgid "User"
-msgstr ""
-
-#. custom: web
-#: loading.js:44
-msgid "Loading (%d)"
-msgstr "Betöltés (%d)"
-
-#. custom: web
-#: misc.js:12
-msgid "Loading..."
-msgstr "Betöltés…"
-
-#. custom: web
-#: priority.js:48
-msgid "Low"
-msgstr "Alacsony"
-
-#. custom: web
-#: search_inputs.js:360
-msgid "Search %(field)s at: %(value)s"
-msgstr "Keresett %(field)s itt: %(value)s"
-
-#. custom: web
-#: form_common.js:281
-msgid "Search: "
-msgstr "Keresés: "
-
-#. custom: web
-#: form_upgrade_widgets.js:34
-msgid "Upgrade now"
-msgstr "Frissítés most"
-
-#. custom: web
-#: priority.js:50
-msgid "Very High"
-msgstr "Nagyon nagy"
-
-#. custom: web
-#: pyeval.js:1027
-msgid "Local evaluation failure\\n%s\\n\\n%s"
-msgstr ""
-
-#. custom: web
-#: search_menus.js:251
-msgid "This filter is global and will be removed for everybody if you continue."
-msgstr "Ez egy globális szűrő és mindenkitől el lesz távolítva, ha folytatja."
-
-#. custom: web
-#: base.xml:0
-msgid "XML ID:"
-msgstr "XML azonosító:"
-
-#. custom: web
-#: base.xml:0
-msgid "Year"
-msgstr "Év"
-
-#. custom: web
-#: sidebar.js:131
-msgid "You must choose at least one record."
-msgstr "Választani kell legalább egy rekordot!"
-
-#. custom: web
-#: base.xml:0
-msgid ""
-"var $div = $(document.createElement('div')).attr('t-if', this.attr('t-if')).addClass('o_form_field_monetary');\n"
-"        this.clone(true).appendTo($div);\n"
-"        this.replaceWith($div);"
-msgstr ""
-
-#. custom: web
-#: search_inputs.js:230
-msgid "not a valid integer"
-msgstr "nem érvényes egész szám"
-
-#. custom: web
-#: crash_manager.js:170 dialog.js:182 form_common.js:1046 form_upgrade_widgets.js:40 base.xml:0
-msgid "Cancel"
-msgstr "Mégsem"
-
-#. custom: web
-#: form_view.js:756
-msgid "The record has been modified, your changes will be discarded. Are you sure you want to leave this page ?"
-msgstr "A rekord módosításra került, a változtatások elvetésre fognak kerülni. Biztosan el akarja hagyni ezt az oldalt?"
-
-#. custom: web
-#: form_common.js:868 form_view.js:1127 data_export.js:202
-msgid "Close"
-msgstr "Bezárás"
-
-#. custom: web
-#: utils.js:143
-msgid "Node [%s] is not a JSONified XML node"
-msgstr ""
-
-#. custom: web
-#: view_manager.js:223 search_menus.js:84 search_menus.js:91
-msgid "Error"
-msgstr "Hiba"
-
-#. custom: web
-#: priority.js:47
-msgid "Normal"
-msgstr "Normál"
-
-#. custom: web
-#: dialog.js:40 dialog.js:158 dialog.js:176 base.xml:0
-msgid "Ok"
-msgstr ""
-
-#. custom: web
-#: form_widgets.js:1093
-msgid "The selected file exceed the maximum file size of %s."
-msgstr "A kiválasztott fájl meghaladja a maximális %s fájlméretet."
-
-#. custom: web
-#: form_common.js:874 base.xml:0 base.xml:0 base.xml:0
-msgid "Save"
-msgstr "Mentés"
-
-#. resource:base_menu_ir_filters
-msgid "User-defined Filters"
-msgstr ""
-
-#. custom: web
-#: form_common.js:889
-msgid "Save & New"
-msgstr "Mentés & Új"
-
-#. custom: web
-#: form_common.js:211
-msgid "Search More..."
-msgstr "Továbbiak keresése..."
-
-#. custom: web
-#: base_common.xml:0
-msgid "Size:"
-msgstr "Méret:"
-
-#. custom: web
-#: graph_view.js:86 graph_widget.js:21 pivot_view.js:182 base.xml:0 base.xml:0
-msgid "Count"
-msgstr "Darab"
-
-#. custom: web
-#: form_common.js:1054
-msgid "Select"
-msgstr "Kiválasztás"
-
-#. custom: web
-#: form_view.js:1125
+#: debug_manager_backend.js:356
 msgid "Set Default"
 msgstr "Alapértelmezés beállítása"
 
 #. custom: web
-#: base_common.xml:0
+#: menu.xml:0
+msgid "Shortcuts"
+msgstr "Gyorsbillentyűk"
+
+#. custom: web
+#: kanban_record.js:406
+msgid "Set a Cover Image"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
 msgid "Special:"
 msgstr "Speciális:"
 
 #. custom: web
-#: form_view.js:1128
-msgid "Save default"
-msgstr "Alapértelmezés mentése"
-
-#. custom: web
 #: base.xml:0
-msgid "Week"
-msgstr "Hét"
+msgid "Support"
+msgstr "Támogatás"
 
 #. custom: web
-#: form_widgets.js:1131
-msgid "Save As..."
-msgstr "Mentés másként..."
+#: basic_fields.js:1663
+msgid "The selected file exceed the maximum file size of %s."
+msgstr "A kiválasztott fájl meghaladja a maximális %s fájlméretet."
+
+#. custom: web
+#: model_field_selector.js:493
+msgid "Relation not allowed"
+msgstr ""
+
+#. custom: web
+#: calendar_quick_create.js:81
+msgid "Summary"
+msgstr ""
 
 #. custom: web
 #: misc.js:14
@@ -1219,49 +1421,77 @@ msgid "Still loading...<br />Please be patient."
 msgstr "Még tölt...<br />Várjon türelemmel."
 
 #. custom: web
+#: name_and_signature.xml:0
+msgid "Style"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 name_and_signature.xml:0
+msgid "Styles"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Tap on the list to change company"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Technical Translation"
+msgstr "Technikai fordítás"
+
+#. custom: web
 #: misc.js:17
 msgid "Take a minute to get a coffee,<br />because it's loading..."
 msgstr "Tartson szünetet és igyon egy kávét,<br />még mindig töltődik..."
 
 #. custom: web
-#: form_relational_widgets.js:1595
-msgid "The type of the field '%s' must be a many2many field with a relation to 'ir.attachment' model."
-msgstr "A '%s' mező típusnak many2many mezőnek kell lennie az 'ir.attachment' modellhez való kapcsolattal."
-
-#. custom: web
-#: form_view.js:301
-msgid "The record could not be found in the database."
-msgstr "A rekord nem található az adatbázisban"
-
-#. custom: web
-#: form_widgets.js:862
-msgid "Timezone Mismatch : The timezone of your browser doesn't match the selected one. The time in Hexya is displayed according to your field timezone."
+#: base.xml:0
+msgid "Template:"
 msgstr ""
 
 #. custom: web
-#: data.js:1075
-msgid "Unknown operator %s in domain %s"
-msgstr "Nem ismert operátor %s ebben a domainben %s"
+#: basic_fields.js:1955
+msgid "The field is empty, there's nothing to save !"
+msgstr "A mező üres, nincs mit menteni!"
 
 #. custom: web
-#: base.xml:0 base.xml:0
-msgid "Uploading..."
-msgstr "Feltöltés..."
-
-#. custom: web
-#: misc.js:16
-msgid "You may not believe it,<br />but the application is actually loading..."
-msgstr "Nem fogja elhinni,<br />de az alkalmazás tényleg töltődik..."
-
-#. custom: web
-#: progress_bar.js:78
-msgid "Wrong value entered!"
-msgstr "Rossz érték került megadásra!"
-
-#. custom: web
-#: form_view.xml:0
-msgid "e"
+#: calendar_quick_create.js:82
+msgid "The following field is invalid:"
 msgstr ""
+
+#. help:Filter.Action
+msgid "The menu action this filter applies to. When left empty the filter applies to all menus for this model."
+msgstr ""
+
+#. custom: web
+#: crash_manager.js:388
+msgid "The operation was interrupted. This usually means that the current operation is taking too much time."
+msgstr ""
+
+#. help:Filter.User
+msgid "The user this filter is private to. When left empty the filter is public and available to all users."
+msgstr ""
+
+#. custom: web
+#: basic_controller.js:84
+msgid "The record has been modified, your changes will be discarded. Do you want to proceed?"
+msgstr ""
+
+#. custom: web
+#: basic_fields.js:1680
+msgid "There was a problem while uploading your file"
+msgstr "Probléma merült fel a fájl feltöltése közben"
+
+#. custom: web
+#: date_picker.js:205
+msgid "This date is on the future. Make sure it is what you expected."
+msgstr ""
+
+#. custom: web
+#: menu.xml:0
+msgid "Save a record"
+msgstr "Bejegyzés mentése"
 
 #. custom: web
 #: misc.js:13
@@ -1269,86 +1499,390 @@ msgid "Still loading..."
 msgstr "Még tölt..."
 
 #. custom: web
-#: search_inputs.js:330
-msgid "Yes"
-msgstr "Igen"
+#: special_fields.js:102
+msgid "Set a timezone on your user"
+msgstr ""
 
 #. custom: web
-#: form_relational_widgets.js:47
-msgid "You are creating a new %s, are you sure it does not exist yet?"
-msgstr "Egy új %s hoz létre, biztos benne, hogy még nem létezik?"
+#: kanban.xml:0
+msgid "There is no available image to be set as cover."
+msgstr ""
 
 #. custom: web
-#: form_relational_widgets.js:153 form_relational_widgets.js:921 form_relational_widgets.js:1104 form_relational_widgets.js:1321
-msgid "Open: "
-msgstr "Megnyitás: "
+#: domain_selector.js:474
+msgid "This domain is not supported."
+msgstr "Ez a tartomány nem támogatott."
+
+#. custom: web
+#: domain_selector.js:585
+msgid "Syntax error"
+msgstr "Szintaktikai hiba"
+
+#. custom: web
+#: model_field_selector.js:432
+msgid "The field chain is not valid. Did you maybe use a non-existing field name or followed a non-relational field?"
+msgstr ""
+
+#. custom: web
+#: basic_controller.js:552 attach_document.js:64
+msgid "The following fields are invalid:"
+msgstr "A következő mezők érvénytelenek:"
+
+#. custom: web
+#: web_calendar.xml:0
+msgid "Summary:"
+msgstr "Összegzés:"
+
+#. custom: web
+#: domain_selector.js:539 domain_selector.js:585
+msgid "The domain you entered is not properly formed"
+msgstr ""
+
+#. custom: web
+#: debug.xml:0
+msgid "Toggle Timelines"
+msgstr "Idővonalak mutatása"
+
+#. custom: web
+#: base.xml:0
+msgid "Type:"
+msgstr "Típus:"
+
+#. custom: web
+#: special_fields.js:93
+msgid "Timezone Mismatch : This timezone is different from that of your browser.\\nPlease, set the same timezone as your browser's to avoid time discrepancies in your system."
+msgstr ""
 
 #. custom: web
 #: base.xml:0
 msgid ""
-"You have updated <strong><t t-esc=\"field.string\"/></strong> (<t t-esc=\"lang\"/>).\n"
-"            <a class=\"oe_field_translate\" t-att-name=\"field.name\" href=\"#\">Update translations</a>"
+"Try to add some records, or make sure that there is no\n"
+"                active filter in the search bar."
 msgstr ""
 
 #. custom: web
-#: base.xml:0
-msgid "console.warn('Unhandled widget', dict.widget);"
+#: favorite_menu.js:117
+msgid "This filter is global and will be removed for everybody if you continue."
+msgstr "Ez egy globális szűrő és mindenkitől el lesz távolítva, ha folytatja."
+
+#. custom: web
+#: name_and_signature.xml:0
+msgid "This file is invalid. Please select an image."
 msgstr ""
 
 #. custom: web
-#: base.xml:0
-msgid "overflow-x: hidden"
+#: kanban.xml:0
+msgid "Unarchive All"
 msgstr ""
 
 #. custom: web
-#: base.xml:0
-msgid ""
-"var message = (d.message !== undefined) ? d.message : d.error.data.message;\n"
-"            d.html_error = context.engine.tools.html_escape(message).replace(/\\n/g, '<br/>');"
-msgstr ""
-
-#. custom: web
-#: form_widgets.js:643 list_view.js:289
+#: form_controller.js:201 list_controller.js:171
 msgid "Unarchive"
 msgstr "Visszatöltés"
 
 #. custom: web
-#: search_inputs.js:192 search_inputs.js:211 search_inputs.js:402
-msgid "Search %(field)s for: %(value)s"
-msgstr "Keresés %(field)s erre: %(value)s"
+#: crash_manager.js:105
+msgid "Unknown CORS error"
+msgstr ""
 
-#. custom: web
-#: crash_manager.js:107 form_view.js:761 list_view.js:676 sidebar.js:131
-msgid "Warning"
-msgstr "Figyelmeztetés"
+#. field:Filter.User
+#. resource:base_ir_filters_view_search
+#. resource:base_ir_filters_view_search
+msgid "User"
+msgstr ""
 
-#. custom: web
-#: list_view.js:676
-msgid "You must select at least one record."
-msgstr "Legalább egy a rekordot válasszon ki."
-
-#. custom: web
-#: crash_manager.js:57
-msgid "Your Hexya session expired. Please refresh the current web page."
+#. resource:base_menu_ir_filters
+msgid "User-defined Filters"
 msgstr ""
 
 #. custom: web
-#: utils.js:302
-msgid "kMGTPE"
+#: data.js:751
+msgid "Unnamed"
+msgstr "Névtelen"
+
+#. custom: web
+#: config_settings.js:45
+msgid "Unsaved changes"
 msgstr ""
 
 #. custom: web
-#: graph_widget.js:79 list_view.js:1379 list_view.js:1385 pivot_view.js:508
+#: base.xml:0
+msgid "Update to:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Uploading"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "Use by default"
+msgstr "Alapértelmezésben használt"
+
+#. custom: web
+#: debug.xml:0
+msgid "View Fields"
+msgstr "Mezők megtekintése"
+
+#. custom: web
+#: upgrade_fields.js:68
+msgid "Upgrade now"
+msgstr "Frissítés most"
+
+#. custom: web
+#: debug.xml:0
+msgid "View Metadata"
+msgstr "Metadata megtekintése"
+
+#. custom: web
+#: web_calendar.xml:0
+msgid "Today"
+msgstr "Ma"
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "Upload your file"
+msgstr "Fáljok feltöltése"
+
+#. custom: web
+#: menu.xml:0
+msgid "Windows/Linux"
+msgstr "Windows/Linux"
+
+#. custom: web
+#: pivot_view.js:116
+msgid "Untitled"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0 base.xml:0
+msgid "Uploading..."
+msgstr "Feltöltés..."
+
+#. custom: web
+#: debug.xml:0
+msgid "XML ID:"
+msgstr "XML azonosító:"
+
+#. custom: web
+#: calendar_model.js:606 graph_model.js:274 graph_renderer.js:217 pivot_model.js:1443
 msgid "Undefined"
 msgstr "Nincs meghatározva"
 
 #. custom: web
-#: search_inputs.js:245
+#: basic_fields.js:2635
+msgid "Wrong value entered!"
+msgstr "Rossz érték került megadásra!"
+
+#. custom: web
+#: relational_fields.js:2002
+msgid "The type of the field '%s' must be a many2many field with a relation to 'ir.attachment' model."
+msgstr "A '%s' mező típusnak many2many mezőnek kell lennie az 'ir.attachment' modellhez való kapcsolattal."
+
+#. custom: web
+#: py_utils.js:302
+msgid "Unknown nonliteral type "
+msgstr "Ismeretlen nem szó szerinti típus "
+
+#. custom: web
+#: base.xml:0
+msgid "Year"
+msgstr "Év"
+
+#. custom: web
+#: model_field_selector.js:493
+msgid "You cannot follow relations for this field chain construction"
+msgstr ""
+
+#. custom: web
+#: search_bar_autocomplete_sources.js:294
+msgid "Yes"
+msgstr "Igen"
+
+#. custom: web
+#: basic_controller.js:88 basic_controller.js:343 favorite_menu.js:122 list_renderer.js:481
+msgid "Warning"
+msgstr "Figyelmeztetés"
+
+#. custom: web
+#: calendar_model.js:429 base.xml:0 web_calendar.xml:0
+msgid "Week"
+msgstr "Hét"
+
+#. custom: web
+#: base.xml:0
+msgid "Widget:"
+msgstr "Widget:"
+
+#. custom: web
+#: relational_fields.js:73
+msgid "You are creating a new %s, are you sure it does not exist yet?"
+msgstr "Egy új %s hoz létre, biztos benne, hogy még nem létezik?"
+
+#. custom: web
+#: basic_controller.js:341
+msgid "You need to save this new record before editing the translation. Do you want to proceed?"
+msgstr ""
+
+#. custom: web
+#: misc.js:16
+msgid "You may not believe it,<br />but the application is actually loading..."
+msgstr "Nem fogja elhinni,<br />de az alkalmazás tényleg töltődik..."
+
+#. custom: web
+#: name_and_signature.js:446
+msgid "Your name"
+msgstr ""
+
+#. custom: web
+#: crash_manager.js:376
+msgid "Your Hexya session expired. Please refresh the current web page."
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"[<t t-esc=\"option[0]\"/>]\n"
+"                    <t t-if=\"option[1]\"> - </t>\n"
+"                    <t t-esc=\"option[1]\"/>"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "all records"
+msgstr "minden bejegyzés"
+
+#. custom: web
+#: menu.xml:0 menu.xml:0
+msgid "a"
+msgstr ""
+
+#. custom: web
+#: form_view.xml:0 form_view.xml:0
+msgid "d"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0 menu.xml:0
+msgid "c"
+msgstr ""
+
+#. custom: web
+#: domain_selector.js:866
+msgid "is not"
+msgstr "nem egyenlő"
+
+#. custom: web
+#: form_view.xml:0
+msgid "e"
+msgstr ""
+
+#. custom: web
+#: document_viewer.xml:0
+msgid "false"
+msgstr ""
+
+#. custom: web
+#: domain_selector.js:865
+msgid "is"
+msgstr "egyenlő"
+
+#. custom: web
+#: menu.xml:0 menu.xml:0
+msgid "k"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0 menu.xml:0
+msgid "l"
+msgstr ""
+
+#. custom: web
+#: document_viewer.xml:0
+msgid "modal o_modal_fullscreen o_document_viewer o_responsive_document_viewer"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "not"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid ""
+"is\n"
+"            <t t-if=\"widget.operator === '=' &amp;&amp; widget.value === false || widget.operator === '!=' &amp;&amp; widget.value === true\">not</t>\n"
+"            set"
+msgstr ""
+
+#. custom: web
+#: search_bar_autocomplete_sources.js:229
 msgid "not a valid number"
 msgstr "nem érvényes szám"
 
 #. custom: web
-#: pivot_view.js:526 pivot_view.js:555
-msgid "Total"
-msgstr "Összesen"
+#: menu.xml:0 menu.xml:0
+msgid "j"
+msgstr ""
+
+#. custom: web
+#: search_bar_autocomplete_sources.js:218
+msgid "not a valid integer"
+msgstr "nem érvényes egész szám"
+
+#. custom: web
+#: menu.xml:0 menu.xml:0
+msgid "n"
+msgstr ""
+
+#. custom: web
+#: domain_selector.js:676
+msgid "not set (false)"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "of:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0
+msgid "of the following rules:"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "or"
+msgstr "vagy"
+
+#. custom: web
+#: menu.xml:0 menu.xml:0
+msgid "s"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 base.xml:0
+msgid "overflow-x: hidden"
+msgstr ""
+
+#. custom: web
+#: menu.xml:0 menu.xml:0
+msgid "p"
+msgstr ""
+
+#. custom: web
+#: domain_selector.js:676
+msgid "set (true)"
+msgstr ""
+
+#. custom: web
+#: base.xml:0 dialog.xml:0
+msgid "×"
+msgstr ""
+
+#. custom: web
+#: kanban.xml:0
+msgid "●"
+msgstr ""
 

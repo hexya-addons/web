@@ -52,7 +52,7 @@ func Translations(c *server.Context) {
 
 // LoadMenus returns the menus of the application as JSON
 func LoadMenus(c *server.Context) {
-	lang := c.Query("lang")
+	lang := GetSessionInfoStruct(c.Session()).UserContext["lang"].(string)
 	var allRootMenuIds []int64
 	for _, menu := range menus.Registry.All() {
 		allRootMenuIds = append(allRootMenuIds, menu.ID)
@@ -104,7 +104,7 @@ func LoadLocale(c *server.Context) {
 	lang := c.Param("lang")
 	var outstr string
 	langFull := strings.ToLower(strings.Replace(lang, "_", "-", -1))
-	jsPath := filepath.Join(server.ResourceDir, "static", "web", "lib", "comment", "locale")
+	jsPath := filepath.Join(server.ResourceDir, "static", "web", "lib", "moment", "locale")
 	jsPathFull := filepath.Join(jsPath, fmt.Sprintf("%s.js", langFull))
 	content, err := ioutil.ReadFile(jsPathFull)
 	if err != nil {
@@ -117,7 +117,6 @@ func LoadLocale(c *server.Context) {
 	}
 	c.Header("Content-Type", "application/javascript")
 	c.String(http.StatusOK, outstr)
-
 }
 
 // A Menu is the representation of a single menu item
