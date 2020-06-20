@@ -93,7 +93,7 @@ func AssetsFrontendCSS(c *server.Context) {
 
 // Dashboard returns the dashboard image of the company or the default one
 func Dashboard(c *server.Context) {
-	checkUser(c.Session().Get("uid").(int64))
+	CheckUser(c.Session().Get("uid").(int64))
 	var image []byte
 	models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
 		user := h.User().Search(env, q.User().ID().Equals(c.Session().Get("uid").(int64)))

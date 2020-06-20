@@ -56,7 +56,7 @@ func LoginPost(c *server.Context) {
 // LoginRequired is a middleware that redirects to login page
 // non logged in users.
 func LoginRequired(c *server.Context) {
-	if c.Session().Get("uid") == nil {
+	if c.Session().Get("uid") == nil || c.Session().Get("uid") == 0 {
 		c.Redirect(http.StatusSeeOther, "/web/login")
 		c.Abort()
 	}

@@ -139,7 +139,7 @@ type CallParams struct {
 
 // Execute executes a method on an object
 func Execute(uid int64, params CallParams) (res interface{}, rError error) {
-	checkUser(uid)
+	CheckUser(uid)
 
 	// Create new Environment with new transaction
 	rError = models.ExecuteInNewEnvironment(uid, func(env models.Environment) {
@@ -316,8 +316,8 @@ func extractContext(params CallParams) types.Context {
 	return ctx
 }
 
-// checkUser panics if the given uid is 0 (i.e. no user is logged in).
-func checkUser(uid int64) {
+// CheckUser panics if the given uid is 0 (i.e. no user is logged in).
+func CheckUser(uid int64) {
 	if uid == 0 {
 		log.Panic("User must be logged in to call model method")
 	}
@@ -325,7 +325,7 @@ func checkUser(uid int64) {
 
 // getFieldValue retrieves the given field of the given model and id.
 func getFieldValue(uid, id int64, model, field string) (res interface{}, rError error) {
-	checkUser(uid)
+	CheckUser(uid)
 	rError = models.ExecuteInNewEnvironment(uid, func(env models.Environment) {
 		model = odooproxy.ConvertModelName(model)
 		rc := env.Pool(model)
@@ -369,7 +369,7 @@ type SearchReadParams struct {
 
 // SearchRead retrieves database records according to the filters defined in params.
 func SearchRead(uid int64, params SearchReadParams) (res *webtypes.SearchReadResult, rError error) {
-	checkUser(uid)
+	CheckUser(uid)
 	rError = models.ExecuteInNewEnvironment(uid, func(env models.Environment) {
 		model := odooproxy.ConvertModelName(params.Model)
 		rs := env.Pool(model).WithNewContext(&params.Context)
