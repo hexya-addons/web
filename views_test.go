@@ -49,40 +49,46 @@ func TestViewModifiers(t *testing.T) {
 	Convey("Testing correct modifiers injection in views", t, func() {
 		models.SimulateInNewEnvironment(security.SuperUserID, func(env models.Environment) {
 			Convey("'invisible', 'required' and 'readonly' field attributes should be set in modifiers", func() {
-				v, _ := xmlutils.XMLToElement(viewDef1)
+				v, _ := xmlutils.XMLToDocument(viewDef1)
 				view := h.User().NewSet(env).ProcessView(v, viewFieldInfos1)
-				So(view, ShouldEqual, `<view id="my_id" name="My View" model="ResUSers">
+				So(view, ShouldEqual, `
+<view id="my_id" name="My View" model="ResUSers">
 	<form>
 		<group>
 			<field name="name" required="1" readonly="1" modifiers="{&quot;readonly&quot;:true}"/>
 			<field name="tz" invisible="1" modifiers="{&quot;invisible&quot;:true}"/>
 		</group>
 	</form>
-</view>`)
+</view>
+`)
 			})
 			Convey("attrs should be set in modifiers", func() {
-				v, _ := xmlutils.XMLToElement(viewDef2)
+				v, _ := xmlutils.XMLToDocument(viewDef2)
 				view := h.User().NewSet(env).ProcessView(v, viewFieldInfos1)
-				So(view, ShouldEqual, `<view id="my_id" name="My View" model="ResUSers">
+				So(view, ShouldEqual, `
+<view id="my_id" name="My View" model="ResUSers">
 	<form>
 		<group>
 			<field name="name" attrs="{&quot;readonly&quot;: [[&quot;Function&quot;, &quot;ilike&quot;, &quot;manager&quot;]], &quot;required&quot;: [[&quot;ID&quot;, &quot;!=&quot;, false]]}" modifiers="{&quot;readonly&quot;:[[&quot;Function&quot;,&quot;ilike&quot;,&quot;manager&quot;]],&quot;required&quot;:[[&quot;ID&quot;,&quot;!=&quot;,false]]}"/>
 			<field name="tz" invisible="1" attrs="{&quot;invisble&quot;: [[&quot;Login&quot;, &quot;!=&quot;, &quot;john&quot;]]}" modifiers="{&quot;invisible&quot;:true}"/>
 		</group>
 	</form>
-</view>`)
+</view>
+`)
 			})
 			Convey("'Readonly' and 'Required' field data should be taken into account", func() {
-				v, _ := xmlutils.XMLToElement(viewDef2)
+				v, _ := xmlutils.XMLToDocument(viewDef2)
 				view := h.User().NewSet(env).ProcessView(v, viewFieldInfos2)
-				So(view, ShouldEqual, `<view id="my_id" name="My View" model="ResUSers">
+				So(view, ShouldEqual, `
+<view id="my_id" name="My View" model="ResUSers">
 	<form>
 		<group>
 			<field name="name" attrs="{&quot;readonly&quot;: [[&quot;Function&quot;, &quot;ilike&quot;, &quot;manager&quot;]], &quot;required&quot;: [[&quot;ID&quot;, &quot;!=&quot;, false]]}" modifiers="{&quot;readonly&quot;:[[&quot;Function&quot;,&quot;ilike&quot;,&quot;manager&quot;]],&quot;required&quot;:true}"/>
 			<field name="tz" invisible="1" attrs="{&quot;invisble&quot;: [[&quot;Login&quot;, &quot;!=&quot;, &quot;john&quot;]]}" modifiers="{&quot;invisible&quot;:true,&quot;readonly&quot;:true}"/>
 		</group>
 	</form>
-</view>`)
+</view>
+`)
 			})
 		})
 	})
