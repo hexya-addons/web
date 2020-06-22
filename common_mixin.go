@@ -448,11 +448,9 @@ func commonMixin_GetToolbar(rs m.CommonMixinSet) webtypes.Toolbar {
 
 // ProcessView makes all the necessary modifications to the view
 // arch and returns the new xml string.`,
-func commonMixin_ProcessView(rs m.CommonMixinSet, arch *etree.Element, fieldInfos map[string]*models.FieldInfo) string {
+func commonMixin_ProcessView(rs m.CommonMixinSet, arch *etree.Document, fieldInfos map[string]*models.FieldInfo) string {
 	// Copy arch into a new document
-	doc := etree.NewDocument()
-	activeArch := arch.Copy()
-	doc.SetRoot(activeArch)
+	doc := arch.Copy()
 	// Apply changes
 	rs.ManageGroupsOnFields(doc, fieldInfos)
 	rs.AddModifiers(doc, fieldInfos)
