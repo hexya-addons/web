@@ -6,6 +6,8 @@
 pool/
 res/
 coverage.txt
+static/src/scss/*.css
+static/src/scss/*.css.map
 
 .idea/
 # User-specific stuff

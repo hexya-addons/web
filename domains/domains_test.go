@@ -1,4 +1,4 @@
-// Copyright 2016 NDP Systèmes. All Rights Reserved.
+// Copyright 2016 Nicolas Piganeau. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import (
 	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/hexya/src/models/security"
 	"github.com/hexya-erp/hexya/src/tests"
-	_ "github.com/hexya-erp/hexya/src/tests/testllmodule"
+	_ "github.com/hexya-erp/hexya/src/tests/testdata/testllmodule"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
